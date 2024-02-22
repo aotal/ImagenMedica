@@ -1,0 +1,18 @@
+lang: es
+project:
+  type: website
+
+website:
+  title: "Imagen Médica"
+  navbar:
+    right:
+      - about.qmd
+      - icon: github
+        href: https://github.com/aotal
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+
+
+

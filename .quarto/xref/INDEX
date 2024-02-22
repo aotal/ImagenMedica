@@ -1,0 +1,26 @@
+{
+  "index.qmd": {
+    "index.html": "05a3560c"
+  },
+  "posts/welcome/index.qmd": {
+    "index.html": "157f6ac5"
+  },
+  "posts/post-with-code/index.qmd": {
+    "index.html": "91e725f0"
+  },
+  "about.qmd": {
+    "about.html": "8b8873c1"
+  },
+  "posts/post-with-code/Datos_1.qmd": {
+    "Datos_1.html": "43f38666"
+  },
+  "posts/Presentaciones/index.qmd": {
+    "index.html": "5e34ee10"
+  },
+  "posts/Presentaciones/Datos_1.qmd": {
+    "Datos_1.html": "1ef0327f"
+  },
+  "posts/Presentaciones/IntroIM.qmd": {
+    "IntroIM.html": "4ed2c487"
+  }
+}

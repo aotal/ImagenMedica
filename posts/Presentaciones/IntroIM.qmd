@@ -1,0 +1,113 @@
+---
+title: "Introducción a la imagen médica"
+date: "2024-02-22"
+categories: [Presentación]
+image: img/Intro2.jpg
+author: "[Antonio Otal Palacín](antonio.otal@udl.cat)"
+institute: Hospital Universitari Arnau de Vilanova (Lleida)
+lang: es
+format: 
+    revealjs:
+        logo: 'img/logoudl.png'
+        footer: "[IAMED](https://cv.udl.cat/portal/site/100794-2324/tool/3d5c2c81-a50b-43ce-a0bf-ecbfd152350b)"
+        css: styles.css
+        number-sections: false
+        slide-number: false
+        center: false
+jupyter: python3   
+---
+
+## Índice
+
+-   Introducción
+-   Introducción a la imagen digital
+-   Conceptos básicos de imagen
+-   Adquisición de imágenes médicas
+-   Procesamiento de imágenes
+
+
+::: notes
+Notes
+:::
+
+# Introducción 
+
+::: notes
+Notes
+:::
+
+## Definición de imagen digital
+
+::: notes
+Notes
+:::
+
+## Breve historia y evolución de la imagen digital
+
+
+::: notes
+Notes
+:::
+
+## Importancia de la imagen digital en la medicina y otras áreas
+
+
+::: notes
+Notes
+:::
+
+# Conceptos básicos de imagen
+
+## Pixel: Explicación de lo que es un píxel y su importancia en las imágenes digitales
+
+::: notes
+Notes
+:::
+
+## Resolución: Explicación de la resolución de una imagen y cómo afecta a la calidad de la misma
+
+::: notes
+Notes
+:::
+
+## Formatos de imagen: Breve descripción de los formatos de imagen más comunes (JPEG, PNG, GIF, etc.) y sus diferencias
+
+::: notes
+Notes
+:::
+
+
+# Adquisición de imágenes médicas
+
+::: notes
+Notes
+:::
+
+## Modalidades de imagen médica: Radiografías, resonancias magnéticas, tomografías computarizadas, etc
+
+::: notes
+Notes
+:::
+
+
+## Equipos de captura de imágenes: Explicación de los dispositivos utilizados para adquirir imágenes médicas y cómo funcionan
+
+::: notes
+Notes
+:::
+
+
+# Procesamiento de imágenes
+
+
+## Mejora de imágenes: Técnicas básicas de mejora de imágenes, como ajuste de brillo y contraste, filtrado, etc
+
+::: notes
+Notes
+:::
+
+## Segmentación de imágenes: Concepto de segmentación de imágenes y su importancia en el análisis de imágenes médicas
+
+::: notes
+Notes
+:::

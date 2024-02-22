@@ -1,0 +1,14 @@
+---
+title: "Acerca de el autor"
+lang: es
+image: img/logo.png
+about:
+  template: jolla
+  links:
+    - icon: github
+      text: Github
+      href: https://github.com/aotal
+
+---
+
+Material del curso
