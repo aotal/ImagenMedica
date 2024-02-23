@@ -1,0 +1,443 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Imagen Médica",
+    "section": "",
+    "text": "Introducción a la imagen médica\n\n\n\n\n\n\n\nPresentación\n\n\n\n\n\n\n\n\n\n\n\n22 feb 2024\n\n\nAntonio Otal Palacín\n\n\n\n\n\n\n  \n\n\n\n\nDatos en el ámbito de la salud\n\n\n\n\n\n\n\nPresentación\n\n\n\n\n\n\n\n\n\n\n\n19 feb 2024\n\n\nAntonio Otal Palacín\n\n\n\n\n\n\nNo hay resultados"
+  },
+  {
+    "objectID": "posts/Presentaciones/IntroIM.html#índice",
+    "href": "posts/Presentaciones/IntroIM.html#índice",
+    "title": "Introducción a la imagen médica",
+    "section": "Índice",
+    "text": "Índice\n\nIntroducción a la imagen digital\nConceptos básicos de imagen\nAdquisición de imágenes médicas\nProcesamiento de imágenes\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/IntroIM.html#definición-de-imagen-digital",
+    "href": "posts/Presentaciones/IntroIM.html#definición-de-imagen-digital",
+    "title": "Introducción a la imagen médica",
+    "section": "Definición de imagen digital",
+    "text": "Definición de imagen digital\nUna imagen digital o gráfico digital es una representación bidimensional de una imagen a partir de una matriz numérica, frecuentemente en binario (unos y ceros). Dependiendo de si la resolución de la imagen es estática o dinámica, puede tratarse de una imagen matricial (o mapa de bits) o de un gráfico vectorial. El mapa de bits es el formato más utilizado en informática.\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/IntroIM.html#definición-de-radiología-digital",
+    "href": "posts/Presentaciones/IntroIM.html#definición-de-radiología-digital",
+    "title": "Introducción a la imagen médica",
+    "section": "Definición de radiología digital",
+    "text": "Definición de radiología digital\nLa radiología digital es el conjunto de técnicas para obtener imágenes radiológicas escaneadas en formato digital\n\nA partir del escaneo de una la película tradicional (analógica) una vez revelada.\nPor escaneo de una Placa fotoestimulable de fósforo reutilizable que se graba con la imagen de la radiografía (CR)\nUtilizando detectores sensibles expuestos directa o indirectamente a los detectores de rayos X.\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/IntroIM.html#breve-historia-y-evolución-de-la-imagen-digital",
+    "href": "posts/Presentaciones/IntroIM.html#breve-historia-y-evolución-de-la-imagen-digital",
+    "title": "Introducción a la imagen médica",
+    "section": "Breve historia y evolución de la imagen digital",
+    "text": "Breve historia y evolución de la imagen digital\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/IntroIM.html#importancia-de-la-imagen-digital-en-la-medicina",
+    "href": "posts/Presentaciones/IntroIM.html#importancia-de-la-imagen-digital-en-la-medicina",
+    "title": "Introducción a la imagen médica",
+    "section": "Importancia de la imagen digital en la medicina",
+    "text": "Importancia de la imagen digital en la medicina\n\nDiagnóstico preciso.\nProcedimiento no invasivo\nInvestigación y desarrollo\nReducción de la dosis al paciente\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/IntroIM.html#qué-es-un-pixel",
+    "href": "posts/Presentaciones/IntroIM.html#qué-es-un-pixel",
+    "title": "Introducción a la imagen médica",
+    "section": "¿Qué es un pixel?",
+    "text": "¿Qué es un pixel?\n\n\n\n\n\n\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/IntroIM.html#resolución",
+    "href": "posts/Presentaciones/IntroIM.html#resolución",
+    "title": "Introducción a la imagen médica",
+    "section": "Resolución",
+    "text": "Resolución\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/IntroIM.html#profundidad-de-bit",
+    "href": "posts/Presentaciones/IntroIM.html#profundidad-de-bit",
+    "title": "Introducción a la imagen médica",
+    "section": "Profundidad de bit",
+    "text": "Profundidad de bit"
+  },
+  {
+    "objectID": "posts/Presentaciones/IntroIM.html#otras-características",
+    "href": "posts/Presentaciones/IntroIM.html#otras-características",
+    "title": "Introducción a la imagen médica",
+    "section": "Otras características",
+    "text": "Otras características\n\nEspacio de color (RGB,CMYK)\nRelación de aspecto\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/IntroIM.html#modalidades-de-imagen-médica-radiografías",
+    "href": "posts/Presentaciones/IntroIM.html#modalidades-de-imagen-médica-radiografías",
+    "title": "Introducción a la imagen médica",
+    "section": "Modalidades de imagen médica: Radiografías",
+    "text": "Modalidades de imagen médica: Radiografías\n\n\n\nTécnica 2D\nRayos X\nExploración anatómica\nGrafía\n\n\n\n\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/IntroIM.html#modalidades-de-imagen-médica-arcos-de-quirófano",
+    "href": "posts/Presentaciones/IntroIM.html#modalidades-de-imagen-médica-arcos-de-quirófano",
+    "title": "Introducción a la imagen médica",
+    "section": "Modalidades de imagen médica: Arcos de quirófano",
+    "text": "Modalidades de imagen médica: Arcos de quirófano\n\n\n\nTécnica 2D\nRayos X\nExploración anatómica\nEscopia\n\n\n\n\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/IntroIM.html#modalidades-de-imagen-médica-tomografía-computerizada",
+    "href": "posts/Presentaciones/IntroIM.html#modalidades-de-imagen-médica-tomografía-computerizada",
+    "title": "Introducción a la imagen médica",
+    "section": "Modalidades de imagen médica: Tomografía computerizada",
+    "text": "Modalidades de imagen médica: Tomografía computerizada\n\n\n\nTécnica 3D\nRayos X\nExploración anatómica\nImagen tomográfica\n\n\n\n\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/IntroIM.html#modalidades-de-imagen-médica-imágenes-por-resonancia-magnética-nuclear",
+    "href": "posts/Presentaciones/IntroIM.html#modalidades-de-imagen-médica-imágenes-por-resonancia-magnética-nuclear",
+    "title": "Introducción a la imagen médica",
+    "section": "Modalidades de imagen médica: Imágenes por resonancia magnética nuclear",
+    "text": "Modalidades de imagen médica: Imágenes por resonancia magnética nuclear\n\n\n\nTécnica 3D\nResonancia magnética nuclear\nExploración anatómica\nImagen tomográfica\n\n\n\n\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/IntroIM.html#modalidades-de-imagen-médica-equipos-de-ultrasonidos",
+    "href": "posts/Presentaciones/IntroIM.html#modalidades-de-imagen-médica-equipos-de-ultrasonidos",
+    "title": "Introducción a la imagen médica",
+    "section": "Modalidades de imagen médica: Equipos de ultrasonidos",
+    "text": "Modalidades de imagen médica: Equipos de ultrasonidos\n\n\n\nTécnica 2D\nOndas sonoras de alta frecuencia\nExploración anatómica\n\n\n\n\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/IntroIM.html#modalidades-de-imagen-médica-spect",
+    "href": "posts/Presentaciones/IntroIM.html#modalidades-de-imagen-médica-spect",
+    "title": "Introducción a la imagen médica",
+    "section": "Modalidades de imagen médica: SPECT",
+    "text": "Modalidades de imagen médica: SPECT\n\n\n\nTécnica 3D\nRadiofármacos que emiten radiación gamma (\\(^{99}Tc^{m}\\))\nExploración funcional\n\n\n\n\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/IntroIM.html#modalidades-de-imagen-médica-pet",
+    "href": "posts/Presentaciones/IntroIM.html#modalidades-de-imagen-médica-pet",
+    "title": "Introducción a la imagen médica",
+    "section": "Modalidades de imagen médica: PET",
+    "text": "Modalidades de imagen médica: PET\n\n\n\nTécnica 3D\nRadiofármacos que emiten positrones (\\(^{18}F\\))\nExploración funcional\n\n\n\n\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/IntroIM.html#segmentación-de-órganos",
+    "href": "posts/Presentaciones/IntroIM.html#segmentación-de-órganos",
+    "title": "Introducción a la imagen médica",
+    "section": "Segmentación de órganos",
+    "text": "Segmentación de órganos\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/IntroIM.html#segmentación-de-células",
+    "href": "posts/Presentaciones/IntroIM.html#segmentación-de-células",
+    "title": "Introducción a la imagen médica",
+    "section": "Segmentación de células",
+    "text": "Segmentación de células\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/IntroIM.html#segmentación-de-tumores",
+    "href": "posts/Presentaciones/IntroIM.html#segmentación-de-tumores",
+    "title": "Introducción a la imagen médica",
+    "section": "Segmentación de tumores",
+    "text": "Segmentación de tumores\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/IntroIM.html#instalar-3dslicer-y-darse-de-alta-en-huggingface",
+    "href": "posts/Presentaciones/IntroIM.html#instalar-3dslicer-y-darse-de-alta-en-huggingface",
+    "title": "Introducción a la imagen médica",
+    "section": "Instalar 3DSlicer y darse de alta en Huggingface",
+    "text": "Instalar 3DSlicer y darse de alta en Huggingface\n\nDescargar el programa\nSeguir las intrucciones del ejecutable\nIr a la página de Huggingface\nDarse de alta\n\n\n\n\nIAMED"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#índice",
+    "href": "posts/Presentaciones/Datos_1.html#índice",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Índice",
+    "text": "Índice\n\nIntroducción\nClasificación de los datos\nAnotación de datos\nPrivacidad y confidencialidad\nRegistros electrónicos de salud\nPreprocesado de datos médicos\nVectorizaciones (Embeddings)\nRadiómica (Radiomics)\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#disponibilidad-masiva-de-datos",
+    "href": "posts/Presentaciones/Datos_1.html#disponibilidad-masiva-de-datos",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Disponibilidad masiva de datos",
+    "text": "Disponibilidad masiva de datos\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#machine-learning",
+    "href": "posts/Presentaciones/Datos_1.html#machine-learning",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Machine learning",
+    "text": "Machine learning\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#problema-con-los-datos",
+    "href": "posts/Presentaciones/Datos_1.html#problema-con-los-datos",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Problema con los datos",
+    "text": "Problema con los datos\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#por-tipos-de-datos",
+    "href": "posts/Presentaciones/Datos_1.html#por-tipos-de-datos",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Por tipos de datos",
+    "text": "Por tipos de datos\n\n\n\nDatos estructurados\nDatos no estructurados\nDatos semiestructurados\n\n\n\n\n\n\n\n\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#datos-estructurados",
+    "href": "posts/Presentaciones/Datos_1.html#datos-estructurados",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Datos estructurados",
+    "text": "Datos estructurados\n\n\n\nimport pandas as pd\ntb=pd.read_csv('tablas/apple_quality.csv')\ntb\n\n\n\n\n\n\n\n\nA_id\nSize\nWeight\nSweetness\nCrunchiness\nJuiciness\nRipeness\nAcidity\nQuality\n\n\n\n\n0\n0.0\n-3.970049\n-2.512336\n5.346330\n-1.012009\n1.844900\n0.329840\n-0.491590483\ngood\n\n\n1\n1.0\n-1.195217\n-2.839257\n3.664059\n1.588232\n0.853286\n0.867530\n-0.722809367\ngood\n\n\n2\n2.0\n-0.292024\n-1.351282\n-1.738429\n-0.342616\n2.838636\n-0.038033\n2.621636473\nbad\n\n\n3\n3.0\n-0.657196\n-2.271627\n1.324874\n-0.097875\n3.637970\n-3.413761\n0.790723217\ngood\n\n\n4\n4.0\n1.364217\n-1.296612\n-0.384658\n-0.553006\n3.030874\n-1.303849\n0.501984036\ngood\n\n\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n\n\n3996\n3996.0\n-0.293118\n1.949253\n-0.204020\n-0.640196\n0.024523\n-1.087900\n1.854235285\ngood\n\n\n3997\n3997.0\n-2.634515\n-2.138247\n-2.440461\n0.657223\n2.199709\n4.763859\n-1.334611391\nbad\n\n\n3998\n3998.0\n-4.008004\n-1.779337\n2.366397\n-0.200329\n2.161435\n0.214488\n-2.229719806\ngood\n\n\n3999\n3999.0\n0.278540\n-1.715505\n0.121217\n-1.154075\n1.266677\n-0.776571\n1.599796456\ngood\n\n\n4000\nNaN\nNaN\nNaN\nNaN\nNaN\nNaN\nNaN\nCreated_by_Nidula_Elgiriyewithana\nNaN\n\n\n\n\n4001 rows × 9 columns\n\n\n\n\n\n\n\n\n\n\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#ejemplos-de-datos-estructurados",
+    "href": "posts/Presentaciones/Datos_1.html#ejemplos-de-datos-estructurados",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Ejemplos de datos estructurados",
+    "text": "Ejemplos de datos estructurados\n\nRegistros Electrónicos de Salud\nDatos de Laboratorio Clínico"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#datos-no-estructurados",
+    "href": "posts/Presentaciones/Datos_1.html#datos-no-estructurados",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Datos no estructurados",
+    "text": "Datos no estructurados\n\n\n\nTexto\nImágenes\nAudio\nVideo\n…\n\n\n\n\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#datos-semiestructurados",
+    "href": "posts/Presentaciones/Datos_1.html#datos-semiestructurados",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Datos semiestructurados",
+    "text": "Datos semiestructurados\n\n\n\n\n\n\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#por-naturaleza-de-los-datos",
+    "href": "posts/Presentaciones/Datos_1.html#por-naturaleza-de-los-datos",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Por naturaleza de los datos",
+    "text": "Por naturaleza de los datos\n\nCategóricos\nNuméricos\nTemporales\nEspaciales\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#por-granularidad-de-los-datos",
+    "href": "posts/Presentaciones/Datos_1.html#por-granularidad-de-los-datos",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Por granularidad de los datos",
+    "text": "Por granularidad de los datos\n\nDatos a nivel de instancia: Datos individuales que representan observaciones o eventos específicos, como registros de pacientes o imágenes médicas.\nDatos a nivel de atributo: Datos que representan características o atributos de las instancias, como la edad, el peso o los síntomas clínicos.\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#fuente-de-los-datos",
+    "href": "posts/Presentaciones/Datos_1.html#fuente-de-los-datos",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Fuente de los datos",
+    "text": "Fuente de los datos\n\nDatos primarios: Datos recopilados directamente de la fuente original, como registros médicos electrónicos (EHR) o resultados de pruebas de laboratorio.\nDatos secundarios: Datos que han sido recopilados o procesados por terceros, como conjuntos de datos disponibles en repositorios públicos o bases de datos comerciales.\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#datos-anotados-vs-no-anotados",
+    "href": "posts/Presentaciones/Datos_1.html#datos-anotados-vs-no-anotados",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Datos anotados vs no anotados",
+    "text": "Datos anotados vs no anotados\n\nEstructura semántica: Los datos anotados tienen metadatos adicionales que proporcionan contexto y significado, como las etiquetas que marcan entidades nombradas.\nInteroperabilidad y procesabilidad: Los datos anotados son más interoperables y procesables, lo que facilita su integración con otros sistemas y su procesamiento automatizado.\nFacilidad de búsqueda y recuperación: Los datos anotados son más fáciles de buscar y recuperar, ya que las anotaciones permiten identificar elementos específicos.\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#qué-es-la-anotación-de-datos",
+    "href": "posts/Presentaciones/Datos_1.html#qué-es-la-anotación-de-datos",
+    "title": "Datos en el ámbito de la salud",
+    "section": "¿Qué es la anotación de datos?",
+    "text": "¿Qué es la anotación de datos?\nLa anotación de datos es el proceso de atribución o etiquetado de datos para ayudar a los algoritmos de aprendizaje automático a comprender y clasificar la información que procesan.\n\nTexto\nImágenes\nAudio\nVideo"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#anotación-de-imágenes",
+    "href": "posts/Presentaciones/Datos_1.html#anotación-de-imágenes",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Anotación de imágenes",
+    "text": "Anotación de imágenes\n\n\n\nClasificación\nReconocimiento/Detección\nSegmentación\n\n\n\nVGG"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#anotación-de-audio",
+    "href": "posts/Presentaciones/Datos_1.html#anotación-de-audio",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Anotación de audio",
+    "text": "Anotación de audio"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#anotación-de-video",
+    "href": "posts/Presentaciones/Datos_1.html#anotación-de-video",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Anotación de video",
+    "text": "Anotación de video"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#anotación-de-texto",
+    "href": "posts/Presentaciones/Datos_1.html#anotación-de-texto",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Anotación de texto",
+    "text": "Anotación de texto\n\n\n\nSemántica\nIntención\nOpinión\n\ntabula"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#antecedentes",
+    "href": "posts/Presentaciones/Datos_1.html#antecedentes",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Antecedentes",
+    "text": "Antecedentes\n\n\n\n\n\n\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#problemas-de-la-historia-clínica-en-papel",
+    "href": "posts/Presentaciones/Datos_1.html#problemas-de-la-historia-clínica-en-papel",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Problemas de la historia clínica en papel",
+    "text": "Problemas de la historia clínica en papel\n\nAccesibilidad limitada\nRiesgo de pérdida o daño\nDificultad para mantener actualizada la información\nEspacio de almacenamiento y organización\nLimitaciones en la compartición y colaboración\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#componentes-de-los-ehr",
+    "href": "posts/Presentaciones/Datos_1.html#componentes-de-los-ehr",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Componentes de los EHR",
+    "text": "Componentes de los EHR\n\nMódulos de Registro y Documentación\nPedidos y Resultados de laboratorio\nGestión de Medicamentos\nIntegración de Imágenes Médicas (PACS)\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#sap-1",
+    "href": "posts/Presentaciones/Datos_1.html#sap-1",
+    "title": "Datos en el ámbito de la salud",
+    "section": "SAP 1",
+    "text": "SAP 1\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#sap-2",
+    "href": "posts/Presentaciones/Datos_1.html#sap-2",
+    "title": "Datos en el ámbito de la salud",
+    "section": "SAP 2",
+    "text": "SAP 2\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#sap-3",
+    "href": "posts/Presentaciones/Datos_1.html#sap-3",
+    "title": "Datos en el ámbito de la salud",
+    "section": "SAP 3",
+    "text": "SAP 3\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#aria",
+    "href": "posts/Presentaciones/Datos_1.html#aria",
+    "title": "Datos en el ámbito de la salud",
+    "section": "ARIA",
+    "text": "ARIA\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#limpieza-de-datos",
+    "href": "posts/Presentaciones/Datos_1.html#limpieza-de-datos",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Limpieza de datos",
+    "text": "Limpieza de datos\n\nEliminación de observaciones incompletas\nImputación de valores\nAnálisis de patrones de datos faltantes\nUso de modelos predictivos\nTécnicas de imputación múltiple\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#normalización-de-variables-continuas",
+    "href": "posts/Presentaciones/Datos_1.html#normalización-de-variables-continuas",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Normalización de variables continuas",
+    "text": "Normalización de variables continuas\n\nLas variables continuas pueden tener diferentes escalas y rangos de valores\nLa normalización ayuda a mitigar este problema al transformar las variables para que estén en una escala similar\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#técnicas-de-normalización",
+    "href": "posts/Presentaciones/Datos_1.html#técnicas-de-normalización",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Técnicas de normalización",
+    "text": "Técnicas de normalización\n\nDatos con una media de 0 y desviación estándar 1\nNormalización min-max (0-1)\nPuede mejorar la convergencia\n\n\n\n\n\n\n\nAdvertencia\n\n\nEs importante aplicar la misma transformación de normalización tanto al conjunto de entrenamiento como al conjunto de prueba para evitar sesgos en los datos.\n\n\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#integración-de-datos",
+    "href": "posts/Presentaciones/Datos_1.html#integración-de-datos",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Integración de datos",
+    "text": "Integración de datos\n\nFuentes de Datos Diversas\nResolución de inconsistencias\nLimpieza de Datos\nGestión de Datos Temporales\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#la-ingeniería-de-características",
+    "href": "posts/Presentaciones/Datos_1.html#la-ingeniería-de-características",
+    "title": "Datos en el ámbito de la salud",
+    "section": "La ingeniería de características",
+    "text": "La ingeniería de características\n\nCreación de Nuevas características\nSelección de Características Relevantes\n\n\nPor ejemplo el índice de masa corporal"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#anonimización-de-los-datos",
+    "href": "posts/Presentaciones/Datos_1.html#anonimización-de-los-datos",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Anonimización de los datos",
+    "text": "Anonimización de los datos\n\nLa anonimización es el proceso de eliminar o modificar datos personales de tal manera que ya no sea posible identificar a un individuo a partir de los datos.\nLa anonimización está vinculada a lo que dicen las leyes de protección de datos en la UE (RGPD)\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#técnicas-de-anonimización",
+    "href": "posts/Presentaciones/Datos_1.html#técnicas-de-anonimización",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Técnicas de anonimización",
+    "text": "Técnicas de anonimización\n\nEliminación de identificadores directos\nPseudonimización\nEnmascaramiento\nAgregación\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#consideraciones-al-elegir-una-técnica-de-anonimización",
+    "href": "posts/Presentaciones/Datos_1.html#consideraciones-al-elegir-una-técnica-de-anonimización",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Consideraciones al elegir una técnica de anonimización",
+    "text": "Consideraciones al elegir una técnica de anonimización\n\nEl tipo de datos que se procesan\nEl nivel de riesgo de reidentificación\nLos fines para los que se utilizarán los datos anonimizados\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#data-augmentation",
+    "href": "posts/Presentaciones/Datos_1.html#data-augmentation",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Data Augmentation",
+    "text": "Data Augmentation\nEs una técnica que consiste en crear nuevas muestras de datos a partir de datos existentes. Estas nuevas muestras se generan mediante la aplicación de transformaciones predefinidas a los datos originales\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#ventajas-de-data-augmentation",
+    "href": "posts/Presentaciones/Datos_1.html#ventajas-de-data-augmentation",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Ventajas de Data Augmentation",
+    "text": "Ventajas de Data Augmentation\n\nAumenta el tamaño del conjunto de datos\nMejora la generalización del modelo\nReduce el sesgo del modelo\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#data-augmentation-en-imágenes-médicas",
+    "href": "posts/Presentaciones/Datos_1.html#data-augmentation-en-imágenes-médicas",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Data Augmentation en imágenes médicas",
+    "text": "Data Augmentation en imágenes médicas\n\nRotaciones\nZoom\nCambio de contraste\nAdición de ruido\nSimulación de artefactos\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#data-augmentation-en-señales-biomédicas",
+    "href": "posts/Presentaciones/Datos_1.html#data-augmentation-en-señales-biomédicas",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Data Augmentation en señales biomédicas",
+    "text": "Data Augmentation en señales biomédicas\nComo el Electrocardiograma o el Electroencefalograma\n\nAdición de ruido\nCambio de escala\nSegmentación de señales\nSimulación de artefactos"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#ángulo-entre-dos-vectores",
+    "href": "posts/Presentaciones/Datos_1.html#ángulo-entre-dos-vectores",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Ángulo entre dos vectores",
+    "text": "Ángulo entre dos vectores"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#qué-son-las-vectorizaciones",
+    "href": "posts/Presentaciones/Datos_1.html#qué-son-las-vectorizaciones",
+    "title": "Datos en el ámbito de la salud",
+    "section": "¿Qué son las vectorizaciones?",
+    "text": "¿Qué son las vectorizaciones?"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#práctica",
+    "href": "posts/Presentaciones/Datos_1.html#práctica",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Práctica",
+    "text": "Práctica"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#section",
+    "href": "posts/Presentaciones/Datos_1.html#section",
+    "title": "Datos en el ámbito de la salud",
+    "section": "",
+    "text": "IAMED"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Acerca de el autor",
+    "section": "",
+    "text": "Material del curso"
+  }
+]
