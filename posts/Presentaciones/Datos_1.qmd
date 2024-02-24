@@ -8,12 +8,15 @@ institute: Hospital Universitari Arnau de Vilanova (Lleida)
 lang: es
 format: 
     revealjs:
-        logo: 'img/logoudl.png'
+        logo: 'https://cdn0.iconfinder.com/data/icons/modern-ui-glyph-1/64/modern-ui-glyph-1-03-512.png'
+        footer-logo-link: "/"
         footer: "[IAMED](https://cv.udl.cat/portal/site/100794-2324/tool/3d5c2c81-a50b-43ce-a0bf-ecbfd152350b)"
         css: styles.css
         number-sections: false
         slide-number: false
         center: false
+filters:
+  - reveal-header        
 jupyter: python3   
 ---
 
