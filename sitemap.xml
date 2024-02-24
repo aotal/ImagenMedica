@@ -2,18 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://aotal.github.io/ImagenMedica/index.html</loc>
-    <lastmod>2024-02-23T13:55:24.304Z</lastmod>
-  </url>
-  <url>
-    <loc>https://aotal.github.io/ImagenMedica/posts/Presentaciones/IntroIM.html</loc>
-    <lastmod>2024-02-23T13:55:21.008Z</lastmod>
+    <lastmod>2024-02-24T17:39:01.987Z</lastmod>
   </url>
   <url>
     <loc>https://aotal.github.io/ImagenMedica/posts/Presentaciones/Datos_1.html</loc>
-    <lastmod>2024-02-23T13:55:18.342Z</lastmod>
+    <lastmod>2024-02-24T17:45:41.235Z</lastmod>
   </url>
   <url>
     <loc>https://aotal.github.io/ImagenMedica/about.html</loc>
-    <lastmod>2024-02-23T13:55:22.484Z</lastmod>
+    <lastmod>2024-02-24T16:44:27.703Z</lastmod>
+  </url>
+  <url>
+    <loc>https://aotal.github.io/ImagenMedica/posts/Presentaciones/IntroIM.html</loc>
+    <lastmod>2024-02-24T17:44:06.447Z</lastmod>
+  </url>
+  <url>
+    <loc>https://aotal.github.io/ImagenMedica/posts/code/PruebaMonai.html</loc>
+    <lastmod>2024-02-24T17:37:00.167Z</lastmod>
   </url>
 </urlset>
