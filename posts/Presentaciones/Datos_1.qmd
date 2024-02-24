@@ -537,10 +537,7 @@ Como el Electrocardiograma o el Electroencefalograma
 
 ## Práctica
 
-<img data-canonical-src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab" src="https://colab.research.google.com/drive/17hAP1ePCEOxDMREzNHQi1SwT0FYNa42n?usp=sharing">
+[Notebook](https://colab.research.google.com/drive/17hAP1ePCEOxDMREzNHQi1SwT0FYNa42n?usp=sharing)
 
-# Radiómica (*Radiomics*)
+[juego](https://colab.research.google.com/drive/1r3e5MLJ7KuIF55yXr4L4bWxSh5udQ9rx?usp=sharing)
 
-# Estándar DICOM
-
-## 

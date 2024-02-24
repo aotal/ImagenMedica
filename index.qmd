@@ -1,5 +1,5 @@
 ---
-title: "Imagen Médica"
+title: "Intel·ligència artificial en medicina"
 listing:
   contents: posts
   sort: "date desc"

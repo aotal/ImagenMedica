@@ -321,9 +321,6 @@
       margin-right: 0; 
     }
   </style>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
-  <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -348,14 +345,10 @@
 <section id="índice" class="slide level2">
 <h2>Índice</h2>
 <ul>
-<li>Introducción</li>
-<li>Clasificación de los datos</li>
-<li>Anotación de datos</li>
-<li>Privacidad y confidencialidad</li>
-<li>Registros electrónicos de salud</li>
-<li>Preprocesado de datos médicos</li>
-<li>Vectorizaciones (<em>Embeddings</em>)</li>
-<li>Radiómica (<em>Radiomics</em>)</li>
+<li>Introducción a la imagen digital</li>
+<li>Conceptos básicos de imagen</li>
+<li>Adquisición de imágenes médicas</li>
+<li>Procesamiento de imágenes</li>
 </ul>
 <aside class="notes">
 <p>Notes</p>
@@ -372,8 +365,8 @@
       }</style></aside>
 </section>
 <section>
-<section id="introducción" class="title-slide slide level1 center">
-<h1>Introducción</h1>
+<section id="introducción-a-la-imagen-digital" class="title-slide slide level1 center">
+<h1>Introducción a la imagen digital</h1>
 <aside class="notes">
 <p>Notes</p>
 <style type="text/css">
@@ -388,10 +381,10 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="disponibilidad-masiva-de-datos" class="slide level2">
-<h2>Disponibilidad masiva de datos</h2>
-
-<img data-src="img/Intro1.jpg" class="r-stretch quarto-figure-center"><aside class="notes">
+<section id="definición-de-imagen-digital" class="slide level2">
+<h2>Definición de imagen digital</h2>
+<p><em>Una imagen digital o gráfico digital es una representación bidimensional de una imagen a partir de una matriz numérica, frecuentemente en binario (unos y ceros). Dependiendo de si la resolución de la imagen es estática o dinámica, puede tratarse de una imagen matricial (o mapa de bits) o de un gráfico vectorial. El mapa de bits es el formato más utilizado en informática.</em></p>
+<aside class="notes">
 <p>Notes</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -405,340 +398,13 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="machine-learning" class="slide level2">
-<h2>Machine learning</h2>
-
-<img data-src="img/Intro2.jpg" class="r-stretch quarto-figure-center"><aside class="notes">
-<p>Notes</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="problema-con-los-datos" class="slide level2">
-<h2>Problema con los datos</h2>
-
-<img data-src="img/Intro3.jpg" class="r-stretch quarto-figure-center"><aside class="notes">
-<p>Notes</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section></section>
-<section>
-<section id="clasificación-de-los-datos" class="title-slide slide level1 center">
-<h1>Clasificación de los datos</h1>
-
-</section>
-<section id="por-tipos-de-datos" class="slide level2">
-<h2>Por tipos de datos</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
+<section id="definición-de-radiología-digital" class="slide level2">
+<h2>Definición de radiología digital</h2>
+<p><em>La <a href="https://www.iaea.org/es/recursos/proteccion-radiologica-de-los-pacientes/profesionales-de-la-salud/radiodiagnostico/radiografias/digitales">radiología digital</a> es el conjunto de técnicas para obtener imágenes radiológicas escaneadas en formato digital</em></p>
 <ul>
-<li>Datos estructurados</li>
-<li>Datos no estructurados</li>
-<li>Datos semiestructurados</li>
-</ul>
-</div><div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-right">
-<figure>
-<p><img data-src="img/TiposDatos.jpg"></p>
-</figure>
-</div>
-</div>
-</div>
-<aside class="notes">
-<p>Notes</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="datos-estructurados" class="slide level2">
-<h2>Datos estructurados</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="cell" data-execution_count="1">
-<div class="cell-output cell-output-display" data-execution_count="1">
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-
-<table class="dataframe" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header" style="text-align: right;">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">A_id</th>
-<th data-quarto-table-cell-role="th">Size</th>
-<th data-quarto-table-cell-role="th">Weight</th>
-<th data-quarto-table-cell-role="th">Sweetness</th>
-<th data-quarto-table-cell-role="th">Crunchiness</th>
-<th data-quarto-table-cell-role="th">Juiciness</th>
-<th data-quarto-table-cell-role="th">Ripeness</th>
-<th data-quarto-table-cell-role="th">Acidity</th>
-<th data-quarto-table-cell-role="th">Quality</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
-<td>0.0</td>
-<td>-3.970049</td>
-<td>-2.512336</td>
-<td>5.346330</td>
-<td>-1.012009</td>
-<td>1.844900</td>
-<td>0.329840</td>
-<td>-0.491590483</td>
-<td>good</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
-<td>1.0</td>
-<td>-1.195217</td>
-<td>-2.839257</td>
-<td>3.664059</td>
-<td>1.588232</td>
-<td>0.853286</td>
-<td>0.867530</td>
-<td>-0.722809367</td>
-<td>good</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
-<td>2.0</td>
-<td>-0.292024</td>
-<td>-1.351282</td>
-<td>-1.738429</td>
-<td>-0.342616</td>
-<td>2.838636</td>
-<td>-0.038033</td>
-<td>2.621636473</td>
-<td>bad</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
-<td>3.0</td>
-<td>-0.657196</td>
-<td>-2.271627</td>
-<td>1.324874</td>
-<td>-0.097875</td>
-<td>3.637970</td>
-<td>-3.413761</td>
-<td>0.790723217</td>
-<td>good</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
-<td>4.0</td>
-<td>1.364217</td>
-<td>-1.296612</td>
-<td>-0.384658</td>
-<td>-0.553006</td>
-<td>3.030874</td>
-<td>-1.303849</td>
-<td>0.501984036</td>
-<td>good</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">3996</td>
-<td>3996.0</td>
-<td>-0.293118</td>
-<td>1.949253</td>
-<td>-0.204020</td>
-<td>-0.640196</td>
-<td>0.024523</td>
-<td>-1.087900</td>
-<td>1.854235285</td>
-<td>good</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">3997</td>
-<td>3997.0</td>
-<td>-2.634515</td>
-<td>-2.138247</td>
-<td>-2.440461</td>
-<td>0.657223</td>
-<td>2.199709</td>
-<td>4.763859</td>
-<td>-1.334611391</td>
-<td>bad</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">3998</td>
-<td>3998.0</td>
-<td>-4.008004</td>
-<td>-1.779337</td>
-<td>2.366397</td>
-<td>-0.200329</td>
-<td>2.161435</td>
-<td>0.214488</td>
-<td>-2.229719806</td>
-<td>good</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">3999</td>
-<td>3999.0</td>
-<td>0.278540</td>
-<td>-1.715505</td>
-<td>0.121217</td>
-<td>-1.154075</td>
-<td>1.266677</td>
-<td>-0.776571</td>
-<td>1.599796456</td>
-<td>good</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">4000</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>Created_by_Nidula_Elgiriyewithana</td>
-<td>NaN</td>
-</tr>
-</tbody>
-</table>
-
-<p>4001 rows × 9 columns</p>
-</div>
-</div>
-</div>
-</div><div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-right">
-<figure>
-<p><img data-src="img/DatosEstructurados1.jpg"></p>
-</figure>
-</div>
-</div>
-</div>
-<aside class="notes">
-<p>Notes</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="ejemplos-de-datos-estructurados" class="slide level2">
-<h2>Ejemplos de datos estructurados</h2>
-<ul>
-<li>Registros Electrónicos de Salud</li>
-<li>Datos de Laboratorio Clínico</li>
-</ul>
-</section>
-<section id="datos-no-estructurados" class="slide level2">
-<h2>Datos no estructurados</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<ul>
-<li>Texto</li>
-<li>Imágenes</li>
-<li>Audio</li>
-<li>Video</li>
-<li>…</li>
-</ul>
-</div><div class="column" style="width:50%;">
-<p><img data-src="img/DatosNoEstructurados1.jpg"></p>
-</div>
-</div>
-<aside class="notes">
-<p>Notes</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="datos-semiestructurados" class="slide level2">
-<h2>Datos semiestructurados</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><img data-src="https://www.diegocalvo.es/wp-content/uploads/2017/11/datos_semiestructurados.png"></p>
-</div><div class="column" style="width:50%;">
-<p><img data-src="https://www.dicomstandard.org/images/librariesprovider2/default-album/dicom-logo.jpg?sfvrsn=7e5f288b_2"></p>
-</div>
-</div>
-<aside class="notes">
-<p>Notes</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="por-naturaleza-de-los-datos" class="slide level2">
-<h2>Por naturaleza de los datos</h2>
-<ul>
-<li>Categóricos</li>
-<li>Numéricos</li>
-<li>Temporales</li>
-<li>Espaciales</li>
+<li><p>A partir del escaneo de una la película tradicional (analógica) una vez revelada.</p></li>
+<li><p>Por escaneo de una Placa fotoestimulable de fósforo reutilizable que se graba con la imagen de la radiografía (CR)</p></li>
+<li><p>Utilizando detectores sensibles expuestos directa o indirectamente a los detectores de rayos X.</p></li>
 </ul>
 <aside class="notes">
 <p>Notes</p>
@@ -754,13 +420,10 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="por-granularidad-de-los-datos" class="slide level2">
-<h2>Por granularidad de los datos</h2>
-<ul>
-<li><strong>Datos a nivel de instancia</strong>: Datos individuales que representan observaciones o eventos específicos, como registros de pacientes o imágenes médicas.</li>
-<li><strong>Datos a nivel de atributo</strong>: Datos que representan características o atributos de las instancias, como la edad, el peso o los síntomas clínicos.</li>
-</ul>
-<aside class="notes">
+<section id="breve-historia-y-evolución-de-la-imagen-digital" class="slide level2">
+<h2>Breve historia y evolución de la imagen digital</h2>
+
+<img data-src="https://emimedicalequipment.com/wp-content/webp-express/webp-images/uploads/2021/05/DR-Technology-Development.jpg.webp" class="r-stretch quarto-figure-center"><aside class="notes">
 <p>Notes</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -774,32 +437,13 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="fuente-de-los-datos" class="slide level2">
-<h2>Fuente de los datos</h2>
+<section id="importancia-de-la-imagen-digital-en-la-medicina" class="slide level2">
+<h2>Importancia de la imagen digital en la medicina</h2>
 <ul>
-<li><p><strong>Datos primarios</strong>: Datos recopilados directamente de la fuente original, como registros médicos electrónicos (EHR) o resultados de pruebas de laboratorio.</p></li>
-<li><p><strong>Datos secundarios</strong>: Datos que han sido recopilados o procesados por terceros, como conjuntos de datos disponibles en repositorios públicos o bases de datos comerciales.</p></li>
-</ul>
-<aside class="notes">
-<p>Notes</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="datos-anotados-vs-no-anotados" class="slide level2">
-<h2>Datos anotados vs no anotados</h2>
-<ul>
-<li><p><strong>Estructura semántica</strong>: Los datos anotados tienen metadatos adicionales que proporcionan contexto y significado, como las etiquetas que marcan entidades nombradas.</p></li>
-<li><p><strong>Interoperabilidad y procesabilidad</strong>: Los datos anotados son más interoperables y procesables, lo que facilita su integración con otros sistemas y su procesamiento automatizado.</p></li>
-<li><p><strong>Facilidad de búsqueda y recuperación</strong>: Los datos anotados son más fáciles de buscar y recuperar, ya que las anotaciones permiten identificar elementos específicos.</p></li>
+<li><p>Diagnóstico preciso.</p></li>
+<li><p>Procedimiento no invasivo</p></li>
+<li><p>Investigación y desarrollo</p></li>
+<li><p>Reducción de la dosis al paciente</p></li>
 </ul>
 <aside class="notes">
 <p>Notes</p>
@@ -816,75 +460,17 @@
       }</style></aside>
 </section></section>
 <section>
-<section id="anotación-de-datos" class="title-slide slide level1 center">
-<h1>Anotación de datos</h1>
-
-<img data-src="https://www.shaip.com/wp-content/uploads/2023/05/Data-Annotation-New-Images-03.jpg" class="r-stretch"></section>
-<section id="qué-es-la-anotación-de-datos" class="slide level2">
-<h2>¿Qué es la anotación de datos?</h2>
-<p>La anotación de datos es el proceso de atribución o etiquetado de datos para ayudar a los algoritmos de aprendizaje automático a comprender y clasificar la información que procesan.</p>
-<ul>
-<li>Texto</li>
-<li>Imágenes</li>
-<li>Audio</li>
-<li>Video</li>
-</ul>
-</section>
-<section id="anotación-de-imágenes" class="slide level2">
-<h2>Anotación de imágenes</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<ul>
-<li>Clasificación</li>
-<li>Reconocimiento/Detección</li>
-<li>Segmentación</li>
-</ul>
-</div><div class="column" style="width:50%;">
-<p><img data-src="https://www.shaip.com/wp-content/uploads/2021/08/page-8-1.jpg"></p>
-<p><a href="https://www.robots.ox.ac.uk/~vgg/software/via/via_demo.html">VGG</a></p>
-</div>
-</div>
-</section>
-<section id="anotación-de-audio" class="slide level2">
-<h2>Anotación de audio</h2>
-
-<img data-src="https://macgence.com/wp-content/uploads/2023/08/Audio-Annotation-801x299.webp" class="r-stretch"></section>
-<section id="anotación-de-video" class="slide level2">
-<h2>Anotación de video</h2>
-
-<img data-src="https://www.shaip.com/wp-content/uploads/2022/02/page-3.jpg" class="r-stretch"></section>
-<section id="anotación-de-texto" class="slide level2">
-<h2>Anotación de texto</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<ul>
-<li>Semántica</li>
-<li>Intención</li>
-<li>Opinión</li>
-</ul>
-<p><a href="http://tabula.ondata.it/">tabula</a></p>
-</div><div class="column" style="width:50%;">
-<p><img data-src="https://www.datasciencecentral.com/wp-content/uploads/2021/10/9489155876.png"></p>
-</div>
-</div>
-</section></section>
-<section id="privacidad-y-confidencialidad" class="title-slide slide level1 center">
-<h1>Privacidad y confidencialidad</h1>
-
-<img data-src="img/RGPD.png" class="r-stretch quarto-figure-center"></section>
-
-<section>
-<section id="registros-electrónicos-de-salud-ehr" class="title-slide slide level1 center">
-<h1>Registros electrónicos de salud (EHR)</h1>
+<section id="conceptos-básicos-de-imagen" class="title-slide slide level1 center">
+<h1>Conceptos básicos de imagen</h1>
 
 </section>
-<section id="antecedentes" class="slide level2">
-<h2>Antecedentes</h2>
+<section id="qué-es-un-pixel" class="slide level2">
+<h2>¿Qué es un pixel?</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><img data-src="img/HistoriaClinica1.jpg"></p>
+<p><img data-src="https://static.javatpoint.com/tutorial/dip/images/concept-of-pixel1.png"></p>
 </div><div class="column" style="width:50%;">
-<p><img data-src="img/HistoriaClinica2.jpg"></p>
+<p><img data-src="https://images.wondershare.com/mockitt/tips/pixel-04.jpg"></p>
 </div>
 </div>
 <aside class="notes">
@@ -901,106 +487,35 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="problemas-de-la-historia-clínica-en-papel" class="slide level2">
-<h2>Problemas de la historia clínica en papel</h2>
+<section id="resolución" class="slide level2">
+<h2>Resolución</h2>
+
+<img data-src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Resolution_illustration.png" class="r-stretch quarto-figure-center"><aside class="notes">
+<p>Notes</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="profundidad-de-bit" class="slide level2">
+<h2>Profundidad de bit</h2>
+<p><img data-src="img/ProfBit.jpg"></p>
+<p><img data-src="https://www.profesionalreview.com/wp-content/uploads/2019/02/Espacio-de-color-img02.jpg"></p>
+</section>
+<section id="otras-características" class="slide level2">
+<h2>Otras características</h2>
 <ul>
-<li><p>Accesibilidad limitada</p></li>
-<li><p>Riesgo de pérdida o daño</p></li>
-<li><p>Dificultad para mantener actualizada la información</p></li>
-<li><p>Espacio de almacenamiento y organización</p></li>
-<li><p>Limitaciones en la compartición y colaboración</p></li>
+<li><p>Espacio de color (RGB,CMYK)</p></li>
+<li><p>Relación de aspecto</p></li>
 </ul>
 <aside class="notes">
-<p>Notes</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="componentes-de-los-ehr" class="slide level2">
-<h2>Componentes de los EHR</h2>
-<ul>
-<li><p>Módulos de Registro y Documentación</p></li>
-<li><p>Pedidos y Resultados de laboratorio</p></li>
-<li><p>Gestión de Medicamentos</p></li>
-<li><p>Integración de Imágenes Médicas (PACS)</p></li>
-</ul>
-<aside class="notes">
-<p>Notes</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="sap-1" class="slide level2">
-<h2>SAP 1</h2>
-
-<img data-src="img/SAP_1.png" class="r-stretch"><aside class="notes">
-<p>Notes</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="sap-2" class="slide level2">
-<h2>SAP 2</h2>
-
-<img data-src="img/SAP_2.png" class="r-stretch"><aside class="notes">
-<p>Notes</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="sap-3" class="slide level2">
-<h2>SAP 3</h2>
-
-<img data-src="img/SAP_3.png" class="r-stretch"><aside class="notes">
-<p>Notes</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="aria" class="slide level2">
-<h2>ARIA</h2>
-
-<img data-src="img/ARIA.PNG" class="r-stretch"><aside class="notes">
 <p>Notes</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -1014,32 +529,50 @@
           display:block!important;
       }</style></aside>
 </section></section>
+<section id="adquisición-de-imágenes-médicas" class="title-slide slide level1 center">
+<h1>Adquisición de imágenes médicas</h1>
+<aside class="notes">
+<p>Notes</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+
+<section id="clasificación-1" class="title-slide slide level1 center">
+<h1>Clasificación 1</h1>
+<ul>
+<li><p>Basadas en radiaciones ionizantes</p></li>
+<li><p>Basadas en radiaciones No ionizantes</p></li>
+</ul>
+<aside class="notes">
+<p>Notes</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+
 <section>
-<section id="preprocesado-de-datos-médicos" class="title-slide slide level1 center">
-<h1>Preprocesado de datos médicos</h1>
-
-<img data-src="img/ProcesadoDeDatos1.png" class="r-stretch quarto-figure-center"><aside class="notes">
-<p>Notes</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="limpieza-de-datos" class="slide level2">
-<h2>Limpieza de datos</h2>
+<section id="clasificación-2" class="title-slide slide level1 center">
+<h1>Clasificación 2</h1>
 <ul>
-<li>Eliminación de observaciones incompletas</li>
-<li>Imputación de valores</li>
-<li>Análisis de patrones de datos faltantes</li>
-<li>Uso de modelos predictivos</li>
-<li>Técnicas de imputación múltiple</li>
+<li><p>Imágenes anatómicas</p></li>
+<li><p>Imágenes funcionales</p></li>
 </ul>
 <aside class="notes">
 <p>Notes</p>
@@ -1055,44 +588,18 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="normalización-de-variables-continuas" class="slide level2">
-<h2>Normalización de variables continuas</h2>
+<section id="modalidades-de-imagen-médica-radiografías" class="slide level2">
+<h2>Modalidades de imagen médica: Radiografías</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
 <ul>
-<li>Las variables continuas pueden tener diferentes escalas y rangos de valores</li>
-<li>La normalización ayuda a mitigar este problema al transformar las variables para que estén en una escala similar</li>
+<li>Técnica 2D</li>
+<li>Rayos X</li>
+<li>Exploración anatómica</li>
+<li>Grafía</li>
 </ul>
-<aside class="notes">
-<p>Notes</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="técnicas-de-normalización" class="slide level2">
-<h2>Técnicas de normalización</h2>
-<ul>
-<li>Datos con una media de 0 y desviación estándar 1</li>
-<li>Normalización min-max (0-1)</li>
-<li>Puede mejorar la convergencia</li>
-</ul>
-<div class="callout callout-warning callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Advertencia</strong></p>
-</div>
-<div class="callout-content">
-<p>Es importante aplicar la misma transformación de normalización tanto al conjunto de entrenamiento como al conjunto de prueba para evitar sesgos en los datos.</p>
-</div>
+</div><div class="column" style="width:50%;">
+<p><img data-src="https://www.philips.es/c-dam/b2bhc/master/Products/Category/radiography/radiography/digital-radiography/digitaldiagnost-c90-product.jpg"></p>
 </div>
 </div>
 <aside class="notes">
@@ -1109,14 +616,20 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="integración-de-datos" class="slide level2">
-<h2>Integración de datos</h2>
+<section id="modalidades-de-imagen-médica-arcos-de-quirófano" class="slide level2">
+<h2>Modalidades de imagen médica: Arcos de quirófano</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
 <ul>
-<li>Fuentes de Datos Diversas</li>
-<li>Resolución de inconsistencias</li>
-<li>Limpieza de Datos</li>
-<li>Gestión de Datos Temporales</li>
+<li>Técnica 2D</li>
+<li>Rayos X</li>
+<li>Exploración anatómica</li>
+<li>Escopia</li>
 </ul>
+</div><div class="column" style="width:50%;">
+<p><img data-src="https://www.philips.es/c-dam/b2bhc/master/image-guided-therapy/mobile-c-arm/vascular/zenition-70.jpg"></p>
+</div>
+</div>
 <aside class="notes">
 <p>Notes</p>
 <style type="text/css">
@@ -1131,32 +644,20 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="la-ingeniería-de-características" class="slide level2">
-<h2>La ingeniería de características</h2>
+<section id="modalidades-de-imagen-médica-tomografía-computerizada" class="slide level2">
+<h2>Modalidades de imagen médica: Tomografía computerizada</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
 <ul>
-<li>Creación de Nuevas características</li>
-<li>Selección de Características Relevantes</li>
+<li>Técnica 3D</li>
+<li>Rayos X</li>
+<li>Exploración anatómica</li>
+<li>Imagen tomográfica</li>
 </ul>
-<aside class="notes">
-<p>Por ejemplo el índice de masa corporal</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="anonimización-de-los-datos" class="slide level2">
-<h2>Anonimización de los datos</h2>
-<ul>
-<li><p>La anonimización es el proceso de eliminar o modificar datos personales de tal manera que ya no sea posible identificar a un individuo a partir de los datos.</p></li>
-<li><p>La anonimización está vinculada a lo que dicen las leyes de protección de datos en la UE (RGPD)</p></li>
-</ul>
+</div><div class="column" style="width:50%;">
+<p><img data-src="https://www.philips.es/c-dam/corporate/newscenter/global/standard/resources/healthcare/2021/spectral-ct-7500/spectral-ct-product-shot-side-view.download.jpg"></p>
+</div>
+</div>
 <aside class="notes">
 <p>Notes</p>
 <style type="text/css">
@@ -1171,14 +672,20 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="técnicas-de-anonimización" class="slide level2">
-<h2>Técnicas de anonimización</h2>
+<section id="modalidades-de-imagen-médica-imágenes-por-resonancia-magnética-nuclear" class="slide level2">
+<h2>Modalidades de imagen médica: Imágenes por resonancia magnética nuclear</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
 <ul>
-<li>Eliminación de identificadores directos</li>
-<li>Pseudonimización</li>
-<li>Enmascaramiento</li>
-<li>Agregación</li>
+<li>Técnica 3D</li>
+<li>Resonancia magnética nuclear</li>
+<li>Exploración anatómica</li>
+<li>Imagen tomográfica</li>
 </ul>
+</div><div class="column" style="width:50%;">
+<p><img data-src="https://marketing.webassets.siemens-healthineers.com/8f29d20bc36cb975/f3b7ec529638/v/e84360e43f6a/siemens-healthineers_MRI_Magnetom-Sola.png"></p>
+</div>
+</div>
 <aside class="notes">
 <p>Notes</p>
 <style type="text/css">
@@ -1193,13 +700,19 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="consideraciones-al-elegir-una-técnica-de-anonimización" class="slide level2">
-<h2>Consideraciones al elegir una técnica de anonimización</h2>
+<section id="modalidades-de-imagen-médica-equipos-de-ultrasonidos" class="slide level2">
+<h2>Modalidades de imagen médica: Equipos de ultrasonidos</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
 <ul>
-<li>El tipo de datos que se procesan</li>
-<li>El nivel de riesgo de reidentificación</li>
-<li>Los fines para los que se utilizarán los datos anonimizados</li>
+<li>Técnica 2D</li>
+<li>Ondas sonoras de alta frecuencia</li>
+<li>Exploración anatómica</li>
 </ul>
+</div><div class="column" style="width:50%;">
+<p><img data-src="https://www.promedco.com/images/Noticias_2022/_pro_Resona.png"></p>
+</div>
+</div>
 <aside class="notes">
 <p>Notes</p>
 <style type="text/css">
@@ -1214,31 +727,19 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="data-augmentation" class="slide level2">
-<h2><em>Data Augmentation</em></h2>
-<p>Es una técnica que consiste en crear nuevas muestras de datos a partir de datos existentes. Estas nuevas muestras se generan mediante la aplicación de transformaciones predefinidas a los datos originales</p>
-
-<img data-src="https://dawn.cs.stanford.edu/assets/img/2017-08-11-tanda/data_aug_basic.png" class="r-stretch"><aside class="notes">
-<p>Notes</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="ventajas-de-data-augmentation" class="slide level2">
-<h2>Ventajas de <em>Data Augmentation</em></h2>
+<section id="modalidades-de-imagen-médica-spect" class="slide level2">
+<h2>Modalidades de imagen médica: SPECT</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
 <ul>
-<li>Aumenta el tamaño del conjunto de datos</li>
-<li>Mejora la generalización del modelo</li>
-<li>Reduce el sesgo del modelo</li>
+<li>Técnica 3D</li>
+<li>Radiofármacos que emiten radiación gamma (<span class="math inline">\(^{99}Tc^{m}\)</span>)</li>
+<li>Exploración funcional</li>
 </ul>
+</div><div class="column" style="width:50%;">
+<p><img data-src="https://cdn.bimedis.com/search/aimage/standardm/93411.png"></p>
+</div>
+</div>
 <aside class="notes">
 <p>Notes</p>
 <style type="text/css">
@@ -1253,15 +754,19 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="data-augmentation-en-imágenes-médicas" class="slide level2">
-<h2><em>Data Augmentation</em> en imágenes médicas</h2>
+<section id="modalidades-de-imagen-médica-pet" class="slide level2">
+<h2>Modalidades de imagen médica: PET</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
 <ul>
-<li>Rotaciones</li>
-<li>Zoom</li>
-<li>Cambio de contraste</li>
-<li>Adición de ruido</li>
-<li>Simulación de artefactos</li>
+<li>Técnica 3D</li>
+<li>Radiofármacos que emiten positrones (<span class="math inline">\(^{18}F\)</span>)</li>
+<li>Exploración funcional</li>
 </ul>
+</div><div class="column" style="width:50%;">
+<p><img data-src="https://d100mj7v0l85u5.cloudfront.net/s3fs-public/styles/webp/public/GEHC-Discovery-IQ_spotlight_1_product_shot.jpg.webp?itok=MV2FdG4K"></p>
+</div>
+</div>
 <aside class="notes">
 <p>Notes</p>
 <style type="text/css">
@@ -1275,46 +780,71 @@
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-</section>
-<section id="data-augmentation-en-señales-biomédicas" class="slide level2">
-<h2><em>Data Augmentation</em> en señales biomédicas</h2>
-<p>Como el Electrocardiograma o el Electroencefalograma</p>
-<ul>
-<li>Adición de ruido</li>
-<li>Cambio de escala</li>
-<li>Segmentación de señales</li>
-<li>Simulación de artefactos</li>
-</ul>
 </section></section>
 <section>
-<section id="vectorizaciones-embeddings" class="title-slide slide level1 center">
-<h1>Vectorizaciones (<em>Embeddings</em>)</h1>
-
+<section id="segmentación-de-imágenes-médicas" class="title-slide slide level1 center">
+<h1>Segmentación de imágenes médicas</h1>
+<p>-La segmentación de imágenes médicas consiste en dividir dichas imágenes en regiones o segmentos significativos que representan estructuras anatómicas o patológicas de interés.</p>
 </section>
-<section id="ángulo-entre-dos-vectores" class="slide level2">
-<h2>Ángulo entre dos vectores</h2>
+<section id="segmentación-de-órganos" class="slide level2">
+<h2>Segmentación de órganos</h2>
 
-<img data-src="https://www.mathsisfun.com/algebra/images/dot-product-ex2.gif" class="r-stretch quarto-figure-center"></section>
-<section id="qué-son-las-vectorizaciones" class="slide level2">
-<h2>¿Qué son las vectorizaciones?</h2>
-
-<img data-src="https://daleonai.com/images/word2vec.png" class="r-stretch quarto-figure-center"></section>
-<section id="práctica" class="slide level2">
-<h2>Práctica</h2>
-
-<img data-canonical-src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab" src="https://colab.research.google.com/drive/17hAP1ePCEOxDMREzNHQi1SwT0FYNa42n?usp=sharing" class="r-stretch"></section></section>
-<section id="radiómica-radiomics" class="title-slide slide level1 center">
-<h1>Radiómica (<em>Radiomics</em>)</h1>
-
+<img data-src="https://cdn.plainconcepts.com/wp-content/uploads/2021/09/segmentacion-organos-ejemplo.jpg" class="r-stretch"><aside class="notes">
+<p>Notes</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
+<section id="segmentación-de-células" class="slide level2">
+<h2>Segmentación de células</h2>
 
-<section>
-<section id="estándar-dicom" class="title-slide slide level1 center">
-<h1>Estándar DICOM</h1>
-
+<img data-src="https://static5.olympus-lifescience.com/modules/imageresizer/268/fa5/212318650b/902x369p695x284.png" class="r-stretch"><aside class="notes">
+<p>Notes</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="section" class="slide level2">
-<h2></h2>
+<section id="segmentación-de-tumores" class="slide level2">
+<h2>Segmentación de tumores</h2>
+
+<img data-src="https://wchh.onlinelibrary.wiley.com/cms/asset/03fc0838-39de-4bbc-8998-51851d6e0739/tre777-fig-0005-m.jpg" style="width:80.0%" class="r-stretch quarto-figure-center"><aside class="notes">
+<p>Notes</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="instalar-3dslicer-y-darse-de-alta-en-huggingface" class="slide level2">
+<h2>Instalar 3DSlicer y darse de alta en Huggingface</h2>
+<ul>
+<li>Descargar el <a href="https://download.slicer.org/">programa</a></li>
+<li>Seguir las intrucciones del ejecutable</li>
+<li>Ir a la página de <a href="https://huggingface.co/">Huggingface</a></li>
+<li>Darse de <a href="https://huggingface.co/join">alta</a></li>
+</ul>
 
 
 <img src="img/logoudl.png" class="slide-logo r-stretch"><div class="footer footer-default">
