@@ -37,5 +37,8 @@
   },
   "posts/code/2_ConvolutionalNN_PNEUMONIA_X_ray.ipynb": {
     "2_ConvolutionalNN_PNEUMONIA_X_ray.html": "493ef5d4"
+  },
+  "posts/code/unet_segmentation.ipynb": {
+    "unet_segmentation.html": "cfde58bc"
   }
 }

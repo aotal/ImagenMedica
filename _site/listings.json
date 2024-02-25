@@ -3,6 +3,7 @@
     "listing": "/index.html",
     "items": [
       "/posts/Presentaciones/ImagenAI.html",
+      "/posts/code/unet_segmentation.html",
       "/posts/code/2_ConvolutionalNN_PNEUMONIA_X_ray.html",
       "/posts/code/PruebaMonai.html",
       "/posts/code/Neumonia.html",

@@ -29,9 +29,6 @@ bibliography: references.bib
 -   Mejora de la calidad de la imagen
 -   Integración de datos multimodales
 
-::: notes
-Notes
-:::
 
 # Knowledge map
 
@@ -91,6 +88,16 @@ Notes
 [@ronneberger2015]
 
 ## U-Net 
+
+![](https://miro.medium.com/v2/resize:fit:4800/format:webp/1*sfIjNCO047KS-rLwfxf29g.png){width="50%"}
+
+[![](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/aotal/ImagenMedica/blob/master/posts/code/unet_segmentation.ipynb)
+
+## Proyecto MONAI
+
+![](https://monai.io/assets/img/MONAI-logo_color_full.png)
+
+[![](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/aotal/ImagenMedica/blob/master/posts/code/PruebaMonai.ipynb)
 
 # Generación de imágenes sintéticas
 
