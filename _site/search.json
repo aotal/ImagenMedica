@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Intel·ligència artificial en medicina",
     "section": "",
-    "text": "Inteligencia artificial en imagen médica\n\n\n\n\n\n\nPresentación\n\n\n\n\n\n\n\n\n\n26 feb 2024\n\n\nAntonio Otal Palacín\n\n\n\n\n\n\n\n\n\n\n\n\nCNN_Neumonía\n\n\n\n\n\n\nColab\n\n\n\n\n\n\n\n\n\n26 feb 2024\n\n\n\n\n\n\n\n\n\n\n\n\nServidor Monai\n\n\n\n\n\n\nColab\n\n\n\n\n\n\n\n\n\n26 feb 2024\n\n\n\n\n\n\n\n\n\n\n\n\nClasificador de Neumonia\n\n\n\n\n\n\nColab\n\n\n\n\n\n\n\n\n\n26 feb 2024\n\n\n\n\n\n\n\n\n\n\n\n\nIntroducción a la imagen médica\n\n\n\n\n\n\nPresentación\n\n\n\n\n\n\n\n\n\n22 feb 2024\n\n\nAntonio Otal Palacín\n\n\n\n\n\n\n\n\n\n\n\n\nDatos en el ámbito de la salud\n\n\n\n\n\n\nPresentación\n\n\n\n\n\n\n\n\n\n19 feb 2024\n\n\nAntonio Otal Palacín\n\n\n\n\n\n\n\n\n\n\n\n\nEmbeddings\n\n\n\n\n\n\nColab\n\n\n\n\n\n\n\n\n\n19 feb 2024\n\n\n\n\n\n\nNo hay resultados"
+    "text": "Inteligencia artificial en imagen médica\n\n\n\n\n\n\nPresentación\n\n\n\n\n\n\n\n\n\n26 feb 2024\n\n\nAntonio Otal Palacín\n\n\n\n\n\n\n\n\n\n\n\n\nCNN_Neumonía\n\n\n\n\n\n\nColab\n\n\n\n\n\n\n\n\n\n26 feb 2024\n\n\n\n\n\n\n\n\n\n\n\n\nServidor Monai\n\n\n\n\n\n\nColab\n\n\n\n\n\n\n\n\n\n26 feb 2024\n\n\n\n\n\n\n\n\n\n\n\n\nClasificador de Neumonia (ViT)\n\n\n\n\n\n\nColab\n\n\n\n\n\n\n\n\n\n26 feb 2024\n\n\n\n\n\n\n\n\n\n\n\n\nIntroducción a la imagen médica\n\n\n\n\n\n\nPresentación\n\n\n\n\n\n\n\n\n\n22 feb 2024\n\n\nAntonio Otal Palacín\n\n\n\n\n\n\n\n\n\n\n\n\nDatos en el ámbito de la salud\n\n\n\n\n\n\nPresentación\n\n\n\n\n\n\n\n\n\n19 feb 2024\n\n\nAntonio Otal Palacín\n\n\n\n\n\n\n\n\n\n\n\n\nEmbeddings\n\n\n\n\n\n\nColab\n\n\n\n\n\n\n\n\n\n19 feb 2024\n\n\n\n\n\n\nNo hay resultados"
   },
   {
     "objectID": "posts/Presentaciones/Datos_1.html#índice",
@@ -458,8 +458,8 @@
     "objectID": "posts/Presentaciones/ImagenAI.html#índice",
     "href": "posts/Presentaciones/ImagenAI.html#índice",
     "title": "Inteligencia artificial en imagen médica",
-    "section": "",
-    "text": "Diagnóstico asistido por IA\nSegmentación de órganos y tejidos\nGeneración de imágenes sintéticas\nMejora de la calidad de la imagen\nIntegración de datos multimodales\n\n\nNotes"
+    "section": "Índice",
+    "text": "Índice\n\nDiagnóstico asistido por IA\nSegmentación de órganos y tejidos\nGeneración de imágenes sintéticas\nMejora de la calidad de la imagen\nIntegración de datos multimodales\n\n\nNotes"
   },
   {
     "objectID": "posts/Presentaciones/ImagenAI.html#definición-de-imagen-digital",
@@ -606,7 +606,7 @@
     "href": "posts/Presentaciones/ImagenAI.html#casos-de-uso",
     "title": "Inteligencia artificial en imagen médica",
     "section": "Casos de uso",
-    "text": "Casos de uso\n\nDetección y clasificación de anomalías\nDetección temprana (screening)\nDiagnóstico diferencial\nReducción de errores"
+    "text": "Casos de uso\n\nDetección y clasificación de anomalías\nDetección temprana (screening)\nReducción de errores"
   },
   {
     "objectID": "posts/code/2_ConvolutionalNN_PNEUMONIA_X_ray.html",
@@ -663,5 +663,26 @@
     "title": "CNN_Neumonía",
     "section": "Interpretación de Resultados",
     "text": "Interpretación de Resultados\nLa red VGG16 mostró buenos resultados, teniendo un desempeño similar al de la primer red (CNN) en términos de Sensibilidad. Sin embargo, mostró una mejora en la precisión y por consiguiente en el Área bajo la curva ROC, así como un mayor valor de avgPR."
+  },
+  {
+    "objectID": "posts/Presentaciones/ImagenAI.html#convolutional-neural-network",
+    "href": "posts/Presentaciones/ImagenAI.html#convolutional-neural-network",
+    "title": "Inteligencia artificial en imagen médica",
+    "section": "Convolutional Neural Network",
+    "text": "Convolutional Neural Network"
+  },
+  {
+    "objectID": "posts/Presentaciones/ImagenAI.html#vision-transformer",
+    "href": "posts/Presentaciones/ImagenAI.html#vision-transformer",
+    "title": "Inteligencia artificial en imagen médica",
+    "section": "Vision Transformer",
+    "text": "Vision Transformer\n\n\n\n\n\n\n\n(Dosovitskiy et al. 2020)"
+  },
+  {
+    "objectID": "posts/Presentaciones/ImagenAI.html#u-net",
+    "href": "posts/Presentaciones/ImagenAI.html#u-net",
+    "title": "Inteligencia artificial en imagen médica",
+    "section": "U-Net",
+    "text": "U-Net\n\n(Ronneberger, Fischer, y Brox 2015)"
   }
 ]
