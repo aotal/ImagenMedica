@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Imagen Médica - Clasificador de Neumonia</title>
+<title>Imagen Médica - Clasificador de Neumonia (ViT)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -146,7 +146,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Clasificador de Neumonia</h1>
+      <h1 class="title">Clasificador de Neumonia (ViT)</h1>
                                 <div class="quarto-categories">
                 <div class="quarto-category">Colab</div>
               </div>
@@ -182,11 +182,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Colab</p>
 <p><a href="https://colab.research.google.com/github/aotal/ImagenMedica/blob/master/posts/code/Neumonia.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a></p>
 <p>Detector de neumonía</p>
-<div id="cell-4" class="cell" data-execution_count="1">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/transformers/model_doc/vit_architecture.jpg" class="img-fluid figure-img"></p>
+<figcaption>Esquema del Vision Transformer Model</figcaption>
+</figure>
+</div>
+<div id="cell-5" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> google.colab <span class="im">import</span> userdata</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>access_token <span class="op">=</span> userdata.get(<span class="st">'tokenHF'</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-5" class="cell" data-execution_count="2">
+<div id="cell-6" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> descargar_imagen_desde_url(url, nombre_archivo):</span>
@@ -197,7 +203,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> <span class="pp">Exception</span> <span class="im">as</span> e:</span>
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"Error: </span><span class="sc">{</span>e<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-6" class="cell" data-outputid="5e9419d6-4ce0-4430-eacd-ee89cb6c8ee9" data-execution_count="3">
+<div id="cell-7" class="cell" data-outputid="5e9419d6-4ce0-4430-eacd-ee89cb6c8ee9" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Use a pipeline as a high-level helper</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> transformers <span class="im">import</span> pipeline</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -223,13 +229,13 @@ Could not find image processor class in the image processor config or the model 
 </script>
 </div>
 </div>
-<div id="cell-7" class="cell" data-execution_count="5">
+<div id="cell-8" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>n<span class="op">=</span><span class="dv">1</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>p<span class="op">=</span><span class="dv">3</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>N<span class="op">=</span><span class="st">"https://raw.githubusercontent.com/aotal/ImagenMedica/master/posts/code/data/clasificatorio/normal/N"</span><span class="op">+</span><span class="bu">str</span>(n)<span class="op">+</span><span class="st">".jpeg"</span></span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>P<span class="op">=</span><span class="st">"https://raw.githubusercontent.com/aotal/ImagenMedica/master/posts/code/data/clasificatorio/neumo/P"</span><span class="op">+</span><span class="bu">str</span>(p)<span class="op">+</span><span class="st">".jpeg"</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-8" class="cell" data-outputid="a6334237-63fb-41b9-cf8a-9876fb4c968c" data-execution_count="6">
+<div id="cell-9" class="cell" data-outputid="a6334237-63fb-41b9-cf8a-9876fb4c968c" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>descargar_imagen_desde_url(N, <span class="st">"imagen1.jpg"</span>)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>descargar_imagen_desde_url(P, <span class="st">"imagen2.jpg"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -237,7 +243,7 @@ Could not find image processor class in the image processor config or the model 
 La imagen ha sido descargada y guardada como 'imagen2.jpg'.</code></pre>
 </div>
 </div>
-<div id="cell-9" class="cell" data-outputid="22c08b1a-edf2-48d6-e455-11aa13e97dbf" data-execution_count="9">
+<div id="cell-10" class="cell" data-outputid="22c08b1a-edf2-48d6-e455-11aa13e97dbf" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> PIL <span class="im">import</span> Image</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -269,14 +275,14 @@ La imagen ha sido descargada y guardada como 'imagen2.jpg'.</code></pre>
 </div>
 </div>
 </div>
-<div id="cell-10" class="cell" data-outputid="1220c45f-dae7-4697-9473-176b93ed9f07" data-execution_count="10">
+<div id="cell-11" class="cell" data-outputid="1220c45f-dae7-4697-9473-176b93ed9f07" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>pipe(<span class="st">'imagen1.jpg'</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="10">
 <pre><code>[{'label': 'NORMAL', 'score': 0.9813147187232971},
  {'label': 'PNEUMONIA', 'score': 0.01868528686463833}]</code></pre>
 </div>
 </div>
-<div id="cell-11" class="cell" data-outputid="36166b9f-add0-4669-dc7b-009b6443c22b" data-execution_count="11">
+<div id="cell-12" class="cell" data-outputid="36166b9f-add0-4669-dc7b-009b6443c22b" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>pipe(<span class="st">'imagen2.jpg'</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="11">
 <pre><code>[{'label': 'PNEUMONIA', 'score': 0.9920761585235596},
