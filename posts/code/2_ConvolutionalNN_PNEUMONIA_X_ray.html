@@ -1,0 +1,1844 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.550">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Imagen Médica - CNN_Neumonía</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Sin resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Imagen Médica</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Buscar"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">Acerca de el autor</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/aotal"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">CNN_Neumonía</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">Colab</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+      <div>
+      <div class="quarto-title-meta-heading">Fecha de publicación</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">26 de febrero de 2024</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<p>Colab</p>
+<section id="cnn-detección-de-neumonía-a-partir-de-imágenes-de-rayos-x" class="level1">
+<h1>CNN: Detección de Neumonía a partir de imágenes de rayos X</h1>
+<section id="notebook-de-preprocesamiento" class="level2">
+<h2 class="anchored" data-anchor-id="notebook-de-preprocesamiento">Notebook de preprocesamiento</h2>
+<p><a href="http://joelriccilopez.com/">Joel Ricci López</a>, 2021.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://colab.research.google.com/github/aotal/ImagenMedica/blob/master/posts/code/2_ConvolutionalNN_PNEUMONIA_X_ray.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid figure-img" alt="Open In Colab"></a></p>
+<figcaption>Open In Colab</figcaption>
+</figure>
+</div>
+<hr>
+<p><br></p>
+</section>
+<section id="planteamiento" class="level2">
+<h2 class="anchored" data-anchor-id="planteamiento">Planteamiento</h2>
+<p><em>Vamos a implementar un modelo de clasificación mediante una red neuronal convolucional para la identificación de casos de neumonía presentado en <a href="https://www.kaggle.com/paultimothymooney/chest-xray-pneumonia">Kaggle</a>. Usaremos <code>Keras</code> y su API <code>Sequential</code> para crear una red capa por capa. Además compararemos el desempeño de nuestra red contra un modelo creado a partir de <strong>Transfer Learning</strong>, utilizando la red preentrenada (VGG16)[https://arxiv.org/abs/1409.1556].</em></p>
+<p><br></p>
+</section>
+<section id="estrategia" class="level2">
+<h2 class="anchored" data-anchor-id="estrategia">Estrategia</h2>
+<p>La estrategia a seguir es la siguiente: 1. <strong>Descargar los datos de Kaggle</strong>: <a href="https://www.kaggle.com/paultimothymooney/chest-xray-pneumonia">Chest X-ray Images (Pneumonia)</a>. 2. Los <strong>datos fueron descargados en Colab</strong> y los conjuntos fueron modificados para que se cumpliera lo siguiente:<br>
+- Conjunto de <strong>Entrenamiento</strong>: 80% de las imágenes. - Conjuntos de <strong>Validación</strong> y <strong>Prueba</strong>: 10% de las imágenes cada uno. - Se aseguró que la proporción de imágenes de las clases <font color="red"><code>PNEUMONIA</code></font> y <font color="#44B275"><code>NORMAL</code></font> fuera la misma en cada conjunto. 3. Esta fase preliminar se realizó en el siguiente notebook: <a href="https://colab.research.google.com/github/jRicciL/ML_and_DataScience_projects/blob/master/ConvNets_and_GradCAM_Xray_dataset/1_Preprocess_CNN_Pneumonia.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid" alt="Abrir en Colab"></a> 4. Se realizó una fase de Análisis Exploratorio con las imágenes. 5. Se implementó una red <strong>neuronal convolucional (CNN</strong>) con Keras para la clasificación de las imágenes.<br>
+<strong>a)</strong> Se evaluó el desempeño de la CNN con el conjunto de prueba. 6. Se implementó <strong>una red neuronal convolucional basada en transferencia de conocimiento.</strong><br>
+<strong>a)</strong> Se tomó como base la red preentrenada <strong>VGG16</strong> con los pesos de <code>imagenet</code>.<br>
+<strong>b)</strong> Se evaluó el desempeño de la red VGG16-base con el conjunto de prueba.</p>
+</section>
+<section id="preliminares-y-carga-de-datos" class="level2">
+<h2 class="anchored" data-anchor-id="preliminares-y-carga-de-datos">Preliminares y carga de datos</h2>
+<section id="montamos-el-acceso-a-drive-para-cargar-los-datos" class="level3">
+<h3 class="anchored" data-anchor-id="montamos-el-acceso-a-drive-para-cargar-los-datos">Montamos el acceso a Drive para cargar los datos</h3>
+<div id="cell-4" class="cell" data-outputid="b0daa2ee-0d9a-43a2-8bd1-b1e491bd21ed">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> google.colab <span class="im">import</span> drive</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>drive.mount(<span class="st">'/content/gdrive/'</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>root_path <span class="op">=</span> <span class="st">'/content/gdrive/My Drive/kaggle/ap-jrl-neumonia/chest_xray'</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>cd $root_path<span class="op">/</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>ls</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Drive already mounted at /content/gdrive/; to attempt to forcibly remount, call drive.mount("/content/gdrive/", force_remount=True).
+/content/gdrive/My Drive/kaggle/ap-jrl-neumonia/chest_xray
+chest_xray/        modelo_neu_jrl_TRAINED.h5              test/
+history_cnn.pkl    modelo_vgg16_jrl.h5                    train/
+__MACOSX/          modelo_VGG16_jrl_trained_20_epocas.h5  val/
+modelo_neu_jrl.h5  output.png</code></pre>
+</div>
+</div>
+</section>
+<section id="carga-de-las-ibrerías-a-utilizar" class="level3">
+<h3 class="anchored" data-anchor-id="carga-de-las-ibrerías-a-utilizar">Carga de las ibrerías a utilizar</h3>
+<div id="cell-6" class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>sns.<span class="bu">set</span>(style<span class="op">=</span><span class="st">'ticks'</span>, context<span class="op">=</span><span class="st">'talk'</span>, palette<span class="op">=</span><span class="st">'Spectral'</span>, font_scale<span class="op">=</span><span class="fl">0.9</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-7" class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Variables con los paths a los directorios de cada conjunto</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>test_dir <span class="op">=</span> os.path.join(root_path, <span class="st">'test'</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>train_dir <span class="op">=</span> os.path.join(root_path, <span class="st">'train'</span>)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>val_dir <span class="op">=</span> os.path.join(root_path, <span class="st">'val'</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+</section>
+<section id="análisis-exploratorio" class="level1">
+<h1>Análisis Exploratorio</h1>
+<div id="cell-9" class="cell" data-outputid="bde94df6-5d29-4812-85b0-594c3e067777">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#@title Proporción de clases en los conjuntos de datos {display-mode: "form"}</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">#@markdown Las siguiente gráfica muestra la proporción</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">#@markdown de clases en cada conjunto de datos.</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Contamos el número de imágenes pertenecientes a cada conjunto</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> count_samples():</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  samples <span class="op">=</span> {}</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> set_ <span class="kw">in</span> [<span class="st">'test'</span>, <span class="st">'train'</span>, <span class="st">'val'</span>]:</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    samples[set_] <span class="op">=</span> {}</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> class_ <span class="kw">in</span> [<span class="st">'NORMAL'</span>, <span class="st">'PNEUMONIA'</span>]:</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>      path <span class="op">=</span> os.path.join(root_path, set_)</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>      k <span class="op">=</span> <span class="bu">len</span>(os.listdir(<span class="ss">f'</span><span class="sc">{</span>path<span class="sc">}</span><span class="ss">/</span><span class="sc">{</span>class_<span class="sc">}</span><span class="ss">'</span>))</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>      samples[set_].update({class_: k})</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Almacenamos los datos en un pequeño dataframe</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>  df_samples <span class="op">=</span> pd.DataFrame(samples)</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> df_samples</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>df_samples <span class="op">=</span> count_samples()</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Número total de observaciones</span></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> df_samples.values.<span class="bu">sum</span>()</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Número de casos positivos y de casos negativos</span></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>n_neg, n_pos <span class="op">=</span> df_samples.<span class="bu">sum</span>(axis <span class="op">=</span> <span class="dv">1</span>).values</span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Num. de casos positivos: </span><span class="sc">{</span>n_pos<span class="sc">}</span><span class="ss"> = </span><span class="sc">{</span>n_pos <span class="op">/</span> n<span class="sc">:.2f}</span><span class="ss">'</span>)</span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Num. de casos negativos: </span><span class="sc">{</span>n_neg<span class="sc">}</span><span class="ss"> = </span><span class="sc">{</span>n_neg <span class="op">/</span> n<span class="sc">:.2f}</span><span class="ss">'</span>)</span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualización</span></span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">2</span>,<span class="dv">1</span>, figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">5</span>))</span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Número total de casos</span></span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].barh([<span class="st">'Pneumonia/Normal'</span>], [n_pos])</span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].barh([<span class="st">'Pneumonia/Normal'</span>], [n_neg], left<span class="op">=</span>[n_pos],</span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>           color<span class="op">=</span><span class="st">'#61dcad'</span>)</span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>ax[<span class="dv">0</span>].<span class="bu">set</span>(title<span class="op">=</span><span class="st">'Total de casos Neumonía vs Normal'</span>)</span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a><span class="co"># Proporción de etiquetas por set</span></span>
+<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a>(df_samples <span class="op">/</span> df_samples.<span class="bu">sum</span>()).iloc[::<span class="op">-</span><span class="dv">1</span>].T.plot(kind<span class="op">=</span><span class="st">'barh'</span>,</span>
+<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a>      ax <span class="op">=</span> ax[<span class="dv">1</span>], xlim<span class="op">=</span>(<span class="dv">0</span>, <span class="dv">1</span>),</span>
+<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a>      color <span class="op">=</span> [<span class="st">'#fa4432'</span>, <span class="st">'#61dcad'</span>],</span>
+<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a>      title<span class="op">=</span><span class="st">'Proporción de clases por conjunto de datos'</span>)</span>
+<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a>plt.legend(loc<span class="op">=</span><span class="st">'center left'</span>, bbox_to_anchor<span class="op">=</span>(<span class="fl">1.0</span>, <span class="fl">0.5</span>))</span>
+<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Num. de casos positivos: 4273 = 0.73
+Num. de casos negativos: 1583 = 0.27</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="2_ConvolutionalNN_PNEUMONIA_X_ray_files/figure-html/cell-5-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="definición-de-las-clases" class="level4">
+<h4 class="anchored" data-anchor-id="definición-de-las-clases">Definición de las clases:</h4>
+<ol type="1">
+<li><font color="#fa4432">⬤</font> Positivo = <code>PNEUMONIA</code></li>
+<li><font color="#61dcad">⬤</font> Negativo = <code>NORMAL</code></li>
+</ol>
+</section>
+<section id="tamaño-de-los-conjuntos" class="level4">
+<h4 class="anchored" data-anchor-id="tamaño-de-los-conjuntos">Tamaño de los conjuntos</h4>
+<ol type="1">
+<li>Entrenamiento: 80%</li>
+<li>Validación: 10%</li>
+<li>Prueba: 10%</li>
+</ol>
+<div id="cell-11" class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Número total de observaciones</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> df_samples.values.<span class="bu">sum</span>()</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Número de casos positivos y de casos negativos</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>n_neg, n_pos <span class="op">=</span> df_samples.<span class="bu">sum</span>(axis <span class="op">=</span> <span class="dv">1</span>).values</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="mostramos-algunas-imágenes-de-ejemplo" class="level3">
+<h3 class="anchored" data-anchor-id="mostramos-algunas-imágenes-de-ejemplo">Mostramos algunas imágenes de ejemplo</h3>
+<p>Se muestra una imagen aleatoria de ejemplo por cada conjunto de entrenamiento (<code>train</code>, <code>test</code>, <code>val</code>) y por cada clase (<font color="red"><code>PNEUMONIA</code></font> y <font color="#44B275"><code>NORMAL</code></font>). - Se obseva que las dimensiones de las imágenes no son uniformes, lo cual deberá tomarse en cuenta cuando se implemente el generador de imágenes con <strong>Keras</strong>.</p>
+<div id="cell-13" class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> tensorflow.keras <span class="im">as</span> k</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tensorflow.keras.preprocessing.image <span class="im">import</span> load_img, img_to_array</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-14" class="cell" data-outputid="bd75dbb2-eca2-47f9-a1d9-86d0bd55e564">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">#@title Imágenes de ejemplo</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co">#@markdown (desplegar la celda para ocultar/mostrar al código)</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> show_random_images():</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  fig, ax <span class="op">=</span> plt.subplots(<span class="dv">2</span>, <span class="dv">3</span>, figsize<span class="op">=</span>(<span class="dv">16</span>, <span class="dv">9</span>))</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> i, class_ <span class="kw">in</span> <span class="bu">enumerate</span>([<span class="st">'NORMAL'</span>, <span class="st">'PNEUMONIA'</span>]):</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j, set_ <span class="kw">in</span> <span class="bu">enumerate</span>([<span class="st">'train'</span>, <span class="st">'test'</span>, <span class="st">'val'</span>]):</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>      path <span class="op">=</span> <span class="ss">f'</span><span class="sc">{</span>root_path<span class="sc">}</span><span class="ss">/</span><span class="sc">{</span>set_<span class="sc">}</span><span class="ss">/</span><span class="sc">{</span>class_<span class="sc">}</span><span class="ss">/'</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>      files <span class="op">=</span> os.listdir(path)</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>      <span class="bu">file</span> <span class="op">=</span> np.random.choice(files, size<span class="op">=</span><span class="dv">1</span>, replace<span class="op">=</span><span class="va">False</span>)[<span class="dv">0</span>]</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>      file_path <span class="op">=</span> <span class="ss">f'</span><span class="sc">{</span>path<span class="sc">}</span><span class="ss">/</span><span class="sc">{</span><span class="bu">file</span><span class="sc">}</span><span class="ss">'</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>      color <span class="op">=</span> <span class="st">'#fa4432'</span> <span class="cf">if</span> class_ <span class="op">==</span> <span class="st">'PNEUMONIA'</span> <span class="cf">else</span> <span class="st">'#61dcad'</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>      img <span class="op">=</span> load_img(file_path)</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>      n, m, c <span class="op">=</span> img_to_array(img).shape</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>      ax[i, j].imshow(img)</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>      ax[i, j].set_title(</span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>          <span class="ss">f'</span><span class="sc">{</span>class_<span class="sc">}</span><span class="ss"> (</span><span class="sc">{</span>set_<span class="sc">}</span><span class="ss">) - [</span><span class="sc">{</span>n<span class="sc">}</span><span class="ss">x</span><span class="sc">{</span>m<span class="sc">}</span><span class="ss">px]'</span>, y <span class="op">=</span> <span class="fl">1.02</span>)</span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>      ax[i, j].grid(<span class="va">False</span>)</span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>      ax[i, j].set_xticks([])</span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>      ax[i, j].set_yticks([])</span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>      ax[i, j].patch.set_edgecolor(color)</span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>      ax[i, j].patch.set_linewidth(<span class="st">'10'</span>)</span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>  plt.tight_layout()</span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>  plt.show()</span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>show_random_images()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="2_ConvolutionalNN_PNEUMONIA_X_ray_files/figure-html/cell-8-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="propiedades-de-las-imágenes" class="level3">
+<h3 class="anchored" data-anchor-id="propiedades-de-las-imágenes">Propiedades de las imágenes</h3>
+<div id="cell-16" class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tensorflow.keras.preprocessing.image <span class="im">import</span> ImageDataGenerator</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>A continuación se carga una <strong>muestra de 150 imágenes por conjunto</strong> (<code>train</code>, <code>test</code>, <code>val</code>) y por clase (<font color="red"><code>PNEUMONIA</code></font> y <font color="#44B275"><code>NORMAL</code></font>). A partir de esta muestra se hará un análisis exploratorio para comparar el conjunto de imágenes tanto entre clases como entre conjuntos. - La función <code>images_to_array()</code> permite cargar la muestra de imágenes en formato <code>np.ndarray</code>.</p>
+<div id="cell-18" class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> images_to_array(directory, target_size <span class="op">=</span> (<span class="dv">150</span>, <span class="dv">150</span>), n_samples <span class="op">=</span> <span class="dv">150</span>):</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">''' Lee n número de imágenes aleatorias del directorio indicado</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co">      y devuelve un arreglo numpy de las mismas'''</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  files <span class="op">=</span> os.listdir(directory)</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Muestrea aleatoriamente n imágenes</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  files <span class="op">=</span> np.random.choice(files, size<span class="op">=</span>n_samples, replace <span class="op">=</span> <span class="va">False</span>)</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> <span class="bu">file</span> <span class="kw">in</span> files:</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>    img <span class="op">=</span> load_img(<span class="ss">f'</span><span class="sc">{</span>directory<span class="sc">}</span><span class="ss">/</span><span class="sc">{</span><span class="bu">file</span><span class="sc">}</span><span class="ss">'</span>,</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>                  target_size <span class="op">=</span> target_size,</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>                  color_mode <span class="op">=</span> <span class="st">'grayscale'</span>)</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>    img_arr <span class="op">=</span> img_to_array(img)</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>      imgs_tensor <span class="op">=</span> np.concatenate([imgs_tensor, img_arr], axis<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> <span class="pp">UnboundLocalError</span>:</span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>      imgs_tensor <span class="op">=</span> img_arr</span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> imgs_tensor</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-19" class="cell" data-outputid="1dea0a7b-9d0b-4788-b3b0-5ebeaef8b613">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>time</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>IMG_WIDTH, IMG_HEIGHT <span class="op">=</span> <span class="dv">150</span>, <span class="dv">150</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>sets <span class="op">=</span> [<span class="st">'train'</span>, <span class="st">'test'</span>, <span class="st">'val'</span>]</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>classes <span class="op">=</span> [<span class="st">'NORMAL'</span>, <span class="st">'PNEUMONIA'</span>]</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Recopila 150 imágenes de cada directorio</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>sample_images <span class="op">=</span> {}</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> set_ <span class="kw">in</span> sets:</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>  sample_images[set_] <span class="op">=</span> {}</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> class_ <span class="kw">in</span> classes:</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>    directory <span class="op">=</span> <span class="ss">f'</span><span class="sc">{</span>root_path<span class="sc">}</span><span class="ss">/</span><span class="sc">{</span>set_<span class="sc">}</span><span class="ss">/</span><span class="sc">{</span>class_<span class="sc">}</span><span class="ss">'</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>    imgs <span class="op">=</span> images_to_array(directory  <span class="op">=</span> directory,</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>                          target_size <span class="op">=</span>(IMG_WIDTH, IMG_HEIGHT))</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>    sample_images[set_][class_] <span class="op">=</span> imgs</span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>sample_images.keys()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>CPU times: user 9.16 s, sys: 302 ms, total: 9.46 s
+Wall time: 10.3 s</code></pre>
+</div>
+</div>
+<section id="imágenes-promedio-por-conjunto-y-clase" class="level4">
+<h4 class="anchored" data-anchor-id="imágenes-promedio-por-conjunto-y-clase">Imágenes promedio por conjunto y clase</h4>
+<div id="cell-21" class="cell" data-cellview="form" data-outputid="d8b3cf7a-d99c-4a19-9902-d1a76c524de6">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">#@markdown La siguiente figura muestra una imagen promedio por cada conjunto y clase</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co">#@markdown del conjunto de datos.</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co">#@markdown El código para generar la figura se puede desplegar en esta misma celda.</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">2</span>, <span class="dv">3</span>, figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">7</span>))</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, set_ <span class="kw">in</span> <span class="bu">enumerate</span>(sets):</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> j, class_ <span class="kw">in</span> <span class="bu">enumerate</span>(classes):</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>    imgs_tensor <span class="op">=</span> sample_images[set_][class_]</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>    mean_image <span class="op">=</span> np.mean(imgs_tensor, axis<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>    color <span class="op">=</span> <span class="st">'#fa4432'</span> <span class="cf">if</span> class_ <span class="op">==</span> <span class="st">'PNEUMONIA'</span> \</span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span> <span class="st">'#61dcad'</span></span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>    ax[j, i].imshow(mean_image,</span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>                    vmin<span class="op">=</span><span class="dv">0</span>, vmax<span class="op">=</span><span class="dv">255</span>,</span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>                    cmap<span class="op">=</span><span class="st">'Greys_r'</span>)</span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>    ax[j, i].set_title(<span class="ss">f'</span><span class="sc">{</span>class_<span class="sc">}</span><span class="ss"> (</span><span class="sc">{</span>set_<span class="sc">}</span><span class="ss">)'</span>, y <span class="op">=</span> <span class="fl">1.05</span>)</span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>    ax[j, i].set_xticks([])</span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a>    ax[j, i].set_yticks([])</span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a>    ax[j, i].patch.set_edgecolor(color)</span>
+<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a>    ax[j, i].patch.set_linewidth(<span class="st">'10'</span>)</span>
+<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a>plt.suptitle(<span class="st">"Imágenes promedio por conjunto y clase"</span>, y <span class="op">=</span> <span class="fl">1.05</span>)</span>
+<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="2_ConvolutionalNN_PNEUMONIA_X_ray_files/figure-html/cell-12-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Es posible observar que, independientemente del conjunto, la clase <font color="red"><code>PNEUMONIA</code></font> tiende a mostrar una mayor densidad en el campo intrapulmonar, es decir, <strong>la zona interna de los pulmones se ve más iluminada</strong> (intensa) en las <strong>muestras con neumonía</strong>.</p>
+</section>
+<section id="histogramas-de-intensidad-y-función-de-distribución-acumulada-fda" class="level4">
+<h4 class="anchored" data-anchor-id="histogramas-de-intensidad-y-función-de-distribución-acumulada-fda">Histogramas de intensidad y función de distribución acumulada (FDA)</h4>
+<div id="cell-24" class="cell" data-outputid="09e474f0-c7f3-43f4-d018-b1fd1b3011f4">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">#@markdown La siguiente figura muestra los histogramas de intensidad de cada</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co">#@markdown &nbsp;**imagen promedio** así como la función de distribución acumulada de</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co">#@markdown dichos valores.</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> scipy.ndimage <span class="im">as</span> ndi</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">2</span>, <span class="dv">3</span>, figsize<span class="op">=</span>(<span class="dv">15</span>, <span class="dv">7</span>))</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, set_ <span class="kw">in</span> <span class="bu">enumerate</span>(sets):</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> j, class_ <span class="kw">in</span> <span class="bu">enumerate</span>(classes):</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>    color <span class="op">=</span> <span class="st">'#fa4432'</span> <span class="cf">if</span> class_ <span class="op">==</span> <span class="st">'PNEUMONIA'</span> <span class="cf">else</span> <span class="st">'#61dcad'</span></span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>    imgs_tensor <span class="op">=</span> sample_images[set_][class_]</span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>    mean_image <span class="op">=</span> np.mean(imgs_tensor, axis<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>    mean_image_arr <span class="op">=</span> mean_image.ravel()</span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Grafica el histograma</span></span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>    ax[j, i].hist(mean_image_arr, bins <span class="op">=</span> <span class="dv">256</span>,</span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>                  histtype <span class="op">=</span> <span class="st">'stepfilled'</span>, color <span class="op">=</span> color)</span>
+<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a>    hist <span class="op">=</span> ndi.histogram(mean_image, <span class="bu">min</span> <span class="op">=</span> <span class="dv">0</span>, <span class="bu">max</span> <span class="op">=</span> <span class="dv">255</span>, bins <span class="op">=</span> <span class="dv">256</span>)</span>
+<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Grafica la función de distribución acumulada</span></span>
+<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a>    cdf <span class="op">=</span> hist.cumsum()  <span class="op">/</span> hist.<span class="bu">sum</span>()</span>
+<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a>    ax_2 <span class="op">=</span> ax[j, i].twinx()</span>
+<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a>    ax_2.plot(cdf, c<span class="op">=</span><span class="st">'blue'</span>)</span>
+<span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a>    ax_2.legend([<span class="st">'FDA'</span>])</span>
+<span id="cb15-24"><a href="#cb15-24" aria-hidden="true" tabindex="-1"></a>    ax[j, i].set_title(<span class="ss">f'</span><span class="sc">{</span>class_<span class="sc">}</span><span class="ss"> (</span><span class="sc">{</span>set_<span class="sc">}</span><span class="ss">)'</span>, y <span class="op">=</span> <span class="fl">1.05</span>)</span>
+<span id="cb15-25"><a href="#cb15-25" aria-hidden="true" tabindex="-1"></a>    ax[j, i].<span class="bu">set</span>(xlim <span class="op">=</span> (<span class="dv">0</span>, <span class="dv">256</span>))</span>
+<span id="cb15-26"><a href="#cb15-26" aria-hidden="true" tabindex="-1"></a>plt.suptitle(<span class="st">"Histograma de intensidad y FDA de las imágenes promedio (por conjunto y clase)"</span>, y <span class="op">=</span> <span class="fl">1.05</span>)</span>
+<span id="cb15-27"><a href="#cb15-27" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb15-28"><a href="#cb15-28" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="2_ConvolutionalNN_PNEUMONIA_X_ray_files/figure-html/cell-13-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>En los histogramas de intensidad se observa la <strong>frecuencia de intensidad de los pixeles</strong> de las imágenes promedio mostradas en la figura anterior. A partir de estas imágenes promedio podemos suponer lo siguiente para cada conjunto de imágenes: - Es posible notar que las imáges con la etiqueta <font color="#44B275"><code>NORMAL</code></font> muestran <strong>picos de intensidad en 100 y 150</strong>. - Por otro lado, las imágenes con etiqueta <font color="red"><code>PNEUMONIA</code></font> <strong>NO muestran este mismo patrón</strong>. - En general, las imágenes con <font color="red"><code>PNEUMONIA</code></font> <strong>no alcanzan intensidades mayores a 200.</strong></p>
+</section>
+<section id="imágenes-promedio-y-desviación-estándar-por-clase" class="level4">
+<h4 class="anchored" data-anchor-id="imágenes-promedio-y-desviación-estándar-por-clase">Imágenes promedio y desviación estándar por clase</h4>
+<div id="cell-27" class="cell" data-cellview="form" data-outputid="d8fb8c61-b710-4670-af10-a4e6ec37d752">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">#@markdown La siguiente figura muestra la **imagen promedio de cada clase** así como</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="co">#@markdown la **desviación estándar** de cada imagen.</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">4</span>, figsize <span class="op">=</span> (<span class="dv">15</span>, <span class="dv">4</span>))</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> j, class_ <span class="kw">in</span> <span class="bu">enumerate</span>(classes):</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>  color <span class="op">=</span> <span class="st">'#fa4432'</span> <span class="cf">if</span> class_ <span class="op">==</span> <span class="st">'PNEUMONIA'</span> <span class="cf">else</span> <span class="st">'#61dcad'</span></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>  all_imgs <span class="op">=</span> np.concatenate([sample_images[set_][class_]</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>                             <span class="cf">for</span> set_ <span class="kw">in</span> sets], axis <span class="op">=</span> <span class="dv">2</span>)</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>  mean_img <span class="op">=</span> np.mean(all_imgs, axis <span class="op">=</span> <span class="dv">2</span>)</span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>  std_img <span class="op">=</span> np.std(all_imgs, axis <span class="op">=</span> <span class="dv">2</span>)</span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>  img_dic <span class="op">=</span> {<span class="st">'Promedio'</span>: mean_img, <span class="st">'Desv. estandar'</span>: std_img}</span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> i, key <span class="kw">in</span> <span class="bu">zip</span>(<span class="bu">range</span>(<span class="dv">0</span>, <span class="dv">4</span>, <span class="dv">2</span>), img_dic.keys()):</span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>    ax[j<span class="op">+</span>i].imshow(img_dic[key], vmin<span class="op">=</span><span class="dv">0</span>, vmax<span class="op">=</span><span class="dv">255</span>, cmap<span class="op">=</span><span class="st">'Greys_r'</span>)</span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>    ax[j<span class="op">+</span>i].patch.set_edgecolor(color)</span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>    ax[j<span class="op">+</span>i].patch.set_linewidth(<span class="st">'10'</span>)</span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>    ax[j<span class="op">+</span>i].set_title(<span class="ss">f'</span><span class="sc">{</span>class_<span class="sc">}</span><span class="ch">\n</span><span class="sc">{</span>key<span class="sc">}</span><span class="ss">'</span>, y <span class="op">=</span> <span class="fl">1.05</span>)</span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>    ax[j<span class="op">+</span>i].set_xticks([])</span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>    ax[j<span class="op">+</span>i].set_yticks([])</span>
+<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="2_ConvolutionalNN_PNEUMONIA_X_ray_files/figure-html/cell-14-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>En la figura anterior es posible <strong>comparar la imagen promedio de las imágenes</strong> de la clase <font color="green"><code>NORMAL</code></font> vs la clase <font color="red"><code>PNEUMONIA</code></font>, así como <strong>la variabilidad de las intensidades</strong> de cada clase en términos de desviación estádar. Se observa lo siguiente: - Como en las figuras anteriores, las imágenes de la clase <font color="red"><code>PNEUMONIA</code></font> muestran una mayor densidad en la región torácica. - Las imágenes <font color="green"><code>NORMAL</code></font> tienen mayor contraste y bordes más definidos entre los elementós óseos (blanco) y región del parénquima pulmonar (negro).</p>
+<hr>
+</section>
+</section>
+</section>
+<section id="red-convolucional" class="level1">
+<h1>Red Convolucional</h1>
+<p><strong>A continuación se muestra la implementación de una red neuronal convolucional para clasificación de radiografías de torax.</strong> 1. Se usarán las imágenes de los conjuntos <code>train</code> y <code>val</code> para la fase de entrenamiento. 2. Se usará la clase <code>ImageDataGenerator</code> de Keras como método de aumento de datos. 3. Se tomará en cuenta el desbalance de clases para la inicialización de los pesos de la capa de salida de la red. 4. Se utilizará el optimizador Adam con momento de Nesterov. 5. Se usará la entropía cruzada binaria (<em>binary cross-entropy</em>) como función de pérdida. 5. Se monitorearán las siguientes métricas durante el entrenamiento (tanto para el conjunto <code>train</code> como para el conjunto <code>val</code>: - Exactitud (<em>accuracy</em>) - Precisión - Sensibilidad - Área bajo la curva ROC</p>
+<section id="generador-de-datos" class="level3">
+<h3 class="anchored" data-anchor-id="generador-de-datos">Generador de Datos</h3>
+<div id="cell-30" class="cell" data-outputid="f906f1d7-d55d-47e6-a8bf-59299f2c7295">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Redimencionaremos las imágenes</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>IMG_WIDTH, IMG_HEIGHT <span class="op">=</span> <span class="dv">150</span>, <span class="dv">150</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>BATCH_SIZE <span class="op">=</span> <span class="dv">32</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Entrenamiento</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Generador de datos para el conjunto de entrenamiento</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>train_datagen <span class="op">=</span> ImageDataGenerator(</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>                   rotation_range     <span class="op">=</span> <span class="dv">5</span>,</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>                   zoom_range         <span class="op">=</span> <span class="fl">0.1</span>,</span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>                   width_shift_range  <span class="op">=</span> <span class="fl">0.1</span>,</span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>                   height_shift_range <span class="op">=</span> <span class="fl">0.1</span>,</span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>                   shear_range        <span class="op">=</span> <span class="fl">0.02</span>,</span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>                   horizontal_flip    <span class="op">=</span> <span class="va">False</span>,</span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>                   vertical_flip      <span class="op">=</span> <span class="va">False</span>,</span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>                   rescale            <span class="op">=</span> <span class="fl">1.</span><span class="op">/</span><span class="dv">255</span>,</span>
+<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a>                )</span>
+<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a>train_generator <span class="op">=</span> train_datagen.<span class="op">\</span></span>
+<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a>            flow_from_directory(</span>
+<span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a>              directory     <span class="op">=</span> train_dir,</span>
+<span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a>              target_size   <span class="op">=</span> (IMG_WIDTH, IMG_HEIGHT),</span>
+<span id="cb17-21"><a href="#cb17-21" aria-hidden="true" tabindex="-1"></a>              batch_size    <span class="op">=</span> BATCH_SIZE,</span>
+<span id="cb17-22"><a href="#cb17-22" aria-hidden="true" tabindex="-1"></a>              class_mode    <span class="op">=</span> <span class="st">'binary'</span></span>
+<span id="cb17-23"><a href="#cb17-23" aria-hidden="true" tabindex="-1"></a>            )</span>
+<span id="cb17-24"><a href="#cb17-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-25"><a href="#cb17-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Validación</span></span>
+<span id="cb17-26"><a href="#cb17-26" aria-hidden="true" tabindex="-1"></a>val_datagen <span class="op">=</span> ImageDataGenerator(rescale <span class="op">=</span> <span class="fl">1.</span><span class="op">/</span><span class="dv">255</span>)</span>
+<span id="cb17-27"><a href="#cb17-27" aria-hidden="true" tabindex="-1"></a>val_generator <span class="op">=</span> val_datagen.<span class="op">\</span></span>
+<span id="cb17-28"><a href="#cb17-28" aria-hidden="true" tabindex="-1"></a>            flow_from_directory(</span>
+<span id="cb17-29"><a href="#cb17-29" aria-hidden="true" tabindex="-1"></a>              directory     <span class="op">=</span> val_dir,</span>
+<span id="cb17-30"><a href="#cb17-30" aria-hidden="true" tabindex="-1"></a>              target_size   <span class="op">=</span> (IMG_WIDTH, IMG_HEIGHT),</span>
+<span id="cb17-31"><a href="#cb17-31" aria-hidden="true" tabindex="-1"></a>              batch_size    <span class="op">=</span> BATCH_SIZE,</span>
+<span id="cb17-32"><a href="#cb17-32" aria-hidden="true" tabindex="-1"></a>              class_mode    <span class="op">=</span> <span class="st">'binary'</span>,</span>
+<span id="cb17-33"><a href="#cb17-33" aria-hidden="true" tabindex="-1"></a>            )</span>
+<span id="cb17-34"><a href="#cb17-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-35"><a href="#cb17-35" aria-hidden="true" tabindex="-1"></a><span class="co"># Prueba</span></span>
+<span id="cb17-36"><a href="#cb17-36" aria-hidden="true" tabindex="-1"></a>test_datagen <span class="op">=</span> ImageDataGenerator(rescale <span class="op">=</span> <span class="fl">1.</span><span class="op">/</span><span class="dv">255</span>)</span>
+<span id="cb17-37"><a href="#cb17-37" aria-hidden="true" tabindex="-1"></a>test_generator <span class="op">=</span> test_datagen.<span class="op">\</span></span>
+<span id="cb17-38"><a href="#cb17-38" aria-hidden="true" tabindex="-1"></a>            flow_from_directory(</span>
+<span id="cb17-39"><a href="#cb17-39" aria-hidden="true" tabindex="-1"></a>              directory     <span class="op">=</span> test_dir,</span>
+<span id="cb17-40"><a href="#cb17-40" aria-hidden="true" tabindex="-1"></a>              target_size   <span class="op">=</span> (IMG_WIDTH, IMG_HEIGHT),</span>
+<span id="cb17-41"><a href="#cb17-41" aria-hidden="true" tabindex="-1"></a>              batch_size    <span class="op">=</span> BATCH_SIZE,</span>
+<span id="cb17-42"><a href="#cb17-42" aria-hidden="true" tabindex="-1"></a>              shuffle       <span class="op">=</span> <span class="va">False</span>,</span>
+<span id="cb17-43"><a href="#cb17-43" aria-hidden="true" tabindex="-1"></a>              class_mode    <span class="op">=</span> <span class="st">'binary'</span></span>
+<span id="cb17-44"><a href="#cb17-44" aria-hidden="true" tabindex="-1"></a>            )</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Found 4688 images belonging to 2 classes.
+Found 584 images belonging to 2 classes.
+Found 584 images belonging to 2 classes.</code></pre>
+</div>
+</div>
+<section id="consideramos-el-desbalance-de-clases" class="level4">
+<h4 class="anchored" data-anchor-id="consideramos-el-desbalance-de-clases">Consideramos el desbalance de clases</h4>
+<p>Tomando en cuenta que <strong>existe un desbalance</strong> de clases vamos a forzar que el peso de la última capa de la red, encargada de devolver la probabilidad de la clase <font color="red"><code>PNEUMONIA</code></font>, tome en cuenta este desbalance. &gt; Este <strong>sesgo inicial</strong> se calculó mediante la siguiente fórmula:</p>
+<p><span class="math display">\[p_0 = \frac{n_{positivos}} {n} = \frac{1}{1 + e^{-b0}}\]</span></p>
+<blockquote class="blockquote">
+<p>donde:</p>
+</blockquote>
+<p><span class="math display">\[b0 = -log_e\left(\frac{n_{positivos}} {n_{negativos}}\right)\]</span></p>
+<div id="cell-32" class="cell" data-outputid="e1867647-da2b-420f-9865-47d8c94e12ea">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Consideramos el bias inicial debido al desbalance de clases</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Num. de casos positivos: </span><span class="sc">{</span>n_pos<span class="sc">}</span><span class="ss"> = </span><span class="sc">{</span>n_pos <span class="op">/</span> n<span class="sc">:.2f}</span><span class="ss">'</span>)</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Num. de casos negativos: </span><span class="sc">{</span>n_neg<span class="sc">}</span><span class="ss"> = </span><span class="sc">{</span>n_neg <span class="op">/</span> n<span class="sc">:.2f}</span><span class="ss">'</span>)</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="co"># bias inicial para la inicialización de los pesos en la capa de salida</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>initial_bias <span class="op">=</span> np.log([n_pos <span class="op">/</span> n_neg])</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>output_bias  <span class="op">=</span> k.initializers.Constant(initial_bias)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Num. de casos positivos: 4273 = 0.73
+Num. de casos negativos: 1583 = 0.27</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="arquitectura-de-la-red" class="level3">
+<h3 class="anchored" data-anchor-id="arquitectura-de-la-red">Arquitectura de la red</h3>
+<div id="cell-34" class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tensorflow.keras.models <span class="im">import</span> Sequential</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tensorflow.keras.layers <span class="im">import</span> Conv2D, MaxPool2D, Dense, Dropout, Flatten</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-35" class="cell" data-outputid="bf7ee9d5-a10a-4699-a7c7-7d7900e057e8">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Definimos la arquitectura de la red usando el API Secuencial de Keras</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> Sequential()</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>model.add(Conv2D(filters      <span class="op">=</span> <span class="dv">32</span>,</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>                 kernel_size  <span class="op">=</span> (<span class="dv">3</span>,<span class="dv">3</span>),</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>                 activation   <span class="op">=</span> <span class="st">'relu'</span>,</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>                 input_shape  <span class="op">=</span> (IMG_WIDTH, IMG_HEIGHT, <span class="dv">3</span>)))</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>model.add(MaxPool2D(pool_size <span class="op">=</span> (<span class="dv">2</span>,<span class="dv">2</span>)))</span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>model.add(Conv2D(filters      <span class="op">=</span> <span class="dv">32</span>,</span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>                 kernel_size  <span class="op">=</span> (<span class="dv">3</span>,<span class="dv">3</span>),</span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>                 activation   <span class="op">=</span> <span class="st">'relu'</span>,</span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>                 padding<span class="op">=</span><span class="st">'same'</span>))</span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>model.add(MaxPool2D(pool_size <span class="op">=</span> (<span class="dv">2</span>,<span class="dv">2</span>)))</span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a>model.add(Dropout(rate <span class="op">=</span> <span class="fl">0.25</span>))</span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a>model.add(Conv2D(filters      <span class="op">=</span> <span class="dv">64</span>,</span>
+<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a>                 kernel_size  <span class="op">=</span> (<span class="dv">3</span>,<span class="dv">3</span>),</span>
+<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a>                 activation   <span class="op">=</span> <span class="st">'relu'</span>,</span>
+<span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a>                 padding<span class="op">=</span><span class="st">'same'</span>))</span>
+<span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a>model.add(MaxPool2D(pool_size <span class="op">=</span> (<span class="dv">2</span>,<span class="dv">2</span>)))</span>
+<span id="cb22-21"><a href="#cb22-21" aria-hidden="true" tabindex="-1"></a>model.add(Dropout(rate <span class="op">=</span> <span class="fl">0.25</span>))</span>
+<span id="cb22-22"><a href="#cb22-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-23"><a href="#cb22-23" aria-hidden="true" tabindex="-1"></a>model.add(Conv2D(filters      <span class="op">=</span> <span class="dv">64</span>,</span>
+<span id="cb22-24"><a href="#cb22-24" aria-hidden="true" tabindex="-1"></a>                 kernel_size  <span class="op">=</span> (<span class="dv">3</span>,<span class="dv">3</span>),</span>
+<span id="cb22-25"><a href="#cb22-25" aria-hidden="true" tabindex="-1"></a>                 activation   <span class="op">=</span> <span class="st">'relu'</span>,</span>
+<span id="cb22-26"><a href="#cb22-26" aria-hidden="true" tabindex="-1"></a>                 padding<span class="op">=</span><span class="st">'same'</span>))</span>
+<span id="cb22-27"><a href="#cb22-27" aria-hidden="true" tabindex="-1"></a>model.add(MaxPool2D(pool_size <span class="op">=</span> (<span class="dv">2</span>,<span class="dv">2</span>)))</span>
+<span id="cb22-28"><a href="#cb22-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-29"><a href="#cb22-29" aria-hidden="true" tabindex="-1"></a>model.add(Flatten())</span>
+<span id="cb22-30"><a href="#cb22-30" aria-hidden="true" tabindex="-1"></a>model.add(Dense(units      <span class="op">=</span> <span class="dv">64</span>,</span>
+<span id="cb22-31"><a href="#cb22-31" aria-hidden="true" tabindex="-1"></a>                activation <span class="op">=</span> <span class="st">'relu'</span>))</span>
+<span id="cb22-32"><a href="#cb22-32" aria-hidden="true" tabindex="-1"></a>model.add(Dropout(rate <span class="op">=</span> <span class="fl">0.5</span>))</span>
+<span id="cb22-33"><a href="#cb22-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-34"><a href="#cb22-34" aria-hidden="true" tabindex="-1"></a><span class="co"># Capa de salida, a ella agregamos el bias de salida</span></span>
+<span id="cb22-35"><a href="#cb22-35" aria-hidden="true" tabindex="-1"></a><span class="co"># deribado del desbalance de clases</span></span>
+<span id="cb22-36"><a href="#cb22-36" aria-hidden="true" tabindex="-1"></a>model.add(Dense(units <span class="op">=</span> <span class="dv">1</span>,</span>
+<span id="cb22-37"><a href="#cb22-37" aria-hidden="true" tabindex="-1"></a>                activation <span class="op">=</span> <span class="st">'sigmoid'</span>,</span>
+<span id="cb22-38"><a href="#cb22-38" aria-hidden="true" tabindex="-1"></a>                bias_initializer <span class="op">=</span> output_bias))</span>
+<span id="cb22-39"><a href="#cb22-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-40"><a href="#cb22-40" aria-hidden="true" tabindex="-1"></a>model.summary()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Model: "sequential"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+conv2d (Conv2D)              (None, 148, 148, 32)      896       
+_________________________________________________________________
+max_pooling2d (MaxPooling2D) (None, 74, 74, 32)        0         
+_________________________________________________________________
+conv2d_1 (Conv2D)            (None, 74, 74, 32)        9248      
+_________________________________________________________________
+max_pooling2d_1 (MaxPooling2 (None, 37, 37, 32)        0         
+_________________________________________________________________
+dropout (Dropout)            (None, 37, 37, 32)        0         
+_________________________________________________________________
+conv2d_2 (Conv2D)            (None, 37, 37, 64)        18496     
+_________________________________________________________________
+max_pooling2d_2 (MaxPooling2 (None, 18, 18, 64)        0         
+_________________________________________________________________
+dropout_1 (Dropout)          (None, 18, 18, 64)        0         
+_________________________________________________________________
+conv2d_3 (Conv2D)            (None, 18, 18, 64)        36928     
+_________________________________________________________________
+max_pooling2d_3 (MaxPooling2 (None, 9, 9, 64)          0         
+_________________________________________________________________
+flatten (Flatten)            (None, 5184)              0         
+_________________________________________________________________
+dense (Dense)                (None, 64)                331840    
+_________________________________________________________________
+dropout_2 (Dropout)          (None, 64)                0         
+_________________________________________________________________
+dense_1 (Dense)              (None, 1)                 65        
+=================================================================
+Total params: 397,473
+Trainable params: 397,473
+Non-trainable params: 0
+_________________________________________________________________</code></pre>
+</div>
+</div>
+<section id="visualización-de-la-arquitectura-de-la-red" class="level4">
+<h4 class="anchored" data-anchor-id="visualización-de-la-arquitectura-de-la-red">Visualización de la Arquitectura de la Red</h4>
+<p>Para la siguiente visualización utilizaremos la librería <code>visualkeras</code>.</p>
+<div id="cell-37" class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>capture</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Instala la librería visualkeras que permite visualizar la arquitectura de la red</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip install git<span class="op">+</span>https:<span class="op">//</span>github.com<span class="op">/</span>paulgavrikov<span class="op">/</span>visualkeras</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-38" class="cell" data-outputid="048dd1a6-a180-432f-9818-5b9fb3eb183b">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> visualkeras</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>visualkeras.layered_view(model <span class="op">=</span> model, scale_xy<span class="op">=</span><span class="dv">1</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="19">
+<div>
+<figure class="figure">
+<p><img src="2_ConvolutionalNN_PNEUMONIA_X_ray_files/figure-html/cell-20-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<ol start="0" type="1">
+<li><font color="#aaa">⬤</font> Input → <code>(150, 150, 3)</code></li>
+<li><font color="#EBBE36">⬤</font> Capa Convolucional → <code>(148, 148, 32)</code>, <code>padding = 'valid'</code></li>
+<li><font color="#E53F65">⬤</font> Max Pooling 2x2 → <code>(74, 74, 32)</code></li>
+<li><font color="#EBBE36">⬤</font> Capa Convolucional → <code>(74, 74, 32)</code>, <code>padding = 'same'</code></li>
+<li><font color="#E53F65">⬤</font> Max Pooling 2x2 → <code>(37, 37, 32)</code></li>
+<li><font color="#0EC286">⬤</font> Dropout (0.25) → <code>(37, 37, 32)</code></li>
+<li><font color="#EBBE36">⬤</font> Capa Convolucional → <code>(37, 37, 64)</code>, <code>padding = 'same'</code></li>
+<li><font color="#E53F65">⬤</font> Max Pooling 2x2 → <code>(18, 18, 64)</code></li>
+<li><font color="#0EC286">⬤</font> Dropout (0.25) → <code>(18, 18, 64)</code></li>
+<li><font color="#EBBE36">⬤</font> Capa Convolucional → <code>(18, 18, 64)</code>, <code>padding = 'same'</code></li>
+<li><font color="#E53F65">⬤</font> Max Pooling 2x2 → <code>(9, 9, 64)</code></li>
+<li><font color="#0075A2">⬤</font> Flatten → <code>(5184)</code></li>
+<li><font color="#003144">⬤</font> Densa → <code>(64)</code></li>
+<li><font color="#0EC286">⬤</font> Dropout → <code>(64)</code></li>
+<li><font color="#003144">⬤</font> Densa → <code>(1)</code></li>
+</ol>
+</section>
+</section>
+<section id="callbacks" class="level3">
+<h3 class="anchored" data-anchor-id="callbacks">Callbacks</h3>
+<p>Usaremos dos <strong><code>callbacks</code></strong> de Keras durante el entrenamiento: - <strong><code>ModelCheckpoint</code></strong>: Permite guardar el modelo con cierta frecuencia dureante el entrenamiento. - <strong><code>EarlyStopping</code></strong>: Permite detener la ejecución del entrenamiento si cierta métrica, definida por el usuario, no mejora depués de cierto criterio (en este caso el número de épocas).</p>
+<div id="cell-41" class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tensorflow.keras.callbacks <span class="im">import</span> ModelCheckpoint, EarlyStopping</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Early Stopping</span></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>early_stop <span class="op">=</span> EarlyStopping(</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>    monitor <span class="op">=</span> <span class="st">'val_loss'</span>,</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>    mode <span class="op">=</span> <span class="st">'min'</span>,</span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>    patience <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a><span class="co"># ModelCheckpoint</span></span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>model_filepath <span class="op">=</span> <span class="ss">f"</span><span class="sc">{</span>root_path<span class="sc">}</span><span class="ss">/modelo_neu_jrl.h5"</span></span>
+<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a>checkpoint <span class="op">=</span> ModelCheckpoint(model_filepath,</span>
+<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a>                monitor        <span class="op">=</span> <span class="st">'val_loss'</span>,</span>
+<span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a>                verbose        <span class="op">=</span> <span class="dv">1</span>,</span>
+<span id="cb26-15"><a href="#cb26-15" aria-hidden="true" tabindex="-1"></a>                save_best_only <span class="op">=</span> <span class="va">True</span>,</span>
+<span id="cb26-16"><a href="#cb26-16" aria-hidden="true" tabindex="-1"></a>                mode           <span class="op">=</span> <span class="st">'min'</span></span>
+<span id="cb26-17"><a href="#cb26-17" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb26-18"><a href="#cb26-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-19"><a href="#cb26-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Lista de Callbacks</span></span>
+<span id="cb26-20"><a href="#cb26-20" aria-hidden="true" tabindex="-1"></a>callbacks_list <span class="op">=</span> [checkpoint, early_stop]</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="métricas-de-evaluación" class="level3">
+<h3 class="anchored" data-anchor-id="métricas-de-evaluación">Métricas de evaluación</h3>
+<div id="cell-43" class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tensorflow.keras.metrics <span class="im">import</span> BinaryAccuracy, <span class="op">\</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>      AUC, Recall, Precision</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>metrics <span class="op">=</span> [BinaryAccuracy(name <span class="op">=</span> <span class="st">'accuracy'</span>),</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>           AUC(name <span class="op">=</span> <span class="st">'roc_auc'</span>),</span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>           Precision(name <span class="op">=</span><span class="st">'precision'</span>),</span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>           Recall(name <span class="op">=</span> <span class="st">'recall'</span>)]</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="optimizador-a-utilizar" class="level3">
+<h3 class="anchored" data-anchor-id="optimizador-a-utilizar">Optimizador a utilizar</h3>
+<div id="cell-45" class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tensorflow.keras.optimizers <span class="im">import</span> Nadam</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>optimizer <span class="op">=</span> Nadam(</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>      learning_rate <span class="op">=</span> <span class="fl">0.001</span>,</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>      beta_1        <span class="op">=</span> <span class="fl">0.9</span>,</span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>      beta_2        <span class="op">=</span> <span class="fl">0.999</span>,</span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>      epsilon       <span class="op">=</span> <span class="fl">1e-07</span>,</span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>      name          <span class="op">=</span> <span class="st">'Nadam'</span></span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="compilación-del-modelo" class="level3">
+<h3 class="anchored" data-anchor-id="compilación-del-modelo">Compilación del modelo</h3>
+<div id="cell-47" class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compilamos el modelo</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>model.<span class="bu">compile</span>(</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>    optimizer <span class="op">=</span> optimizer,</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>    loss      <span class="op">=</span> <span class="st">'binary_crossentropy'</span>,</span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>    metrics   <span class="op">=</span> metrics</span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="entrenamiento-de-la-red" class="level3">
+<h3 class="anchored" data-anchor-id="entrenamiento-de-la-red">Entrenamiento de la red</h3>
+<div id="cell-49" class="cell" data-outputid="74d53024-3bb5-4971-c6b4-8904e68183e3">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>time</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>BATCH_SIZE <span class="op">=</span> <span class="dv">64</span></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>EPOCHS <span class="op">=</span> <span class="dv">50</span></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Entrenamiento</span></span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>history <span class="op">=</span> model.fit(</span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>            train_generator,</span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a>            validation_data <span class="op">=</span> val_generator,</span>
+<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a>            epochs          <span class="op">=</span> EPOCHS,</span>
+<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a>            batch_size      <span class="op">=</span> BATCH_SIZE,</span>
+<span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a>            callbacks       <span class="op">=</span> callbacks_list</span>
+<span id="cb30-12"><a href="#cb30-12" aria-hidden="true" tabindex="-1"></a>          )</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Epoch 1/50
+147/147 [==============================] - 79s 511ms/step - loss: 0.5872 - accuracy: 0.7247 - roc_auc: 0.5726 - precision: 0.7280 - recall: 0.9887 - val_loss: 0.5739 - val_accuracy: 0.7466 - val_roc_auc: 0.7769 - val_precision: 0.7439 - val_recall: 0.9953
+
+Epoch 00001: val_loss improved from inf to 0.57385, saving model to /content/gdrive/My Drive/kaggle/ap-jrl-neumonia/chest_xray/modelo_neu_jrl.h5
+Epoch 2/50
+147/147 [==============================] - 74s 505ms/step - loss: 0.4403 - accuracy: 0.7946 - roc_auc: 0.8354 - precision: 0.8137 - recall: 0.9291 - val_loss: 0.3253 - val_accuracy: 0.8373 - val_roc_auc: 0.9156 - val_precision: 0.8529 - val_recall: 0.9390
+
+Epoch 00002: val_loss improved from 0.57385 to 0.32534, saving model to /content/gdrive/My Drive/kaggle/ap-jrl-neumonia/chest_xray/modelo_neu_jrl.h5
+Epoch 3/50
+147/147 [==============================] - 74s 504ms/step - loss: 0.3155 - accuracy: 0.8549 - roc_auc: 0.9234 - precision: 0.8723 - recall: 0.9389 - val_loss: 0.2565 - val_accuracy: 0.8836 - val_roc_auc: 0.9535 - val_precision: 0.8776 - val_recall: 0.9765
+
+Epoch 00003: val_loss improved from 0.32534 to 0.25650, saving model to /content/gdrive/My Drive/kaggle/ap-jrl-neumonia/chest_xray/modelo_neu_jrl.h5
+Epoch 4/50
+147/147 [==============================] - 74s 505ms/step - loss: 0.2359 - accuracy: 0.9020 - roc_auc: 0.9562 - precision: 0.9202 - recall: 0.9475 - val_loss: 0.3910 - val_accuracy: 0.8613 - val_roc_auc: 0.9474 - val_precision: 0.8429 - val_recall: 0.9953
+
+Epoch 00004: val_loss did not improve from 0.25650
+Epoch 5/50
+147/147 [==============================] - 75s 508ms/step - loss: 0.2231 - accuracy: 0.9075 - roc_auc: 0.9620 - precision: 0.9238 - recall: 0.9522 - val_loss: 0.2257 - val_accuracy: 0.9024 - val_roc_auc: 0.9582 - val_precision: 0.9128 - val_recall: 0.9577
+
+Epoch 00005: val_loss improved from 0.25650 to 0.22566, saving model to /content/gdrive/My Drive/kaggle/ap-jrl-neumonia/chest_xray/modelo_neu_jrl.h5
+Epoch 6/50
+147/147 [==============================] - 74s 505ms/step - loss: 0.1765 - accuracy: 0.9363 - roc_auc: 0.9742 - precision: 0.9500 - recall: 0.9634 - val_loss: 0.2481 - val_accuracy: 0.8887 - val_roc_auc: 0.9624 - val_precision: 0.8784 - val_recall: 0.9836
+
+Epoch 00006: val_loss did not improve from 0.22566
+Epoch 7/50
+147/147 [==============================] - 74s 505ms/step - loss: 0.1952 - accuracy: 0.9199 - roc_auc: 0.9714 - precision: 0.9332 - recall: 0.9576 - val_loss: 0.2416 - val_accuracy: 0.9041 - val_roc_auc: 0.9587 - val_precision: 0.8987 - val_recall: 0.9789
+
+Epoch 00007: val_loss did not improve from 0.22566
+Epoch 8/50
+147/147 [==============================] - 74s 503ms/step - loss: 0.1807 - accuracy: 0.9323 - roc_auc: 0.9759 - precision: 0.9484 - recall: 0.9592 - val_loss: 0.2393 - val_accuracy: 0.9007 - val_roc_auc: 0.9567 - val_precision: 0.9017 - val_recall: 0.9695
+
+Epoch 00008: val_loss did not improve from 0.22566
+Epoch 9/50
+147/147 [==============================] - 75s 507ms/step - loss: 0.1611 - accuracy: 0.9330 - roc_auc: 0.9791 - precision: 0.9468 - recall: 0.9634 - val_loss: 0.2523 - val_accuracy: 0.8938 - val_roc_auc: 0.9623 - val_precision: 0.8889 - val_recall: 0.9765
+
+Epoch 00009: val_loss did not improve from 0.22566
+Epoch 10/50
+147/147 [==============================] - 74s 503ms/step - loss: 0.1516 - accuracy: 0.9423 - roc_auc: 0.9821 - precision: 0.9555 - recall: 0.9653 - val_loss: 0.2136 - val_accuracy: 0.9161 - val_roc_auc: 0.9615 - val_precision: 0.9198 - val_recall: 0.9695
+
+Epoch 00010: val_loss improved from 0.22566 to 0.21365, saving model to /content/gdrive/My Drive/kaggle/ap-jrl-neumonia/chest_xray/modelo_neu_jrl.h5
+Epoch 11/50
+147/147 [==============================] - 74s 504ms/step - loss: 0.1303 - accuracy: 0.9537 - roc_auc: 0.9856 - precision: 0.9694 - recall: 0.9668 - val_loss: 0.1980 - val_accuracy: 0.9127 - val_roc_auc: 0.9699 - val_precision: 0.9176 - val_recall: 0.9671
+
+Epoch 00011: val_loss improved from 0.21365 to 0.19796, saving model to /content/gdrive/My Drive/kaggle/ap-jrl-neumonia/chest_xray/modelo_neu_jrl.h5
+Epoch 12/50
+147/147 [==============================] - 74s 504ms/step - loss: 0.1227 - accuracy: 0.9500 - roc_auc: 0.9875 - precision: 0.9599 - recall: 0.9729 - val_loss: 0.2340 - val_accuracy: 0.9092 - val_roc_auc: 0.9551 - val_precision: 0.9191 - val_recall: 0.9601
+
+Epoch 00012: val_loss did not improve from 0.19796
+Epoch 13/50
+147/147 [==============================] - 75s 507ms/step - loss: 0.1395 - accuracy: 0.9479 - roc_auc: 0.9859 - precision: 0.9583 - recall: 0.9709 - val_loss: 0.2062 - val_accuracy: 0.9281 - val_roc_auc: 0.9666 - val_precision: 0.9404 - val_recall: 0.9624
+
+Epoch 00013: val_loss did not improve from 0.19796
+Epoch 14/50
+147/147 [==============================] - 74s 503ms/step - loss: 0.1257 - accuracy: 0.9485 - roc_auc: 0.9877 - precision: 0.9598 - recall: 0.9701 - val_loss: 0.1902 - val_accuracy: 0.9229 - val_roc_auc: 0.9723 - val_precision: 0.9281 - val_recall: 0.9695
+
+Epoch 00014: val_loss improved from 0.19796 to 0.19020, saving model to /content/gdrive/My Drive/kaggle/ap-jrl-neumonia/chest_xray/modelo_neu_jrl.h5
+Epoch 15/50
+147/147 [==============================] - 74s 505ms/step - loss: 0.1357 - accuracy: 0.9504 - roc_auc: 0.9853 - precision: 0.9626 - recall: 0.9701 - val_loss: 0.2019 - val_accuracy: 0.9178 - val_roc_auc: 0.9704 - val_precision: 0.9163 - val_recall: 0.9765
+
+Epoch 00015: val_loss did not improve from 0.19020
+Epoch 16/50
+147/147 [==============================] - 77s 522ms/step - loss: 0.1064 - accuracy: 0.9583 - roc_auc: 0.9909 - precision: 0.9667 - recall: 0.9764 - val_loss: 0.2227 - val_accuracy: 0.9041 - val_roc_auc: 0.9766 - val_precision: 0.9602 - val_recall: 0.9061
+
+Epoch 00016: val_loss did not improve from 0.19020
+Epoch 17/50
+147/147 [==============================] - 75s 513ms/step - loss: 0.1268 - accuracy: 0.9545 - roc_auc: 0.9874 - precision: 0.9638 - recall: 0.9750 - val_loss: 0.2166 - val_accuracy: 0.9195 - val_roc_auc: 0.9642 - val_precision: 0.9258 - val_recall: 0.9671
+
+Epoch 00017: val_loss did not improve from 0.19020
+Epoch 18/50
+147/147 [==============================] - 75s 507ms/step - loss: 0.1192 - accuracy: 0.9603 - roc_auc: 0.9881 - precision: 0.9699 - recall: 0.9760 - val_loss: 0.1833 - val_accuracy: 0.9247 - val_roc_auc: 0.9764 - val_precision: 0.9226 - val_recall: 0.9789
+
+Epoch 00018: val_loss improved from 0.19020 to 0.18330, saving model to /content/gdrive/My Drive/kaggle/ap-jrl-neumonia/chest_xray/modelo_neu_jrl.h5
+Epoch 19/50
+147/147 [==============================] - 74s 505ms/step - loss: 0.1029 - accuracy: 0.9590 - roc_auc: 0.9917 - precision: 0.9691 - recall: 0.9749 - val_loss: 0.2104 - val_accuracy: 0.9247 - val_roc_auc: 0.9704 - val_precision: 0.9189 - val_recall: 0.9836
+
+Epoch 00019: val_loss did not improve from 0.18330
+Epoch 20/50
+147/147 [==============================] - 74s 503ms/step - loss: 0.1014 - accuracy: 0.9584 - roc_auc: 0.9921 - precision: 0.9698 - recall: 0.9736 - val_loss: 0.1708 - val_accuracy: 0.9298 - val_roc_auc: 0.9781 - val_precision: 0.9385 - val_recall: 0.9671
+
+Epoch 00020: val_loss improved from 0.18330 to 0.17079, saving model to /content/gdrive/My Drive/kaggle/ap-jrl-neumonia/chest_xray/modelo_neu_jrl.h5
+Epoch 21/50
+147/147 [==============================] - 74s 503ms/step - loss: 0.1070 - accuracy: 0.9610 - roc_auc: 0.9901 - precision: 0.9708 - recall: 0.9754 - val_loss: 0.1602 - val_accuracy: 0.9366 - val_roc_auc: 0.9797 - val_precision: 0.9391 - val_recall: 0.9765
+
+Epoch 00021: val_loss improved from 0.17079 to 0.16020, saving model to /content/gdrive/My Drive/kaggle/ap-jrl-neumonia/chest_xray/modelo_neu_jrl.h5
+Epoch 22/50
+147/147 [==============================] - 73s 500ms/step - loss: 0.1012 - accuracy: 0.9653 - roc_auc: 0.9905 - precision: 0.9756 - recall: 0.9770 - val_loss: 0.1874 - val_accuracy: 0.9349 - val_roc_auc: 0.9746 - val_precision: 0.9350 - val_recall: 0.9789
+
+Epoch 00022: val_loss did not improve from 0.16020
+Epoch 23/50
+147/147 [==============================] - 73s 500ms/step - loss: 0.1084 - accuracy: 0.9615 - roc_auc: 0.9901 - precision: 0.9741 - recall: 0.9742 - val_loss: 0.2524 - val_accuracy: 0.9144 - val_roc_auc: 0.9698 - val_precision: 0.8966 - val_recall: 0.9977
+
+Epoch 00023: val_loss did not improve from 0.16020
+Epoch 24/50
+147/147 [==============================] - 73s 498ms/step - loss: 0.1120 - accuracy: 0.9575 - roc_auc: 0.9894 - precision: 0.9677 - recall: 0.9757 - val_loss: 0.1790 - val_accuracy: 0.9315 - val_roc_auc: 0.9737 - val_precision: 0.9427 - val_recall: 0.9648
+
+Epoch 00024: val_loss did not improve from 0.16020
+Epoch 25/50
+147/147 [==============================] - 73s 500ms/step - loss: 0.1013 - accuracy: 0.9618 - roc_auc: 0.9916 - precision: 0.9734 - recall: 0.9745 - val_loss: 0.2023 - val_accuracy: 0.9247 - val_roc_auc: 0.9730 - val_precision: 0.9207 - val_recall: 0.9812
+
+Epoch 00025: val_loss did not improve from 0.16020
+Epoch 26/50
+147/147 [==============================] - 73s 500ms/step - loss: 0.0908 - accuracy: 0.9652 - roc_auc: 0.9934 - precision: 0.9745 - recall: 0.9782 - val_loss: 0.1905 - val_accuracy: 0.9332 - val_roc_auc: 0.9711 - val_precision: 0.9368 - val_recall: 0.9742
+
+Epoch 00026: val_loss did not improve from 0.16020
+Epoch 27/50
+147/147 [==============================] - 73s 496ms/step - loss: 0.0940 - accuracy: 0.9651 - roc_auc: 0.9922 - precision: 0.9745 - recall: 0.9775 - val_loss: 0.1641 - val_accuracy: 0.9349 - val_roc_auc: 0.9729 - val_precision: 0.9429 - val_recall: 0.9695
+
+Epoch 00027: val_loss did not improve from 0.16020
+Epoch 28/50
+147/147 [==============================] - 73s 499ms/step - loss: 0.0756 - accuracy: 0.9710 - roc_auc: 0.9953 - precision: 0.9790 - recall: 0.9809 - val_loss: 0.2124 - val_accuracy: 0.9384 - val_roc_auc: 0.9706 - val_precision: 0.9314 - val_recall: 0.9883
+
+Epoch 00028: val_loss did not improve from 0.16020
+Epoch 29/50
+147/147 [==============================] - 73s 498ms/step - loss: 0.0840 - accuracy: 0.9711 - roc_auc: 0.9924 - precision: 0.9779 - recall: 0.9827 - val_loss: 0.1773 - val_accuracy: 0.9384 - val_roc_auc: 0.9714 - val_precision: 0.9314 - val_recall: 0.9883
+
+Epoch 00029: val_loss did not improve from 0.16020
+Epoch 30/50
+147/147 [==============================] - 73s 500ms/step - loss: 0.0792 - accuracy: 0.9663 - roc_auc: 0.9952 - precision: 0.9736 - recall: 0.9806 - val_loss: 0.1957 - val_accuracy: 0.9281 - val_roc_auc: 0.9742 - val_precision: 0.9248 - val_recall: 0.9812
+
+Epoch 00030: val_loss did not improve from 0.16020
+Epoch 31/50
+147/147 [==============================] - 73s 498ms/step - loss: 0.0940 - accuracy: 0.9641 - roc_auc: 0.9927 - precision: 0.9754 - recall: 0.9750 - val_loss: 0.2209 - val_accuracy: 0.9247 - val_roc_auc: 0.9691 - val_precision: 0.9152 - val_recall: 0.9883
+
+Epoch 00031: val_loss did not improve from 0.16020
+CPU times: user 35min 51s, sys: 1min 16s, total: 37min 8s
+Wall time: 38min 23s</code></pre>
+</div>
+</div>
+<section id="guarda-el-modelo-y-el-el-objeto-history" class="level4">
+<h4 class="anchored" data-anchor-id="guarda-el-modelo-y-el-el-objeto-history">Guarda el modelo y el el objeto <code>history</code></h4>
+<div id="cell-51" class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>model.save(<span class="ss">f"</span><span class="sc">{</span>root_path<span class="sc">}</span><span class="ss">/modelo_cnn_jrl_TRAINED.h5"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-52" class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pickle</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>history <span class="op">=</span> history.history</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="ss">f"</span><span class="sc">{</span>root_path<span class="sc">}</span><span class="ss">/history_cnn.pkl"</span>, <span class="st">'wb'</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>  pickle.dump(history, <span class="bu">file</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-53" class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Carga del modelo</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="co"># import pickle</span></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="co"># model = k.models.load_model(f"{root_path}/modelo_neu_jrl.h5")</span></span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="co"># with open(f"{root_path}/history_cnn.pkl", 'rb') as file:</span></span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a><span class="co">#   history = pickle.load( file )</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="evaluación-del-modelo" class="level2">
+<h2 class="anchored" data-anchor-id="evaluación-del-modelo">Evaluación del modelo</h2>
+<div id="cell-55" class="cell" data-outputid="ac9fd5d9-1103-4797-aa8d-533f6991f823">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co">#@title Desempeño de la red durante el entrenamiento</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="co">#@markdown (desplegar para ver el código)</span></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculamos el F1 score a partir de los resultados de Precision y Recall</span></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_f1_score(precision_arr, recall_arr):</span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>  epsilon       <span class="op">=</span> <span class="fl">1e-7</span></span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>  precision_arr <span class="op">=</span> np.array(precision_arr)</span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>  recall_arr    <span class="op">=</span> np.array(recall_arr)</span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>  f1 <span class="op">=</span> (<span class="dv">2</span>) <span class="op">*</span> (precision_arr<span class="op">*</span>recall_arr) <span class="op">/</span> <span class="op">\</span></span>
+<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a>      (precision_arr <span class="op">+</span> recall_arr <span class="op">+</span> epsilon)</span>
+<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> f1</span>
+<span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-13"><a href="#cb35-13" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_history(train_hist, suptitle<span class="op">=</span><span class="st">''</span>):</span>
+<span id="cb35-14"><a href="#cb35-14" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Agregar F1 score</span></span>
+<span id="cb35-15"><a href="#cb35-15" aria-hidden="true" tabindex="-1"></a>  train_hist[<span class="st">'F1_score'</span>]     <span class="op">=</span> get_f1_score(train_hist[<span class="st">'precision'</span>],</span>
+<span id="cb35-16"><a href="#cb35-16" aria-hidden="true" tabindex="-1"></a>                                    train_hist[<span class="st">'recall'</span>])</span>
+<span id="cb35-17"><a href="#cb35-17" aria-hidden="true" tabindex="-1"></a>  train_hist[<span class="st">'val_F1_score'</span>] <span class="op">=</span> get_f1_score(train_hist[<span class="st">'val_precision'</span>],</span>
+<span id="cb35-18"><a href="#cb35-18" aria-hidden="true" tabindex="-1"></a>                                    train_hist[<span class="st">'val_recall'</span>])</span>
+<span id="cb35-19"><a href="#cb35-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-20"><a href="#cb35-20" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Gráficas</span></span>
+<span id="cb35-21"><a href="#cb35-21" aria-hidden="true" tabindex="-1"></a>  metrics <span class="op">=</span> [key <span class="cf">for</span> key <span class="kw">in</span> train_hist.keys()</span>
+<span id="cb35-22"><a href="#cb35-22" aria-hidden="true" tabindex="-1"></a>              <span class="cf">if</span> <span class="kw">not</span> key.startswith(<span class="st">'val'</span>)]</span>
+<span id="cb35-23"><a href="#cb35-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-24"><a href="#cb35-24" aria-hidden="true" tabindex="-1"></a>  fig, ax <span class="op">=</span> plt.subplots(<span class="dv">2</span>, <span class="bu">int</span>(<span class="bu">len</span>(metrics)<span class="op">/</span><span class="dv">2</span>),</span>
+<span id="cb35-25"><a href="#cb35-25" aria-hidden="true" tabindex="-1"></a>                        figsize <span class="op">=</span> (<span class="dv">16</span>, <span class="dv">8</span>))</span>
+<span id="cb35-26"><a href="#cb35-26" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> i, metric <span class="kw">in</span> <span class="bu">enumerate</span>(metrics):</span>
+<span id="cb35-27"><a href="#cb35-27" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> i <span class="op">&lt;</span> <span class="dv">3</span>:</span>
+<span id="cb35-28"><a href="#cb35-28" aria-hidden="true" tabindex="-1"></a>      j <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb35-29"><a href="#cb35-29" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb35-30"><a href="#cb35-30" aria-hidden="true" tabindex="-1"></a>      i, j <span class="op">=</span> i <span class="op">-</span> <span class="dv">3</span>, <span class="dv">1</span></span>
+<span id="cb35-31"><a href="#cb35-31" aria-hidden="true" tabindex="-1"></a>    ax[j, i].plot(train_hist[metric])</span>
+<span id="cb35-32"><a href="#cb35-32" aria-hidden="true" tabindex="-1"></a>    ax[j, i].plot(train_hist[<span class="ss">f"val_</span><span class="sc">{</span>metric<span class="sc">}</span><span class="ss">"</span>])</span>
+<span id="cb35-33"><a href="#cb35-33" aria-hidden="true" tabindex="-1"></a>    ax[j, i].set_title(metric.replace(<span class="st">'_'</span>, <span class="st">' '</span>).capitalize())</span>
+<span id="cb35-34"><a href="#cb35-34" aria-hidden="true" tabindex="-1"></a>    ax[j, i].set_xlabel(<span class="st">'Épocas'</span>)</span>
+<span id="cb35-35"><a href="#cb35-35" aria-hidden="true" tabindex="-1"></a>    ax[j, i].grid()</span>
+<span id="cb35-36"><a href="#cb35-36" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> metric <span class="op">!=</span> <span class="st">'loss'</span>:</span>
+<span id="cb35-37"><a href="#cb35-37" aria-hidden="true" tabindex="-1"></a>      ax[j, i].set_ylim(<span class="fl">0.7</span>, <span class="fl">1.05</span>)</span>
+<span id="cb35-38"><a href="#cb35-38" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb35-39"><a href="#cb35-39" aria-hidden="true" tabindex="-1"></a>      ax[j, i].legend([<span class="st">'Train'</span>, <span class="st">'Val'</span>])</span>
+<span id="cb35-40"><a href="#cb35-40" aria-hidden="true" tabindex="-1"></a>  plt.tight_layout()</span>
+<span id="cb35-41"><a href="#cb35-41" aria-hidden="true" tabindex="-1"></a>  plt.suptitle(suptitle, y <span class="op">=</span> <span class="fl">1.02</span>)</span>
+<span id="cb35-42"><a href="#cb35-42" aria-hidden="true" tabindex="-1"></a>  plt.show()</span>
+<span id="cb35-43"><a href="#cb35-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-44"><a href="#cb35-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-45"><a href="#cb35-45" aria-hidden="true" tabindex="-1"></a><span class="co"># Ejecutamos la función</span></span>
+<span id="cb35-46"><a href="#cb35-46" aria-hidden="true" tabindex="-1"></a>train_hist <span class="op">=</span> history <span class="co">#.history.copy()</span></span>
+<span id="cb35-47"><a href="#cb35-47" aria-hidden="true" tabindex="-1"></a>plot_history(train_hist,</span>
+<span id="cb35-48"><a href="#cb35-48" aria-hidden="true" tabindex="-1"></a>      suptitle<span class="op">=</span><span class="st">'CNN: Métricas de evaluación en '</span> <span class="op">+</span></span>
+<span id="cb35-49"><a href="#cb35-49" aria-hidden="true" tabindex="-1"></a>      <span class="st">'los conjuntos de Entrenamiento y Validación'</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="2_ConvolutionalNN_PNEUMONIA_X_ray_files/figure-html/cell-29-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="evaluación-con-el-conjunto-de-prueba" class="level3">
+<h3 class="anchored" data-anchor-id="evaluación-con-el-conjunto-de-prueba">Evaluación con el conjunto de prueba</h3>
+<div id="cell-57" class="cell" data-outputid="8cf3494c-7394-4ab4-9769-c5b9d0b7282f">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>score_test <span class="op">=</span> model.evaluate(test_generator, batch_size<span class="op">=</span><span class="dv">128</span>)</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, j <span class="kw">in</span> <span class="bu">zip</span>(history.keys(), score_test):</span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="ss">f'</span><span class="sc">{</span>i<span class="sc">.</span>upper()<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>j<span class="sc">:.3f}</span><span class="ss">'</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>19/19 [==============================] - 5s 226ms/step - loss: 0.4822 - accuracy: 0.8904 - roc_auc: 0.9339 - precision: 0.8740 - recall: 0.9930
+LOSS: 0.482
+ACCURACY: 0.890
+ROC_AUC: 0.934
+PRECISION: 0.874
+RECALL: 0.993</code></pre>
+</div>
+</div>
+<p>Otenemos las etiquetas reales y las etiquetas predichas del conjunto de prueba.</p>
+<div id="cell-59" class="cell">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Etiquetas reales</span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>y_test <span class="op">=</span> test_generator.classes</span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Predicciones</span></span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>y_pred <span class="op">=</span> model.predict(test_generator)</span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>y_pred_classes <span class="op">=</span> (y_pred <span class="op">&gt;=</span> <span class="fl">0.5</span>).astype(<span class="st">'int32'</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="matriz-de-confusión" class="level4">
+<h4 class="anchored" data-anchor-id="matriz-de-confusión">Matriz de confusión</h4>
+<div id="cell-61" class="cell" data-outputid="6f3fb47b-9fdc-4871-834a-8527d6026e7b">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co">#@markdown (desplegar para ver el código)</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> confusion_matrix</span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_cfn_matrix(y_test, y_pred_classes, suptitle<span class="op">=</span><span class="st">''</span>):</span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>  cf_matrix <span class="op">=</span> confusion_matrix(y_test, y_pred_classes)</span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a>  labels_a <span class="op">=</span> np.array(</span>
+<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a>      [<span class="ss">f'</span><span class="sc">{</span>i<span class="sc">}</span><span class="ch">\n</span><span class="sc">{</span>j<span class="sc">}</span><span class="ss">'</span></span>
+<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a>      <span class="cf">for</span> i, j <span class="kw">in</span></span>
+<span id="cb39-11"><a href="#cb39-11" aria-hidden="true" tabindex="-1"></a>        <span class="bu">zip</span>([<span class="st">'TN'</span>, <span class="st">'FP'</span>, <span class="st">'FN'</span>, <span class="st">'TP'</span>],</span>
+<span id="cb39-12"><a href="#cb39-12" aria-hidden="true" tabindex="-1"></a>              cf_matrix.flatten()</span>
+<span id="cb39-13"><a href="#cb39-13" aria-hidden="true" tabindex="-1"></a>          )</span>
+<span id="cb39-14"><a href="#cb39-14" aria-hidden="true" tabindex="-1"></a>      ]).reshape(<span class="dv">2</span>,<span class="dv">2</span>)</span>
+<span id="cb39-15"><a href="#cb39-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-16"><a href="#cb39-16" aria-hidden="true" tabindex="-1"></a>  fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">4</span>))</span>
+<span id="cb39-17"><a href="#cb39-17" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Valores crudos</span></span>
+<span id="cb39-18"><a href="#cb39-18" aria-hidden="true" tabindex="-1"></a>  sns.heatmap(cf_matrix,</span>
+<span id="cb39-19"><a href="#cb39-19" aria-hidden="true" tabindex="-1"></a>              cmap <span class="op">=</span> <span class="st">'Reds'</span>, ax <span class="op">=</span> ax[<span class="dv">0</span>],</span>
+<span id="cb39-20"><a href="#cb39-20" aria-hidden="true" tabindex="-1"></a>              fmt <span class="op">=</span> <span class="st">''</span>, annot <span class="op">=</span> labels_a,</span>
+<span id="cb39-21"><a href="#cb39-21" aria-hidden="true" tabindex="-1"></a>              cbar_kws<span class="op">=</span>{<span class="st">'label'</span>: <span class="st">'Imágenes'</span>})</span>
+<span id="cb39-22"><a href="#cb39-22" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Porcentajes</span></span>
+<span id="cb39-23"><a href="#cb39-23" aria-hidden="true" tabindex="-1"></a>  sns.heatmap(cf_matrix<span class="op">/</span>np.<span class="bu">sum</span>(cf_matrix),</span>
+<span id="cb39-24"><a href="#cb39-24" aria-hidden="true" tabindex="-1"></a>              cmap <span class="op">=</span> <span class="st">'Blues'</span>, ax <span class="op">=</span> ax[<span class="dv">1</span>],</span>
+<span id="cb39-25"><a href="#cb39-25" aria-hidden="true" tabindex="-1"></a>              fmt <span class="op">=</span> <span class="st">'.2%'</span>, annot <span class="op">=</span> <span class="va">True</span>,</span>
+<span id="cb39-26"><a href="#cb39-26" aria-hidden="true" tabindex="-1"></a>              cbar_kws<span class="op">=</span>{<span class="st">'label'</span>: <span class="st">'Porcentaje'</span>})</span>
+<span id="cb39-27"><a href="#cb39-27" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>):</span>
+<span id="cb39-28"><a href="#cb39-28" aria-hidden="true" tabindex="-1"></a>    ax[i].<span class="bu">set</span>(aspect <span class="op">=</span> <span class="st">"equal"</span>,</span>
+<span id="cb39-29"><a href="#cb39-29" aria-hidden="true" tabindex="-1"></a>              xlabel <span class="op">=</span> <span class="st">'Predichos'</span>, ylabel <span class="op">=</span> <span class="st">'Reales'</span>)</span>
+<span id="cb39-30"><a href="#cb39-30" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> _, spine <span class="kw">in</span> ax[i].spines.items():</span>
+<span id="cb39-31"><a href="#cb39-31" aria-hidden="true" tabindex="-1"></a>      spine.set_visible(<span class="va">True</span>)</span>
+<span id="cb39-32"><a href="#cb39-32" aria-hidden="true" tabindex="-1"></a>  plt.suptitle(suptitle, y <span class="op">=</span> <span class="fl">1.05</span>)</span>
+<span id="cb39-33"><a href="#cb39-33" aria-hidden="true" tabindex="-1"></a>  plt.tight_layout()</span>
+<span id="cb39-34"><a href="#cb39-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-35"><a href="#cb39-35" aria-hidden="true" tabindex="-1"></a><span class="co"># Genera la gráfica</span></span>
+<span id="cb39-36"><a href="#cb39-36" aria-hidden="true" tabindex="-1"></a>plot_cfn_matrix(y_test, y_pred_classes,</span>
+<span id="cb39-37"><a href="#cb39-37" aria-hidden="true" tabindex="-1"></a>    suptitle<span class="op">=</span><span class="st">'Matriz de confusión CNN (conjunto de prueba)'</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="2_ConvolutionalNN_PNEUMONIA_X_ray_files/figure-html/cell-32-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="curva-roc-y-curva-de-precisión-sensibilidad" class="level4">
+<h4 class="anchored" data-anchor-id="curva-roc-y-curva-de-precisión-sensibilidad">Curva ROC y Curva de Precisión Sensibilidad</h4>
+<p>Para esta evaluación usamos las métricas: - Área bajo la curva ROC. - Promedio de Precisión-Sensibilidad (<em>avgPR</em>): &gt; <span class="math inline">\(\text{AP} = \sum_n (R_n - R_{n-1}) P_n\)</span></p>
+<div id="cell-63" class="cell" data-outputid="f4384b93-7038-4aad-d1d5-b2caabff1dce">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co">#@markdown (desplegar para ver el código)</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> roc_auc_score, roc_curve, <span class="op">\</span></span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>          f1_score, precision_recall_curve, average_precision_score</span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_roc_and_pr_curves(y_test, y_pred,</span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a>                           suptitle<span class="op">=</span><span class="st">''</span>, name <span class="op">=</span> <span class="st">''</span>):</span>
+<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a>  auc_ <span class="op">=</span> roc_auc_score(y_test, y_pred)</span>
+<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a>  f1_score_ <span class="op">=</span> roc_auc_score(y_test, y_pred)</span>
+<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a>  vg_pr_score <span class="op">=</span> average_precision_score(y_test, y_pred)</span>
+<span id="cb40-11"><a href="#cb40-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-12"><a href="#cb40-12" aria-hidden="true" tabindex="-1"></a>  fpr, tpr, _ <span class="op">=</span> roc_curve(y_test, y_pred)</span>
+<span id="cb40-13"><a href="#cb40-13" aria-hidden="true" tabindex="-1"></a>  prec_, recall_, _ <span class="op">=</span> precision_recall_curve(y_test, y_pred)</span>
+<span id="cb40-14"><a href="#cb40-14" aria-hidden="true" tabindex="-1"></a>  pr_baseline <span class="op">=</span> y_test.<span class="bu">sum</span>() <span class="op">/</span> <span class="bu">len</span>(y_test)</span>
+<span id="cb40-15"><a href="#cb40-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-16"><a href="#cb40-16" aria-hidden="true" tabindex="-1"></a>  fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">14</span>, <span class="dv">6</span>))</span>
+<span id="cb40-17"><a href="#cb40-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-18"><a href="#cb40-18" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Curva ROC</span></span>
+<span id="cb40-19"><a href="#cb40-19" aria-hidden="true" tabindex="-1"></a>  ax[<span class="dv">0</span>].plot(fpr, tpr, c <span class="op">=</span> <span class="st">'#00A3A4'</span>,</span>
+<span id="cb40-20"><a href="#cb40-20" aria-hidden="true" tabindex="-1"></a>            linewidth <span class="op">=</span> <span class="dv">4</span>, label <span class="op">=</span> <span class="ss">f'</span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>auc_<span class="sc">:.3f}</span><span class="ss"> AUC'</span>)</span>
+<span id="cb40-21"><a href="#cb40-21" aria-hidden="true" tabindex="-1"></a>  ax[<span class="dv">0</span>].plot([<span class="dv">0</span>, <span class="dv">1</span>], [<span class="dv">0</span>, <span class="dv">1</span>], c <span class="op">=</span> <span class="st">'gray'</span>,</span>
+<span id="cb40-22"><a href="#cb40-22" aria-hidden="true" tabindex="-1"></a>            linestyle <span class="op">=</span> <span class="st">'--'</span>, label <span class="op">=</span> <span class="st">'Aleatorio'</span>)</span>
+<span id="cb40-23"><a href="#cb40-23" aria-hidden="true" tabindex="-1"></a>  ax[<span class="dv">0</span>].legend()</span>
+<span id="cb40-24"><a href="#cb40-24" aria-hidden="true" tabindex="-1"></a>  ax[<span class="dv">0</span>].<span class="bu">set</span>(xlabel <span class="op">=</span> <span class="st">'1 - Especificidad (FPR)'</span>,</span>
+<span id="cb40-25"><a href="#cb40-25" aria-hidden="true" tabindex="-1"></a>            ylabel <span class="op">=</span> <span class="st">'Sensibilidad (TPR)'</span>)</span>
+<span id="cb40-26"><a href="#cb40-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-27"><a href="#cb40-27" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Curva de Precision-Sensibilidad</span></span>
+<span id="cb40-28"><a href="#cb40-28" aria-hidden="true" tabindex="-1"></a>  ax[<span class="dv">1</span>].plot(recall_, prec_, c <span class="op">=</span> <span class="st">'#F48000'</span>,</span>
+<span id="cb40-29"><a href="#cb40-29" aria-hidden="true" tabindex="-1"></a>            linewidth <span class="op">=</span> <span class="dv">4</span>, label <span class="op">=</span> <span class="ss">f'</span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>vg_pr_score<span class="sc">:.3f}</span><span class="ss"> avgPR'</span>)</span>
+<span id="cb40-30"><a href="#cb40-30" aria-hidden="true" tabindex="-1"></a>  ax[<span class="dv">1</span>].plot([<span class="dv">0</span>, <span class="dv">1</span>], [pr_baseline, pr_baseline], c <span class="op">=</span> <span class="st">'gray'</span>,</span>
+<span id="cb40-31"><a href="#cb40-31" aria-hidden="true" tabindex="-1"></a>            linestyle <span class="op">=</span> <span class="st">'--'</span>, label <span class="op">=</span> <span class="st">'Aleatorio'</span>)</span>
+<span id="cb40-32"><a href="#cb40-32" aria-hidden="true" tabindex="-1"></a>  ax[<span class="dv">1</span>].legend()</span>
+<span id="cb40-33"><a href="#cb40-33" aria-hidden="true" tabindex="-1"></a>  ax[<span class="dv">1</span>].<span class="bu">set</span>(xlabel <span class="op">=</span> <span class="st">'Sensibilidad'</span>,</span>
+<span id="cb40-34"><a href="#cb40-34" aria-hidden="true" tabindex="-1"></a>            ylabel <span class="op">=</span> <span class="st">'Precisión'</span>)</span>
+<span id="cb40-35"><a href="#cb40-35" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> i, title <span class="kw">in</span> <span class="bu">enumerate</span>([<span class="st">'Curva ROC'</span>,</span>
+<span id="cb40-36"><a href="#cb40-36" aria-hidden="true" tabindex="-1"></a>                            <span class="st">'Curva Precisión-Sensibilidad'</span>]):</span>
+<span id="cb40-37"><a href="#cb40-37" aria-hidden="true" tabindex="-1"></a>    ax[i].<span class="bu">set</span>(aspect<span class="op">=</span><span class="st">'equal'</span>, ylim<span class="op">=</span>(<span class="dv">0</span>,<span class="fl">1.02</span>), title<span class="op">=</span>title)</span>
+<span id="cb40-38"><a href="#cb40-38" aria-hidden="true" tabindex="-1"></a>    ax[i].grid(<span class="va">True</span>)</span>
+<span id="cb40-39"><a href="#cb40-39" aria-hidden="true" tabindex="-1"></a>  plt.tight_layout()</span>
+<span id="cb40-40"><a href="#cb40-40" aria-hidden="true" tabindex="-1"></a>  plt.suptitle(suptitle, y <span class="op">=</span> <span class="fl">1.02</span>)</span>
+<span id="cb40-41"><a href="#cb40-41" aria-hidden="true" tabindex="-1"></a>  plt.show()</span>
+<span id="cb40-42"><a href="#cb40-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-43"><a href="#cb40-43" aria-hidden="true" tabindex="-1"></a><span class="co"># Genera la gráfica</span></span>
+<span id="cb40-44"><a href="#cb40-44" aria-hidden="true" tabindex="-1"></a>plot_roc_and_pr_curves(y_test, y_pred,</span>
+<span id="cb40-45"><a href="#cb40-45" aria-hidden="true" tabindex="-1"></a>          suptitle<span class="op">=</span><span class="st">'Desempeño CNN'</span>, name <span class="op">=</span> <span class="st">'CNN'</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="2_ConvolutionalNN_PNEUMONIA_X_ray_files/figure-html/cell-33-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="interpretación-de-resultados" class="level3">
+<h3 class="anchored" data-anchor-id="interpretación-de-resultados">Interpretación de Resultados</h3>
+<p><strong>Vemos que la CNN obtiene buenos valores de desempeño en todas las métricas.</strong> - En particular <strong>nos interesa que la sensibilidad del modelo sea alta (0.98)</strong> y por consecuencia que el número de Falsos Negativos sea bajo (9 FN). - Se observa que <strong>el modelo sólo identificó 9 Falsos Negativos</strong>, lo cual es un buen resultado pues nos interesa que casos verdaderos de neumonía <strong>NO</strong> sean identificados como casos NORMALES. - El <strong>modelo tiene una mayor sensibilidad (0.98) que precisión (0.89)</strong>. Es un buen resultado, pero hay que considerar que esto también es consecuencia de que en el conjunto de datos haya considerablemente más ejemplos positivos que negativos.</p>
+<hr>
+</section>
+</section>
+</section>
+<section id="transferencia-de-conocimiento" class="level1">
+<h1>Transferencia de conocimiento</h1>
+<section id="uso-de-la-red-vgg16" class="level2">
+<h2 class="anchored" data-anchor-id="uso-de-la-red-vgg16">Uso de la red VGG16</h2>
+<p>Para esta fase vamos a implementar el método de transferencia de conocimiento (<em>Transfer learning</em>) usando la red <strong>VGG16</strong> (Simonyan and Zisserman, 2015).</p>
+<div id="cell-67" class="cell">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tensorflow.keras.applications <span class="im">import</span> VGG16</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>vgg16 <span class="op">=</span> VGG16(weights     <span class="op">=</span> <span class="st">'imagenet'</span>,</span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>              include_top <span class="op">=</span> <span class="va">False</span>,</span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>              <span class="co"># Definimos el tamaño de la capa de entrada</span></span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>              <span class="co"># igual a las dimensiones de las imágenes</span></span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a>              input_shape <span class="op">=</span> (IMG_HEIGHT, IMG_WIDTH, <span class="dv">3</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="visualizamos-la-arquitectura-de-la-vgg16" class="level4">
+<h4 class="anchored" data-anchor-id="visualizamos-la-arquitectura-de-la-vgg16">Visualizamos la arquitectura de la VGG16</h4>
+<div id="cell-69" class="cell" data-outputid="ae2945cc-f6ae-4f4b-f36c-0b42da36af4f">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>visualkeras.layered_view(vgg16, scale_xy<span class="op">=</span><span class="dv">1</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="37">
+<div>
+<figure class="figure">
+<p><img src="2_ConvolutionalNN_PNEUMONIA_X_ray_files/figure-html/cell-35-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="cell-70" class="cell" data-outputid="c0b5bacc-b52c-4b50-ed10-f537cfdb8319">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tensorflow.keras.layers <span class="im">import</span> Input</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Creamos nuestro nuevo modelo</span></span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Primero congelamos los pesos de las primeras capas de VGG16</span></span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>vgg16.trainable <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a>model_vgg16 <span class="op">=</span> Sequential()</span>
+<span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Añadimos a VGG16 como si fuese una capa</span></span>
+<span id="cb43-9"><a href="#cb43-9" aria-hidden="true" tabindex="-1"></a>model_vgg16.add(Input(shape <span class="op">=</span> (IMG_HEIGHT, IMG_WIDTH, <span class="dv">3</span>)))</span>
+<span id="cb43-10"><a href="#cb43-10" aria-hidden="true" tabindex="-1"></a>model_vgg16.add(vgg16)</span>
+<span id="cb43-11"><a href="#cb43-11" aria-hidden="true" tabindex="-1"></a>model_vgg16.add(Flatten())</span>
+<span id="cb43-12"><a href="#cb43-12" aria-hidden="true" tabindex="-1"></a>model_vgg16.add(Dense(<span class="dv">128</span>,</span>
+<span id="cb43-13"><a href="#cb43-13" aria-hidden="true" tabindex="-1"></a>                  activation<span class="op">=</span><span class="st">'relu'</span>))</span>
+<span id="cb43-14"><a href="#cb43-14" aria-hidden="true" tabindex="-1"></a>model_vgg16.add(Dropout(<span class="fl">0.4</span>))</span>
+<span id="cb43-15"><a href="#cb43-15" aria-hidden="true" tabindex="-1"></a>model_vgg16.add(Dense(<span class="dv">1</span>,</span>
+<span id="cb43-16"><a href="#cb43-16" aria-hidden="true" tabindex="-1"></a>                      activation<span class="op">=</span><span class="st">'sigmoid'</span>,</span>
+<span id="cb43-17"><a href="#cb43-17" aria-hidden="true" tabindex="-1"></a>                      bias_initializer <span class="op">=</span> output_bias))</span>
+<span id="cb43-18"><a href="#cb43-18" aria-hidden="true" tabindex="-1"></a>model_vgg16.summary()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Model: "sequential_1"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+vgg16 (Functional)           (None, 4, 4, 512)         14714688  
+_________________________________________________________________
+flatten_1 (Flatten)          (None, 8192)              0         
+_________________________________________________________________
+dense_2 (Dense)              (None, 128)               1048704   
+_________________________________________________________________
+dropout_3 (Dropout)          (None, 128)               0         
+_________________________________________________________________
+dense_3 (Dense)              (None, 1)                 129       
+=================================================================
+Total params: 15,763,521
+Trainable params: 1,048,833
+Non-trainable params: 14,714,688
+_________________________________________________________________</code></pre>
+</div>
+</div>
+<p>Listo, el modelo tiene 524,417 de parámetros entrenables.</p>
+</section>
+<section id="compilamos-el-modelo-basado-en-vgg16" class="level3">
+<h3 class="anchored" data-anchor-id="compilamos-el-modelo-basado-en-vgg16">Compilamos el modelo basado en VGG16</h3>
+<div id="cell-73" class="cell">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Usamos las mismas métricas de evaluación</span></span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>metrics <span class="op">=</span> [BinaryAccuracy(name <span class="op">=</span> <span class="st">'accuracy'</span>),</span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>           AUC(name <span class="op">=</span> <span class="st">'roc_auc'</span>),</span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>           Precision(name <span class="op">=</span><span class="st">'precision'</span>),</span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a>           Recall(name <span class="op">=</span> <span class="st">'recall'</span>)</span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a>          ]</span>
+<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Compilamos el modelo</span></span>
+<span id="cb45-9"><a href="#cb45-9" aria-hidden="true" tabindex="-1"></a>model_vgg16.<span class="bu">compile</span>(</span>
+<span id="cb45-10"><a href="#cb45-10" aria-hidden="true" tabindex="-1"></a>    optimizer <span class="op">=</span> optimizer,</span>
+<span id="cb45-11"><a href="#cb45-11" aria-hidden="true" tabindex="-1"></a>    loss      <span class="op">=</span> <span class="st">'binary_crossentropy'</span>,</span>
+<span id="cb45-12"><a href="#cb45-12" aria-hidden="true" tabindex="-1"></a>    metrics   <span class="op">=</span> metrics</span>
+<span id="cb45-13"><a href="#cb45-13" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="entrenamiento-del-moelo-basado-en-vgg16" class="level3">
+<h3 class="anchored" data-anchor-id="entrenamiento-del-moelo-basado-en-vgg16">Entrenamiento del moelo basado en VGG16</h3>
+<section id="callbacks-1" class="level4">
+<h4 class="anchored" data-anchor-id="callbacks-1">Callbacks</h4>
+<div id="cell-75" class="cell">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>BATCH_SIZE <span class="op">=</span> <span class="dv">64</span></span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>EPOCHS <span class="op">=</span> <span class="dv">50</span></span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a><span class="co"># ModelCheckpoint</span></span>
+<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a>model_filepath <span class="op">=</span> <span class="ss">f"</span><span class="sc">{</span>root_path<span class="sc">}</span><span class="ss">/modelo_vgg16_jrl.h5"</span></span>
+<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a>checkpoint_vgg16 <span class="op">=</span> ModelCheckpoint(model_filepath,</span>
+<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a>                monitor        <span class="op">=</span> <span class="st">'val_loss'</span>,</span>
+<span id="cb46-8"><a href="#cb46-8" aria-hidden="true" tabindex="-1"></a>                verbose        <span class="op">=</span> <span class="dv">1</span>,</span>
+<span id="cb46-9"><a href="#cb46-9" aria-hidden="true" tabindex="-1"></a>                save_best_only <span class="op">=</span> <span class="va">True</span>,</span>
+<span id="cb46-10"><a href="#cb46-10" aria-hidden="true" tabindex="-1"></a>                mode           <span class="op">=</span> <span class="st">'min'</span></span>
+<span id="cb46-11"><a href="#cb46-11" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb46-12"><a href="#cb46-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-13"><a href="#cb46-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Lista de Callbacks</span></span>
+<span id="cb46-14"><a href="#cb46-14" aria-hidden="true" tabindex="-1"></a>callbacks_list_vgg16 <span class="op">=</span> [checkpoint_vgg16, early_stop]</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="entrenamiento-de-la-red-1" class="level3">
+<h3 class="anchored" data-anchor-id="entrenamiento-de-la-red-1">Entrenamiento de la red</h3>
+<div id="cell-77" class="cell" data-outputid="f0c0a654-67c2-4318-bedf-0adf07941b3b">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>time</span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Entrenamiento</span></span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>history_vgg16 <span class="op">=</span> model_vgg16.fit(</span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>          train_generator,</span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a>          validation_data <span class="op">=</span> val_generator,</span>
+<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a>          epochs          <span class="op">=</span> EPOCHS,</span>
+<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a>          batch_size      <span class="op">=</span> BATCH_SIZE,</span>
+<span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a>          callbacks       <span class="op">=</span> callbacks_list_vgg16</span>
+<span id="cb47-9"><a href="#cb47-9" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Epoch 1/50
+147/147 [==============================] - 86s 555ms/step - loss: 1.1479 - accuracy: 0.8489 - roc_auc: 0.8704 - precision: 0.8874 - recall: 0.9027 - val_loss: 0.2040 - val_accuracy: 0.9195 - val_roc_auc: 0.9656 - val_precision: 0.9397 - val_recall: 0.9507
+
+Epoch 00001: val_loss improved from inf to 0.20395, saving model to /content/gdrive/My Drive/kaggle/ap-jrl-neumonia/chest_xray/modelo_vgg16_jrl.h5
+Epoch 2/50
+147/147 [==============================] - 78s 532ms/step - loss: 0.1513 - accuracy: 0.9360 - roc_auc: 0.9830 - precision: 0.9473 - recall: 0.9647 - val_loss: 0.2019 - val_accuracy: 0.9195 - val_roc_auc: 0.9677 - val_precision: 0.9566 - val_recall: 0.9319
+
+Epoch 00002: val_loss improved from 0.20395 to 0.20186, saving model to /content/gdrive/My Drive/kaggle/ap-jrl-neumonia/chest_xray/modelo_vgg16_jrl.h5
+Epoch 3/50
+147/147 [==============================] - 79s 534ms/step - loss: 0.1478 - accuracy: 0.9409 - roc_auc: 0.9826 - precision: 0.9522 - recall: 0.9677 - val_loss: 0.1855 - val_accuracy: 0.9315 - val_roc_auc: 0.9702 - val_precision: 0.9447 - val_recall: 0.9624
+
+Epoch 00003: val_loss improved from 0.20186 to 0.18551, saving model to /content/gdrive/My Drive/kaggle/ap-jrl-neumonia/chest_xray/modelo_vgg16_jrl.h5
+Epoch 4/50
+147/147 [==============================] - 79s 536ms/step - loss: 0.1204 - accuracy: 0.9525 - roc_auc: 0.9894 - precision: 0.9611 - recall: 0.9739 - val_loss: 0.2082 - val_accuracy: 0.9161 - val_roc_auc: 0.9646 - val_precision: 0.9255 - val_recall: 0.9624
+
+Epoch 00004: val_loss did not improve from 0.18551
+Epoch 5/50
+147/147 [==============================] - 79s 535ms/step - loss: 0.1245 - accuracy: 0.9509 - roc_auc: 0.9870 - precision: 0.9662 - recall: 0.9675 - val_loss: 0.2068 - val_accuracy: 0.9281 - val_roc_auc: 0.9661 - val_precision: 0.9507 - val_recall: 0.9507
+
+Epoch 00005: val_loss did not improve from 0.18551
+Epoch 6/50
+147/147 [==============================] - 78s 529ms/step - loss: 0.1235 - accuracy: 0.9502 - roc_auc: 0.9887 - precision: 0.9623 - recall: 0.9682 - val_loss: 0.2046 - val_accuracy: 0.9264 - val_roc_auc: 0.9652 - val_precision: 0.9423 - val_recall: 0.9577
+
+Epoch 00006: val_loss did not improve from 0.18551
+Epoch 7/50
+147/147 [==============================] - 78s 529ms/step - loss: 0.1050 - accuracy: 0.9607 - roc_auc: 0.9913 - precision: 0.9653 - recall: 0.9817 - val_loss: 0.2287 - val_accuracy: 0.9264 - val_roc_auc: 0.9627 - val_precision: 0.9362 - val_recall: 0.9648
+
+Epoch 00007: val_loss did not improve from 0.18551
+Epoch 8/50
+147/147 [==============================] - 77s 526ms/step - loss: 0.1014 - accuracy: 0.9596 - roc_auc: 0.9922 - precision: 0.9672 - recall: 0.9774 - val_loss: 0.1935 - val_accuracy: 0.9332 - val_roc_auc: 0.9651 - val_precision: 0.9510 - val_recall: 0.9577
+
+Epoch 00008: val_loss did not improve from 0.18551
+Epoch 9/50
+147/147 [==============================] - 78s 528ms/step - loss: 0.1184 - accuracy: 0.9494 - roc_auc: 0.9893 - precision: 0.9589 - recall: 0.9726 - val_loss: 0.1990 - val_accuracy: 0.9298 - val_roc_auc: 0.9657 - val_precision: 0.9385 - val_recall: 0.9671
+
+Epoch 00009: val_loss did not improve from 0.18551
+Epoch 10/50
+147/147 [==============================] - 77s 527ms/step - loss: 0.1041 - accuracy: 0.9570 - roc_auc: 0.9919 - precision: 0.9625 - recall: 0.9785 - val_loss: 0.2304 - val_accuracy: 0.9195 - val_roc_auc: 0.9627 - val_precision: 0.9165 - val_recall: 0.9789
+
+Epoch 00010: val_loss did not improve from 0.18551
+Epoch 11/50
+147/147 [==============================] - 77s 526ms/step - loss: 0.1035 - accuracy: 0.9583 - roc_auc: 0.9921 - precision: 0.9638 - recall: 0.9792 - val_loss: 0.2082 - val_accuracy: 0.9229 - val_roc_auc: 0.9659 - val_precision: 0.9281 - val_recall: 0.9695
+
+Epoch 00011: val_loss did not improve from 0.18551
+Epoch 12/50
+147/147 [==============================] - 77s 526ms/step - loss: 0.0845 - accuracy: 0.9629 - roc_auc: 0.9940 - precision: 0.9687 - recall: 0.9814 - val_loss: 0.1949 - val_accuracy: 0.9315 - val_roc_auc: 0.9654 - val_precision: 0.9488 - val_recall: 0.9577
+
+Epoch 00012: val_loss did not improve from 0.18551
+Epoch 13/50
+147/147 [==============================] - 78s 527ms/step - loss: 0.1085 - accuracy: 0.9587 - roc_auc: 0.9905 - precision: 0.9679 - recall: 0.9766 - val_loss: 0.1864 - val_accuracy: 0.9298 - val_roc_auc: 0.9678 - val_precision: 0.9385 - val_recall: 0.9671
+
+Epoch 00013: val_loss did not improve from 0.18551</code></pre>
+</div>
+</div>
+<div id="cell-78" class="cell">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>model_vgg16.save(<span class="ss">f"</span><span class="sc">{</span>root_path<span class="sc">}</span><span class="ss">/modelo_vgg16_jrl_TRAINED.h5"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-79" class="cell">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>history_vgg16 <span class="op">=</span> history_vgg16.history</span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="ss">f"</span><span class="sc">{</span>root_path<span class="sc">}</span><span class="ss">/history_cnn_vgg16.pkl"</span>, <span class="st">'wb'</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>  pickle.dump(history_vgg16, <span class="bu">file</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-80" class="cell" data-outputid="f5056d7d-7d09-4d2a-9ef4-c1629b92b31b">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ejecutamos la función</span></span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>train_hist_v16 <span class="op">=</span> history_vgg16.copy()</span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>plot_history(train_hist_v16,</span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a>      suptitle<span class="op">=</span><span class="st">'VGG16-base: Métricas de evaluación en '</span> <span class="op">+</span></span>
+<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a>      <span class="st">'los conjuntos de Entrenamiento y Validación'</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="2_ConvolutionalNN_PNEUMONIA_X_ray_files/figure-html/cell-42-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="cell-81" class="cell" data-outputid="622a4d25-8efa-4c5a-fb2b-29d5a61d652b">
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>score_test_vgg16 <span class="op">=</span> model_vgg16.evaluate(test_generator, batch_size<span class="op">=</span><span class="dv">64</span>)</span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, j <span class="kw">in</span> <span class="bu">zip</span>(train_hist_v16.keys(), score_test_vgg16):</span>
+<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="ss">f'</span><span class="sc">{</span>i<span class="sc">.</span>upper()<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>j<span class="sc">:.2f}</span><span class="ss">'</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>19/19 [==============================] - 5s 251ms/step - loss: 0.2621 - accuracy: 0.9092 - roc_auc: 0.9625 - precision: 0.8943 - recall: 0.9930
+LOSS: 0.26
+ACCURACY: 0.91
+ROC_AUC: 0.96
+PRECISION: 0.89
+RECALL: 0.99</code></pre>
+</div>
+</div>
+<div id="cell-82" class="cell">
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Etiquetas reales</span></span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="co"># y_test = test_generator.classes</span></span>
+<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Predicciones</span></span>
+<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a>y_pred_v16 <span class="op">=</span> model_vgg16.predict(test_generator)</span>
+<span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a>y_pred_classes_v16 <span class="op">=</span> (y_pred_v16 <span class="op">&gt;=</span> <span class="fl">0.5</span>).astype(<span class="st">'int32'</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-83" class="cell" data-outputid="b6308434-bbc6-43a2-d8e9-558ba09a41c5">
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="co">#@markdown (desplegar para ver el código)</span></span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Genera la gráfica</span></span>
+<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a>plot_cfn_matrix(y_test, y_pred_classes_v16,</span>
+<span id="cb55-5"><a href="#cb55-5" aria-hidden="true" tabindex="-1"></a>    suptitle<span class="op">=</span><span class="st">'Matriz de confusión VGG16-base (conjunto de prueba)'</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="2_ConvolutionalNN_PNEUMONIA_X_ray_files/figure-html/cell-45-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="cell-84" class="cell" data-outputid="e2042ab8-d736-4290-8a31-d839e3390f0c">
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Genera la gráfica</span></span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>plot_roc_and_pr_curves(y_test, y_pred_v16,</span>
+<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>          suptitle <span class="op">=</span> <span class="st">'Desempeño VGG16-base'</span>,</span>
+<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a>          name <span class="op">=</span> <span class="st">'VGG16'</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="2_ConvolutionalNN_PNEUMONIA_X_ray_files/figure-html/cell-46-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="interpretación-de-resultados-1" class="level2">
+<h2 class="anchored" data-anchor-id="interpretación-de-resultados-1">Interpretación de Resultados</h2>
+<p>La red VGG16 mostró buenos resultados, teniendo un desempeño similar al de la primer red (CNN) en términos de Sensibilidad. Sin embargo, mostró una mejora en la precisión y por consiguiente en el Área bajo la curva ROC, así como un mayor valor de <em>avgPR</em>.</p>
+</section>
+</section>
+<section id="referencias" class="level1">
+<h1>Referencias</h1>
+<ol type="1">
+<li>Mariano Rivera (2018). <strong><a href="http://personal.cimat.mx:8181/~mrivera/cursos/aprendizaje_profundo/preentrenadas/preentrenadas.html">Reeuso de Redes Preentrenadas</a></strong>. <em>Consultado el 18 de marzo del 2021.</em></li>
+<li>Eunjoo Byeon (2020). <strong><a href="https://towardsdatascience.com/exploratory-data-analysis-ideas-for-image-classification-d3fc6bbfb2d2">Exploratory Data Analysis Ideas for Image Classification</a></strong>. En towardsdatascience.com. <em>Consultado el 18 de marzo del 2021.</em></li>
+<li>Paul Mooney (2018). <strong><a href="https://www.kaggle.com/paultimothymooney/chest-xray-pneumonia">Chest X-Ray Images (Pneumonia)</a></strong>. En kaggle.com. <em>Consultado el 18 de marzo del 2021.</em></li>
+<li>Chollet, Francois (2017). <strong>Deep Learning with Python.</strong> New York, NY: Manning Publications.</li>
+</ol>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copiado");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copiado");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
