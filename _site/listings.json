@@ -2,9 +2,12 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/Presentaciones/ImagenAI.html",
       "/posts/code/PruebaMonai.html",
+      "/posts/code/Neumonia.html",
       "/posts/Presentaciones/IntroIM.html",
-      "/posts/Presentaciones/Datos_1.html"
+      "/posts/Presentaciones/Datos_1.html",
+      "/posts/code/Embedding.html"
     ]
   }
 ]

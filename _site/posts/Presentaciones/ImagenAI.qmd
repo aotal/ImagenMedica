@@ -32,7 +32,7 @@ jupyter: python3
 Notes
 :::
 
-# Knowledge map
+# AI-assisted diagnosis
 
 ```{=html}
 
@@ -60,7 +60,7 @@ Notes
 Notes
 :::
 
-# Knowledge map
+# Segmentation of organs, tissues and tumors
 
 ```{=html}
 
@@ -76,7 +76,7 @@ Notes
 Notes
 :::
 
-# Knowledge map
+# Synthetic image generation with AI
 
 ```{=html}
 
@@ -92,7 +92,7 @@ Notes
 Notes
 :::
 
-# Knowledge map
+# Image quality improvement through AI
 
 ```{=html}
 
@@ -107,13 +107,3 @@ Notes
 ::: notes
 Notes
 :::
-
-# Knowledge map
-
-```{=html}
-
-<iframe width="1260" height="756" src="https://openknowledgemaps.org/map/583ebd3fea23351b1cb1cf374612ce52?embed=true" 
-                                allow="clipboard-write; self https://openknowledgemaps.org/;"></iframe>
-
-
-```
