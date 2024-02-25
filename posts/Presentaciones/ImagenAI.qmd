@@ -52,7 +52,11 @@ Notes
 - Diagnóstico diferencial
 - Reducción de errores
 
-## 
+## Convolutional Neural Network
+
+![](https://www.mdpi.com/electronics/electronics-11-01775/article_deploy/html/images/electronics-11-01775-g001.png)
+
+
 
 # Segmentación de órganos y tejidos
 
