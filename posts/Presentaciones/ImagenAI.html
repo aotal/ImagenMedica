@@ -11,7 +11,7 @@
 <script src="../../site_libs/quarto-contrib/reveal-header-1.0.0/add_header.js" defer="true"></script>
 <link href="../../site_libs/quarto-contrib/reveal-header-1.0.0/add_header.css" rel="stylesheet">
 <link href="../../site_libs/quarto-contrib/grid-no-htext-1.0.0/grid_no_htext.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.3.450">
+  <meta name="generator" content="quarto-1.4.550">
 
   <meta name="author" content="Antonio Otal Palacín">
   <meta name="dcterms.date" content="2024-02-26">
@@ -37,6 +37,7 @@
     div.csl-bib-body { }
     div.csl-entry {
       clear: both;
+      margin-bottom: 0em;
     }
     .hanging-indent div.csl-entry {
       margin-left:2em;
@@ -180,7 +181,8 @@
   }
 
   .callout.callout-titled .callout-body > .callout-content > :last-child {
-    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
   }
 
   .callout.callout-titled .callout-icon::before {
@@ -371,13 +373,25 @@
 <li>Segmentación de órganos y tejidos</li>
 <li>Generación de imágenes sintéticas</li>
 <li>Mejora de la calidad de la imagen</li>
-<li>Integración de datos multimodales</li>
+</ul>
+</section>
+<section>
+<section id="diagnóstico-asistido-por-ia" class="title-slide slide level1 center">
+<h1>Diagnóstico asistido por IA</h1>
+
+</section>
+<section id="casos-de-uso" class="slide level2">
+<h2>Casos de uso</h2>
+<ul>
+<li>Detección y clasificación de anomalías</li>
+<li>Detección temprana (<em>screening</em>)</li>
+<li>Reducción de errores</li>
 </ul>
 </section>
 <section id="knowledge-map" class="slide level2">
 <h2>Knowledge map</h2>
 
-<iframe width="1260" height="500" src="https://openknowledgemaps.org/map/86eb00552ff30fc1fb9cf72adb701465?embed=true" allow="clipboard-write; self https://openknowledgemaps.org/;"></iframe>
+<iframe width="1260" height="500" src="https://openknowledgemaps.org/map/297b03ad3b8eae1c9be9be7e18350672?embed=true" allow="clipboard-write; self https://openknowledgemaps.org/;"></iframe>
 <aside class="notes">
 <p>Notes</p>
 <style type="text/css">
@@ -392,22 +406,10 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="casos-de-uso" class="slide level2">
-<h2>Casos de uso</h2>
-<ul>
-<li>Detección y clasificación de anomalías</li>
-<li>Detección temprana (<em>screening</em>)</li>
-<li>Reducción de errores</li>
-</ul>
-</section>
 <section id="convolutional-neural-network" class="slide level2">
 <h2>Convolutional Neural Network</h2>
 <p><img data-src="https://www.mdpi.com/electronics/electronics-11-01775/article_deploy/html/images/electronics-11-01775-g001.png"></p>
-<div class="quarto-figure quarto-figure-center">
-<figure>
 <p><a href="https://colab.research.google.com/github/aotal/ImagenMedica/blob/master/posts/code/2_ConvolutionalNN_PNEUMONIA_X_ray.ipynb"><img data-src="https://colab.research.google.com/assets/colab-badge.svg"></a></p>
-</figure>
-</div>
 </section>
 <section id="vision-transformer" class="slide level2">
 <h2>Vision Transformer</h2>
@@ -418,13 +420,9 @@
 <p><img data-src="https://viso.ai/wp-content/uploads/2021/09/vision-transformer-vit.png"></p>
 </div>
 </div>
-<p><span class="citation" data-cites="dosovitskiy2020">(<a href="#/knowledge-map-4" role="doc-biblioref" onclick="">Dosovitskiy et&nbsp;al. 2020</a>)</span></p>
-<div class="quarto-figure quarto-figure-center">
-<figure>
+<p><span class="citation" data-cites="dosovitskiy2020">(<a href="#/knowledge-map-3" role="doc-biblioref" onclick="">Dosovitskiy et&nbsp;al. 2020</a>)</span></p>
 <p><a href="https://colab.research.google.com/github/aotal/ImagenMedica/blob/master/posts/code/Neumonia.ipynb"><img data-src="https://colab.research.google.com/assets/colab-badge.svg"></a></p>
-</figure>
-</div>
-</section>
+</section></section>
 <section>
 <section id="segmentación-de-órganos-y-tejidos-y-tumores" class="title-slide slide level1 center">
 <h1>Segmentación de órganos y tejidos (y tumores)</h1>
@@ -445,30 +443,22 @@
 <section id="knowledge-map-1" class="slide level2">
 <h2>Knowledge map</h2>
 
-<iframe width="1260" height="500" src="https://openknowledgemaps.org/map/e9fd2dd8af959392c2dd4171c326d8ad?embed=true" allow="clipboard-write; self https://openknowledgemaps.org/;"></iframe>
+<iframe width="1260" height="500" src="https://openknowledgemaps.org/map/f7779ae30d9618c87f48fbf52374eb5b?embed=true" allow="clipboard-write; self https://openknowledgemaps.org/;"></iframe>
 </section>
 <section id="u-net" class="slide level2">
 <h2>U-Net</h2>
 
-<img data-src="https://lmb.informatik.uni-freiburg.de/people/ronneber/u-net/u-net-architecture.png" class="r-stretch"><p><span class="citation" data-cites="ronneberger2015">(<a href="#/knowledge-map-4" role="doc-biblioref" onclick="">Ronneberger, Fischer, y Brox 2015</a>)</span></p>
+<img data-src="https://lmb.informatik.uni-freiburg.de/people/ronneber/u-net/u-net-architecture.png" class="r-stretch"><p><span class="citation" data-cites="ronneberger2015">(<a href="#/knowledge-map-3" role="doc-biblioref" onclick="">Ronneberger, Fischer, y Brox 2015</a>)</span></p>
 </section>
 <section id="u-net-1" class="slide level2">
 <h2>U-Net</h2>
 <p><img data-src="https://miro.medium.com/v2/resize:fit:4800/format:webp/1*sfIjNCO047KS-rLwfxf29g.png" style="width:50.0%"></p>
-<div class="quarto-figure quarto-figure-center">
-<figure>
 <p><a href="https://colab.research.google.com/github/aotal/ImagenMedica/blob/master/posts/code/unet_segmentation.ipynb"><img data-src="https://colab.research.google.com/assets/colab-badge.svg"></a></p>
-</figure>
-</div>
 </section>
 <section id="proyecto-monai" class="slide level2">
 <h2>Proyecto MONAI</h2>
 <p><img data-src="https://monai.io/assets/img/MONAI-logo_color_full.png"></p>
-<div class="quarto-figure quarto-figure-center">
-<figure>
 <p><a href="https://colab.research.google.com/github/aotal/ImagenMedica/blob/master/posts/code/PruebaMonai.ipynb"><img data-src="https://colab.research.google.com/assets/colab-badge.svg"></a></p>
-</figure>
-</div>
 </section></section>
 <section>
 <section id="generación-de-imágenes-sintéticas" class="title-slide slide level1 center">
@@ -490,10 +480,11 @@
 <section id="knowledge-map-2" class="slide level2">
 <h2>Knowledge map</h2>
 
-<iframe width="1260" height="756" src="https://openknowledgemaps.org/map/687c721294394576af73aac966231d79?embed=true" allow="clipboard-write; self https://openknowledgemaps.org/;"></iframe>
+<iframe width="1260" height="500" src="https://openknowledgemaps.org/map/76d3571aa699e09fb5d271c63c3fedeb?embed=true" allow="clipboard-write; self https://openknowledgemaps.org/;"></iframe>
+
 </section>
-<section id="ejemplo-creación-de-cts-sintéticos-de-mri" class="slide level2">
-<h2>Ejemplo: Creación de CTs sintéticos de MRI</h2>
+<section id="ejemplo-creación-de-cts-sintéticos" class="slide level2">
+<h2>Ejemplo: Creación de CTs sintéticos</h2>
 
 <img data-src="https://cig-utrecht.org/img/DL/SitesCT.png" class="r-stretch"></section></section>
 <section>
@@ -513,36 +504,17 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="knowledge-map-3" class="slide level2">
+<section id="knowledge-map-3" class="slide level2 smaller scrollable">
 <h2>Knowledge map</h2>
 
-<iframe width="1260" height="500" src="https://openknowledgemaps.org/map/d2abda66e78928274e165b60e6fba91a?embed=true" allow="clipboard-write; self https://openknowledgemaps.org/;"></iframe>
-</section></section>
-<section>
-<section id="integración-de-datos-multimodales" class="title-slide slide level1 center">
-<h1>Integración de datos multimodales</h1>
-<aside class="notes">
-<p>Notes</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="knowledge-map-4" class="slide level2 smaller scrollable">
-<h2>Knowledge map</h2>
+<iframe width="1260" height="500" src="https://openknowledgemaps.org/map/32c7919f4f11087ec3b756ba3f35e670?embed=true" allow="clipboard-write; self https://openknowledgemaps.org/;"></iframe>
 
-<iframe width="1260" height="756" src="https://openknowledgemaps.org/map/583ebd3fea23351b1cb1cf374612ce52?embed=true" allow="clipboard-write; self https://openknowledgemaps.org/;"></iframe>
 
+<div class="quarto-auto-generated-content">
 <p><img src="https://cdn0.iconfinder.com/data/icons/modern-ui-glyph-1/64/modern-ui-glyph-1-03-512.png" class="slide-logo"></p>
 <div class="footer footer-default">
 <p><a href="https://cv.udl.cat/portal/site/100794-2324/tool/3d5c2c81-a50b-43ce-a0bf-ecbfd152350b">IAMED</a></p>
+</div>
 </div>
 <div class="reveal-header">
 <div class="header-logo" data-footer-logo-link="/">
@@ -558,7 +530,7 @@
 <p> </p>
 </div>
 </div>
-<div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-dosovitskiy2020" class="csl-entry" role="listitem">
 Dosovitskiy, Alexey, Lucas Beyer, Alexander Kolesnikov, Dirk Weissenborn, Xiaohua Zhai, Thomas Unterthiner, Mostafa Dehghani, et&nbsp;al. 2020. <span>«An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale»</span>. <a href="https://doi.org/10.48550/ARXIV.2010.11929">https://doi.org/10.48550/ARXIV.2010.11929</a>.
 </div>
@@ -593,7 +565,6 @@ Ronneberger, Olaf, Philipp Fischer, y Thomas Brox. 2015. <span>«U-Net: Convolut
       Reveal.initialize({
 'controlsAuto': true,
 'previewLinksAuto': false,
-'smaller': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
@@ -854,10 +825,9 @@ Ronneberger, Olaf, Philipp Fischer, y Thomas Brox. 2015. <span>«U-Net: Convolut
         // clear code selection
         e.clearSelection();
       });
-      function tippyHover(el, contentFn) {
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
           allowHTML: true,
-          content: contentFn,
           maxWidth: 500,
           delay: 100,
           arrow: false,
@@ -867,8 +837,17 @@ Ronneberger, Olaf, Philipp Fischer, y Thomas Brox. 2015. <span>«U-Net: Convolut
           interactive: true,
           interactiveBorder: 10,
           theme: 'light-border',
-          placement: 'bottom-start'
+          placement: 'bottom-start',
         };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
           config['offset'] = [0,0];
           config['maxWidth'] = 700;
         window.tippy(el, config); 
