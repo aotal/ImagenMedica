@@ -27,24 +27,26 @@ bibliography: references.bib
 -   Segmentación de órganos y tejidos
 -   Generación de imágenes sintéticas
 -   Mejora de la calidad de la imagen
--   Integración de datos multimodales
 
-
-# Knowledge map
-
-```{=html}
-
-<iframe width="1260" height="500" src="https://openknowledgemaps.org/map/86eb00552ff30fc1fb9cf72adb701465?embed=true" allow="clipboard-write; self https://openknowledgemaps.org/;"></iframe>
-```
-::: notes
-Notes
-:::
+# Diagnóstico asistido por IA
 
 ## Casos de uso
 
 -   Detección y clasificación de anomalías
 -   Detección temprana (*screening*)
 -   Reducción de errores
+
+## Knowledge map
+
+```{=html}
+
+<iframe width="1260" height="500" src="https://openknowledgemaps.org/map/297b03ad3b8eae1c9be9be7e18350672?embed=true" 
+                                allow="clipboard-write; self https://openknowledgemaps.org/;"></iframe>
+```
+::: notes
+Notes
+:::
+
 
 ## Convolutional Neural Network
 
@@ -74,11 +76,11 @@ Notes
 Notes
 :::
 
-# Knowledge map
+## Knowledge map
 
 ```{=html}
 
-<iframe width="1260" height="500" src="https://openknowledgemaps.org/map/e9fd2dd8af959392c2dd4171c326d8ad?embed=true" 
+<iframe width="1260" height="500" src="https://openknowledgemaps.org/map/f7779ae30d9618c87f48fbf52374eb5b?embed=true" 
                                 allow="clipboard-write; self https://openknowledgemaps.org/;"></iframe>
 ```
 ## U-Net
@@ -105,36 +107,32 @@ Notes
 Notes
 :::
 
-# Knowledge map
+
+## Knowledge map
 
 ```{=html}
 
-<iframe width="1260" height="756" src="https://openknowledgemaps.org/map/687c721294394576af73aac966231d79?embed=true" 
+<iframe width="1260" height="500" src="https://openknowledgemaps.org/map/76d3571aa699e09fb5d271c63c3fedeb?embed=true" 
                                 allow="clipboard-write; self https://openknowledgemaps.org/;"></iframe>
+
 ```
+
+## Ejemplo: Creación de CTs sintéticos 
+
+![](https://cig-utrecht.org/img/DL/SitesCT.png)
+
+
 # Mejora de la calidad de la imagen
 
 ::: notes
 Notes
 :::
 
-# Knowledge map
+## Knowledge map
 
 ```{=html}
 
-<iframe width="1260" height="500" src="https://openknowledgemaps.org/map/d2abda66e78928274e165b60e6fba91a?embed=true" 
+<iframe width="1260" height="500" src="https://openknowledgemaps.org/map/32c7919f4f11087ec3b756ba3f35e670?embed=true" 
                                 allow="clipboard-write; self https://openknowledgemaps.org/;"></iframe>
-```
-# Integración de datos multimodales
 
-::: notes
-Notes
-:::
-
-# Knowledge map
-
-```{=html}
-
-<iframe width="1260" height="756" src="https://openknowledgemaps.org/map/583ebd3fea23351b1cb1cf374612ce52?embed=true" 
-                                allow="clipboard-write; self https://openknowledgemaps.org/;"></iframe>
 ```
