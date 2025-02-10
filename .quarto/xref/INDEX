@@ -40,5 +40,11 @@
   },
   "posts/code/unet_segmentation.ipynb": {
     "unet_segmentation.html": "cfde58bc"
+  },
+  "posts/Presentaciones/LLMs.qmd": {
+    "LLMs.html": "efde0fb8"
+  },
+  "posts/code/word_embeddings.ipynb": {
+    "word_embeddings.html": "7a706370"
   }
 }

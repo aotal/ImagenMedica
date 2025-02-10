@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.549">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Imagen Médica - Word Embeddings</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Sin resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Imagen Médica</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Buscar"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">Acerca de el autor</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/aotal"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Word Embeddings</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">Colab</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+      <div>
+      <div class="quarto-title-meta-heading">Fecha de publicación</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">12 de febrero de 2024</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<div id="cell-1" class="cell" data-cellview="form">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#@title Licensed under the Apache License, Version 2.0 (the "License");</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># you may not use this file except in compliance with the License.</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># You may obtain a copy of the License at</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># https://www.apache.org/licenses/LICENSE-2.0</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Unless required by applicable law or agreed to in writing, software</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># distributed under the License is distributed on an "AS IS" BASIS,</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># See the License for the specific language governing permissions and</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># limitations under the License.</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Colab</p>
+<p><a href="https://colab.research.google.com/github/aotal/ImagenMedica/blob/master/posts/code/word_embeddings.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a></p>
+<section id="word-embeddings" class="level1">
+<h1><em>Word Embeddings</em></h1>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://colab.research.google.com/github/aotal/ImagenMedica/blob/master/posts/code/word_embeddings.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid figure-img" alt="Open In Colab"></a></p>
+<figcaption>Open In Colab</figcaption>
+</figure>
+</div>
+<p>Este tutorial es una introducción a los word embeddings. Entrenarás tus propios word embeddings utilizando un modelo simple de Keras para una tarea de clasificación de sentimientos y luego los visualizarás en el <a href="http://projector.tensorflow.org">Embedding Projector</a> (como se muestra en la imagen a continuación).</p>
+<p><img src="https://github.com/tensorflow/text/blob/master/docs/tutorials/images/embedding.jpg?raw=1" alt="Screenshot of the embedding projector" width="400"></p>
+<section id="representación-de-texto-como-números" class="level2">
+<h2 class="anchored" data-anchor-id="representación-de-texto-como-números">Representación de texto como números</h2>
+<p>Los modelos de aprendizaje automático toman vectores (matrices de números) como entrada. Cuando se trabaja con texto, lo primero que debes hacer es idear una estrategia para convertir cadenas en números (o “vectorizar” el texto) antes de introducirlo en el modelo. En esta sección, veremos tres estrategias para hacerlo.</p>
+<section id="codificaciones-one-hot" class="level3">
+<h3 class="anchored" data-anchor-id="codificaciones-one-hot">Codificaciones One-hot</h3>
+<p>Como primera idea, podrías codificar cada palabra en tu vocabulario con “one-hot”. Considera la frase “El gato se sentó en el tapete”. El vocabulario (o palabras únicas) en esta frase es (gato, tapete, en, sentó, el). Para representar cada palabra, crearás un vector cero con una longitud igual al vocabulario y luego colocarás un uno en el índice que corresponde a la palabra. Este enfoque se muestra en el siguiente diagrama.</p>
+<p>Para crear un vector que contenga la codificación de la frase, podrías concatenar los vectores one-hot para cada palabra.</p>
+<p>Punto clave: Este enfoque es ineficiente. Un vector codificado con one-hot es disperso (es decir, la mayoría de los índices son cero). Imagina que tienes 10000 palabras en el vocabulario. Para codificar cada palabra con one-hot, crearías un vector donde el 99.99% de los elementos son cero.</p>
+<p><img src="https://www.tensorflow.org/static/text/guide/images/one-hot.png" alt="Diagrama de codificación one-hot" width="400"></p>
+</section>
+<section id="codifica-cada-palabra-con-un-número-único" class="level3">
+<h3 class="anchored" data-anchor-id="codifica-cada-palabra-con-un-número-único">Codifica cada palabra con un número único</h3>
+<p>Un segundo enfoque que podrías intentar es codificar cada palabra usando un número único. Continuando con el ejemplo anterior, podrías asignar 1 a “gato”, 2 a “tapete”, y así sucesivamente. Luego, podrías codificar la frase “El gato se sentó en el tapete” como un vector denso como [5, 1, 4, 3, 5, 2]. Este enfoque es eficiente. En lugar de un vector disperso, ahora tienes uno denso (donde todos los elementos están llenos).</p>
+<p>Sin embargo, hay dos desventajas en este enfoque:</p>
+<ul>
+<li><p>La codificación de enteros es arbitraria (no captura ninguna relación entre palabras).</p></li>
+<li><p>Una codificación de enteros puede ser difícil de interpretar para un modelo. Un clasificador lineal, por ejemplo, aprende un solo peso para cada característica. Debido a que no existe una relación entre la similitud de dos palabras y la similitud de sus codificaciones, esta combinación de peso de característica no tiene sentido.</p></li>
+</ul>
+</section>
+<section id="word-embeddings-1" class="level3">
+<h3 class="anchored" data-anchor-id="word-embeddings-1"><em>Word embeddings</em></h3>
+<p>Los word embeddings nos brindan una forma de usar una representación eficiente y densa en la que palabras similares tienen una codificación similar. Es importante destacar que no tienes que especificar esta codificación manualmente. Una incrustación (embedding) es un vector denso de valores de punto flotante (la longitud del vector es un parámetro que especificas). En lugar de especificar los valores para la incrustación manualmente, son parámetros entrenables (pesos aprendidos por el modelo durante el entrenamiento, de la misma manera que un modelo aprende pesos para una capa densa). Es común ver word embeddings que son de 8 dimensiones (para conjuntos de datos pequeños), hasta 1024 dimensiones cuando se trabaja con conjuntos de datos grandes. Una incrustación de mayor dimensión puede capturar relaciones detalladas entre palabras, pero se necesitan más datos para aprender.</p>
+<p><img src="https://www.tensorflow.org/text/guide/images/embedding2.png?hl=es-419" alt="Diagram of an *embedding*" width="400"></p>
+<p>Arriba hay un diagrama para una incrustación de palabras (word embedding). Cada palabra se representa como un vector de 4 dimensiones de valores de punto flotante. Otra forma de pensar en una incrustación (embedding) es como una “tabla de búsqueda”. Después de que se han aprendido estos pesos, puedes codificar cada palabra buscando el vector denso al que corresponde en la tabla.</p>
+</section>
+</section>
+<section id="preparación" class="level2">
+<h2 class="anchored" data-anchor-id="preparación">Preparación</h2>
+<div id="cell-7" class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> io</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> shutil</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> string</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> tensorflow <span class="im">as</span> tf</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tensorflow.keras <span class="im">import</span> Sequential</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tensorflow.keras.layers <span class="im">import</span> Dense, Embedding, GlobalAveragePooling1D</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tensorflow.keras.layers <span class="im">import</span> TextVectorization</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="descargar-el-conjunto-de-datos-imdb" class="level3">
+<h3 class="anchored" data-anchor-id="descargar-el-conjunto-de-datos-imdb">Descargar el conjunto de datos IMDb</h3>
+<p>Utilizaremos el <a href="http://ai.stanford.edu/~amaas/data/sentiment/">Large Movie Review Dataset</a> a lo largo del tutorial. Entrenarás un modelo clasificador de sentimientos en este conjunto de datos y en el proceso aprenderás word embeddings desde cero. Para leer más sobre cómo cargar un conjunto de datos desde cero, consulta el <a href="https://www.tensorflow.org/tutorials/load_data/text">Loading text tutorial</a>.</p>
+<p>Descarga el conjunto de datos usando la utilidad de archivos de Keras y echa un vistazo a los directorios.</p>
+<div id="cell-9" class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">"https://ai.stanford.edu/~amaas/data/sentiment/aclImdb_v1.tar.gz"</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>dataset <span class="op">=</span> tf.keras.utils.get_file(<span class="st">"aclImdb_v1.tar.gz"</span>, url,</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>                                  untar<span class="op">=</span><span class="va">True</span>, cache_dir<span class="op">=</span><span class="st">'.'</span>,</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>                                  cache_subdir<span class="op">=</span><span class="st">''</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>dataset_dir <span class="op">=</span> os.path.join(os.path.dirname(dataset), <span class="st">'aclImdb'</span>)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>os.listdir(dataset_dir)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Echa un vistazo al directorio train/. Tiene carpetas pos y neg con reseñas de películas etiquetadas como positivas y negativas, respectivamente. Utilizarás las reseñas de las carpetas pos y neg para entrenar un modelo de clasificación binaria.</p>
+<div id="cell-11" class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>train_dir <span class="op">=</span> os.path.join(dataset_dir, <span class="st">'train'</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>os.listdir(train_dir)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The <code>train</code> directory also has additional folders which should be removed before creating training dataset.</p>
+<div id="cell-13" class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>remove_dir <span class="op">=</span> os.path.join(train_dir, <span class="st">'unsup'</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>shutil.rmtree(remove_dir)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>A continuación, crea un tf.data.Dataset usando tf.keras.utils.text_dataset_from_directory. Puedes leer más sobre el uso de esta utilidad en este <a href="https://www.tensorflow.org/tutorials/keras/text_classification">text classification tutorial</a>.</p>
+<p>Utiliza el directorio train para crear conjuntos de datos de entrenamiento y validación con una división del 20% para la validación.</p>
+<div id="cell-15" class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>batch_size <span class="op">=</span> <span class="dv">1024</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>seed <span class="op">=</span> <span class="dv">123</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>train_ds <span class="op">=</span> tf.keras.utils.text_dataset_from_directory(</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'aclImdb/train'</span>, batch_size<span class="op">=</span>batch_size, validation_split<span class="op">=</span><span class="fl">0.2</span>,</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    subset<span class="op">=</span><span class="st">'training'</span>, seed<span class="op">=</span>seed)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>val_ds <span class="op">=</span> tf.keras.utils.text_dataset_from_directory(</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">'aclImdb/train'</span>, batch_size<span class="op">=</span>batch_size, validation_split<span class="op">=</span><span class="fl">0.2</span>,</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    subset<span class="op">=</span><span class="st">'validation'</span>, seed<span class="op">=</span>seed)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Echa un vistazo a algunas reseñas de películas y sus etiquetas (1: positivo, 0: negativo) del conjunto de datos de entrenamiento.</p>
+<div id="cell-17" class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> text_batch, label_batch <span class="kw">in</span> train_ds.take(<span class="dv">1</span>):</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(label_batch[i].numpy(), text_batch.numpy()[i])</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="configurar-el-conjunto-de-datos-para-el-rendimiento" class="level3">
+<h3 class="anchored" data-anchor-id="configurar-el-conjunto-de-datos-para-el-rendimiento">Configurar el conjunto de datos para el rendimiento</h3>
+<p>Estos son dos métodos importantes que debes usar al cargar datos para asegurarte de que la E/S no se bloquee.</p>
+<p><code>.cache()</code> mantiene los datos en la memoria después de que se cargan desde el disco. Esto asegurará que el conjunto de datos no se convierta en un cuello de botella mientras se entrena tu modelo. Si tu conjunto de datos es demasiado grande para caber en la memoria, también puedes usar este método para crear una caché en disco de alto rendimiento, que es más eficiente de leer que muchos archivos pequeños.</p>
+<p><code>.prefetch()</code> superpone el preprocesamiento de datos y la ejecución del modelo durante el entrenamiento.</p>
+<p>Puedes obtener más información sobre ambos métodos, así como sobre cómo almacenar en caché los datos en el disco en la <a href="https://www.tensorflow.org/guide/data_performance">data performance guide</a>.</p>
+<div id="cell-19" class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>AUTOTUNE <span class="op">=</span> tf.data.AUTOTUNE</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>train_ds <span class="op">=</span> train_ds.cache().prefetch(buffer_size<span class="op">=</span>AUTOTUNE)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>val_ds <span class="op">=</span> val_ds.cache().prefetch(buffer_size<span class="op">=</span>AUTOTUNE)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="usando-la-capa-embedding" class="level2">
+<h2 class="anchored" data-anchor-id="usando-la-capa-embedding">Usando la capa Embedding</h2>
+<p>Keras facilita el uso de word embeddings. Echa un vistazo a la capa <a href="https://www.tensorflow.org/api_docs/python/tf/keras/layers/Embedding">Embedding</a>.</p>
+<p>La capa Embedding se puede entender como una tabla de búsqueda que mapea desde índices enteros (que representan palabras específicas) a vectores densos (sus incrustaciones - embeddings). La dimensionalidad (o ancho) de la incrustación es un parámetro con el que puedes experimentar para ver qué funciona bien para tu problema, de la misma manera que experimentarías con la cantidad de neuronas en una capa densa.</p>
+<div id="cell-21" class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Embed a 1,000 word vocabulary into 5 dimensions.</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>embedding_layer <span class="op">=</span> tf.keras.layers.Embedding(<span class="dv">1000</span>, <span class="dv">5</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Cuando creas una capa Embedding, los pesos para la incrustación se inicializan aleatoriamente (como cualquier otra capa). Durante el entrenamiento, se ajustan gradualmente mediante retropropagación. Una vez entrenados, los word embeddings aprendidos codificarán aproximadamente las similitudes entre las palabras (ya que se aprendieron para el problema específico en el que se entrena tu modelo).</p>
+<p>Si pasas un entero a una capa Embedding, el resultado reemplaza cada entero con el vector de la tabla de incrustaciones:</p>
+<div id="cell-23" class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> embedding_layer(tf.constant([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]))</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>result.numpy()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Para problemas de texto o secuencia, la capa Embedding toma un tensor 2D de enteros, de forma <code>(muestras, longitud_de_secuencia)</code>, donde cada entrada es una secuencia de enteros. Puede incrustar secuencias de longitudes variables. Podrías alimentar a la capa de incrustación anterior lotes con formas <code>(32, 10)</code> (lote de 32 secuencias de longitud 10) or <code>(64, 15)</code> (lote de 64 secuencias de longitud 15).</p>
+<p>El tensor devuelto tiene un eje más que la entrada, los vectores de incrustación se alinean a lo largo del nuevo último eje. Pásale un lote de entrada <code>(2, 3)</code> y la salida es <code>(2, 3, N)</code></p>
+<div id="cell-25" class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> embedding_layer(tf.constant([[<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]]))</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>result.shape</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Cuando se le da un lote de secuencias como entrada, una capa Embedding devuelve un tensor de punto flotante 3D, de forma <code>(muestras, longitud_de_secuencia, dimensionalidad_de_la_incrustación)</code>. Para convertir de esta secuencia de longitud variable a una representación fija, hay una variedad de enfoques estándar. Podrías usar una RNN, Atención o una capa de agrupación antes de pasarla a una capa Densa. Este tutorial utiliza la agrupación porque es la más simple. El<a href="https://www.tensorflow.org/text/tutorials/text_classification_rnn">Text Classification with an RNN</a> es un buen siguiente paso.</p>
+</section>
+<section id="preprocesamiento-de-texto" class="level2">
+<h2 class="anchored" data-anchor-id="preprocesamiento-de-texto">Preprocesamiento de texto</h2>
+<p>A continuación, define los pasos de preprocesamiento del conjunto de datos necesarios para tu modelo de clasificación de sentimientos. Inicializa una capa TextVectorization con los parámetros deseados para vectorizar las reseñas de películas. Puedes obtener más información sobre el uso de esta capa en el tutorial <a href="https://www.tensorflow.org/tutorials/keras/text_classification">Text Classification</a>.</p>
+<div id="cell-29" class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a custom standardization function to strip HTML break tags '&lt;br /&gt;'.</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> custom_standardization(input_data):</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  lowercase <span class="op">=</span> tf.strings.lower(input_data)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  stripped_html <span class="op">=</span> tf.strings.regex_replace(lowercase, <span class="st">'&lt;br /&gt;'</span>, <span class="st">' '</span>)</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> tf.strings.regex_replace(stripped_html,</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>                                  <span class="st">'[</span><span class="sc">%s</span><span class="st">]'</span> <span class="op">%</span> re.escape(string.punctuation), <span class="st">''</span>)</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Vocabulary size and number of words in a sequence.</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>vocab_size <span class="op">=</span> <span class="dv">10000</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>sequence_length <span class="op">=</span> <span class="dv">100</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Use the text vectorization layer to normalize, split, and map strings to</span></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a><span class="co"># integers. Note that the layer uses the custom standardization defined above.</span></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Set maximum_sequence length as all samples are not of the same length.</span></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>vectorize_layer <span class="op">=</span> TextVectorization(</span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>    standardize<span class="op">=</span>custom_standardization,</span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>    max_tokens<span class="op">=</span>vocab_size,</span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>    output_mode<span class="op">=</span><span class="st">'int'</span>,</span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>    output_sequence_length<span class="op">=</span>sequence_length)</span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Make a text-only dataset (no labels) and call adapt to build the vocabulary.</span></span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a>text_ds <span class="op">=</span> train_ds.<span class="bu">map</span>(<span class="kw">lambda</span> x, y: x)</span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a>vectorize_layer.adapt(text_ds)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="crea-un-modelo-de-clasificación" class="level2">
+<h2 class="anchored" data-anchor-id="crea-un-modelo-de-clasificación">Crea un modelo de clasificación</h2>
+<p>Utiliza la <a href="https://www.tensorflow.org/guide/keras/sequential_model">Keras Sequential API</a> para definir el modelo de clasificación de sentimientos. En este caso, es un modelo de estilo “bolsa de palabras continua”. * La capa <a href="https://www.tensorflow.org/api_docs/python/tf/keras/layers/experimental/preprocessing/TextVectorization"><code>TextVectorization</code></a> transforma cadenas en índices de vocabulario. Ya has inicializado <code>vectorize_layer</code> como una capa TextVectorization y has creado su vocabulario llamando a <code>adapt</code> en <code>text_ds</code>. Ahora <code>vectorize_layer</code> se puede utilizar como la primera capa de tu modelo de clasificación de extremo a extremo, alimentando cadenas transformadas en la capa. * La capa <a href="https://www.tensorflow.org/api_docs/python/tf/keras/layers/Embedding"><code>Embedding</code></a> toma el vocabulario codificado en enteros y busca el vector de incrustación (embedding) para cada índice de palabra. Estos vectores se aprenden a medida que se entrena el modelo. Los vectores agregan una dimensión a la matriz de salida. Las dimensiones resultantes son: <code>(batch, sequence, embedding)</code>.</p>
+<ul>
+<li><p>La capa <a href="https://www.tensorflow.org/api_docs/python/tf/keras/layers/GlobalAveragePooling1D"><code>GlobalAveragePooling1D</code></a> devuelve un vector de salida de longitud fija para cada ejemplo promediando sobre la dimensión de la secuencia. Esto permite que el modelo maneje la entrada de longitud variable, de la manera más simple posible.</p></li>
+<li><p>El vector de salida de longitud fija se canaliza a través de una capa completamente conectada (<a href="https://www.tensorflow.org/api_docs/python/tf/keras/layers/Dense"><code>Dense</code></a>) con 16 unidades ocultas.</p></li>
+<li><p>La última capa está densamente conectada con un solo nodo de salida.</p></li>
+</ul>
+<p>Precaución: Este modelo no utiliza enmascaramiento, por lo que el relleno de ceros se utiliza como parte de la entrada y, por lo tanto, la longitud del relleno puede afectar la salida. Para solucionar esto, consulta <a href="https://www.tensorflow.org/guide/keras/masking_and_padding">masking and padding guide</a>.</p>
+<div id="cell-31" class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>embedding_dim<span class="op">=</span><span class="dv">16</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> Sequential([</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  vectorize_layer,</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  Embedding(vocab_size, embedding_dim, name<span class="op">=</span><span class="st">"embedding"</span>),</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>  GlobalAveragePooling1D(),</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  Dense(<span class="dv">16</span>, activation<span class="op">=</span><span class="st">'relu'</span>),</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>  Dense(<span class="dv">1</span>)</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>])</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="compila-y-entrena-el-modelo" class="level2">
+<h2 class="anchored" data-anchor-id="compila-y-entrena-el-modelo">Compila y entrena el modelo</h2>
+<p>Utilizarás <a href="https://www.tensorflow.org/tensorboard">TensorBoard</a> ara visualizar métricas, incluidas la pérdida y la precisión. Crea un tf.keras.callbacks.TensorBoard.</p>
+<div id="cell-34" class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>tensorboard_callback <span class="op">=</span> tf.keras.callbacks.TensorBoard(log_dir<span class="op">=</span><span class="st">"logs"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Compila y entrena el modelo utilizando el optimizador Adam y la pérdida BinaryCrossentropy.</p>
+<div id="cell-36" class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>model.<span class="bu">compile</span>(optimizer<span class="op">=</span><span class="st">'adam'</span>,</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>              loss<span class="op">=</span>tf.keras.losses.BinaryCrossentropy(from_logits<span class="op">=</span><span class="va">True</span>),</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>              metrics<span class="op">=</span>[<span class="st">'accuracy'</span>])</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-37" class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>model.fit(</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    train_ds,</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    validation_data<span class="op">=</span>val_ds,</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    epochs<span class="op">=</span><span class="dv">15</span>,</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    callbacks<span class="op">=</span>[tensorboard_callback])</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Con este enfoque, el modelo alcanza una precisión de validación de alrededor del 78% (ten en cuenta que el modelo está sobreajustado ya que la precisión del entrenamiento es mayor).</p>
+<p>Nota: Tus resultados pueden ser un poco diferentes, dependiendo de cómo se inicializaron aleatoriamente los pesos antes de entrenar la capa Embedding.</p>
+<p>Puedes consultar el resumen del modelo para obtener más información sobre cada capa del modelo.</p>
+<div id="cell-39" class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>model.summary()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Visualiza las métricas del modelo en TensorBoard.</p>
+<div id="cell-41" class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co">#docs_infra: no_execute</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>load_ext tensorboard</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>tensorboard <span class="op">--</span>logdir logs</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://www.tensorflow.org/text/guide/images/embeddings_classifier_accuracy.png?hl=es-419" class="img-fluid figure-img"></p>
+<figcaption>embeddings_classifier_accuracy.png</figcaption>
+</figure>
+</div>
+</section>
+<section id="recupere-las-incrustaciones-de-palabras-entrenadas-y-guárdelas-en-el-disco" class="level2">
+<h2 class="anchored" data-anchor-id="recupere-las-incrustaciones-de-palabras-entrenadas-y-guárdelas-en-el-disco">Recupere las incrustaciones de palabras entrenadas y guárdelas en el disco</h2>
+<p>A continuación, recupere las incrustaciones de palabras aprendidas durante el entrenamiento. Las incrustaciones son pesos de la capa de incrustación en el modelo. La matriz de ponderaciones tiene la forma (vocab_size, embedding_dimension) .</p>
+<p>Obtenga los pesos del modelo usando get_layer() y get_weights() . La función get_vocabulary() proporciona el vocabulario para crear un archivo de metadatos con un token por línea.</p>
+<div id="cell-45" class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>weights <span class="op">=</span> model.get_layer(<span class="st">'embedding'</span>).get_weights()[<span class="dv">0</span>]</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>vocab <span class="op">=</span> vectorize_layer.get_vocabulary()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Escriba los pesos en el disco. Para utilizar el proyector de incrustaciones , deberá cargar dos archivos en formato separado por tabulaciones: un archivo de vectores (que contiene la incrustación) y un archivo de metadatos (que contiene las palabras).</p>
+<div id="cell-47" class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>out_v <span class="op">=</span> io.<span class="bu">open</span>(<span class="st">'vectors.tsv'</span>, <span class="st">'w'</span>, encoding<span class="op">=</span><span class="st">'utf-8'</span>)</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>out_m <span class="op">=</span> io.<span class="bu">open</span>(<span class="st">'metadata.tsv'</span>, <span class="st">'w'</span>, encoding<span class="op">=</span><span class="st">'utf-8'</span>)</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> index, word <span class="kw">in</span> <span class="bu">enumerate</span>(vocab):</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> index <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">continue</span>  <span class="co"># skip 0, it's padding.</span></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>  vec <span class="op">=</span> weights[index]</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>  out_v.write(<span class="st">'</span><span class="ch">\t</span><span class="st">'</span>.join([<span class="bu">str</span>(x) <span class="cf">for</span> x <span class="kw">in</span> vec]) <span class="op">+</span> <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>  out_m.write(word <span class="op">+</span> <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>out_v.close()</span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>out_m.close()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Si está ejecutando este tutorial en Colaboratory , puede usar el siguiente fragmento para descargar estos archivos a su máquina local (o usar el explorador de archivos, Ver -&gt; Tabla de contenido -&gt; Explorador de archivos ).</p>
+<div id="cell-49" class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="im">from</span> google.colab <span class="im">import</span> files</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  files.download(<span class="st">'vectors.tsv'</span>)</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  files.download(<span class="st">'metadata.tsv'</span>)</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> <span class="pp">Exception</span>:</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>  <span class="cf">pass</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="visualiza-las-incrustaciones" class="level2">
+<h2 class="anchored" data-anchor-id="visualiza-las-incrustaciones">Visualiza las incrustaciones</h2>
+<p>Para visualizar las incrustaciones, súbalas al proyector de incrustaciones.</p>
+<p>Abra el <a href="http://projector.tensorflow.org/">Embedding Projector</a> (esto también se puede ejecutar en una instancia local de TensorBoard)).</p>
+<ul>
+<li><p>Haga clic en “Cargar datos”.</p></li>
+<li><p>Cargue los dos archivos que creó anteriormente: <code>vecs.tsv</code> and <code>meta.tsv</code>.</p></li>
+</ul>
+<p>Ahora se mostrarán las incrustaciones que ha entrenado. Puede buscar palabras para encontrar a sus vecinos más cercanos. Por ejemplo, intente buscar “hermoso”. Es posible que vea vecinos como “maravilloso”.</p>
+<p>Nota: Experimentalmente, es posible que pueda producir incrustaciones más interpretables mediante el uso de un modelo más simple. Intente eliminar la capa Dense(16) , vuelva a entrenar el modelo y visualice las incrustaciones nuevamente.</p>
+<p>Nota: Por lo general, se necesita un conjunto de datos mucho más grande para entrenar incrustaciones de palabras más interpretables. Este tutorial utiliza un pequeño conjunto de datos de IMDb con fines de demostración.</p>
+</section>
+<section id="próximos-pasos" class="level2">
+<h2 class="anchored" data-anchor-id="próximos-pasos">Próximos pasos</h2>
+<p>Este tutorial le ha mostrado cómo entrenar y visualizar incrustaciones de palabras desde cero en un pequeño conjunto de datos.</p>
+<ul>
+<li><p>Para entrenar incrustaciones de palabras usando el algoritmo de Word2Vec, pruebe el tutorial de<a href="https://www.tensorflow.org/tutorials/text/word2vec">Word2Vec</a> .</p></li>
+<li><p>Para obtener más información sobre el procesamiento de texto avanzado, lea el <a href="https://www.tensorflow.org/text/tutorials/transformer">modelo de Transformer para la comprensión del lenguaje</a>.</p></li>
+</ul>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copiado");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copiado");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

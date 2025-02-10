@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.549">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -22,7 +22,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -79,7 +79,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "Sin resultados",
     "search-matching-documents-text": "documentos encontrados",
@@ -88,6 +94,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "resultado adicional en este documento",
     "search-more-matches-text": "resultados adicionales en este documento",
     "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancelar",
     "search-submit-button-title": "Enviar",
     "search-label": "Buscar"
@@ -97,16 +104,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
 <link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Imagen Médica</span>
     </a>
@@ -118,18 +152,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html" rel="" target="">
- <span class="menu-text">Acerca de el autor</span></a>
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">Acerca de el autor</span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/aotal" rel="" target=""><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/aotal"> <i class="bi bi-github" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools">
-</div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -169,6 +203,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
+
 <p>Colab</p>
 <section id="cnn-detección-de-neumonía-a-partir-de-imágenes-de-rayos-x" class="level1">
 <h1>CNN: Detección de Neumonía a partir de imágenes de rayos X</h1>
@@ -177,8 +212,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><a href="http://joelriccilopez.com/">Joel Ricci López</a>, 2021.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="https://colab.research.google.com/github/aotal/ImagenMedica/blob/master/posts/code/2_ConvolutionalNN_PNEUMONIA_X_ray.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid figure-img"></a></p>
-<figcaption class="figure-caption">Open In Colab</figcaption>
+<p><a href="https://colab.research.google.com/github/aotal/ImagenMedica/blob/master/posts/code/2_ConvolutionalNN_PNEUMONIA_X_ray.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" class="img-fluid figure-img" alt="Open In Colab"></a></p>
+<figcaption>Open In Colab</figcaption>
 </figure>
 </div>
 <hr>
@@ -201,7 +236,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="preliminares-y-carga-de-datos">Preliminares y carga de datos</h2>
 <section id="montamos-el-acceso-a-drive-para-cargar-los-datos" class="level3">
 <h3 class="anchored" data-anchor-id="montamos-el-acceso-a-drive-para-cargar-los-datos">Montamos el acceso a Drive para cargar los datos</h3>
-<div class="cell" data-outputid="b0daa2ee-0d9a-43a2-8bd1-b1e491bd21ed">
+<div id="cell-4" class="cell" data-outputid="b0daa2ee-0d9a-43a2-8bd1-b1e491bd21ed">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> google.colab <span class="im">import</span> drive</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>drive.mount(<span class="st">'/content/gdrive/'</span>)</span>
@@ -220,7 +255,7 @@ modelo_neu_jrl.h5  output.png</code></pre>
 </section>
 <section id="carga-de-las-ibrerías-a-utilizar" class="level3">
 <h3 class="anchored" data-anchor-id="carga-de-las-ibrerías-a-utilizar">Carga de las ibrerías a utilizar</h3>
-<div class="cell">
+<div id="cell-6" class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
@@ -228,7 +263,7 @@ modelo_neu_jrl.h5  output.png</code></pre>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>sns.<span class="bu">set</span>(style<span class="op">=</span><span class="st">'ticks'</span>, context<span class="op">=</span><span class="st">'talk'</span>, palette<span class="op">=</span><span class="st">'Spectral'</span>, font_scale<span class="op">=</span><span class="fl">0.9</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell">
+<div id="cell-7" class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Variables con los paths a los directorios de cada conjunto</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>test_dir <span class="op">=</span> os.path.join(root_path, <span class="st">'test'</span>)</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>train_dir <span class="op">=</span> os.path.join(root_path, <span class="st">'train'</span>)</span>
@@ -239,7 +274,7 @@ modelo_neu_jrl.h5  output.png</code></pre>
 </section>
 <section id="análisis-exploratorio" class="level1">
 <h1>Análisis Exploratorio</h1>
-<div class="cell" data-outputid="bde94df6-5d29-4812-85b0-594c3e067777">
+<div id="cell-9" class="cell" data-outputid="bde94df6-5d29-4812-85b0-594c3e067777">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#@title Proporción de clases en los conjuntos de datos {display-mode: "form"}</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">#@markdown Las siguiente gráfica muestra la proporción</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">#@markdown de clases en cada conjunto de datos.</span></span>
@@ -287,7 +322,11 @@ modelo_neu_jrl.h5  output.png</code></pre>
 Num. de casos negativos: 1583 = 0.27</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="2_ConvolutionalNN_PNEUMONIA_X_ray_files/figure-html/cell-5-output-2.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="2_ConvolutionalNN_PNEUMONIA_X_ray_files/figure-html/cell-5-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <section id="definición-de-las-clases" class="level4">
@@ -304,7 +343,7 @@ Num. de casos negativos: 1583 = 0.27</code></pre>
 <li>Validación: 10%</li>
 <li>Prueba: 10%</li>
 </ol>
-<div class="cell">
+<div id="cell-11" class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Número total de observaciones</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> df_samples.values.<span class="bu">sum</span>()</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Número de casos positivos y de casos negativos</span></span>
@@ -314,11 +353,11 @@ Num. de casos negativos: 1583 = 0.27</code></pre>
 <section id="mostramos-algunas-imágenes-de-ejemplo" class="level3">
 <h3 class="anchored" data-anchor-id="mostramos-algunas-imágenes-de-ejemplo">Mostramos algunas imágenes de ejemplo</h3>
 <p>Se muestra una imagen aleatoria de ejemplo por cada conjunto de entrenamiento (<code>train</code>, <code>test</code>, <code>val</code>) y por cada clase (<font color="red"><code>PNEUMONIA</code></font> y <font color="#44B275"><code>NORMAL</code></font>). - Se obseva que las dimensiones de las imágenes no son uniformes, lo cual deberá tomarse en cuenta cuando se implemente el generador de imágenes con <strong>Keras</strong>.</p>
-<div class="cell">
+<div id="cell-13" class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> tensorflow.keras <span class="im">as</span> k</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tensorflow.keras.preprocessing.image <span class="im">import</span> load_img, img_to_array</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-outputid="bd75dbb2-eca2-47f9-a1d9-86d0bd55e564">
+<div id="cell-14" class="cell" data-outputid="bd75dbb2-eca2-47f9-a1d9-86d0bd55e564">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">#@title Imágenes de ejemplo</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co">#@markdown (desplegar la celda para ocultar/mostrar al código)</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> show_random_images():</span>
@@ -345,17 +384,21 @@ Num. de casos negativos: 1583 = 0.27</code></pre>
 <span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>show_random_images()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="2_ConvolutionalNN_PNEUMONIA_X_ray_files/figure-html/cell-8-output-1.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="2_ConvolutionalNN_PNEUMONIA_X_ray_files/figure-html/cell-8-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 </section>
 <section id="propiedades-de-las-imágenes" class="level3">
 <h3 class="anchored" data-anchor-id="propiedades-de-las-imágenes">Propiedades de las imágenes</h3>
-<div class="cell">
+<div id="cell-16" class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tensorflow.keras.preprocessing.image <span class="im">import</span> ImageDataGenerator</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>A continuación se carga una <strong>muestra de 150 imágenes por conjunto</strong> (<code>train</code>, <code>test</code>, <code>val</code>) y por clase (<font color="red"><code>PNEUMONIA</code></font> y <font color="#44B275"><code>NORMAL</code></font>). A partir de esta muestra se hará un análisis exploratorio para comparar el conjunto de imágenes tanto entre clases como entre conjuntos. - La función <code>images_to_array()</code> permite cargar la muestra de imágenes en formato <code>np.ndarray</code>.</p>
-<div class="cell">
+<div id="cell-18" class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> images_to_array(directory, target_size <span class="op">=</span> (<span class="dv">150</span>, <span class="dv">150</span>), n_samples <span class="op">=</span> <span class="dv">150</span>):</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">''' Lee n número de imágenes aleatorias del directorio indicado</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co">      y devuelve un arreglo numpy de las mismas'''</span></span>
@@ -374,7 +417,7 @@ Num. de casos negativos: 1583 = 0.27</code></pre>
 <span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> imgs_tensor</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-outputid="1dea0a7b-9d0b-4788-b3b0-5ebeaef8b613">
+<div id="cell-19" class="cell" data-outputid="1dea0a7b-9d0b-4788-b3b0-5ebeaef8b613">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>time</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>IMG_WIDTH, IMG_HEIGHT <span class="op">=</span> <span class="dv">150</span>, <span class="dv">150</span></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>sets <span class="op">=</span> [<span class="st">'train'</span>, <span class="st">'test'</span>, <span class="st">'val'</span>]</span>
@@ -398,7 +441,7 @@ Wall time: 10.3 s</code></pre>
 </div>
 <section id="imágenes-promedio-por-conjunto-y-clase" class="level4">
 <h4 class="anchored" data-anchor-id="imágenes-promedio-por-conjunto-y-clase">Imágenes promedio por conjunto y clase</h4>
-<div class="cell" data-cellview="form" data-outputid="d8b3cf7a-d99c-4a19-9902-d1a76c524de6">
+<div id="cell-21" class="cell" data-cellview="form" data-outputid="d8b3cf7a-d99c-4a19-9902-d1a76c524de6">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">#@markdown La siguiente figura muestra una imagen promedio por cada conjunto y clase</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co">#@markdown del conjunto de datos.</span></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -425,14 +468,18 @@ Wall time: 10.3 s</code></pre>
 <span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a>plt.suptitle(<span class="st">"Imágenes promedio por conjunto y clase"</span>, y <span class="op">=</span> <span class="fl">1.05</span>)</span>
 <span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="2_ConvolutionalNN_PNEUMONIA_X_ray_files/figure-html/cell-12-output-1.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="2_ConvolutionalNN_PNEUMONIA_X_ray_files/figure-html/cell-12-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Es posible observar que, independientemente del conjunto, la clase <font color="red"><code>PNEUMONIA</code></font> tiende a mostrar una mayor densidad en el campo intrapulmonar, es decir, <strong>la zona interna de los pulmones se ve más iluminada</strong> (intensa) en las <strong>muestras con neumonía</strong>.</p>
 </section>
 <section id="histogramas-de-intensidad-y-función-de-distribución-acumulada-fda" class="level4">
 <h4 class="anchored" data-anchor-id="histogramas-de-intensidad-y-función-de-distribución-acumulada-fda">Histogramas de intensidad y función de distribución acumulada (FDA)</h4>
-<div class="cell" data-outputid="09e474f0-c7f3-43f4-d018-b1fd1b3011f4">
+<div id="cell-24" class="cell" data-outputid="09e474f0-c7f3-43f4-d018-b1fd1b3011f4">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">#@markdown La siguiente figura muestra los histogramas de intensidad de cada</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co">#@markdown &nbsp;**imagen promedio** así como la función de distribución acumulada de</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co">#@markdown dichos valores.</span></span>
@@ -462,14 +509,18 @@ Wall time: 10.3 s</code></pre>
 <span id="cb15-27"><a href="#cb15-27" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
 <span id="cb15-28"><a href="#cb15-28" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="2_ConvolutionalNN_PNEUMONIA_X_ray_files/figure-html/cell-13-output-1.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="2_ConvolutionalNN_PNEUMONIA_X_ray_files/figure-html/cell-13-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>En los histogramas de intensidad se observa la <strong>frecuencia de intensidad de los pixeles</strong> de las imágenes promedio mostradas en la figura anterior. A partir de estas imágenes promedio podemos suponer lo siguiente para cada conjunto de imágenes: - Es posible notar que las imáges con la etiqueta <font color="#44B275"><code>NORMAL</code></font> muestran <strong>picos de intensidad en 100 y 150</strong>. - Por otro lado, las imágenes con etiqueta <font color="red"><code>PNEUMONIA</code></font> <strong>NO muestran este mismo patrón</strong>. - En general, las imágenes con <font color="red"><code>PNEUMONIA</code></font> <strong>no alcanzan intensidades mayores a 200.</strong></p>
 </section>
 <section id="imágenes-promedio-y-desviación-estándar-por-clase" class="level4">
 <h4 class="anchored" data-anchor-id="imágenes-promedio-y-desviación-estándar-por-clase">Imágenes promedio y desviación estándar por clase</h4>
-<div class="cell" data-cellview="form" data-outputid="d8fb8c61-b710-4670-af10-a4e6ec37d752">
+<div id="cell-27" class="cell" data-cellview="form" data-outputid="d8fb8c61-b710-4670-af10-a4e6ec37d752">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">#@markdown La siguiente figura muestra la **imagen promedio de cada clase** así como</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="co">#@markdown la **desviación estándar** de cada imagen.</span></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -491,7 +542,11 @@ Wall time: 10.3 s</code></pre>
 <span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>    ax[j<span class="op">+</span>i].set_yticks([])</span>
 <span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="2_ConvolutionalNN_PNEUMONIA_X_ray_files/figure-html/cell-14-output-1.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="2_ConvolutionalNN_PNEUMONIA_X_ray_files/figure-html/cell-14-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>En la figura anterior es posible <strong>comparar la imagen promedio de las imágenes</strong> de la clase <font color="green"><code>NORMAL</code></font> vs la clase <font color="red"><code>PNEUMONIA</code></font>, así como <strong>la variabilidad de las intensidades</strong> de cada clase en términos de desviación estádar. Se observa lo siguiente: - Como en las figuras anteriores, las imágenes de la clase <font color="red"><code>PNEUMONIA</code></font> muestran una mayor densidad en la región torácica. - Las imágenes <font color="green"><code>NORMAL</code></font> tienen mayor contraste y bordes más definidos entre los elementós óseos (blanco) y región del parénquima pulmonar (negro).</p>
@@ -504,7 +559,7 @@ Wall time: 10.3 s</code></pre>
 <p><strong>A continuación se muestra la implementación de una red neuronal convolucional para clasificación de radiografías de torax.</strong> 1. Se usarán las imágenes de los conjuntos <code>train</code> y <code>val</code> para la fase de entrenamiento. 2. Se usará la clase <code>ImageDataGenerator</code> de Keras como método de aumento de datos. 3. Se tomará en cuenta el desbalance de clases para la inicialización de los pesos de la capa de salida de la red. 4. Se utilizará el optimizador Adam con momento de Nesterov. 5. Se usará la entropía cruzada binaria (<em>binary cross-entropy</em>) como función de pérdida. 5. Se monitorearán las siguientes métricas durante el entrenamiento (tanto para el conjunto <code>train</code> como para el conjunto <code>val</code>: - Exactitud (<em>accuracy</em>) - Precisión - Sensibilidad - Área bajo la curva ROC</p>
 <section id="generador-de-datos" class="level3">
 <h3 class="anchored" data-anchor-id="generador-de-datos">Generador de Datos</h3>
-<div class="cell" data-outputid="f906f1d7-d55d-47e6-a8bf-59299f2c7295">
+<div id="cell-30" class="cell" data-outputid="f906f1d7-d55d-47e6-a8bf-59299f2c7295">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Redimencionaremos las imágenes</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>IMG_WIDTH, IMG_HEIGHT <span class="op">=</span> <span class="dv">150</span>, <span class="dv">150</span></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>BATCH_SIZE <span class="op">=</span> <span class="dv">32</span></span>
@@ -563,7 +618,7 @@ Found 584 images belonging to 2 classes.</code></pre>
 <p>donde:</p>
 </blockquote>
 <p><span class="math display">\[b0 = -log_e\left(\frac{n_{positivos}} {n_{negativos}}\right)\]</span></p>
-<div class="cell" data-outputid="e1867647-da2b-420f-9865-47d8c94e12ea">
+<div id="cell-32" class="cell" data-outputid="e1867647-da2b-420f-9865-47d8c94e12ea">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Consideramos el bias inicial debido al desbalance de clases</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Num. de casos positivos: </span><span class="sc">{</span>n_pos<span class="sc">}</span><span class="ss"> = </span><span class="sc">{</span>n_pos <span class="op">/</span> n<span class="sc">:.2f}</span><span class="ss">'</span>)</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Num. de casos negativos: </span><span class="sc">{</span>n_neg<span class="sc">}</span><span class="ss"> = </span><span class="sc">{</span>n_neg <span class="op">/</span> n<span class="sc">:.2f}</span><span class="ss">'</span>)</span>
@@ -580,11 +635,11 @@ Num. de casos negativos: 1583 = 0.27</code></pre>
 </section>
 <section id="arquitectura-de-la-red" class="level3">
 <h3 class="anchored" data-anchor-id="arquitectura-de-la-red">Arquitectura de la red</h3>
-<div class="cell">
+<div id="cell-34" class="cell">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tensorflow.keras.models <span class="im">import</span> Sequential</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tensorflow.keras.layers <span class="im">import</span> Conv2D, MaxPool2D, Dense, Dropout, Flatten</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-outputid="bf7ee9d5-a10a-4699-a7c7-7d7900e057e8">
+<div id="cell-35" class="cell" data-outputid="bf7ee9d5-a10a-4699-a7c7-7d7900e057e8">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Definimos la arquitectura de la red usando el API Secuencial de Keras</span></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> Sequential()</span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>model.add(Conv2D(filters      <span class="op">=</span> <span class="dv">32</span>,</span>
@@ -667,17 +722,21 @@ _________________________________________________________________</code></pre>
 <section id="visualización-de-la-arquitectura-de-la-red" class="level4">
 <h4 class="anchored" data-anchor-id="visualización-de-la-arquitectura-de-la-red">Visualización de la Arquitectura de la Red</h4>
 <p>Para la siguiente visualización utilizaremos la librería <code>visualkeras</code>.</p>
-<div class="cell">
+<div id="cell-37" class="cell">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>capture</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Instala la librería visualkeras que permite visualizar la arquitectura de la red</span></span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip install git<span class="op">+</span>https:<span class="op">//</span>github.com<span class="op">/</span>paulgavrikov<span class="op">/</span>visualkeras</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-outputid="048dd1a6-a180-432f-9818-5b9fb3eb183b">
+<div id="cell-38" class="cell" data-outputid="048dd1a6-a180-432f-9818-5b9fb3eb183b">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> visualkeras</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>visualkeras.layered_view(model <span class="op">=</span> model, scale_xy<span class="op">=</span><span class="dv">1</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="19">
-<p><img src="2_ConvolutionalNN_PNEUMONIA_X_ray_files/figure-html/cell-20-output-1.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="2_ConvolutionalNN_PNEUMONIA_X_ray_files/figure-html/cell-20-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <ol start="0" type="1">
@@ -702,7 +761,7 @@ _________________________________________________________________</code></pre>
 <section id="callbacks" class="level3">
 <h3 class="anchored" data-anchor-id="callbacks">Callbacks</h3>
 <p>Usaremos dos <strong><code>callbacks</code></strong> de Keras durante el entrenamiento: - <strong><code>ModelCheckpoint</code></strong>: Permite guardar el modelo con cierta frecuencia dureante el entrenamiento. - <strong><code>EarlyStopping</code></strong>: Permite detener la ejecución del entrenamiento si cierta métrica, definida por el usuario, no mejora depués de cierto criterio (en este caso el número de épocas).</p>
-<div class="cell">
+<div id="cell-41" class="cell">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tensorflow.keras.callbacks <span class="im">import</span> ModelCheckpoint, EarlyStopping</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Early Stopping</span></span>
@@ -727,7 +786,7 @@ _________________________________________________________________</code></pre>
 </section>
 <section id="métricas-de-evaluación" class="level3">
 <h3 class="anchored" data-anchor-id="métricas-de-evaluación">Métricas de evaluación</h3>
-<div class="cell">
+<div id="cell-43" class="cell">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tensorflow.keras.metrics <span class="im">import</span> BinaryAccuracy, <span class="op">\</span></span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>      AUC, Recall, Precision</span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -739,7 +798,7 @@ _________________________________________________________________</code></pre>
 </section>
 <section id="optimizador-a-utilizar" class="level3">
 <h3 class="anchored" data-anchor-id="optimizador-a-utilizar">Optimizador a utilizar</h3>
-<div class="cell">
+<div id="cell-45" class="cell">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tensorflow.keras.optimizers <span class="im">import</span> Nadam</span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>optimizer <span class="op">=</span> Nadam(</span>
@@ -753,7 +812,7 @@ _________________________________________________________________</code></pre>
 </section>
 <section id="compilación-del-modelo" class="level3">
 <h3 class="anchored" data-anchor-id="compilación-del-modelo">Compilación del modelo</h3>
-<div class="cell">
+<div id="cell-47" class="cell">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Compilamos el modelo</span></span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>model.<span class="bu">compile</span>(</span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>    optimizer <span class="op">=</span> optimizer,</span>
@@ -764,7 +823,7 @@ _________________________________________________________________</code></pre>
 </section>
 <section id="entrenamiento-de-la-red" class="level3">
 <h3 class="anchored" data-anchor-id="entrenamiento-de-la-red">Entrenamiento de la red</h3>
-<div class="cell" data-outputid="74d53024-3bb5-4971-c6b4-8904e68183e3">
+<div id="cell-49" class="cell" data-outputid="74d53024-3bb5-4971-c6b4-8904e68183e3">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>time</span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>BATCH_SIZE <span class="op">=</span> <span class="dv">64</span></span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>EPOCHS <span class="op">=</span> <span class="dv">50</span></span>
@@ -908,16 +967,16 @@ Wall time: 38min 23s</code></pre>
 </div>
 <section id="guarda-el-modelo-y-el-el-objeto-history" class="level4">
 <h4 class="anchored" data-anchor-id="guarda-el-modelo-y-el-el-objeto-history">Guarda el modelo y el el objeto <code>history</code></h4>
-<div class="cell">
+<div id="cell-51" class="cell">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>model.save(<span class="ss">f"</span><span class="sc">{</span>root_path<span class="sc">}</span><span class="ss">/modelo_cnn_jrl_TRAINED.h5"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell">
+<div id="cell-52" class="cell">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pickle</span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>history <span class="op">=</span> history.history</span>
 <span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="ss">f"</span><span class="sc">{</span>root_path<span class="sc">}</span><span class="ss">/history_cnn.pkl"</span>, <span class="st">'wb'</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
 <span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>  pickle.dump(history, <span class="bu">file</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell">
+<div id="cell-53" class="cell">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Carga del modelo</span></span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="co"># import pickle</span></span>
 <span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="co"># model = k.models.load_model(f"{root_path}/modelo_neu_jrl.h5")</span></span>
@@ -928,7 +987,7 @@ Wall time: 38min 23s</code></pre>
 </section>
 <section id="evaluación-del-modelo" class="level2">
 <h2 class="anchored" data-anchor-id="evaluación-del-modelo">Evaluación del modelo</h2>
-<div class="cell" data-outputid="ac9fd5d9-1103-4797-aa8d-533f6991f823">
+<div id="cell-55" class="cell" data-outputid="ac9fd5d9-1103-4797-aa8d-533f6991f823">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co">#@title Desempeño de la red durante el entrenamiento</span></span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="co">#@markdown (desplegar para ver el código)</span></span>
 <span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -979,12 +1038,16 @@ Wall time: 38min 23s</code></pre>
 <span id="cb35-48"><a href="#cb35-48" aria-hidden="true" tabindex="-1"></a>      suptitle<span class="op">=</span><span class="st">'CNN: Métricas de evaluación en '</span> <span class="op">+</span></span>
 <span id="cb35-49"><a href="#cb35-49" aria-hidden="true" tabindex="-1"></a>      <span class="st">'los conjuntos de Entrenamiento y Validación'</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="2_ConvolutionalNN_PNEUMONIA_X_ray_files/figure-html/cell-29-output-1.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="2_ConvolutionalNN_PNEUMONIA_X_ray_files/figure-html/cell-29-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <section id="evaluación-con-el-conjunto-de-prueba" class="level3">
 <h3 class="anchored" data-anchor-id="evaluación-con-el-conjunto-de-prueba">Evaluación con el conjunto de prueba</h3>
-<div class="cell" data-outputid="8cf3494c-7394-4ab4-9769-c5b9d0b7282f">
+<div id="cell-57" class="cell" data-outputid="8cf3494c-7394-4ab4-9769-c5b9d0b7282f">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>score_test <span class="op">=</span> model.evaluate(test_generator, batch_size<span class="op">=</span><span class="dv">128</span>)</span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, j <span class="kw">in</span> <span class="bu">zip</span>(history.keys(), score_test):</span>
@@ -999,7 +1062,7 @@ RECALL: 0.993</code></pre>
 </div>
 </div>
 <p>Otenemos las etiquetas reales y las etiquetas predichas del conjunto de prueba.</p>
-<div class="cell">
+<div id="cell-59" class="cell">
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Etiquetas reales</span></span>
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>y_test <span class="op">=</span> test_generator.classes</span>
 <span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Predicciones</span></span>
@@ -1008,7 +1071,7 @@ RECALL: 0.993</code></pre>
 </div>
 <section id="matriz-de-confusión" class="level4">
 <h4 class="anchored" data-anchor-id="matriz-de-confusión">Matriz de confusión</h4>
-<div class="cell" data-outputid="6f3fb47b-9fdc-4871-834a-8527d6026e7b">
+<div id="cell-61" class="cell" data-outputid="6f3fb47b-9fdc-4871-834a-8527d6026e7b">
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co">#@markdown (desplegar para ver el código)</span></span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> confusion_matrix</span>
@@ -1047,14 +1110,18 @@ RECALL: 0.993</code></pre>
 <span id="cb39-36"><a href="#cb39-36" aria-hidden="true" tabindex="-1"></a>plot_cfn_matrix(y_test, y_pred_classes,</span>
 <span id="cb39-37"><a href="#cb39-37" aria-hidden="true" tabindex="-1"></a>    suptitle<span class="op">=</span><span class="st">'Matriz de confusión CNN (conjunto de prueba)'</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="2_ConvolutionalNN_PNEUMONIA_X_ray_files/figure-html/cell-32-output-1.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="2_ConvolutionalNN_PNEUMONIA_X_ray_files/figure-html/cell-32-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 </section>
 <section id="curva-roc-y-curva-de-precisión-sensibilidad" class="level4">
 <h4 class="anchored" data-anchor-id="curva-roc-y-curva-de-precisión-sensibilidad">Curva ROC y Curva de Precisión Sensibilidad</h4>
 <p>Para esta evaluación usamos las métricas: - Área bajo la curva ROC. - Promedio de Precisión-Sensibilidad (<em>avgPR</em>): &gt; <span class="math inline">\(\text{AP} = \sum_n (R_n - R_{n-1}) P_n\)</span></p>
-<div class="cell" data-outputid="f4384b93-7038-4aad-d1d5-b2caabff1dce">
+<div id="cell-63" class="cell" data-outputid="f4384b93-7038-4aad-d1d5-b2caabff1dce">
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co">#@markdown (desplegar para ver el código)</span></span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> roc_auc_score, roc_curve, <span class="op">\</span></span>
@@ -1101,7 +1168,11 @@ RECALL: 0.993</code></pre>
 <span id="cb40-44"><a href="#cb40-44" aria-hidden="true" tabindex="-1"></a>plot_roc_and_pr_curves(y_test, y_pred,</span>
 <span id="cb40-45"><a href="#cb40-45" aria-hidden="true" tabindex="-1"></a>          suptitle<span class="op">=</span><span class="st">'Desempeño CNN'</span>, name <span class="op">=</span> <span class="st">'CNN'</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="2_ConvolutionalNN_PNEUMONIA_X_ray_files/figure-html/cell-33-output-1.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="2_ConvolutionalNN_PNEUMONIA_X_ray_files/figure-html/cell-33-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -1118,7 +1189,7 @@ RECALL: 0.993</code></pre>
 <section id="uso-de-la-red-vgg16" class="level2">
 <h2 class="anchored" data-anchor-id="uso-de-la-red-vgg16">Uso de la red VGG16</h2>
 <p>Para esta fase vamos a implementar el método de transferencia de conocimiento (<em>Transfer learning</em>) usando la red <strong>VGG16</strong> (Simonyan and Zisserman, 2015).</p>
-<div class="cell">
+<div id="cell-67" class="cell">
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tensorflow.keras.applications <span class="im">import</span> VGG16</span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>vgg16 <span class="op">=</span> VGG16(weights     <span class="op">=</span> <span class="st">'imagenet'</span>,</span>
@@ -1129,13 +1200,17 @@ RECALL: 0.993</code></pre>
 </div>
 <section id="visualizamos-la-arquitectura-de-la-vgg16" class="level4">
 <h4 class="anchored" data-anchor-id="visualizamos-la-arquitectura-de-la-vgg16">Visualizamos la arquitectura de la VGG16</h4>
-<div class="cell" data-outputid="ae2945cc-f6ae-4f4b-f36c-0b42da36af4f">
+<div id="cell-69" class="cell" data-outputid="ae2945cc-f6ae-4f4b-f36c-0b42da36af4f">
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>visualkeras.layered_view(vgg16, scale_xy<span class="op">=</span><span class="dv">1</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="37">
-<p><img src="2_ConvolutionalNN_PNEUMONIA_X_ray_files/figure-html/cell-35-output-1.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="2_ConvolutionalNN_PNEUMONIA_X_ray_files/figure-html/cell-35-output-1.png" class="img-fluid figure-img"></p>
+</figure>
 </div>
 </div>
-<div class="cell" data-outputid="c0b5bacc-b52c-4b50-ed10-f537cfdb8319">
+</div>
+<div id="cell-70" class="cell" data-outputid="c0b5bacc-b52c-4b50-ed10-f537cfdb8319">
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tensorflow.keras.layers <span class="im">import</span> Input</span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Creamos nuestro nuevo modelo</span></span>
 <span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1179,7 +1254,7 @@ _________________________________________________________________</code></pre>
 </section>
 <section id="compilamos-el-modelo-basado-en-vgg16" class="level3">
 <h3 class="anchored" data-anchor-id="compilamos-el-modelo-basado-en-vgg16">Compilamos el modelo basado en VGG16</h3>
-<div class="cell">
+<div id="cell-73" class="cell">
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Usamos las mismas métricas de evaluación</span></span>
 <span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>metrics <span class="op">=</span> [BinaryAccuracy(name <span class="op">=</span> <span class="st">'accuracy'</span>),</span>
 <span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>           AUC(name <span class="op">=</span> <span class="st">'roc_auc'</span>),</span>
@@ -1199,7 +1274,7 @@ _________________________________________________________________</code></pre>
 <h3 class="anchored" data-anchor-id="entrenamiento-del-moelo-basado-en-vgg16">Entrenamiento del moelo basado en VGG16</h3>
 <section id="callbacks-1" class="level4">
 <h4 class="anchored" data-anchor-id="callbacks-1">Callbacks</h4>
-<div class="cell">
+<div id="cell-75" class="cell">
 <div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>BATCH_SIZE <span class="op">=</span> <span class="dv">64</span></span>
 <span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>EPOCHS <span class="op">=</span> <span class="dv">50</span></span>
 <span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1219,7 +1294,7 @@ _________________________________________________________________</code></pre>
 </section>
 <section id="entrenamiento-de-la-red-1" class="level3">
 <h3 class="anchored" data-anchor-id="entrenamiento-de-la-red-1">Entrenamiento de la red</h3>
-<div class="cell" data-outputid="f0c0a654-67c2-4318-bedf-0adf07941b3b">
+<div id="cell-77" class="cell" data-outputid="f0c0a654-67c2-4318-bedf-0adf07941b3b">
 <div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>time</span>
 <span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Entrenamiento</span></span>
 <span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>history_vgg16 <span class="op">=</span> model_vgg16.fit(</span>
@@ -1284,25 +1359,29 @@ Epoch 13/50
 Epoch 00013: val_loss did not improve from 0.18551</code></pre>
 </div>
 </div>
-<div class="cell">
+<div id="cell-78" class="cell">
 <div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>model_vgg16.save(<span class="ss">f"</span><span class="sc">{</span>root_path<span class="sc">}</span><span class="ss">/modelo_vgg16_jrl_TRAINED.h5"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell">
+<div id="cell-79" class="cell">
 <div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>history_vgg16 <span class="op">=</span> history_vgg16.history</span>
 <span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="ss">f"</span><span class="sc">{</span>root_path<span class="sc">}</span><span class="ss">/history_cnn_vgg16.pkl"</span>, <span class="st">'wb'</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
 <span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>  pickle.dump(history_vgg16, <span class="bu">file</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-outputid="f5056d7d-7d09-4d2a-9ef4-c1629b92b31b">
+<div id="cell-80" class="cell" data-outputid="f5056d7d-7d09-4d2a-9ef4-c1629b92b31b">
 <div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ejecutamos la función</span></span>
 <span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>train_hist_v16 <span class="op">=</span> history_vgg16.copy()</span>
 <span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>plot_history(train_hist_v16,</span>
 <span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a>      suptitle<span class="op">=</span><span class="st">'VGG16-base: Métricas de evaluación en '</span> <span class="op">+</span></span>
 <span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a>      <span class="st">'los conjuntos de Entrenamiento y Validación'</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="2_ConvolutionalNN_PNEUMONIA_X_ray_files/figure-html/cell-42-output-1.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="2_ConvolutionalNN_PNEUMONIA_X_ray_files/figure-html/cell-42-output-1.png" class="img-fluid figure-img"></p>
+</figure>
 </div>
 </div>
-<div class="cell" data-outputid="622a4d25-8efa-4c5a-fb2b-29d5a61d652b">
+</div>
+<div id="cell-81" class="cell" data-outputid="622a4d25-8efa-4c5a-fb2b-29d5a61d652b">
 <div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>score_test_vgg16 <span class="op">=</span> model_vgg16.evaluate(test_generator, batch_size<span class="op">=</span><span class="dv">64</span>)</span>
 <span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, j <span class="kw">in</span> <span class="bu">zip</span>(train_hist_v16.keys(), score_test_vgg16):</span>
@@ -1316,30 +1395,38 @@ PRECISION: 0.89
 RECALL: 0.99</code></pre>
 </div>
 </div>
-<div class="cell">
+<div id="cell-82" class="cell">
 <div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Etiquetas reales</span></span>
 <span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="co"># y_test = test_generator.classes</span></span>
 <span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Predicciones</span></span>
 <span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a>y_pred_v16 <span class="op">=</span> model_vgg16.predict(test_generator)</span>
 <span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a>y_pred_classes_v16 <span class="op">=</span> (y_pred_v16 <span class="op">&gt;=</span> <span class="fl">0.5</span>).astype(<span class="st">'int32'</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-outputid="b6308434-bbc6-43a2-d8e9-558ba09a41c5">
+<div id="cell-83" class="cell" data-outputid="b6308434-bbc6-43a2-d8e9-558ba09a41c5">
 <div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="co">#@markdown (desplegar para ver el código)</span></span>
 <span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Genera la gráfica</span></span>
 <span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a>plot_cfn_matrix(y_test, y_pred_classes_v16,</span>
 <span id="cb55-5"><a href="#cb55-5" aria-hidden="true" tabindex="-1"></a>    suptitle<span class="op">=</span><span class="st">'Matriz de confusión VGG16-base (conjunto de prueba)'</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="2_ConvolutionalNN_PNEUMONIA_X_ray_files/figure-html/cell-45-output-1.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="2_ConvolutionalNN_PNEUMONIA_X_ray_files/figure-html/cell-45-output-1.png" class="img-fluid figure-img"></p>
+</figure>
 </div>
 </div>
-<div class="cell" data-outputid="e2042ab8-d736-4290-8a31-d839e3390f0c">
+</div>
+<div id="cell-84" class="cell" data-outputid="e2042ab8-d736-4290-8a31-d839e3390f0c">
 <div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Genera la gráfica</span></span>
 <span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>plot_roc_and_pr_curves(y_test, y_pred_v16,</span>
 <span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>          suptitle <span class="op">=</span> <span class="st">'Desempeño VGG16-base'</span>,</span>
 <span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a>          name <span class="op">=</span> <span class="st">'VGG16'</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="2_ConvolutionalNN_PNEUMONIA_X_ray_files/figure-html/cell-46-output-1.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="2_ConvolutionalNN_PNEUMONIA_X_ray_files/figure-html/cell-46-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -1441,10 +1528,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1454,8 +1540,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1468,6 +1563,125 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -1511,6 +1725,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1536,6 +1751,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1596,6 +1837,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+
 
 
 
