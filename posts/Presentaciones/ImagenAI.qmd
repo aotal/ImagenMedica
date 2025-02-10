@@ -9,7 +9,7 @@ lang: es
 format: 
     revealjs:
         logo: 'https://cdn0.iconfinder.com/data/icons/modern-ui-glyph-1/64/modern-ui-glyph-1-03-512.png'
-        footer-logo-link: "/ImagenMedica"
+        footer-logo-link: "/"
         footer: "[IAMED](https://cv.udl.cat/portal/site/100794-2324/tool/3d5c2c81-a50b-43ce-a0bf-ecbfd152350b)"
         css: styles.css
         number-sections: false
@@ -17,6 +17,7 @@ format:
         center: false
 filters:
   - reveal-header        
+jupyter: python3   
 bibliography: references.bib
 ---
 
@@ -53,7 +54,6 @@ Notes
 
 [![](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/aotal/ImagenMedica/blob/master/posts/code/2_ConvolutionalNN_PNEUMONIA_X_ray.ipynb)
 
-
 ## Vision Transformer
 
 ::: columns
@@ -83,7 +83,6 @@ Notes
 <iframe width="1260" height="500" src="https://openknowledgemaps.org/map/f7779ae30d9618c87f48fbf52374eb5b?embed=true" 
                                 allow="clipboard-write; self https://openknowledgemaps.org/;"></iframe>
 ```
-
 ## U-Net
 
 ![](https://lmb.informatik.uni-freiburg.de/people/ronneber/u-net/u-net-architecture.png)
@@ -137,6 +136,3 @@ Notes
                                 allow="clipboard-write; self https://openknowledgemaps.org/;"></iframe>
 
 ```
-
-# Bibliografía
-

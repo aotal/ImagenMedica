@@ -2,10 +2,12 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/code/word_embeddings.html",
+      "/posts/Presentaciones/LLMs.html",
+      "/posts/code/2_ConvolutionalNN_PNEUMONIA_X_ray.html",
       "/posts/code/Neumonia.html",
       "/posts/code/PruebaMonai.html",
       "/posts/code/unet_segmentation.html",
-      "/posts/code/2_ConvolutionalNN_PNEUMONIA_X_ray.html",
       "/posts/Presentaciones/ImagenAI.html",
       "/posts/Presentaciones/IntroIM.html",
       "/posts/code/Embedding.html",
