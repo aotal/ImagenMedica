@@ -1,6 +1,6 @@
 ---
 title: "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO"
-date: "2025-02-10"
+date: "2025-02-12"
 categories: [Presentación]
 image: img/portada_llm.png
 author: "[Antonio Otal Palacín](antonio.otal@udl.cat)"
@@ -15,6 +15,8 @@ format:
         number-sections: false
         slide-number: false
         center: false
+        preview-links: true
+        smaller: true
 filters:
   - reveal-header        
 jupyter: python3   
@@ -24,9 +26,9 @@ jupyter: python3
 
 -   Introducción breve a los LLM
 -   Embedding Systems
--   Fine-Tuning y Retrieval Augmentation Generation (RAG)
--   Ejemplo de RAG según la estructuración de los datos
 -   Knowledge Graphs
+-   Bases de datos
+-   Fine-Tuning y Retrieval Augmentation Generation (RAG)
 -   Límites de los LLM
 
 ::: notes
@@ -81,23 +83,13 @@ Notes
 :::
 
 ::: {.column width="80%"}
-<p style="font-size: 30px;">
 
 **Codificaciones posicionales**: Los transformers agregan un número a cada palabra para indicar su posición en la oración. Esto ayuda al modelo a comprender el orden de las palabras, lo cual es crucial para el significado.
 
-</p>
-
-<p style="font-size: 30px;">
-
 **Atención**: Permite al modelo considerar todas las palabras de la oración al traducir o analizar una palabra específica. Esto ayuda a capturar relaciones complejas entre palabras y mejora la precisión de la traducción y la comprensión.
-
-</p>
-
-<p style="font-size: 30px;">
 
 **Autoatención**: Permite al modelo comprender una palabra en el contexto de las palabras que la rodean, lo que ayuda a desambiguar palabras con múltiples significados y captar matices del lenguaje.
 
-</p>
 :::
 :::::
 
@@ -123,6 +115,8 @@ Notes
 
 ![](img/vectores.gif)
 
+<a href="https://colab.research.google.com/github/aotal/ImagenMedica/blob/master/posts/code/Embedding.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+
 ::: notes
 Notes
 :::
@@ -135,7 +129,139 @@ Notes
 Notes
 :::
 
-# FINE-TUNNING y RETRIEVAS AUGMENTATION GENERATION (RAG)
+## CHUNKS
+
+<blockquote cite>
+
+Un *chunk* es una unidad discreta de información extraída de un cuerpo de texto más grande. Puede ser una frase, un párrafo, una sección de un documento o incluso un documento completo, dependiendo del sistema y la aplicación. La idea principal es dividir la información en partes más pequeñas que sean más fáciles de procesar y analizar para la IA.
+
+</blockquote>
+
+
+::: notes
+Notes
+:::
+
+## Métodos de División en Chunks
+
+- **Por encabezados**: Se usan los encabezados y subtítulos del documento para crear chunks.
+- **Por párrafos**: Se divide el texto en chunks según los párrafos.
+- **Ventanas deslizantes**: Una ventana captura texto al desplazarse, creando chunks que se superponen.
+- **Segmentación semántica**: Se usan algoritmos para identificar unidades de significado y dividir el texto en chunks.
+
+::: notes
+Notes
+:::
+
+## ¿Cómo los LLMs Utilizan los Chunks?
+
+Los LLMs utilizan los chunks para comprender el contexto y generar texto coherente. Al procesar un chunk, el LLM puede:
+
+- **Identificar las ideas principales**: Extraer la información más relevante del chunk.
+
+- **Establecer conexiones**: Relacionar la información del chunk con otros chunks o con el conocimiento previo del LLM. Para lograr esto, los LLMs utilizan mecanismos como la atención y la codificación posicional. La atención permite al modelo enfocarse en las partes más relevantes de la información dentro de un chunk y entre diferentes chunks. La codificación posicional proporciona información sobre la ubicación de las palabras dentro de un chunk y en relación con otros chunks, lo que ayuda al modelo a comprender el orden y la secuencia de la información.
+
+- **Generar resúmenes**: Condensar la información del chunk en un resumen conciso.
+
+- **Responder preguntas**: Proporcionar respuestas precisas y relevantes a las preguntas basadas en la información del chunk.
+
+::: notes
+Notes
+:::
+
+## Desafíos de los *Chunks* en LLMs
+
+- Pérdida de contexto: Dividir el texto en *chunks* puede dificultar la comprensión de relaciones entre datos, afectando la precisión de las respuestas.
+
+- Sesgo: La selección de *chunks* puede introducir sesgos, llevando a resultados incompletos o inexactos.
+
+- Información compleja: Cierta información (imágenes, datos, etc.) es difícil de representar en *chunks*.
+
+- Tamaño del *chunk*: Encontrar el tamaño óptimo es crucial para el rendimiento del modelo.
+
+
+::: notes
+Notes
+:::
+
+# KNOWLEDGE GRAPH (KG)
+
+## ¿QUÉ SON LOS KG?
+
+<blockquote cite>
+Los grafos de conocimiento son bases de datos inteligentes que representan el conocimiento médico de manera estructurada, permitiendo a la IA comprender y razonar sobre la información de forma más efectiva.
+</blockquote>
+
+[![Lord of the rings](img/thering.jpg){width=300px}](https://alon-cohen-gordon.wixsite.com/lotr-graph){preview-links="true" .h}
+
+::: notes
+Notes
+:::
+
+## Componentes principales de un grafo de conocimiento
+
+::::: columns
+::: {.column width="30%" }
+ ![](img/esquema_kg.jpg)
+:::
+
+::: {.column width="70%" .absolute top="220" left="340"}
+
+
+- **Nodos**: Representan entidades, conceptos u objetos, como enfermedades, síntomas, genes o medicamentos.
+- **Aristas**: Representan las relaciones entre los nodos, como "causa", "trata", "se asocia con" o "es un tipo de".
+- **Etiquetas**: Proporcionan información adicional sobre los nodos y las aristas, como nombres, descripciones o atributos.
+
+:::
+:::::
+
+::: notes
+Notes
+:::
+
+## Beneficios de los Grafos de Conocimiento
+::::: columns
+::: {.column width="30%" }
+ ![](img/beneficios_KG.jpg)
+:::
+
+::: {.column width="70%" .absolute top="230" left="340"}
+
+
+- **Precisión en el diagnóstico**: Integración de información de diversas fuentes.
+- **Personalización de tratamientos**: Uso de información genómica, clínica y de estilo de vida.
+- **Descubrimiento de fármacos**: Identificación de nuevas relaciones entre genes, proteínas y enfermedades.
+
+:::
+:::::
+
+::: notes
+Notes
+:::
+
+## Limitaciones de los Grafos de Conocimiento
+::::: columns
+::: {.column width="30%" }
+ ![](img/limitations_kg.jpg)
+:::
+
+::: {.column width="70%" .absolute top="230" left="340"}
+
+
+- **Calidad de los datos**: La precisión y completitud son cruciales.
+- **Escalabilidad**: Construcción y mantenimiento a gran escala pueden ser complejos.
+- **Interoperabilidad**: Integración con otros sistemas y bases de datos puede ser un desafío.
+
+:::
+:::::
+
+::: notes
+Notes
+:::
+
+
+
+# FINE-TUNNING y RETRIEVAL AUGMENTATION GENERATION (RAG)
 
 ## FINE-TUNNING
 
@@ -263,17 +389,11 @@ Notes
 Notes
 :::
 
-# KNOWLEDGE GRAPH
-
-## Lord os the rings
-
-```{=html}
-<iframe width="780" height="500" src="https://alon-cohen-gordon.wixsite.com/lotr-graph" title="Lord of the rings"></iframe>
-```
 
 
-## Prueba
 
-```{=html}
-<iframe width="1000" height="800" src="html/1_CrearJSON_medicamentos/1_CrearJSON_medicamentos.html" title="CrearJSON"></iframe>
-```
+
+## prueba2
+
+[JSON](https://g.co/gemini/share/1a71601dec07)
+

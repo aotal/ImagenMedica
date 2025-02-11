@@ -1,0 +1,31 @@
+---
+title: "TEXTO DATOS E IMAGEN"
+date: "2025-02-12"
+categories: [Introducción]
+image: img/presentacion_bloque.jpg
+author: "[Antonio Otal Palacín](antonio.otal@udl.cat)"
+institute: Hospital Universitari Arnau de Vilanova (Lleida)
+lang: es
+format: 
+    revealjs:
+        logo: 'https://cdn0.iconfinder.com/data/icons/modern-ui-glyph-1/64/modern-ui-glyph-1-03-512.png'
+        footer-logo-link: "/"
+        footer: "[IAMED](https://cv.udl.cat/portal/site/100794-2324/tool/3d5c2c81-a50b-43ce-a0bf-ecbfd152350b)"
+        css: styles.css
+        number-sections: false
+        slide-number: false
+        center: false
+        preview-links: true
+filters:
+  - reveal-header        
+jupyter: python3   
+---
+
+# Hoja de Ruta
+- [LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO](/posts/Presentaciones/LLMs.html)
+- DATOS EN EL ÁMBITO SANITARIO
+- EJEMPLO DE DATOS NO ESTRUCTURADOS A ESTRUCTURADOS
+- MODALIDADES DE IMAGEN
+- AI APLICADA A LA IMÁGEN MÉDICA
+
+# LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO

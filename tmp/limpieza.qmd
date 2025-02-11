@@ -1,0 +1,27 @@
+---
+title: "Instrucciones para incrustar un chat de gemini"
+format: html
+---
+
+
+
+# Primeros pasos
+
+- ![Compartir el chat](tmp/img/compartirchat.png)
+- ![Copiar ruta](tmp/img/copiarruta.png)
+- Pegarlo en la barra de un navegador
+- ![Guardar página web como **Página web (Completa)](tmp/img/guardarpagina.png)
+- Abrir el html guardado (se guarda una carpeta con el mismo nombre). En vscode al dar al botón derecho sale una opción que se llama **Dar formato al documento**
+- Buscar la cadena
+- Buscar la cadena <div class="gb_z gb_cd gb_Mf gb_0"> en el fichero html. Si pulsamos en el editor el <div> de partida nos remarcará el </div> de terminar y viceversa.
+  Borramos ese <div>.
+
+
+_ngcontent-ng-c1920989603="" politica de privacidad
+  _ngcontent-ng-c2593308738="" ventana de reanudar el chat
+
+
+
+
+
+

@@ -46,5 +46,32 @@
   },
   "posts/code/word_embeddings.ipynb": {
     "word_embeddings.html": "7a706370"
+  },
+  "tmp/limpieza.qmd": {
+    "limpieza.html": "ac47a24c"
+  },
+  "pre-post/code/2_ConvolutionalNN_PNEUMONIA_X_ray.ipynb": {
+    "2_ConvolutionalNN_PNEUMONIA_X_ray.html": "b6e74c57"
+  },
+  "pre-post/code/Neumonia.ipynb": {
+    "Neumonia.html": "59a8a2e3"
+  },
+  "pre-post/Presentaciones/Datos_1.qmd": {
+    "Datos_1.html": "fc52050e"
+  },
+  "pre-post/Presentaciones/ImagenAI.qmd": {
+    "ImagenAI.html": "50f456e8"
+  },
+  "pre-post/Presentaciones/IntroIM.qmd": {
+    "IntroIM.html": "0f4e523a"
+  },
+  "posts/Presentaciones/plan.qmd": {
+    "plan.html": "2dbc30bd"
+  },
+  "pre-post/code/PruebaMonai.ipynb": {
+    "PruebaMonai.html": "81e6da4e"
+  },
+  "pre-post/code/unet_segmentation.ipynb": {
+    "unet_segmentation.html": "ab5cc97f"
   }
 }

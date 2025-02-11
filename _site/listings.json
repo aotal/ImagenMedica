@@ -3,14 +3,8 @@
     "listing": "/index.html",
     "items": [
       "/posts/Presentaciones/LLMs.html",
-      "/posts/code/PruebaMonai.html",
-      "/posts/code/unet_segmentation.html",
-      "/posts/code/2_ConvolutionalNN_PNEUMONIA_X_ray.html",
-      "/posts/code/Neumonia.html",
-      "/posts/Presentaciones/ImagenAI.html",
-      "/posts/Presentaciones/IntroIM.html",
+      "/posts/Presentaciones/plan.html",
       "/posts/code/Embedding.html",
-      "/posts/Presentaciones/Datos_1.html",
       "/posts/code/word_embeddings.html"
     ]
   }
