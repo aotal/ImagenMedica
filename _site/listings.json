@@ -2,8 +2,8 @@
   {
     "listing": "/index.html",
     "items": [
-      "/posts/Presentaciones/LLMs.html",
       "/posts/Presentaciones/plan.html",
+      "/posts/Presentaciones/LLMs.html",
       "/posts/code/Embedding.html",
       "/posts/code/word_embeddings.html"
     ]

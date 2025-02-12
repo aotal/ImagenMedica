@@ -508,7 +508,7 @@
     "href": "index.html",
     "title": "Intel·ligència artificial en medicina",
     "section": "",
-    "text": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO\n\n\n\n\n\n\nPresentación\n\n\n\n\n\n\n\n\n\n12 feb 2025\n\n\nAntonio Otal Palacín\n\n\n\n\n\n\n\n\n\n\n\n\nTEXTO DATOS E IMAGEN\n\n\n\n\n\n\nIntroducción\n\n\n\n\n\n\n\n\n\n12 feb 2025\n\n\nAntonio Otal Palacín\n\n\n\n\n\n\n\n\n\n\n\n\nEmbeddings\n\n\n\n\n\n\nColab\n\n\n\n\n\n\n\n\n\n19 feb 2024\n\n\n\n\n\n\n\n\n\n\n\n\nWord Embeddings\n\n\n\n\n\n\nColab\n\n\n\n\n\n\n\n\n\n12 feb 2024\n\n\n\n\n\n\nNo hay resultados"
+    "text": "TEXTO DATOS E IMAGEN\n\n\n\n\n\n\nIntroducción\n\n\n\n\n\n\n\n\n\n12 feb 2025\n\n\nAntonio Otal Palacín\n\n\n\n\n\n\n\n\n\n\n\n\nLARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO\n\n\n\n\n\n\nPresentación\n\n\n\n\n\n\n\n\n\n12 feb 2025\n\n\nAntonio Otal Palacín\n\n\n\n\n\n\n\n\n\n\n\n\nEmbeddings\n\n\n\n\n\n\nColab\n\n\n\n\n\n\n\n\n\n19 feb 2024\n\n\n\n\n\n\n\n\n\n\n\n\nWord Embeddings\n\n\n\n\n\n\nColab\n\n\n\n\n\n\n\n\n\n12 feb 2024\n\n\n\n\n\n\nNo hay resultados"
   },
   {
     "objectID": "about.html",
@@ -620,7 +620,7 @@
     "href": "posts/Presentaciones/LLMs.html#índice",
     "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
     "section": "Índice",
-    "text": "Índice\n\nIntroducción breve a los LLM\nEmbedding Systems\nKnowledge Graphs\nBases de datos\nFine-Tuning y Retrieval Augmentation Generation (RAG)\nLímites de los LLM\n\n\nNotes"
+    "text": "Índice\n\nIntroducción breve a los LLM\nEmbedding Systems\nKnowledge Graphs\nFine-Tuning y Retrieval Augmentation Generation (RAG)\nLímites de los LLM\n\n\nNotes"
   },
   {
     "objectID": "posts/Presentaciones/LLMs.html#llm",
@@ -634,7 +634,7 @@
     "href": "posts/Presentaciones/LLMs.html#llm-pretraining",
     "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
     "section": "LLM Pretraining",
-    "text": "LLM Pretraining\nA una velocidad de 1000 millones de operaciones por segundo entrenar a GPT3 nos costaría 100 millones de años.\nSe hubiese tenido que empezar a entrenar el modelo en el cretácico.\n\nNotes"
+    "text": "LLM Pretraining\nA una velocidad de 1000 millones de operaciones por segundo entrenar a GPT3 nos costaría 100 millones de años. Se hubiese tenido que empezar a entrenar el modelo en el cretácico.\n\n\n\n\n\n\nNotes"
   },
   {
     "objectID": "posts/Presentaciones/LLMs.html#llm-reinforcement-learning-with-human-feedback",
@@ -655,14 +655,14 @@
     "href": "posts/Presentaciones/LLMs.html#transformers",
     "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
     "section": "TRANSFORMERS",
-    "text": "TRANSFORMERS\n\n\n  \n\nCodificaciones posicionales: Los transformers agregan un número a cada palabra para indicar su posición en la oración. Esto ayuda al modelo a comprender el orden de las palabras, lo cual es crucial para el significado.\nAtención: Permite al modelo considerar todas las palabras de la oración al traducir o analizar una palabra específica. Esto ayuda a capturar relaciones complejas entre palabras y mejora la precisión de la traducción y la comprensión.\nAutoatención: Permite al modelo comprender una palabra en el contexto de las palabras que la rodean, lo que ayuda a desambiguar palabras con múltiples significados y captar matices del lenguaje.\n\n\n\nNotes"
+    "text": "TRANSFORMERS\n\n\n  \n\nCodificaciones posicionales: Los transformers agregan un número a cada palabra para indicar su posición en la oración. Esto ayuda al modelo a comprender el orden de las palabras, lo cual es crucial para el significado.\nAtención: Permite al modelo considerar todas las palabras de la oración al traducir o analizar una palabra específica. Esto ayuda a capturar relaciones complejas entre palabras y mejora la precisión de la traducción y la comprensión.\nAutoatención: Permite al modelo comprender una palabra en el contexto de las palabras que la rodean, lo que ayuda a desambiguar palabras con múltiples significados y captar matices del lenguaje.\n\n\nNotes"
   },
   {
     "objectID": "posts/Presentaciones/LLMs.html#embedding",
     "href": "posts/Presentaciones/LLMs.html#embedding",
     "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
     "section": "EMBEDDING",
-    "text": "EMBEDDING\n\nVector embeddings son representaciones numéricas de información, como texto, documentos, imágenes o audio. Capturan el significado semántico de la información\n\n\nNotes"
+    "text": "EMBEDDING\n\nVector embeddings son representaciones numéricas de información, como texto, documentos, imágenes o audio. Capturan el significado semántico de la información\n\n\n\n\n\n\n\nNotes"
   },
   {
     "objectID": "posts/Presentaciones/LLMs.html#vectores",
@@ -1068,7 +1068,7 @@
     "href": "posts/Presentaciones/LLMs.html#fine-tunning",
     "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
     "section": "FINE-TUNNING",
-    "text": "FINE-TUNNING\n\nEl ajuste fino de un LLM es una técnica de aprendizaje por transferencia en la que se toma un modelo pre-entrenado con un gran conjunto de datos para una tarea general, y se realizan pequeños ajustes a sus parámetros internos para optimizar su rendimiento en una nueva tarea específica\n\n\nNotes"
+    "text": "FINE-TUNNING\n\nEl ajuste fino de un LLM es una técnica de aprendizaje por transferencia en la que se toma un modelo pre-entrenado con un gran conjunto de datos para una tarea general, y se realizan pequeños ajustes a sus parámetros internos para optimizar su rendimiento en una nueva tarea específica\n\n\n\n\n\n\n\nNotes"
   },
   {
     "objectID": "posts/Presentaciones/LLMs.html#transfer-learning",
@@ -1096,7 +1096,7 @@
     "href": "posts/Presentaciones/LLMs.html#fine-tuning-demostración",
     "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
     "section": "FINE-TUNING (DEMOSTRACIÓN)",
-    "text": "FINE-TUNING (DEMOSTRACIÓN)\n\n\n\n\n\nBioMistral/BioMistral-7B\nmistralai/Mistral-7B-Instruct-v0.1\n\nEjemplo\n\n\n\n\nNotes"
+    "text": "FINE-TUNING (DEMOSTRACIÓN)\n\n\n\n\n\nBioMistral/BioMistral-7B\nmistralai/Mistral-7B-Instruct-v0.1\n\nEjemplo\n\n\n\nNotes"
   },
   {
     "objectID": "posts/Presentaciones/LLMs.html#rag-2020",
@@ -1117,14 +1117,14 @@
     "href": "posts/Presentaciones/LLMs.html#fine-tunning-vs-rag",
     "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
     "section": "FINE-TUNNING VS RAG",
-    "text": "FINE-TUNNING VS RAG\n\n\n\n\nCaracterística\n\n\nFine-tuning\n\n\nRAG\n\n\n\n\nEnfoque principal\n\n\nAdaptación del modelo\n\n\nAumento de la información\n\n\n\n\nMétodo\n\n\nAjuste de parámetros\n\n\nRecuperación de información externa\n\n\n\n\nVentajas\n\n\nPersonalización del modelo, eficiencia\n\n\nRespuestas contextualmente relevantes, precisión\n\n\n\n\nLimitaciones\n\n\nDificultad con datos cambiantes, adaptación de estilo limitada\n\n\nAdaptación de estilo limitada, enfoque en recuperación\n\n\n\n\n\nNotes"
+    "text": "FINE-TUNNING VS RAG\nhttps://notebooklm.google.com/notebook/d40fef92-ed62-4659-9b3e-0e5cde949f45 https://notebooklm.google.com/notebook/35c43bd2-d012-45fb-a514-aa2958b1fdda\n\n\n\n\nCaracterística\n\n\nFine-tuning\n\n\nRAG\n\n\n\n\nEnfoque principal\n\n\nAdaptación del modelo\n\n\nAumento de la información\n\n\n\n\nMétodo\n\n\nAjuste de parámetros\n\n\nRecuperación de información externa\n\n\n\n\nVentajas\n\n\nPersonalización del modelo, eficiencia\n\n\nRespuestas contextualmente relevantes, precisión\n\n\n\n\nLimitaciones\n\n\nDificultad con datos cambiantes, adaptación de estilo limitada\n\n\nAdaptación de estilo limitada, enfoque en recuperación\n\n\n\n\n\nNotes"
   },
   {
     "objectID": "posts/Presentaciones/LLMs.html#fine-tunning-vs-rag-1",
     "href": "posts/Presentaciones/LLMs.html#fine-tunning-vs-rag-1",
     "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
     "section": "FINE-TUNNING VS RAG",
-    "text": "FINE-TUNNING VS RAG\n\n\n\n\n\n\nFinne-tunning\n\n\n\n\n \n\n\n\n\n\nRAG\n\n\n\n\n\n\nNotes"
+    "text": "FINE-TUNNING VS RAG\n\n\n\n\n\n\n\n\n\nFinne-tunning\n\n\n\n\n \n\n\n\n\n\nRAG\n\n\n\n\n\n\nNotes"
   },
   {
     "objectID": "posts/Presentaciones/LLMs.html#rag-ejemplo",
@@ -1152,14 +1152,14 @@
     "href": "posts/Presentaciones/LLMs.html#prueba2",
     "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
     "section": "prueba2",
-    "text": "prueba2\nJSON\n\n\n\n\nIAMED"
+    "text": "prueba2\nJSON"
   },
   {
     "objectID": "tmp/limpieza.html",
     "href": "tmp/limpieza.html",
     "title": "Instrucciones para incrustar un chat de gemini",
     "section": "",
-    "text": "Primeros pasos\n\n\n\n\nCompartir el chat\n\n\n\n\n\nCopiar ruta\n\n\nPegarlo en la barra de un navegador\n\n\n\nGuardar página web como **Página web (Completa)\n\n\nAbrir el html guardado (se guarda una carpeta con el mismo nombre). En vscode al dar al botón derecho sale una opción que se llama Dar formato al documento\nBuscar la cadena\nBuscar la cadena\n\nen el fichero html. Si pulsamos en el editor el\n\nde partida nos remarcará el\n\nde terminar y viceversa. Borramos ese\n\n.\n\n_ngcontent-ng-c1920989603=“” politica de privacidad _ngcontent-ng-c2593308738=“” ventana de reanudar el chat"
+    "text": "Primeros pasos\n\n\n\n\nCompartir el chat\n\n\n\n\n\nCopiar ruta\n\n\nPegarlo en la barra de un navegador\n\n\n\nGuardar página web como **Página web (Completa)\n\n\nAbrir el html guardado (se guarda una carpeta con el mismo nombre). En vscode al dar al botón derecho sale una opción que se llama Dar formato al documento\nBuscar la cadena\nBuscar la cadena\n\nen el fichero html. Si pulsamos en el editor el\n\nde partida nos remarcará el\n\nde terminar y viceversa. Borramos ese\n\n.\n\n\n\n_ngcontent-ng-c1920989603=“” politica de privacidad _ngcontent-ng-c2593308738=“” ventana de reanudar el chat"
   },
   {
     "objectID": "pre-post/Presentaciones/IntroIM.html#índice",
@@ -1201,7 +1201,7 @@
     "href": "pre-post/Presentaciones/IntroIM.html#qué-es-un-pixel",
     "title": "Introducción a la imagen médica",
     "section": "¿Qué es un pixel?",
-    "text": "¿Qué es un pixel?\n\n\n\n\n\n\n\n\nNotes"
+    "text": "¿Qué es un pixel?\n\n\n\n\n\n\n\nNotes"
   },
   {
     "objectID": "pre-post/Presentaciones/IntroIM.html#resolución",
@@ -1229,49 +1229,49 @@
     "href": "pre-post/Presentaciones/IntroIM.html#modalidades-de-imagen-médica-radiografías",
     "title": "Introducción a la imagen médica",
     "section": "Modalidades de imagen médica: Radiografías",
-    "text": "Modalidades de imagen médica: Radiografías\n\n\n\nTécnica 2D\nRayos X\nExploración anatómica\nGrafía\n\n\n\n\n\n\nNotes"
+    "text": "Modalidades de imagen médica: Radiografías\n\n\n\nTécnica 2D\nRayos X\nExploración anatómica\nGrafía\n\n\n\n\n\nNotes"
   },
   {
     "objectID": "pre-post/Presentaciones/IntroIM.html#modalidades-de-imagen-médica-arcos-de-quirófano",
     "href": "pre-post/Presentaciones/IntroIM.html#modalidades-de-imagen-médica-arcos-de-quirófano",
     "title": "Introducción a la imagen médica",
     "section": "Modalidades de imagen médica: Arcos de quirófano",
-    "text": "Modalidades de imagen médica: Arcos de quirófano\n\n\n\nTécnica 2D\nRayos X\nExploración anatómica\nEscopia\n\n\n\n\n\n\nNotes"
+    "text": "Modalidades de imagen médica: Arcos de quirófano\n\n\n\nTécnica 2D\nRayos X\nExploración anatómica\nEscopia\n\n\n\n\n\nNotes"
   },
   {
     "objectID": "pre-post/Presentaciones/IntroIM.html#modalidades-de-imagen-médica-tomografía-computerizada",
     "href": "pre-post/Presentaciones/IntroIM.html#modalidades-de-imagen-médica-tomografía-computerizada",
     "title": "Introducción a la imagen médica",
     "section": "Modalidades de imagen médica: Tomografía computerizada",
-    "text": "Modalidades de imagen médica: Tomografía computerizada\n\n\n\nTécnica 3D\nRayos X\nExploración anatómica\nImagen tomográfica\n\n\n\n\n\n\nNotes"
+    "text": "Modalidades de imagen médica: Tomografía computerizada\n\n\n\nTécnica 3D\nRayos X\nExploración anatómica\nImagen tomográfica\n\n\n\n\n\nNotes"
   },
   {
     "objectID": "pre-post/Presentaciones/IntroIM.html#modalidades-de-imagen-médica-imágenes-por-resonancia-magnética-nuclear",
     "href": "pre-post/Presentaciones/IntroIM.html#modalidades-de-imagen-médica-imágenes-por-resonancia-magnética-nuclear",
     "title": "Introducción a la imagen médica",
     "section": "Modalidades de imagen médica: Imágenes por resonancia magnética nuclear",
-    "text": "Modalidades de imagen médica: Imágenes por resonancia magnética nuclear\n\n\n\nTécnica 3D\nResonancia magnética nuclear\nExploración anatómica\nImagen tomográfica\n\n\n\n\n\n\nNotes"
+    "text": "Modalidades de imagen médica: Imágenes por resonancia magnética nuclear\n\n\n\nTécnica 3D\nResonancia magnética nuclear\nExploración anatómica\nImagen tomográfica\n\n\n\n\n\nNotes"
   },
   {
     "objectID": "pre-post/Presentaciones/IntroIM.html#modalidades-de-imagen-médica-equipos-de-ultrasonidos",
     "href": "pre-post/Presentaciones/IntroIM.html#modalidades-de-imagen-médica-equipos-de-ultrasonidos",
     "title": "Introducción a la imagen médica",
     "section": "Modalidades de imagen médica: Equipos de ultrasonidos",
-    "text": "Modalidades de imagen médica: Equipos de ultrasonidos\n\n\n\nTécnica 2D\nOndas sonoras de alta frecuencia\nExploración anatómica\n\n\n\n\n\n\nNotes"
+    "text": "Modalidades de imagen médica: Equipos de ultrasonidos\n\n\n\nTécnica 2D\nOndas sonoras de alta frecuencia\nExploración anatómica\n\n\n\n\n\nNotes"
   },
   {
     "objectID": "pre-post/Presentaciones/IntroIM.html#modalidades-de-imagen-médica-spect",
     "href": "pre-post/Presentaciones/IntroIM.html#modalidades-de-imagen-médica-spect",
     "title": "Introducción a la imagen médica",
     "section": "Modalidades de imagen médica: SPECT",
-    "text": "Modalidades de imagen médica: SPECT\n\n\n\nTécnica 3D\nRadiofármacos que emiten radiación gamma (\\(^{99}Tc^{m}\\))\nExploración funcional\n\n\n\n\n\n\nNotes"
+    "text": "Modalidades de imagen médica: SPECT\n\n\n\nTécnica 3D\nRadiofármacos que emiten radiación gamma (\\(^{99}Tc^{m}\\))\nExploración funcional\n\n\n\n\n\nNotes"
   },
   {
     "objectID": "pre-post/Presentaciones/IntroIM.html#modalidades-de-imagen-médica-pet",
     "href": "pre-post/Presentaciones/IntroIM.html#modalidades-de-imagen-médica-pet",
     "title": "Introducción a la imagen médica",
     "section": "Modalidades de imagen médica: PET",
-    "text": "Modalidades de imagen médica: PET\n\n\n\nTécnica 3D\nRadiofármacos que emiten positrones (\\(^{18}F\\))\nExploración funcional\n\n\n\n\n\n\nNotes"
+    "text": "Modalidades de imagen médica: PET\n\n\n\nTécnica 3D\nRadiofármacos que emiten positrones (\\(^{18}F\\))\nExploración funcional\n\n\n\n\n\nNotes"
   },
   {
     "objectID": "pre-post/Presentaciones/IntroIM.html#segmentación-de-órganos",
@@ -1299,7 +1299,7 @@
     "href": "pre-post/Presentaciones/IntroIM.html#instalar-3dslicer-y-darse-de-alta-en-huggingface",
     "title": "Introducción a la imagen médica",
     "section": "Instalar 3DSlicer y darse de alta en Huggingface",
-    "text": "Instalar 3DSlicer y darse de alta en Huggingface\n\nDescargar el programa\nSeguir las intrucciones del ejecutable\nIr a la página de Huggingface\nDarse de alta\n\n\n\n\n\nIAMED"
+    "text": "Instalar 3DSlicer y darse de alta en Huggingface\n\nDescargar el programa\nSeguir las intrucciones del ejecutable\nIr a la página de Huggingface\nDarse de alta"
   },
   {
     "objectID": "pre-post/Presentaciones/ImagenAI.html#índice",
@@ -1334,7 +1334,7 @@
     "href": "pre-post/Presentaciones/ImagenAI.html#vision-transformer",
     "title": "Inteligencia artificial en imagen médica",
     "section": "Vision Transformer",
-    "text": "Vision Transformer\n\n\n\n\n\n\n\n(Dosovitskiy et al. 2020)"
+    "text": "Vision Transformer\n\n\n\n\n\n\n(Dosovitskiy et al. 2020)"
   },
   {
     "objectID": "pre-post/Presentaciones/ImagenAI.html#knowledge-map-1",
@@ -1383,7 +1383,7 @@
     "href": "pre-post/Presentaciones/ImagenAI.html#knowledge-map-3",
     "title": "Inteligencia artificial en imagen médica",
     "section": "Knowledge map",
-    "text": "Knowledge map\n\n\n\n\n\n\n\nIAMED\n\n\n\n\n\n\n\n \n\n\n \n\n\n \n\n\n\n\nDosovitskiy, Alexey, Lucas Beyer, Alexander Kolesnikov, Dirk Weissenborn, Xiaohua Zhai, Thomas Unterthiner, Mostafa Dehghani, et al. 2020. «An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale». https://doi.org/10.48550/ARXIV.2010.11929.\n\n\nRonneberger, Olaf, Philipp Fischer, y Thomas Brox. 2015. «U-Net: Convolutional Networks for Biomedical Image Segmentation». En, 234-41. Springer International Publishing. https://doi.org/10.1007/978-3-319-24574-4_28."
+    "text": "Knowledge map\n\n\n\n\n\n\n\n\n\n\n \n\n\n \n\n\n \n\n\n\n\nDosovitskiy, Alexey, Lucas Beyer, Alexander Kolesnikov, Dirk Weissenborn, Xiaohua Zhai, Thomas Unterthiner, Mostafa Dehghani, et al. 2020. «An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale». https://doi.org/10.48550/ARXIV.2010.11929.\n\n\nRonneberger, Olaf, Philipp Fischer, y Thomas Brox. 2015. «U-Net: Convolutional Networks for Biomedical Image Segmentation». En, 234-41. Springer International Publishing. https://doi.org/10.1007/978-3-319-24574-4_28."
   },
   {
     "objectID": "pre-post/code/unet_segmentation.html",
@@ -1481,14 +1481,14 @@
     "href": "pre-post/code/Neumonia.html",
     "title": "Clasificador de Neumonia (ViT)",
     "section": "",
-    "text": "Colab\n\nDetector de neumonía\n\n\n\nEsquema del Vision Transformer Model\n\n\n\nfrom google.colab import userdata\naccess_token = userdata.get('tokenHF')\n\n\nimport os\n\ndef descargar_imagen_desde_url(url, nombre_archivo):\n    try:\n        # Utilizar la instrucción curl para descargar la imagen\n        os.system(f\"curl -o {nombre_archivo} -L -H 'Accept: image/jpeg' {url}\")\n        print(f\"La imagen ha sido descargada y guardada como '{nombre_archivo}'.\")\n    except Exception as e:\n        print(f\"Error: {e}\")\n\n\n# Use a pipeline as a high-level helper\nfrom transformers import pipeline\n\npipe = pipeline(\"image-classification\", model=\"nickmuchi/vit-finetuned-chest-xray-pneumonia\",token=access_token)\n\n\n\n\n\n\n\n/usr/local/lib/python3.10/dist-packages/torch/_utils.py:831: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()\n  return self.fget.__get__(instance, owner)()\nCould not find image processor class in the image processor config or the model config. Loading based on pattern matching with the model's feature extractor configuration. Please open a PR/issue to update `preprocessor_config.json` to use `image_processor_type` instead of `feature_extractor_type`. This warning will be removed in v4.40.\n\n\n\n\n\n\nn=1\np=3\nN=\"https://raw.githubusercontent.com/aotal/ImagenMedica/master/posts/code/data/clasificatorio/normal/N\"+str(n)+\".jpeg\"\nP=\"https://raw.githubusercontent.com/aotal/ImagenMedica/master/posts/code/data/clasificatorio/neumo/P\"+str(p)+\".jpeg\"\n\n\ndescargar_imagen_desde_url(N, \"imagen1.jpg\")\ndescargar_imagen_desde_url(P, \"imagen2.jpg\")\n\nLa imagen ha sido descargada y guardada como 'imagen1.jpg'.\nLa imagen ha sido descargada y guardada como 'imagen2.jpg'.\n\n\n\nimport matplotlib.pyplot as plt\nfrom PIL import Image\n\n# Cargar las imágenes\nimagen1 = Image.open(\"imagen1.jpg\")\nimagen2 = Image.open(\"imagen2.jpg\")\n\n# Crear una figura y ejes de subtramas\nfig, axs = plt.subplots(1, 2, figsize=(10, 5))\n\n# Mostrar la primera imagen en el primer eje de subtrama\naxs[0].imshow(imagen1,cmap=\"gray\")\naxs[0].axis('off')  # Desactivar los ejes\n\n# Mostrar la segunda imagen en el segundo eje de subtrama\naxs[1].imshow(imagen2,cmap=\"gray\")\naxs[1].axis('off')  # Desactivar los ejes\n\n# Ajustar el espacio entre las subtramas\nplt.subplots_adjust(wspace=0.2)\n\n# Mostrar la figura\nplt.show()\n\n\n\n\n\n\n\n\n\npipe('imagen1.jpg')\n\n[{'label': 'NORMAL', 'score': 0.9813147187232971},\n {'label': 'PNEUMONIA', 'score': 0.01868528686463833}]\n\n\n\npipe('imagen2.jpg')\n\n[{'label': 'PNEUMONIA', 'score': 0.9920761585235596},\n {'label': 'NORMAL', 'score': 0.007923857308924198}]"
+    "text": "Colab\n\nDetector de neumonía\n\n\n\nEsquema del Vision Transformer Model\n\n\n\nfrom google.colab import userdata\naccess_token = userdata.get('tokenHF')\n\n\nimport os\n\ndef descargar_imagen_desde_url(url, nombre_archivo):\n    try:\n        # Utilizar la instrucción curl para descargar la imagen\n        os.system(f\"curl -o {nombre_archivo} -L -H 'Accept: image/jpeg' {url}\")\n        print(f\"La imagen ha sido descargada y guardada como '{nombre_archivo}'.\")\n    except Exception as e:\n        print(f\"Error: {e}\")\n\n\n# Use a pipeline as a high-level helper\nfrom transformers import pipeline\n\npipe = pipeline(\"image-classification\", model=\"nickmuchi/vit-finetuned-chest-xray-pneumonia\",token=access_token)\n\n\n\n\n\n\n\n/usr/local/lib/python3.10/dist-packages/torch/_utils.py:831: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()\n  return self.fget.__get__(instance, owner)()\n\n\n\n\n\nCould not find image processor class in the image processor config or the model config. Loading based on pattern matching with the model's feature extractor configuration. Please open a PR/issue to update `preprocessor_config.json` to use `image_processor_type` instead of `feature_extractor_type`. This warning will be removed in v4.40.\n\n\n\nn=1\np=3\nN=\"https://raw.githubusercontent.com/aotal/ImagenMedica/master/posts/code/data/clasificatorio/normal/N\"+str(n)+\".jpeg\"\nP=\"https://raw.githubusercontent.com/aotal/ImagenMedica/master/posts/code/data/clasificatorio/neumo/P\"+str(p)+\".jpeg\"\n\n\ndescargar_imagen_desde_url(N, \"imagen1.jpg\")\ndescargar_imagen_desde_url(P, \"imagen2.jpg\")\n\nLa imagen ha sido descargada y guardada como 'imagen1.jpg'.\nLa imagen ha sido descargada y guardada como 'imagen2.jpg'.\n\n\n\nimport matplotlib.pyplot as plt\nfrom PIL import Image\n\n# Cargar las imágenes\nimagen1 = Image.open(\"imagen1.jpg\")\nimagen2 = Image.open(\"imagen2.jpg\")\n\n# Crear una figura y ejes de subtramas\nfig, axs = plt.subplots(1, 2, figsize=(10, 5))\n\n# Mostrar la primera imagen en el primer eje de subtrama\naxs[0].imshow(imagen1,cmap=\"gray\")\naxs[0].axis('off')  # Desactivar los ejes\n\n# Mostrar la segunda imagen en el segundo eje de subtrama\naxs[1].imshow(imagen2,cmap=\"gray\")\naxs[1].axis('off')  # Desactivar los ejes\n\n# Ajustar el espacio entre las subtramas\nplt.subplots_adjust(wspace=0.2)\n\n# Mostrar la figura\nplt.show()\n\n\n\n\n\n\n\n\n\npipe('imagen1.jpg')\n\n[{'label': 'NORMAL', 'score': 0.9813147187232971},\n {'label': 'PNEUMONIA', 'score': 0.01868528686463833}]\n\n\n\npipe('imagen2.jpg')\n\n[{'label': 'PNEUMONIA', 'score': 0.9920761585235596},\n {'label': 'NORMAL', 'score': 0.007923857308924198}]"
   },
   {
     "objectID": "posts/Presentaciones/LLMs.html#chunks",
     "href": "posts/Presentaciones/LLMs.html#chunks",
     "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
     "section": "CHUNKS",
-    "text": "CHUNKS\n\nUn chunk es una unidad discreta de información extraída de un cuerpo de texto más grande. Puede ser una frase, un párrafo, una sección de un documento o incluso un documento completo, dependiendo del sistema y la aplicación. La idea principal es dividir la información en partes más pequeñas que sean más fáciles de procesar y analizar para la IA.\n\n\nNotes"
+    "text": "CHUNKS\n\nUn chunk es una unidad discreta de información extraída de un cuerpo de texto más grande. Puede ser una frase, un párrafo, una sección de un documento o incluso un documento completo, dependiendo del sistema y la aplicación. La idea principal es dividir la información en partes más pequeñas que sean más fáciles de procesar y analizar para la IA.\n\n\n\n\n\n\n\nNotes"
   },
   {
     "objectID": "posts/Presentaciones/LLMs.html#división-en-chunks",
@@ -1537,7 +1537,7 @@
     "href": "posts/Presentaciones/LLMs.html#beneficios-de-los-grafos-de-conocimiento",
     "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
     "section": "Beneficios de los Grafos de Conocimiento",
-    "text": "Beneficios de los Grafos de Conocimiento\n\n\n\n\n\nPrecisión en el diagnóstico: Integración de información de diversas fuentes.\nPersonalización de tratamientos: Uso de información genómica, clínica y de estilo de vida.\nDescubrimiento de fármacos: Identificación de nuevas relaciones entre genes, proteínas y enfermedades.\n\n\n\n\nNotes"
+    "text": "Beneficios de los Grafos de Conocimiento\n\n\n\n\n\nPrecisión en el diagnóstico: Integración de información de diversas fuentes.\nPersonalización de tratamientos: Uso de información genómica, clínica y de estilo de vida.\nDescubrimiento de fármacos: Identificación de nuevas relaciones entre genes, proteínas y enfermedades.\n\n\n\nNotes"
   },
   {
     "objectID": "posts/Presentaciones/LLMs.html#beneficios-de-los-grafos-de-conocimiento-1",
@@ -1551,13 +1551,419 @@
     "href": "posts/Presentaciones/LLMs.html#limitaciones-de-los-grafos-de-conocimiento",
     "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
     "section": "Limitaciones de los Grafos de Conocimiento",
-    "text": "Limitaciones de los Grafos de Conocimiento\n\n\n\n\n\nCalidad de los datos: La precisión y completitud son cruciales.\nEscalabilidad: Construcción y mantenimiento a gran escala pueden ser complejos.\nInteroperabilidad: Integración con otros sistemas y bases de datos puede ser un desafío.\n\n\n\n\nNotes"
+    "text": "Limitaciones de los Grafos de Conocimiento\n\n\n\n\n\nCalidad de los datos: La precisión y completitud son cruciales.\nEscalabilidad: Construcción y mantenimiento a gran escala pueden ser complejos.\nInteroperabilidad: Integración con otros sistemas y bases de datos puede ser un desafío.\n\n\n\nNotes"
   },
   {
     "objectID": "posts/Presentaciones/LLMs.html#componentes-principales-de-un-grafo-de-conocimiento",
     "href": "posts/Presentaciones/LLMs.html#componentes-principales-de-un-grafo-de-conocimiento",
     "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
     "section": "Componentes principales de un grafo de conocimiento",
-    "text": "Componentes principales de un grafo de conocimiento\n\n\n\n\n\nNodos: Representan entidades, conceptos u objetos, como enfermedades, síntomas, genes o medicamentos.\nAristas: Representan las relaciones entre los nodos, como “causa”, “trata”, “se asocia con” o “es un tipo de”.\nEtiquetas: Proporcionan información adicional sobre los nodos y las aristas, como nombres, descripciones o atributos.\n\n\n\n\nNotes"
+    "text": "Componentes principales de un grafo de conocimiento\n\n\n\n\n\nNodos: Representan entidades, conceptos u objetos, como enfermedades, síntomas, genes o medicamentos.\nAristas: Representan las relaciones entre los nodos, como “causa”, “trata”, “se asocia con” o “es un tipo de”.\nEtiquetas: Proporcionan información adicional sobre los nodos y las aristas, como nombres, descripciones o atributos.\n\n\n\nNotes"
+  },
+  {
+    "objectID": "pre-post/Presentaciones/Datos_1.html#índice",
+    "href": "pre-post/Presentaciones/Datos_1.html#índice",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Índice",
+    "text": "Índice\n\nIntroducción\nClasificación de los datos\nAnotación de datos\nPrivacidad y confidencialidad\nRegistros electrónicos de salud\nPreprocesado de datos médicos\nVectorizaciones (Embeddings)\nRadiómica (Radiomics)\n\n\nNotes"
+  },
+  {
+    "objectID": "pre-post/Presentaciones/Datos_1.html#disponibilidad-masiva-de-datos",
+    "href": "pre-post/Presentaciones/Datos_1.html#disponibilidad-masiva-de-datos",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Disponibilidad masiva de datos",
+    "text": "Disponibilidad masiva de datos\n\n\nNotes"
+  },
+  {
+    "objectID": "pre-post/Presentaciones/Datos_1.html#machine-learning",
+    "href": "pre-post/Presentaciones/Datos_1.html#machine-learning",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Machine learning",
+    "text": "Machine learning\n\n\nNotes"
+  },
+  {
+    "objectID": "pre-post/Presentaciones/Datos_1.html#problema-con-los-datos",
+    "href": "pre-post/Presentaciones/Datos_1.html#problema-con-los-datos",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Problema con los datos",
+    "text": "Problema con los datos\n\n\nNotes"
+  },
+  {
+    "objectID": "pre-post/Presentaciones/Datos_1.html#por-tipos-de-datos",
+    "href": "pre-post/Presentaciones/Datos_1.html#por-tipos-de-datos",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Por tipos de datos",
+    "text": "Por tipos de datos\n\n\n\nDatos estructurados\nDatos no estructurados\nDatos semiestructurados\n\n\n\n\n\n\n\n\n\nNotes"
+  },
+  {
+    "objectID": "pre-post/Presentaciones/Datos_1.html#datos-estructurados",
+    "href": "pre-post/Presentaciones/Datos_1.html#datos-estructurados",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Datos estructurados",
+    "text": "Datos estructurados\n\n\n\n\n\n\n\n\n\n\n\nA_id\nSize\nWeight\nSweetness\nCrunchiness\nJuiciness\nRipeness\nAcidity\nQuality\n\n\n\n\n0\n0.0\n-3.970049\n-2.512336\n5.346330\n-1.012009\n1.844900\n0.329840\n-0.491590483\ngood\n\n\n1\n1.0\n-1.195217\n-2.839257\n3.664059\n1.588232\n0.853286\n0.867530\n-0.722809367\ngood\n\n\n2\n2.0\n-0.292024\n-1.351282\n-1.738429\n-0.342616\n2.838636\n-0.038033\n2.621636473\nbad\n\n\n3\n3.0\n-0.657196\n-2.271627\n1.324874\n-0.097875\n3.637970\n-3.413761\n0.790723217\ngood\n\n\n4\n4.0\n1.364217\n-1.296612\n-0.384658\n-0.553006\n3.030874\n-1.303849\n0.501984036\ngood\n\n\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n\n\n3996\n3996.0\n-0.293118\n1.949253\n-0.204020\n-0.640196\n0.024523\n-1.087900\n1.854235285\ngood\n\n\n3997\n3997.0\n-2.634515\n-2.138247\n-2.440461\n0.657223\n2.199709\n4.763859\n-1.334611391\nbad\n\n\n3998\n3998.0\n-4.008004\n-1.779337\n2.366397\n-0.200329\n2.161435\n0.214488\n-2.229719806\ngood\n\n\n3999\n3999.0\n0.278540\n-1.715505\n0.121217\n-1.154075\n1.266677\n-0.776571\n1.599796456\ngood\n\n\n4000\nNaN\nNaN\nNaN\nNaN\nNaN\nNaN\nNaN\nCreated_by_Nidula_Elgiriyewithana\nNaN\n\n\n\n\n4001 rows × 9 columns\n\n\n\n\n\n\n\n\n\n\n\nNotes"
+  },
+  {
+    "objectID": "pre-post/Presentaciones/Datos_1.html#ejemplos-de-datos-estructurados",
+    "href": "pre-post/Presentaciones/Datos_1.html#ejemplos-de-datos-estructurados",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Ejemplos de datos estructurados",
+    "text": "Ejemplos de datos estructurados\n\nRegistros Electrónicos de Salud\nDatos de Laboratorio Clínico"
+  },
+  {
+    "objectID": "pre-post/Presentaciones/Datos_1.html#datos-no-estructurados",
+    "href": "pre-post/Presentaciones/Datos_1.html#datos-no-estructurados",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Datos no estructurados",
+    "text": "Datos no estructurados\n\n\n\nTexto\nImágenes\nAudio\nVideo\n…\n\n\n\n\n\nNotes"
+  },
+  {
+    "objectID": "pre-post/Presentaciones/Datos_1.html#datos-semiestructurados",
+    "href": "pre-post/Presentaciones/Datos_1.html#datos-semiestructurados",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Datos semiestructurados",
+    "text": "Datos semiestructurados\n\n\n\n\n\n\n\nNotes"
+  },
+  {
+    "objectID": "pre-post/Presentaciones/Datos_1.html#por-naturaleza-de-los-datos",
+    "href": "pre-post/Presentaciones/Datos_1.html#por-naturaleza-de-los-datos",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Por naturaleza de los datos",
+    "text": "Por naturaleza de los datos\n\nCategóricos\nNuméricos\nTemporales\nEspaciales\n\n\nNotes"
+  },
+  {
+    "objectID": "pre-post/Presentaciones/Datos_1.html#por-granularidad-de-los-datos",
+    "href": "pre-post/Presentaciones/Datos_1.html#por-granularidad-de-los-datos",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Por granularidad de los datos",
+    "text": "Por granularidad de los datos\n\nDatos a nivel de instancia: Datos individuales que representan observaciones o eventos específicos, como registros de pacientes o imágenes médicas.\nDatos a nivel de atributo: Datos que representan características o atributos de las instancias, como la edad, el peso o los síntomas clínicos.\n\n\nNotes"
+  },
+  {
+    "objectID": "pre-post/Presentaciones/Datos_1.html#fuente-de-los-datos",
+    "href": "pre-post/Presentaciones/Datos_1.html#fuente-de-los-datos",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Fuente de los datos",
+    "text": "Fuente de los datos\n\nDatos primarios: Datos recopilados directamente de la fuente original, como registros médicos electrónicos (EHR) o resultados de pruebas de laboratorio.\nDatos secundarios: Datos que han sido recopilados o procesados por terceros, como conjuntos de datos disponibles en repositorios públicos o bases de datos comerciales.\n\n\nNotes"
+  },
+  {
+    "objectID": "pre-post/Presentaciones/Datos_1.html#datos-anotados-vs-no-anotados",
+    "href": "pre-post/Presentaciones/Datos_1.html#datos-anotados-vs-no-anotados",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Datos anotados vs no anotados",
+    "text": "Datos anotados vs no anotados\n\nEstructura semántica: Los datos anotados tienen metadatos adicionales que proporcionan contexto y significado, como las etiquetas que marcan entidades nombradas.\nInteroperabilidad y procesabilidad: Los datos anotados son más interoperables y procesables, lo que facilita su integración con otros sistemas y su procesamiento automatizado.\nFacilidad de búsqueda y recuperación: Los datos anotados son más fáciles de buscar y recuperar, ya que las anotaciones permiten identificar elementos específicos.\n\n\nNotes"
+  },
+  {
+    "objectID": "pre-post/Presentaciones/Datos_1.html#qué-es-la-anotación-de-datos",
+    "href": "pre-post/Presentaciones/Datos_1.html#qué-es-la-anotación-de-datos",
+    "title": "Datos en el ámbito de la salud",
+    "section": "¿Qué es la anotación de datos?",
+    "text": "¿Qué es la anotación de datos?\nLa anotación de datos es el proceso de atribución o etiquetado de datos para ayudar a los algoritmos de aprendizaje automático a comprender y clasificar la información que procesan.\n\nTexto\nImágenes\nAudio\nVideo"
+  },
+  {
+    "objectID": "pre-post/Presentaciones/Datos_1.html#anotación-de-imágenes",
+    "href": "pre-post/Presentaciones/Datos_1.html#anotación-de-imágenes",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Anotación de imágenes",
+    "text": "Anotación de imágenes\n\n\n\nClasificación\nReconocimiento/Detección\nSegmentación\n\n\n\nVGG"
+  },
+  {
+    "objectID": "pre-post/Presentaciones/Datos_1.html#anotación-de-audio",
+    "href": "pre-post/Presentaciones/Datos_1.html#anotación-de-audio",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Anotación de audio",
+    "text": "Anotación de audio"
+  },
+  {
+    "objectID": "pre-post/Presentaciones/Datos_1.html#anotación-de-video",
+    "href": "pre-post/Presentaciones/Datos_1.html#anotación-de-video",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Anotación de video",
+    "text": "Anotación de video"
+  },
+  {
+    "objectID": "pre-post/Presentaciones/Datos_1.html#anotación-de-texto",
+    "href": "pre-post/Presentaciones/Datos_1.html#anotación-de-texto",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Anotación de texto",
+    "text": "Anotación de texto\n\n\n\nSemántica\nIntención\nOpinión\n\ntabula"
+  },
+  {
+    "objectID": "pre-post/Presentaciones/Datos_1.html#antecedentes",
+    "href": "pre-post/Presentaciones/Datos_1.html#antecedentes",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Antecedentes",
+    "text": "Antecedentes\n\n\n\n\n\n\n\nNotes"
+  },
+  {
+    "objectID": "pre-post/Presentaciones/Datos_1.html#problemas-de-la-historia-clínica-en-papel",
+    "href": "pre-post/Presentaciones/Datos_1.html#problemas-de-la-historia-clínica-en-papel",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Problemas de la historia clínica en papel",
+    "text": "Problemas de la historia clínica en papel\n\nAccesibilidad limitada\nRiesgo de pérdida o daño\nDificultad para mantener actualizada la información\nEspacio de almacenamiento y organización\nLimitaciones en la compartición y colaboración\n\n\nNotes"
+  },
+  {
+    "objectID": "pre-post/Presentaciones/Datos_1.html#componentes-de-los-ehr",
+    "href": "pre-post/Presentaciones/Datos_1.html#componentes-de-los-ehr",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Componentes de los EHR",
+    "text": "Componentes de los EHR\n\nMódulos de Registro y Documentación\nPedidos y Resultados de laboratorio\nGestión de Medicamentos\nIntegración de Imágenes Médicas (PACS)\n\n\nNotes"
+  },
+  {
+    "objectID": "pre-post/Presentaciones/Datos_1.html#sap-1",
+    "href": "pre-post/Presentaciones/Datos_1.html#sap-1",
+    "title": "Datos en el ámbito de la salud",
+    "section": "SAP 1",
+    "text": "SAP 1\n\n\nNotes"
+  },
+  {
+    "objectID": "pre-post/Presentaciones/Datos_1.html#sap-2",
+    "href": "pre-post/Presentaciones/Datos_1.html#sap-2",
+    "title": "Datos en el ámbito de la salud",
+    "section": "SAP 2",
+    "text": "SAP 2\n\n\nNotes"
+  },
+  {
+    "objectID": "pre-post/Presentaciones/Datos_1.html#sap-3",
+    "href": "pre-post/Presentaciones/Datos_1.html#sap-3",
+    "title": "Datos en el ámbito de la salud",
+    "section": "SAP 3",
+    "text": "SAP 3\n\n\nNotes"
+  },
+  {
+    "objectID": "pre-post/Presentaciones/Datos_1.html#aria",
+    "href": "pre-post/Presentaciones/Datos_1.html#aria",
+    "title": "Datos en el ámbito de la salud",
+    "section": "ARIA",
+    "text": "ARIA\n\n\nNotes"
+  },
+  {
+    "objectID": "pre-post/Presentaciones/Datos_1.html#limpieza-de-datos",
+    "href": "pre-post/Presentaciones/Datos_1.html#limpieza-de-datos",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Limpieza de datos",
+    "text": "Limpieza de datos\n\nEliminación de observaciones incompletas\nImputación de valores\nAnálisis de patrones de datos faltantes\nUso de modelos predictivos\nTécnicas de imputación múltiple\n\n\nNotes"
+  },
+  {
+    "objectID": "pre-post/Presentaciones/Datos_1.html#normalización-de-variables-continuas",
+    "href": "pre-post/Presentaciones/Datos_1.html#normalización-de-variables-continuas",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Normalización de variables continuas",
+    "text": "Normalización de variables continuas\n\nLas variables continuas pueden tener diferentes escalas y rangos de valores\nLa normalización ayuda a mitigar este problema al transformar las variables para que estén en una escala similar\n\n\nNotes"
+  },
+  {
+    "objectID": "pre-post/Presentaciones/Datos_1.html#técnicas-de-normalización",
+    "href": "pre-post/Presentaciones/Datos_1.html#técnicas-de-normalización",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Técnicas de normalización",
+    "text": "Técnicas de normalización\n\nDatos con una media de 0 y desviación estándar 1\nNormalización min-max (0-1)\nPuede mejorar la convergencia\n\n\n\n\n\n\n\nAdvertencia\n\n\nEs importante aplicar la misma transformación de normalización tanto al conjunto de entrenamiento como al conjunto de prueba para evitar sesgos en los datos.\n\n\n\n\nNotes"
+  },
+  {
+    "objectID": "pre-post/Presentaciones/Datos_1.html#integración-de-datos",
+    "href": "pre-post/Presentaciones/Datos_1.html#integración-de-datos",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Integración de datos",
+    "text": "Integración de datos\n\nFuentes de Datos Diversas\nResolución de inconsistencias\nLimpieza de Datos\nGestión de Datos Temporales\n\n\nNotes"
+  },
+  {
+    "objectID": "pre-post/Presentaciones/Datos_1.html#la-ingeniería-de-características",
+    "href": "pre-post/Presentaciones/Datos_1.html#la-ingeniería-de-características",
+    "title": "Datos en el ámbito de la salud",
+    "section": "La ingeniería de características",
+    "text": "La ingeniería de características\n\nCreación de Nuevas características\nSelección de Características Relevantes\n\n\nPor ejemplo el índice de masa corporal"
+  },
+  {
+    "objectID": "pre-post/Presentaciones/Datos_1.html#anonimización-de-los-datos",
+    "href": "pre-post/Presentaciones/Datos_1.html#anonimización-de-los-datos",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Anonimización de los datos",
+    "text": "Anonimización de los datos\n\nLa anonimización es el proceso de eliminar o modificar datos personales de tal manera que ya no sea posible identificar a un individuo a partir de los datos.\nLa anonimización está vinculada a lo que dicen las leyes de protección de datos en la UE (RGPD)\n\n\nNotes"
+  },
+  {
+    "objectID": "pre-post/Presentaciones/Datos_1.html#técnicas-de-anonimización",
+    "href": "pre-post/Presentaciones/Datos_1.html#técnicas-de-anonimización",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Técnicas de anonimización",
+    "text": "Técnicas de anonimización\n\nEliminación de identificadores directos\nPseudonimización\nEnmascaramiento\nAgregación\n\n\nNotes"
+  },
+  {
+    "objectID": "pre-post/Presentaciones/Datos_1.html#consideraciones-al-elegir-una-técnica-de-anonimización",
+    "href": "pre-post/Presentaciones/Datos_1.html#consideraciones-al-elegir-una-técnica-de-anonimización",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Consideraciones al elegir una técnica de anonimización",
+    "text": "Consideraciones al elegir una técnica de anonimización\n\nEl tipo de datos que se procesan\nEl nivel de riesgo de reidentificación\nLos fines para los que se utilizarán los datos anonimizados\n\n\nNotes"
+  },
+  {
+    "objectID": "pre-post/Presentaciones/Datos_1.html#data-augmentation",
+    "href": "pre-post/Presentaciones/Datos_1.html#data-augmentation",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Data Augmentation",
+    "text": "Data Augmentation\nEs una técnica que consiste en crear nuevas muestras de datos a partir de datos existentes. Estas nuevas muestras se generan mediante la aplicación de transformaciones predefinidas a los datos originales\n\n\nNotes"
+  },
+  {
+    "objectID": "pre-post/Presentaciones/Datos_1.html#ventajas-de-data-augmentation",
+    "href": "pre-post/Presentaciones/Datos_1.html#ventajas-de-data-augmentation",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Ventajas de Data Augmentation",
+    "text": "Ventajas de Data Augmentation\n\nAumenta el tamaño del conjunto de datos\nMejora la generalización del modelo\nReduce el sesgo del modelo\n\n\nNotes"
+  },
+  {
+    "objectID": "pre-post/Presentaciones/Datos_1.html#data-augmentation-en-imágenes-médicas",
+    "href": "pre-post/Presentaciones/Datos_1.html#data-augmentation-en-imágenes-médicas",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Data Augmentation en imágenes médicas",
+    "text": "Data Augmentation en imágenes médicas\n\nRotaciones\nZoom\nCambio de contraste\nAdición de ruido\nSimulación de artefactos\n\n\nNotes"
+  },
+  {
+    "objectID": "pre-post/Presentaciones/Datos_1.html#data-augmentation-en-señales-biomédicas",
+    "href": "pre-post/Presentaciones/Datos_1.html#data-augmentation-en-señales-biomédicas",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Data Augmentation en señales biomédicas",
+    "text": "Data Augmentation en señales biomédicas\nComo el Electrocardiograma o el Electroencefalograma\n\nAdición de ruido\nCambio de escala\nSegmentación de señales\nSimulación de artefactos"
+  },
+  {
+    "objectID": "pre-post/Presentaciones/Datos_1.html#ángulo-entre-dos-vectores",
+    "href": "pre-post/Presentaciones/Datos_1.html#ángulo-entre-dos-vectores",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Ángulo entre dos vectores",
+    "text": "Ángulo entre dos vectores"
+  },
+  {
+    "objectID": "pre-post/Presentaciones/Datos_1.html#qué-son-las-vectorizaciones",
+    "href": "pre-post/Presentaciones/Datos_1.html#qué-son-las-vectorizaciones",
+    "title": "Datos en el ámbito de la salud",
+    "section": "¿Qué son las vectorizaciones?",
+    "text": "¿Qué son las vectorizaciones?"
+  },
+  {
+    "objectID": "pre-post/Presentaciones/Datos_1.html#práctica",
+    "href": "pre-post/Presentaciones/Datos_1.html#práctica",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Práctica",
+    "text": "Práctica\nNotebook\njuego"
+  },
+  {
+    "objectID": "pre-post/code/2_ConvolutionalNN_PNEUMONIA_X_ray.html",
+    "href": "pre-post/code/2_ConvolutionalNN_PNEUMONIA_X_ray.html",
+    "title": "CNN_Neumonía",
+    "section": "",
+    "text": "Colab"
+  },
+  {
+    "objectID": "pre-post/code/2_ConvolutionalNN_PNEUMONIA_X_ray.html#notebook-de-preprocesamiento",
+    "href": "pre-post/code/2_ConvolutionalNN_PNEUMONIA_X_ray.html#notebook-de-preprocesamiento",
+    "title": "CNN_Neumonía",
+    "section": "Notebook de preprocesamiento",
+    "text": "Notebook de preprocesamiento\nJoel Ricci López, 2021.\n\n\n\nOpen In Colab"
+  },
+  {
+    "objectID": "pre-post/code/2_ConvolutionalNN_PNEUMONIA_X_ray.html#planteamiento",
+    "href": "pre-post/code/2_ConvolutionalNN_PNEUMONIA_X_ray.html#planteamiento",
+    "title": "CNN_Neumonía",
+    "section": "Planteamiento",
+    "text": "Planteamiento\nVamos a implementar un modelo de clasificación mediante una red neuronal convolucional para la identificación de casos de neumonía presentado en Kaggle. Usaremos Keras y su API Sequential para crear una red capa por capa. Además compararemos el desempeño de nuestra red contra un modelo creado a partir de Transfer Learning, utilizando la red preentrenada (VGG16)[https://arxiv.org/abs/1409.1556]."
+  },
+  {
+    "objectID": "pre-post/code/2_ConvolutionalNN_PNEUMONIA_X_ray.html#estrategia",
+    "href": "pre-post/code/2_ConvolutionalNN_PNEUMONIA_X_ray.html#estrategia",
+    "title": "CNN_Neumonía",
+    "section": "Estrategia",
+    "text": "Estrategia\nLa estrategia a seguir es la siguiente: 1. Descargar los datos de Kaggle: Chest X-ray Images (Pneumonia). 2. Los datos fueron descargados en Colab y los conjuntos fueron modificados para que se cumpliera lo siguiente:\n- Conjunto de Entrenamiento: 80% de las imágenes. - Conjuntos de Validación y Prueba: 10% de las imágenes cada uno. - Se aseguró que la proporción de imágenes de las clases PNEUMONIA y NORMAL fuera la misma en cada conjunto. 3. Esta fase preliminar se realizó en el siguiente notebook:  4. Se realizó una fase de Análisis Exploratorio con las imágenes. 5. Se implementó una red neuronal convolucional (CNN) con Keras para la clasificación de las imágenes.\na) Se evaluó el desempeño de la CNN con el conjunto de prueba. 6. Se implementó una red neuronal convolucional basada en transferencia de conocimiento.\na) Se tomó como base la red preentrenada VGG16 con los pesos de imagenet.\nb) Se evaluó el desempeño de la red VGG16-base con el conjunto de prueba."
+  },
+  {
+    "objectID": "pre-post/code/2_ConvolutionalNN_PNEUMONIA_X_ray.html#preliminares-y-carga-de-datos",
+    "href": "pre-post/code/2_ConvolutionalNN_PNEUMONIA_X_ray.html#preliminares-y-carga-de-datos",
+    "title": "CNN_Neumonía",
+    "section": "Preliminares y carga de datos",
+    "text": "Preliminares y carga de datos\n\nMontamos el acceso a Drive para cargar los datos\n\nfrom google.colab import drive\n\ndrive.mount('/content/gdrive/')\nroot_path = '/content/gdrive/My Drive/kaggle/ap-jrl-neumonia/chest_xray'\n%cd $root_path/\n%ls\n\nDrive already mounted at /content/gdrive/; to attempt to forcibly remount, call drive.mount(\"/content/gdrive/\", force_remount=True).\n/content/gdrive/My Drive/kaggle/ap-jrl-neumonia/chest_xray\nchest_xray/        modelo_neu_jrl_TRAINED.h5              test/\nhistory_cnn.pkl    modelo_vgg16_jrl.h5                    train/\n__MACOSX/          modelo_VGG16_jrl_trained_20_epocas.h5  val/\nmodelo_neu_jrl.h5  output.png\n\n\n\n\nCarga de las ibrerías a utilizar\n\nimport pandas as pd\nimport numpy as np\nimport os\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nsns.set(style='ticks', context='talk', palette='Spectral', font_scale=0.9)\n\n\n# Variables con los paths a los directorios de cada conjunto\ntest_dir = os.path.join(root_path, 'test')\ntrain_dir = os.path.join(root_path, 'train')\nval_dir = os.path.join(root_path, 'val')"
+  },
+  {
+    "objectID": "pre-post/code/2_ConvolutionalNN_PNEUMONIA_X_ray.html#evaluación-del-modelo",
+    "href": "pre-post/code/2_ConvolutionalNN_PNEUMONIA_X_ray.html#evaluación-del-modelo",
+    "title": "CNN_Neumonía",
+    "section": "Evaluación del modelo",
+    "text": "Evaluación del modelo\n\n#@title Desempeño de la red durante el entrenamiento\n#@markdown (desplegar para ver el código)\n\n# Calculamos el F1 score a partir de los resultados de Precision y Recall\ndef get_f1_score(precision_arr, recall_arr):\n  epsilon       = 1e-7\n  precision_arr = np.array(precision_arr)\n  recall_arr    = np.array(recall_arr)\n  f1 = (2) * (precision_arr*recall_arr) / \\\n      (precision_arr + recall_arr + epsilon)\n  return f1\n\ndef plot_history(train_hist, suptitle=''):\n  # Agregar F1 score\n  train_hist['F1_score']     = get_f1_score(train_hist['precision'],\n                                    train_hist['recall'])\n  train_hist['val_F1_score'] = get_f1_score(train_hist['val_precision'],\n                                    train_hist['val_recall'])\n\n  # Gráficas\n  metrics = [key for key in train_hist.keys()\n              if not key.startswith('val')]\n\n  fig, ax = plt.subplots(2, int(len(metrics)/2),\n                        figsize = (16, 8))\n  for i, metric in enumerate(metrics):\n    if i &lt; 3:\n      j = 0\n    else:\n      i, j = i - 3, 1\n    ax[j, i].plot(train_hist[metric])\n    ax[j, i].plot(train_hist[f\"val_{metric}\"])\n    ax[j, i].set_title(metric.replace('_', ' ').capitalize())\n    ax[j, i].set_xlabel('Épocas')\n    ax[j, i].grid()\n    if metric != 'loss':\n      ax[j, i].set_ylim(0.7, 1.05)\n    else:\n      ax[j, i].legend(['Train', 'Val'])\n  plt.tight_layout()\n  plt.suptitle(suptitle, y = 1.02)\n  plt.show()\n\n\n# Ejecutamos la función\ntrain_hist = history #.history.copy()\nplot_history(train_hist,\n      suptitle='CNN: Métricas de evaluación en ' +\n      'los conjuntos de Entrenamiento y Validación')\n\n\n\n\n\n\n\n\n\nEvaluación con el conjunto de prueba\n\nscore_test = model.evaluate(test_generator, batch_size=128)\n\nfor i, j in zip(history.keys(), score_test):\n  print(f'{i.upper()}: {j:.3f}')\n\n19/19 [==============================] - 5s 226ms/step - loss: 0.4822 - accuracy: 0.8904 - roc_auc: 0.9339 - precision: 0.8740 - recall: 0.9930\nLOSS: 0.482\nACCURACY: 0.890\nROC_AUC: 0.934\nPRECISION: 0.874\nRECALL: 0.993\n\n\nOtenemos las etiquetas reales y las etiquetas predichas del conjunto de prueba.\n\n# Etiquetas reales\ny_test = test_generator.classes\n# Predicciones\ny_pred = model.predict(test_generator)\ny_pred_classes = (y_pred &gt;= 0.5).astype('int32')\n\n\nMatriz de confusión\n\n#@markdown (desplegar para ver el código)\n\nfrom sklearn.metrics import confusion_matrix\n\ndef plot_cfn_matrix(y_test, y_pred_classes, suptitle=''):\n  cf_matrix = confusion_matrix(y_test, y_pred_classes)\n\n  labels_a = np.array(\n      [f'{i}\\n{j}'\n      for i, j in\n        zip(['TN', 'FP', 'FN', 'TP'],\n              cf_matrix.flatten()\n          )\n      ]).reshape(2,2)\n\n  fig, ax = plt.subplots(1, 2, figsize=(12, 4))\n  # Valores crudos\n  sns.heatmap(cf_matrix,\n              cmap = 'Reds', ax = ax[0],\n              fmt = '', annot = labels_a,\n              cbar_kws={'label': 'Imágenes'})\n  # Porcentajes\n  sns.heatmap(cf_matrix/np.sum(cf_matrix),\n              cmap = 'Blues', ax = ax[1],\n              fmt = '.2%', annot = True,\n              cbar_kws={'label': 'Porcentaje'})\n  for i in range(2):\n    ax[i].set(aspect = \"equal\",\n              xlabel = 'Predichos', ylabel = 'Reales')\n    for _, spine in ax[i].spines.items():\n      spine.set_visible(True)\n  plt.suptitle(suptitle, y = 1.05)\n  plt.tight_layout()\n\n# Genera la gráfica\nplot_cfn_matrix(y_test, y_pred_classes,\n    suptitle='Matriz de confusión CNN (conjunto de prueba)')\n\n\n\n\n\n\n\n\n\n\nCurva ROC y Curva de Precisión Sensibilidad\nPara esta evaluación usamos las métricas: - Área bajo la curva ROC. - Promedio de Precisión-Sensibilidad (avgPR): &gt; \\(\\text{AP} = \\sum_n (R_n - R_{n-1}) P_n\\)\n\n#@markdown (desplegar para ver el código)\n\nfrom sklearn.metrics import roc_auc_score, roc_curve, \\\n          f1_score, precision_recall_curve, average_precision_score\n\ndef plot_roc_and_pr_curves(y_test, y_pred,\n                           suptitle='', name = ''):\n  auc_ = roc_auc_score(y_test, y_pred)\n  f1_score_ = roc_auc_score(y_test, y_pred)\n  vg_pr_score = average_precision_score(y_test, y_pred)\n\n  fpr, tpr, _ = roc_curve(y_test, y_pred)\n  prec_, recall_, _ = precision_recall_curve(y_test, y_pred)\n  pr_baseline = y_test.sum() / len(y_test)\n\n  fig, ax = plt.subplots(1, 2, figsize=(14, 6))\n\n  # Curva ROC\n  ax[0].plot(fpr, tpr, c = '#00A3A4',\n            linewidth = 4, label = f'{name}: {auc_:.3f} AUC')\n  ax[0].plot([0, 1], [0, 1], c = 'gray',\n            linestyle = '--', label = 'Aleatorio')\n  ax[0].legend()\n  ax[0].set(xlabel = '1 - Especificidad (FPR)',\n            ylabel = 'Sensibilidad (TPR)')\n\n  # Curva de Precision-Sensibilidad\n  ax[1].plot(recall_, prec_, c = '#F48000',\n            linewidth = 4, label = f'{name}: {vg_pr_score:.3f} avgPR')\n  ax[1].plot([0, 1], [pr_baseline, pr_baseline], c = 'gray',\n            linestyle = '--', label = 'Aleatorio')\n  ax[1].legend()\n  ax[1].set(xlabel = 'Sensibilidad',\n            ylabel = 'Precisión')\n  for i, title in enumerate(['Curva ROC',\n                            'Curva Precisión-Sensibilidad']):\n    ax[i].set(aspect='equal', ylim=(0,1.02), title=title)\n    ax[i].grid(True)\n  plt.tight_layout()\n  plt.suptitle(suptitle, y = 1.02)\n  plt.show()\n\n# Genera la gráfica\nplot_roc_and_pr_curves(y_test, y_pred,\n          suptitle='Desempeño CNN', name = 'CNN')\n\n\n\n\n\n\n\n\n\n\n\nInterpretación de Resultados\nVemos que la CNN obtiene buenos valores de desempeño en todas las métricas. - En particular nos interesa que la sensibilidad del modelo sea alta (0.98) y por consecuencia que el número de Falsos Negativos sea bajo (9 FN). - Se observa que el modelo sólo identificó 9 Falsos Negativos, lo cual es un buen resultado pues nos interesa que casos verdaderos de neumonía NO sean identificados como casos NORMALES. - El modelo tiene una mayor sensibilidad (0.98) que precisión (0.89). Es un buen resultado, pero hay que considerar que esto también es consecuencia de que en el conjunto de datos haya considerablemente más ejemplos positivos que negativos."
+  },
+  {
+    "objectID": "pre-post/code/2_ConvolutionalNN_PNEUMONIA_X_ray.html#uso-de-la-red-vgg16",
+    "href": "pre-post/code/2_ConvolutionalNN_PNEUMONIA_X_ray.html#uso-de-la-red-vgg16",
+    "title": "CNN_Neumonía",
+    "section": "Uso de la red VGG16",
+    "text": "Uso de la red VGG16\nPara esta fase vamos a implementar el método de transferencia de conocimiento (Transfer learning) usando la red VGG16 (Simonyan and Zisserman, 2015).\n\nfrom tensorflow.keras.applications import VGG16\n\nvgg16 = VGG16(weights     = 'imagenet',\n              include_top = False,\n              # Definimos el tamaño de la capa de entrada\n              # igual a las dimensiones de las imágenes\n              input_shape = (IMG_HEIGHT, IMG_WIDTH, 3))\n\n\nVisualizamos la arquitectura de la VGG16\n\nvisualkeras.layered_view(vgg16, scale_xy=1)\n\n\n\n\n\n\n\n\n\nfrom tensorflow.keras.layers import Input\n# Creamos nuestro nuevo modelo\n\n# Primero congelamos los pesos de las primeras capas de VGG16\nvgg16.trainable = False\n\nmodel_vgg16 = Sequential()\n# Añadimos a VGG16 como si fuese una capa\nmodel_vgg16.add(Input(shape = (IMG_HEIGHT, IMG_WIDTH, 3)))\nmodel_vgg16.add(vgg16)\nmodel_vgg16.add(Flatten())\nmodel_vgg16.add(Dense(128,\n                  activation='relu'))\nmodel_vgg16.add(Dropout(0.4))\nmodel_vgg16.add(Dense(1,\n                      activation='sigmoid',\n                      bias_initializer = output_bias))\nmodel_vgg16.summary()\n\nModel: \"sequential_1\"\n_________________________________________________________________\nLayer (type)                 Output Shape              Param #   \n=================================================================\nvgg16 (Functional)           (None, 4, 4, 512)         14714688  \n_________________________________________________________________\nflatten_1 (Flatten)          (None, 8192)              0         \n_________________________________________________________________\ndense_2 (Dense)              (None, 128)               1048704   \n_________________________________________________________________\ndropout_3 (Dropout)          (None, 128)               0         \n_________________________________________________________________\ndense_3 (Dense)              (None, 1)                 129       \n=================================================================\nTotal params: 15,763,521\nTrainable params: 1,048,833\nNon-trainable params: 14,714,688\n_________________________________________________________________\n\n\nListo, el modelo tiene 524,417 de parámetros entrenables.\n\n\nCompilamos el modelo basado en VGG16\n\n# Usamos las mismas métricas de evaluación\nmetrics = [BinaryAccuracy(name = 'accuracy'),\n           AUC(name = 'roc_auc'),\n           Precision(name ='precision'),\n           Recall(name = 'recall')\n          ]\n\n# Compilamos el modelo\nmodel_vgg16.compile(\n    optimizer = optimizer,\n    loss      = 'binary_crossentropy',\n    metrics   = metrics\n)\n\n\n\nEntrenamiento del moelo basado en VGG16\n\nCallbacks\n\nBATCH_SIZE = 64\nEPOCHS = 50\n\n# ModelCheckpoint\nmodel_filepath = f\"{root_path}/modelo_vgg16_jrl.h5\"\ncheckpoint_vgg16 = ModelCheckpoint(model_filepath,\n                monitor        = 'val_loss',\n                verbose        = 1,\n                save_best_only = True,\n                mode           = 'min'\n)\n\n# Lista de Callbacks\ncallbacks_list_vgg16 = [checkpoint_vgg16, early_stop]\n\n\n\n\nEntrenamiento de la red\n\n%%time\n# Entrenamiento\nhistory_vgg16 = model_vgg16.fit(\n          train_generator,\n          validation_data = val_generator,\n          epochs          = EPOCHS,\n          batch_size      = BATCH_SIZE,\n          callbacks       = callbacks_list_vgg16\n)\n\nEpoch 1/50\n147/147 [==============================] - 86s 555ms/step - loss: 1.1479 - accuracy: 0.8489 - roc_auc: 0.8704 - precision: 0.8874 - recall: 0.9027 - val_loss: 0.2040 - val_accuracy: 0.9195 - val_roc_auc: 0.9656 - val_precision: 0.9397 - val_recall: 0.9507\n\nEpoch 00001: val_loss improved from inf to 0.20395, saving model to /content/gdrive/My Drive/kaggle/ap-jrl-neumonia/chest_xray/modelo_vgg16_jrl.h5\nEpoch 2/50\n147/147 [==============================] - 78s 532ms/step - loss: 0.1513 - accuracy: 0.9360 - roc_auc: 0.9830 - precision: 0.9473 - recall: 0.9647 - val_loss: 0.2019 - val_accuracy: 0.9195 - val_roc_auc: 0.9677 - val_precision: 0.9566 - val_recall: 0.9319\n\nEpoch 00002: val_loss improved from 0.20395 to 0.20186, saving model to /content/gdrive/My Drive/kaggle/ap-jrl-neumonia/chest_xray/modelo_vgg16_jrl.h5\nEpoch 3/50\n147/147 [==============================] - 79s 534ms/step - loss: 0.1478 - accuracy: 0.9409 - roc_auc: 0.9826 - precision: 0.9522 - recall: 0.9677 - val_loss: 0.1855 - val_accuracy: 0.9315 - val_roc_auc: 0.9702 - val_precision: 0.9447 - val_recall: 0.9624\n\nEpoch 00003: val_loss improved from 0.20186 to 0.18551, saving model to /content/gdrive/My Drive/kaggle/ap-jrl-neumonia/chest_xray/modelo_vgg16_jrl.h5\nEpoch 4/50\n147/147 [==============================] - 79s 536ms/step - loss: 0.1204 - accuracy: 0.9525 - roc_auc: 0.9894 - precision: 0.9611 - recall: 0.9739 - val_loss: 0.2082 - val_accuracy: 0.9161 - val_roc_auc: 0.9646 - val_precision: 0.9255 - val_recall: 0.9624\n\nEpoch 00004: val_loss did not improve from 0.18551\nEpoch 5/50\n147/147 [==============================] - 79s 535ms/step - loss: 0.1245 - accuracy: 0.9509 - roc_auc: 0.9870 - precision: 0.9662 - recall: 0.9675 - val_loss: 0.2068 - val_accuracy: 0.9281 - val_roc_auc: 0.9661 - val_precision: 0.9507 - val_recall: 0.9507\n\nEpoch 00005: val_loss did not improve from 0.18551\nEpoch 6/50\n147/147 [==============================] - 78s 529ms/step - loss: 0.1235 - accuracy: 0.9502 - roc_auc: 0.9887 - precision: 0.9623 - recall: 0.9682 - val_loss: 0.2046 - val_accuracy: 0.9264 - val_roc_auc: 0.9652 - val_precision: 0.9423 - val_recall: 0.9577\n\nEpoch 00006: val_loss did not improve from 0.18551\nEpoch 7/50\n147/147 [==============================] - 78s 529ms/step - loss: 0.1050 - accuracy: 0.9607 - roc_auc: 0.9913 - precision: 0.9653 - recall: 0.9817 - val_loss: 0.2287 - val_accuracy: 0.9264 - val_roc_auc: 0.9627 - val_precision: 0.9362 - val_recall: 0.9648\n\nEpoch 00007: val_loss did not improve from 0.18551\nEpoch 8/50\n147/147 [==============================] - 77s 526ms/step - loss: 0.1014 - accuracy: 0.9596 - roc_auc: 0.9922 - precision: 0.9672 - recall: 0.9774 - val_loss: 0.1935 - val_accuracy: 0.9332 - val_roc_auc: 0.9651 - val_precision: 0.9510 - val_recall: 0.9577\n\nEpoch 00008: val_loss did not improve from 0.18551\nEpoch 9/50\n147/147 [==============================] - 78s 528ms/step - loss: 0.1184 - accuracy: 0.9494 - roc_auc: 0.9893 - precision: 0.9589 - recall: 0.9726 - val_loss: 0.1990 - val_accuracy: 0.9298 - val_roc_auc: 0.9657 - val_precision: 0.9385 - val_recall: 0.9671\n\nEpoch 00009: val_loss did not improve from 0.18551\nEpoch 10/50\n147/147 [==============================] - 77s 527ms/step - loss: 0.1041 - accuracy: 0.9570 - roc_auc: 0.9919 - precision: 0.9625 - recall: 0.9785 - val_loss: 0.2304 - val_accuracy: 0.9195 - val_roc_auc: 0.9627 - val_precision: 0.9165 - val_recall: 0.9789\n\nEpoch 00010: val_loss did not improve from 0.18551\nEpoch 11/50\n147/147 [==============================] - 77s 526ms/step - loss: 0.1035 - accuracy: 0.9583 - roc_auc: 0.9921 - precision: 0.9638 - recall: 0.9792 - val_loss: 0.2082 - val_accuracy: 0.9229 - val_roc_auc: 0.9659 - val_precision: 0.9281 - val_recall: 0.9695\n\nEpoch 00011: val_loss did not improve from 0.18551\nEpoch 12/50\n147/147 [==============================] - 77s 526ms/step - loss: 0.0845 - accuracy: 0.9629 - roc_auc: 0.9940 - precision: 0.9687 - recall: 0.9814 - val_loss: 0.1949 - val_accuracy: 0.9315 - val_roc_auc: 0.9654 - val_precision: 0.9488 - val_recall: 0.9577\n\nEpoch 00012: val_loss did not improve from 0.18551\nEpoch 13/50\n147/147 [==============================] - 78s 527ms/step - loss: 0.1085 - accuracy: 0.9587 - roc_auc: 0.9905 - precision: 0.9679 - recall: 0.9766 - val_loss: 0.1864 - val_accuracy: 0.9298 - val_roc_auc: 0.9678 - val_precision: 0.9385 - val_recall: 0.9671\n\nEpoch 00013: val_loss did not improve from 0.18551\n\n\n\nmodel_vgg16.save(f\"{root_path}/modelo_vgg16_jrl_TRAINED.h5\")\n\n\nhistory_vgg16 = history_vgg16.history\nwith open(f\"{root_path}/history_cnn_vgg16.pkl\", 'wb') as file:\n  pickle.dump(history_vgg16, file)\n\n\n# Ejecutamos la función\ntrain_hist_v16 = history_vgg16.copy()\nplot_history(train_hist_v16,\n      suptitle='VGG16-base: Métricas de evaluación en ' +\n      'los conjuntos de Entrenamiento y Validación')\n\n\n\n\n\n\n\n\n\nscore_test_vgg16 = model_vgg16.evaluate(test_generator, batch_size=64)\n\nfor i, j in zip(train_hist_v16.keys(), score_test_vgg16):\n  print(f'{i.upper()}: {j:.2f}')\n\n19/19 [==============================] - 5s 251ms/step - loss: 0.2621 - accuracy: 0.9092 - roc_auc: 0.9625 - precision: 0.8943 - recall: 0.9930\nLOSS: 0.26\nACCURACY: 0.91\nROC_AUC: 0.96\nPRECISION: 0.89\nRECALL: 0.99\n\n\n\n# Etiquetas reales\n# y_test = test_generator.classes\n# Predicciones\ny_pred_v16 = model_vgg16.predict(test_generator)\ny_pred_classes_v16 = (y_pred_v16 &gt;= 0.5).astype('int32')\n\n\n#@markdown (desplegar para ver el código)\n\n# Genera la gráfica\nplot_cfn_matrix(y_test, y_pred_classes_v16,\n    suptitle='Matriz de confusión VGG16-base (conjunto de prueba)')\n\n\n\n\n\n\n\n\n\n# Genera la gráfica\nplot_roc_and_pr_curves(y_test, y_pred_v16,\n          suptitle = 'Desempeño VGG16-base',\n          name = 'VGG16')"
+  },
+  {
+    "objectID": "pre-post/code/2_ConvolutionalNN_PNEUMONIA_X_ray.html#interpretación-de-resultados-1",
+    "href": "pre-post/code/2_ConvolutionalNN_PNEUMONIA_X_ray.html#interpretación-de-resultados-1",
+    "title": "CNN_Neumonía",
+    "section": "Interpretación de Resultados",
+    "text": "Interpretación de Resultados\nLa red VGG16 mostró buenos resultados, teniendo un desempeño similar al de la primer red (CNN) en términos de Sensibilidad. Sin embargo, mostró una mejora en la precisión y por consiguiente en el Área bajo la curva ROC, así como un mayor valor de avgPR."
+  },
+  {
+    "objectID": "posts/Presentaciones/LLMs.html#notebook-lm",
+    "href": "posts/Presentaciones/LLMs.html#notebook-lm",
+    "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
+    "section": "NOtebook LM",
+    "text": "NOtebook LM\nEnlace"
+  },
+  {
+    "objectID": "posts/Presentaciones/LLMs.html#codificación-posicional",
+    "href": "posts/Presentaciones/LLMs.html#codificación-posicional",
+    "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
+    "section": "Codificación Posicional",
+    "text": "Codificación Posicional\n\nProblema: A diferencia de las RNNs, los Transformers procesan palabras en paralelo, perdiendo información sobre el orden de las palabras.\nSolución: La codificación posicional añade información sobre la posición de cada palabra mediante vectores que se suman a los embeddings de las palabras.\nBeneficio: Permite al modelo distinguir oraciones con las mismas palabras en diferente orden, crucial para la interpretación del significado.\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/LLMs.html#mecanismo-de-atención-attention",
+    "href": "posts/Presentaciones/LLMs.html#mecanismo-de-atención-attention",
+    "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
+    "section": "Mecanismo de Atención (Attention)",
+    "text": "Mecanismo de Atención (Attention)\n\nPropósito: Permite al modelo enfocarse en las partes más relevantes de la secuencia de entrada al generar la salida.\nFuncionamiento: Asigna pesos a cada palabra de la entrada, indicando cuánto debe “prestar atención” el modelo.\nCálculo: Se computan matrices Query (Q), Key (K) y Value (V). La atención se calcula como una función de Q y K, ponderando los valores en V para generar un vector de contexto.\nBeneficio: Mejora el rendimiento en tareas de secuencia a secuencia al proporcionar información contextualmente relevante.\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/LLMs.html#autoatención-self-attention",
+    "href": "posts/Presentaciones/LLMs.html#autoatención-self-attention",
+    "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
+    "section": "Autoatención (Self-Attention)",
+    "text": "Autoatención (Self-Attention)\n\nPropósito: Permite a cada palabra prestar atención a todas las demás palabras dentro de la misma secuencia.\nFuncionamiento: Las matrices Q, K y V se calculan a partir de la misma secuencia de entrada.\nBeneficio: Permite el procesamiento paralelo y la captura de dependencias a largo alcance, superando las limitaciones de las RNNs.\nRelación con Atención: La autoatención es un caso particular del mecanismo de atención.\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/LLMs.html#word-embeddings-métodos-basados-en-frecuencia",
+    "href": "posts/Presentaciones/LLMs.html#word-embeddings-métodos-basados-en-frecuencia",
+    "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
+    "section": "Word Embeddings: Métodos Basados en Frecuencia",
+    "text": "Word Embeddings: Métodos Basados en Frecuencia\n\nBag-of-Words (BoW): Conjunto no ordenado de palabras y sus frecuencias. Simple pero ignora el orden y la semántica.\nTF-IDF: Asigna pesos a las palabras según su frecuencia en un documento y en el corpus. Mejora BoW pero ignora el contexto.\nN-gramas: Considera secuencias de n palabras. Captura contexto local pero basado en frecuencia.\nMatrices de Co-ocurrencia: Capturan la frecuencia con la que las palabras aparecen juntas. Base para generar embeddings.\nOne-Hot Encoding: Vector binario para cada palabra. Sencillo pero de alta dimensionalidad y sin relaciones semánticas.\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/LLMs.html#word-embeddings-embeddings-estáticos",
+    "href": "posts/Presentaciones/LLMs.html#word-embeddings-embeddings-estáticos",
+    "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
+    "section": "Word Embeddings: Embeddings Estáticos",
+    "text": "Word Embeddings: Embeddings Estáticos\nGeneran un vector único por palabra, independientemente del contexto.\n\nWord2Vec (CBOW y Skip-gram): Redes neuronales para predecir palabras a partir de su contexto.\nGloVe: Combina métodos de conteo y predicción, capturando relaciones semánticas locales y globales.\nFastText: Mejora Word2Vec considerando la estructura interna de las palabras.\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/LLMs.html#word-embeddings-embeddings-contextuales",
+    "href": "posts/Presentaciones/LLMs.html#word-embeddings-embeddings-contextuales",
+    "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
+    "section": "Word Embeddings: Embeddings Contextuales",
+    "text": "Word Embeddings: Embeddings Contextuales\nGeneran embeddings que varían según el contexto, capturando la polisemia.\n\nSelf-Attention: Permite a cada palabra relacionarse con todas las demás. Fundamental en Transformers.\nELMo: Considera todo el contexto de la oración para embeddings dinámicos.\nBERT: Arquitectura Transformer para embeddings contextuales, capturando contexto izquierdo y derecho.\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/LLMs.html#word-embeddings-embeddings-contextuales-1",
+    "href": "posts/Presentaciones/LLMs.html#word-embeddings-embeddings-contextuales-1",
+    "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
+    "section": "Word Embeddings: Embeddings Contextuales",
+    "text": "Word Embeddings: Embeddings Contextuales\nGeneran embeddings que varían según el contexto, capturando la polisemia.\n\nSelf-Attention: Permite a cada palabra relacionarse con todas las demás. Fundamental en Transformers.\nELMo: Considera todo el contexto de la oración para embeddings dinámicos.\nBERT: Arquitectura Transformer para embeddings contextuales, capturando contexto izquierdo y derecho.\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/LLMs.html#límites-de-los-llm-clásicos",
+    "href": "posts/Presentaciones/LLMs.html#límites-de-los-llm-clásicos",
+    "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
+    "section": "Límites de los LLM (Clásicos)",
+    "text": "Límites de los LLM (Clásicos)\n\nFalta de comprensión del mundo real: Un LLM podría tener dificultades para responder preguntas sobre eventos actuales, lugares geográficos o conceptos abstractos.\nSesgo: Los LLMs pueden perpetuar y amplificar los sesgos presentes en los datos de entrenamiento. Esto puede resultar en respuestas discriminatorias, ofensivas o estereotipadas. Es importante abordar el sesgo en los LLMs para garantizar la equidad y la inclusión en las aplicaciones de IA.\n\nIncapacidad para razonar: Un LLM podría tener dificultades para resolver un problema matemático o para comprender las relaciones causales entre diferentes eventos.\nDificultad para manejar información nueva o inesperada: Los LLMs se basan en los datos con los que fueron entrenados y pueden tener dificultades para procesar información nueva o inesperada. Esto puede llevar a respuestas inexactas o irrelevantes cuando se enfrentan a situaciones novedosas.\nDificultad con el lenguaje complejo: Los LLMs pueden tener dificultades para comprender y procesar el lenguaje complejo o matizado, como el sarcasmo, las metáforas y otras figuras retóricas..\nLimitaciones en la creatividad: Los LLMs pueden generar diferentes tipos de contenido creativo de formato textual, como poemas, guiones, piezas musicales y correos electrónicos. Sin embargo, su capacidad para producir contenido verdaderamente original y creativo es limitada."
+  },
+  {
+    "objectID": "posts/Presentaciones/LLMs.html#ejemplo-rag",
+    "href": "posts/Presentaciones/LLMs.html#ejemplo-rag",
+    "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
+    "section": "Ejemplo RAG",
+    "text": "Ejemplo RAG\nPregunta:Basándote en la historia clínica proporcionada, ¿cuáles son los tres factores de riesgo cardiovascular más relevantes para la paciente María Pérez y por qué son importantes en este caso específico?\nHistoria mal estructurada\nHistoria bien estructurada"
   }
 ]
