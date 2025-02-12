@@ -242,14 +242,14 @@
     "href": "posts/Presentaciones/LLMs.html#límites-de-los-llm-clásicos",
     "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
     "section": "Límites de los LLM (Clásicos)",
-    "text": "Límites de los LLM (Clásicos)\n\nFalta de comprensión del mundo real: Un LLM podría tener dificultades para responder preguntas sobre eventos actuales, lugares geográficos o conceptos abstractos.\nSesgo: Los LLMs pueden perpetuar y amplificar los sesgos presentes en los datos de entrenamiento. Esto puede resultar en respuestas discriminatorias, ofensivas o estereotipadas. Es importante abordar el sesgo en los LLMs para garantizar la equidad y la inclusión en las aplicaciones de IA.\n\nIncapacidad para razonar: Un LLM podría tener dificultades para resolver un problema matemático o para comprender las relaciones causales entre diferentes eventos.\nDificultad para manejar información nueva o inesperada: Los LLMs se basan en los datos con los que fueron entrenados y pueden tener dificultades para procesar información nueva o inesperada. Esto puede llevar a respuestas inexactas o irrelevantes cuando se enfrentan a situaciones novedosas.\nDificultad con el lenguaje complejo: Los LLMs pueden tener dificultades para comprender y procesar el lenguaje complejo o matizado, como el sarcasmo, las metáforas y otras figuras retóricas..\nLimitaciones en la creatividad: Los LLMs pueden generar diferentes tipos de contenido creativo de formato textual, como poemas, guiones, piezas musicales y correos electrónicos. Sin embargo, su capacidad para producir contenido verdaderamente original y creativo es limitada."
+    "text": "Límites de los LLM (Clásicos)\n\nFalta de comprensión del mundo real: Un LLM podría tener dificultades para responder preguntas sobre eventos actuales, lugares geográficos o conceptos abstractos.\nSesgo: Los LLMs pueden perpetuar y amplificar los sesgos presentes en los datos de entrenamiento. Esto puede resultar en respuestas discriminatorias, ofensivas o estereotipadas. Es importante abordar el sesgo en los LLMs para garantizar la equidad y la inclusión en las aplicaciones de IA.\n\nIncapacidad para razonar: Un LLM podría tener dificultades para resolver un problema matemático o para comprender las relaciones causales entre diferentes eventos.\n\nNotes"
   },
   {
-    "objectID": "posts/Presentaciones/LLMs.html#notebook-lm",
-    "href": "posts/Presentaciones/LLMs.html#notebook-lm",
+    "objectID": "posts/Presentaciones/LLMs.html#límites-de-los-llm-clásicos-ii",
+    "href": "posts/Presentaciones/LLMs.html#límites-de-los-llm-clásicos-ii",
     "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
-    "section": "NOtebook LM",
-    "text": "NOtebook LM\nEnlace"
+    "section": "Límites de los LLM (Clásicos) II",
+    "text": "Límites de los LLM (Clásicos) II\nDificultad para manejar información nueva o inesperada: Los LLMs se basan en los datos con los que fueron entrenados y pueden tener dificultades para procesar información nueva o inesperada. Esto puede llevar a respuestas inexactas o irrelevantes cuando se enfrentan a situaciones novedosas.\nDificultad con el lenguaje complejo: Los LLMs pueden tener dificultades para comprender y procesar el lenguaje complejo o matizado, como el sarcasmo, las metáforas y otras figuras retóricas..\nLimitaciones en la creatividad: Los LLMs pueden generar diferentes tipos de contenido creativo de formato textual, como poemas, guiones, piezas musicales y correos electrónicos. Sin embargo, su capacidad para producir contenido verdaderamente original y creativo es limitada.\n\nNotes"
   },
   {
     "objectID": "posts/code/word_embeddings.html",

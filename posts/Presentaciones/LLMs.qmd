@@ -525,6 +525,10 @@ Notes
 
 **Incapacidad para razonar**: Un LLM podría tener dificultades para resolver un problema matemático o para comprender las relaciones causales entre diferentes eventos.
 
+::: notes
+Notes
+:::
+
 ## Límites de los LLM (Clásicos) II
 
 **Dificultad para manejar información nueva o inesperada**: Los LLMs se basan en los datos con los que fueron entrenados y pueden tener dificultades para procesar información nueva o inesperada. Esto puede llevar a respuestas inexactas o irrelevantes cuando se enfrentan a situaciones novedosas.
@@ -532,5 +536,11 @@ Notes
 **Dificultad con el lenguaje complejo**: Los LLMs pueden tener dificultades para comprender y procesar el lenguaje complejo o matizado, como el sarcasmo, las metáforas y otras figuras retóricas..
 
 **Limitaciones en la creatividad**: Los LLMs pueden generar diferentes tipos de contenido creativo de formato textual, como poemas, guiones, piezas musicales y correos electrónicos. Sin embargo, su capacidad para producir contenido verdaderamente original y creativo es limitada.
+
+::: notes
+Notes
+:::
+
+# GRACIAS POR VUESTRA ATENCIÓN
 
 
