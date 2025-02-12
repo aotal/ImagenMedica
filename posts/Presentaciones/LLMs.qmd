@@ -1,6 +1,6 @@
 ---
 title: "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO"
-date: "2025-02-10"
+date: "2025-02-12"
 categories: [Presentación]
 image: img/portada_llm.png
 author: "[Antonio Otal Palacín](antonio.otal@udl.cat)"
@@ -15,6 +15,9 @@ format:
         number-sections: false
         slide-number: false
         center: false
+        preview-links: true
+        smaller: true
+        navigation-mode: vertical
 filters:
   - reveal-header        
 jupyter: python3   
@@ -24,9 +27,8 @@ jupyter: python3
 
 -   Introducción breve a los LLM
 -   Embedding Systems
--   Fine-Tuning y Retrieval Augmentation Generation (RAG)
--   Ejemplo de RAG según la estructuración de los datos
 -   Knowledge Graphs
+-   Fine-Tuning y Retrieval Augmentation Generation (RAG)
 -   Límites de los LLM
 
 ::: notes
@@ -50,8 +52,9 @@ Notes
 ## LLM Pretraining
 
 A una velocidad de 1000 millones de operaciones por segundo entrenar a GPT3 nos costaría 100 millones de años.
-
 Se hubiese tenido que empezar a entrenar el modelo en el cretácico.
+
+![](img/cretacico_a_hoy.jpg){fig-align="right" width="300" height="300"}
 
 ::: notes
 Notes
@@ -75,41 +78,77 @@ Notes
 
 ## TRANSFORMERS
 
-::: columns
+::::: columns
 ::: {.column width="20%"}
-
-![](img/transformer.jpg){.absolute top=200left=0 width="200" height="200"}
-![](img/qrcode_transformers.png){.absolute top=350 left=0 width="200" height="200"}
-![](img/deeplearningai.png){.absolute top=550 left=0 width="200"}
-
+![](img/transformer.jpg){.absolute top="200left=0" width="200" height="200"} ![](img/qrcode_transformers.png){.absolute top="350" left="0" width="200" height="200"} ![](img/deeplearningai.png){.absolute top="550" left="0" width="200"}
 :::
 
 ::: {.column width="80%"}
-<p style="font-size: 30px;">**Codificaciones posicionales**: Los transformers agregan un número a cada palabra para indicar su posición en la oración. Esto ayuda al modelo a comprender el orden de las palabras, lo cual es crucial para el significado.
-</p>
-<p style="font-size: 30px;">**Atención**: Permite al modelo considerar todas las palabras de la oración al traducir o analizar una palabra específica. Esto ayuda a capturar relaciones complejas entre palabras y mejora la precisión de la traducción y la comprensión.
-</p>
-<p style="font-size: 30px;">**Autoatención**: Permite al modelo comprender una palabra en el contexto de las palabras que la rodean, lo que ayuda a desambiguar palabras con múltiples significados y captar matices del lenguaje.
-</p>
+
+**Codificaciones posicionales**: Los transformers agregan un número a cada palabra para indicar su posición en la oración. Esto ayuda al modelo a comprender el orden de las palabras, lo cual es crucial para el significado.
+
+**Atención**: Permite al modelo considerar todas las palabras de la oración al traducir o analizar una palabra específica. Esto ayuda a capturar relaciones complejas entre palabras y mejora la precisión de la traducción y la comprensión.
+
+**Autoatención**: Permite al modelo comprender una palabra en el contexto de las palabras que la rodean, lo que ayuda a desambiguar palabras con múltiples significados y captar matices del lenguaje.
 
 :::
-:::
-
+:::::
 
 ::: notes
 Notes
 :::
 
-# Vector Embedding 
+## Codificación Posicional
+
+- **Problema**: A diferencia de las RNNs, los Transformers procesan palabras en paralelo, perdiendo información sobre el orden de las palabras.
+
+- **Solución**: La codificación posicional añade información sobre la posición de cada palabra mediante vectores que se suman a los embeddings de las palabras.
+
+- **Beneficio**: Permite al modelo distinguir oraciones con las mismas palabras en diferente orden, crucial para la interpretación del significado.
+
+::: notes
+Notes
+:::
+
+## Mecanismo de Atención (Attention)
+
+- **Propósito**: Permite al modelo enfocarse en las partes más relevantes de la secuencia de entrada al generar la salida.
+
+- **Funcionamiento**: Asigna pesos a cada palabra de la entrada, indicando cuánto debe "prestar atención" el modelo.
+
+- **Cálculo**: Se computan matrices Query (Q), Key (K) y Value (V). La atención se calcula como una función de Q y K, ponderando los valores en V para generar un vector de contexto.
+
+- **Beneficio**: Mejora el rendimiento en tareas de secuencia a secuencia al proporcionar información contextualmente relevante.
+
+::: notes
+Notes
+:::
+
+## Autoatención (Self-Attention)
+
+- **Propósito**: Permite a cada palabra prestar atención a todas las demás palabras dentro de la misma secuencia.
+
+- **Funcionamiento**: Las matrices Q, K y V se calculan a partir de la misma secuencia de entrada.
+
+- **Beneficio**: Permite el procesamiento paralelo y la captura de dependencias a largo alcance, superando las limitaciones de las RNNs.
+
+- **Relación con Atención**: La autoatención es un caso particular del mecanismo de atención.
+
+::: notes
+Notes
+:::
+
+# Vector Embedding
 
 ## EMBEDDING
 
+<blockquote cite>
 
-<blockquote cite="">
-    *Vector embeddings* son representaciones numéricas de información, como texto, documentos, imágenes o audio. Capturan el significado semántico de la información
-  </blockquote>
+*Vector embeddings* son representaciones numéricas de información, como texto, documentos, imágenes o audio. Capturan el significado semántico de la información
 
+</blockquote>
 
+![](img/vector_embeddings.jpg){fig-align="right" width="300" height="300"}
 
 ::: notes
 Notes
@@ -117,402 +156,383 @@ Notes
 
 ## VECTORES
 
-
 ![](img/vectores.gif)
 
+<a href="https://colab.research.google.com/github/aotal/ImagenMedica/blob/master/posts/code/Embedding.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+
+::: notes
+Notes
+:::
+
+## EMBEDDING MACHINE
+
+![](img/embeddings.png)
+
+::: notes
+Notes
+:::
+
+## CHUNKS
+
+<blockquote cite>
+
+Un *chunk* es una unidad discreta de información extraída de un cuerpo de texto más grande. Puede ser una frase, un párrafo, una sección de un documento o incluso un documento completo, dependiendo del sistema y la aplicación. La idea principal es dividir la información en partes más pequeñas que sean más fáciles de procesar y analizar para la IA.
+
+</blockquote>
+
+![](img/chunk_image.jpg){fig-align="right" width="300" height="300"}
 
 
 ::: notes
 Notes
 :::
 
-## Datos estructurados
+## Métodos de División en Chunks
 
-::: columns
-::: {.column width="50%"}
-```{python}
-import pandas as pd
-tb=pd.read_csv('tablas/apple_quality.csv')
-tb
-```
+- **Por encabezados**: Se usan los encabezados y subtítulos del documento para crear chunks.
+- **Por párrafos**: Se divide el texto en chunks según los párrafos.
+- **Ventanas deslizantes**: Una ventana captura texto al desplazarse, creando chunks que se superponen.
+- **Segmentación semántica**: Se usan algoritmos para identificar unidades de significado y dividir el texto en chunks.
+
+::: notes
+Notes
 :::
 
-::: {.column width="50%"}
-![](img/DatosEstructurados1.jpg){fig-align="right"}
+## ¿Cómo los LLMs Utilizan los Chunks?
+
+Los LLMs utilizan los chunks para comprender el contexto y generar texto coherente. Al procesar un chunk, el LLM puede:
+
+- **Identificar las ideas principales**: Extraer la información más relevante del chunk.
+
+- **Establecer conexiones**: Relacionar la información del chunk con otros chunks o con el conocimiento previo del LLM. Para lograr esto, los LLMs utilizan mecanismos como la atención y la codificación posicional. La atención permite al modelo enfocarse en las partes más relevantes de la información dentro de un chunk y entre diferentes chunks. La codificación posicional proporciona información sobre la ubicación de las palabras dentro de un chunk y en relación con otros chunks, lo que ayuda al modelo a comprender el orden y la secuencia de la información.
+
+- **Generar resúmenes**: Condensar la información del chunk en un resumen conciso.
+
+- **Responder preguntas**: Proporcionar respuestas precisas y relevantes a las preguntas basadas en la información del chunk.
+
+::: notes
+Notes
 :::
+
+## Desafíos de los *Chunks* en LLMs
+
+- **Pérdida de contexto**: Dividir el texto en *chunks* puede dificultar la comprensión de relaciones entre datos, afectando la precisión de las respuestas.
+
+- **Sesgo**: La selección de *chunks* puede introducir sesgos, llevando a resultados incompletos o inexactos.
+
+- **Información compleja**: Cierta información (imágenes, datos, etc.) es difícil de representar en *chunks*.
+
+- **Tamaño del *chunk***: Encontrar el tamaño óptimo es crucial para el rendimiento del modelo.
+
+::: notes
+Notes
+:::
+
+
+## **Word Embeddings**: Métodos Basados en Frecuencia
+
+- **Bag-of-Words (BoW)**: Conjunto no ordenado de palabras y sus frecuencias. Simple pero ignora el orden y la semántica.
+
+- **TF-IDF**: Asigna pesos a las palabras según su frecuencia en un documento y en el corpus. Mejora BoW pero ignora el contexto.
+
+- **N-gramas**: Considera secuencias de n palabras. Captura contexto local pero basado en frecuencia.
+
+- **Matrices de Co-ocurrencia**: Capturan la frecuencia con la que las palabras aparecen juntas. Base para generar embeddings.
+
+- **One-Hot Encoding**: Vector binario para cada palabra. Sencillo pero de alta dimensionalidad y sin relaciones semánticas.
+
+
+::: notes
+Notes
+:::
+
+## **Word Embeddings**: Embeddings Estáticos
+
+Generan un vector único por palabra, independientemente del contexto.
+
+- **Word2Vec (CBOW y Skip-gram)**: Redes neuronales para predecir palabras a partir de su contexto.
+
+- **GloVe**: Combina métodos de conteo y predicción, capturando relaciones semánticas locales y globales.
+
+- **FastText**: Mejora Word2Vec considerando la estructura interna de las palabras.
+
+
+::: notes
+Notes
+:::
+
+## **Word Embeddings**: Embeddings Contextuales
+
+Generan embeddings que varían según el contexto, capturando la polisemia.
+
+- **Self-Attention**: Permite a cada palabra relacionarse con todas las demás. Fundamental en Transformers.
+
+- **ELMo**: Considera todo el contexto de la oración para embeddings dinámicos.
+
+- **BERT**: Arquitectura Transformer para embeddings contextuales, capturando contexto izquierdo y derecho.
+
+
+::: notes
+Notes
+:::
+
+## **Word Embeddings**: Embeddings Contextuales
+
+Generan embeddings que varían según el contexto, capturando la polisemia.
+
+- **Self-Attention**: Permite a cada palabra relacionarse con todas las demás. Fundamental en Transformers.
+
+- **ELMo**: Considera todo el contexto de la oración para embeddings dinámicos.
+
+- **BERT**: Arquitectura Transformer para embeddings contextuales, capturando contexto izquierdo y derecho.
+
+
+::: notes
+Notes
+:::
+
+# KNOWLEDGE GRAPH (KG)
+
+## ¿QUÉ SON LOS KG?
+
+<blockquote cite>
+Los grafos de conocimiento son bases de datos inteligentes que representan el conocimiento médico de manera estructurada, permitiendo a la IA comprender y razonar sobre la información de forma más efectiva.
+</blockquote>
+
+[![Lord of the rings](img/thering.jpg){width=300px}](https://alon-cohen-gordon.wixsite.com/lotr-graph){preview-links="true"}
+
+::: notes
+Notes
+:::
+
+## Componentes principales de un grafo de conocimiento
+
+::::: columns
+::: {.column width="30%" }
+ ![](img/esquema_kg.jpg)
+:::
+
+::: {.column width="70%" .absolute top="220" left="340"}
+
+
+- **Nodos**: Representan entidades, conceptos u objetos, como enfermedades, síntomas, genes o medicamentos.
+- **Aristas**: Representan las relaciones entre los nodos, como "causa", "trata", "se asocia con" o "es un tipo de".
+- **Etiquetas**: Proporcionan información adicional sobre los nodos y las aristas, como nombres, descripciones o atributos.
+
+:::
+:::::
+
+::: notes
+Notes
+:::
+
+## Beneficios de los Grafos de Conocimiento
+::::: columns
+::: {.column width="30%" }
+ ![](img/beneficios_KG.jpg)
+:::
+
+::: {.column width="70%" .absolute top="230" left="340"}
+
+
+- **Precisión en el diagnóstico**: Integración de información de diversas fuentes.
+- **Personalización de tratamientos**: Uso de información genómica, clínica y de estilo de vida.
+- **Descubrimiento de fármacos**: Identificación de nuevas relaciones entre genes, proteínas y enfermedades.
+
+:::
+:::::
+
+::: notes
+Notes
+:::
+
+## Limitaciones de los Grafos de Conocimiento
+::::: columns
+::: {.column width="30%" }
+ ![](img/limitations_kg.jpg)
+:::
+
+::: {.column width="70%" .absolute top="230" left="340"}
+
+
+- **Calidad de los datos**: La precisión y completitud son cruciales.
+- **Escalabilidad**: Construcción y mantenimiento a gran escala pueden ser complejos.
+- **Interoperabilidad**: Integración con otros sistemas y bases de datos puede ser un desafío.
+
+:::
+:::::
+
+::: notes
+Notes
+:::
+
+
+# FINE-TUNNING y RETRIEVAL AUGMENTATION GENERATION (RAG)
+
+## FINE-TUNNING
+
+<blockquote cite>
+
+El ajuste fino de un LLM es una técnica de aprendizaje por transferencia en la que se toma un modelo pre-entrenado con un gran conjunto de datos para una tarea general, y se realizan pequeños ajustes a sus parámetros internos para optimizar su rendimiento en una nueva tarea específica
+
+</blockquote>
+
+![](img/fine_tunning_presentacion.jpg){fig-align="right" width="350" height="350"}
+
+::: notes
+Notes
+:::
+
+## TRANSFER LEARNING
+
+![](img/transferlearning.png)
+
+::: notes
+Notes
+:::
+
+## FINE-TUNNING (ESQUEMA)
+
+![](img/esquemafinetunning.png)
+
+::: notes
+Notes
+:::
+
+## FINE-TUNNING (ESQUEMA)
+
+![](img/esquemafinetunning.png)
+
+::: notes
+Notes
+:::
+
+## FINE-TUNING (DEMOSTRACIÓN)
+
+::::: columns
+::: {.column width="30%"}
+ ![](img/qr_demo_bio.png){.absolute top="200" left="0" width="300" height="300"}
+:::
+
+::: {.column width="70%" .absolute top="240" left="340"}
+
+
+- BioMistral/BioMistral-7B
+- mistralai/Mistral-7B-Instruct-v0.1
+
+[Ejemplo](https://aotal.github.io/CursoAI2024/)
+:::
+:::::
+
+![](img/huggingface_logo.png){.absolute bottom="100" right="50" width="300"}
+
+::: notes
+Notes
+:::
+
+## RAG (2020)
+
+- **Vectorización del contenido**: Cada fragmento de texto se convierte en un vector numérico utilizando un modelo de embeddings. Estos vectores representan el significado semántico del texto en un espacio multidimensional.
+
+- **Búsqueda de similitud**: Cuando se realiza una consulta, esta también se vectoriza, y se busca en la base de datos vectorial los fragmentos cuyos vectores sean más cercanos al de la consulta (similaridad coseno, distancia euclidiana, etc.).
+
+::: notes
+Notes
+:::
+
+## ESQUEMA RAG
+
+![](img/esquemarag.png)
+
+::: notes
+Notes
+:::
+
+## FINE-TUNNING VS RAG
+
+
+https://notebooklm.google.com/notebook/d40fef92-ed62-4659-9b3e-0e5cde949f45
+https://notebooklm.google.com/notebook/35c43bd2-d012-45fb-a514-aa2958b1fdda
+
+
+<div style="display: flex; justify-content: center; align-items: center; height: 75%; margin-top: -60px" >
+  <table style="transform: scale(0.75);">
+    <tr>
+      <th>Característica</th>
+      <th>Fine-tuning</th>
+      <th>RAG</th>
+    </tr>
+    <tr>
+      <td>Enfoque principal</td>
+      <td>Adaptación del modelo</td>
+      <td>Aumento de la información</td>
+    </tr>
+    <tr>
+      <td>Método</td>
+      <td>Ajuste de parámetros</td>
+      <td>Recuperación de información externa</td>
+    </tr>
+    <tr>
+      <td>Ventajas</td>
+      <td>Personalización del modelo, eficiencia</td>
+      <td>Respuestas contextualmente relevantes, precisión</td>
+    </tr>
+    <tr>
+      <td>Limitaciones</td>
+      <td>Dificultad con datos cambiantes, adaptación de estilo limitada</td>
+      <td>Adaptación de estilo limitada, enfoque en recuperación</td>
+    </tr>
+  </table>
+</div>
+
+::: notes
+Notes
+:::
+
+## FINE-TUNNING VS RAG
+
+::: {layout="[15,-5,12]"}
+![Finne-tunning](img/medico_fine_tunning.jpg)
+
+![RAG](img/lector_rag.jpg)
 :::
 
 ::: notes
 Notes
 :::
 
-## Ejemplos de datos estructurados
+## Ejemplo RAG
 
--   Registros Electrónicos de Salud
--   Datos de Laboratorio Clínico
+**Pregunta**:Basándote en la historia clínica proporcionada, ¿cuáles son los tres factores de riesgo cardiovascular más relevantes para la paciente María Pérez y por qué son importantes en este caso específico?
 
-## Datos no estructurados
+[Historia mal estructurada](https://notebooklm.google.com/notebook/d40fef92-ed62-4659-9b3e-0e5cde949f45)
 
-::: columns
-::: {.column width="50%"}
--   Texto
--   Imágenes
--   Audio
--   Video
--   ...
-:::
+[Historia bien estructurada](https://notebooklm.google.com/notebook/35c43bd2-d012-45fb-a514-aa2958b1fdda)
 
-::: {.column width="50%"}
-![](img/DatosNoEstructurados1.jpg)
-:::
-:::
+![](img/notebooklm_logo.png)
+
+# Límites de los LLM
 
 ::: notes
 Notes
 :::
 
-## Datos semiestructurados
+## Límites de los LLM (Clásicos)
 
-::: columns
-::: {.column width="50%"}
-![](https://www.diegocalvo.es/wp-content/uploads/2017/11/datos_semiestructurados.png)
-:::
+- **Falta de comprensión del mundo real**: Un LLM podría tener dificultades para responder preguntas sobre eventos actuales, lugares geográficos o conceptos abstractos.
 
-::: {.column width="50%"}
-![](https://www.dicomstandard.org/images/librariesprovider2/default-album/dicom-logo.jpg?sfvrsn=7e5f288b_2)
-:::
-:::
+- **Sesgo**: Los LLMs pueden perpetuar y amplificar los sesgos presentes en los datos de entrenamiento. Esto puede resultar en respuestas discriminatorias, ofensivas o estereotipadas. Es importante abordar el sesgo en los LLMs para garantizar la equidad y la inclusión en las aplicaciones de IA.
 
-::: notes
-Notes
-:::
+**Incapacidad para razonar**: Un LLM podría tener dificultades para resolver un problema matemático o para comprender las relaciones causales entre diferentes eventos.
 
-## Por naturaleza de los datos
+**Dificultad para manejar información nueva o inesperada**: Los LLMs se basan en los datos con los que fueron entrenados y pueden tener dificultades para procesar información nueva o inesperada. Esto puede llevar a respuestas inexactas o irrelevantes cuando se enfrentan a situaciones novedosas.
 
--   Categóricos
--   Numéricos
--   Temporales
--   Espaciales
+**Dificultad con el lenguaje complejo**: Los LLMs pueden tener dificultades para comprender y procesar el lenguaje complejo o matizado, como el sarcasmo, las metáforas y otras figuras retóricas..
 
-::: notes
-Notes
-:::
+**Limitaciones en la creatividad**: Los LLMs pueden generar diferentes tipos de contenido creativo de formato textual, como poemas, guiones, piezas musicales y correos electrónicos. Sin embargo, su capacidad para producir contenido verdaderamente original y creativo es limitada.
 
-## Por granularidad de los datos
 
--   **Datos a nivel de instancia**: Datos individuales que representan observaciones o eventos específicos, como registros de pacientes o imágenes médicas.
--   **Datos a nivel de atributo**: Datos que representan características o atributos de las instancias, como la edad, el peso o los síntomas clínicos.
+## NOtebook LM
 
-::: notes
-Notes
-:::
+[Enlace](https://notebooklm.google.com/notebook/40a3cbbf-0d09-4cec-a129-3efd69592ee8){preview-links="true"}
 
-## Fuente de los datos
-
--   **Datos primarios**: Datos recopilados directamente de la fuente original, como registros médicos electrónicos (EHR) o resultados de pruebas de laboratorio.
-
--   **Datos secundarios**: Datos que han sido recopilados o procesados por terceros, como conjuntos de datos disponibles en repositorios públicos o bases de datos comerciales.
-
-::: notes
-Notes
-:::
-
-## Datos anotados vs no anotados
-
--   **Estructura semántica**: Los datos anotados tienen metadatos adicionales que proporcionan contexto y significado, como las etiquetas que marcan entidades nombradas.
-
--   **Interoperabilidad y procesabilidad**: Los datos anotados son más interoperables y procesables, lo que facilita su integración con otros sistemas y su procesamiento automatizado.
-
--   **Facilidad de búsqueda y recuperación**: Los datos anotados son más fáciles de buscar y recuperar, ya que las anotaciones permiten identificar elementos específicos.
-
-::: notes
-Notes
-:::
-
-# Anotación de datos
-
-![](https://www.shaip.com/wp-content/uploads/2023/05/Data-Annotation-New-Images-03.jpg)
-
-## ¿Qué es la anotación de datos?
-
-La anotación de datos es el proceso de atribución o etiquetado de datos para ayudar a los algoritmos de aprendizaje automático a comprender y clasificar la información que procesan.
-
--   Texto
--   Imágenes
--   Audio
--   Video
-
-## Anotación de imágenes
-
-::: columns
-::: {.column width="50%"}
--   Clasificación
--   Reconocimiento/Detección
--   Segmentación
-:::
-
-::: {.column width="50%"}
-![](https://www.shaip.com/wp-content/uploads/2021/08/page-8-1.jpg)
-
-[VGG](https://www.robots.ox.ac.uk/~vgg/software/via/via_demo.html)
-:::
-:::
-
-## Anotación de audio
-
-![](https://macgence.com/wp-content/uploads/2023/08/Audio-Annotation-801x299.webp)
-
-## Anotación de video
-
-![](https://www.shaip.com/wp-content/uploads/2022/02/page-3.jpg)
-
-## Anotación de texto
-
-::: columns
-::: {.column width="50%"}
--   Semántica
--   Intención
--   Opinión
-
-[tabula](http://tabula.ondata.it/)
-:::
-
-::: {.column width="50%"}
-![](https://www.datasciencecentral.com/wp-content/uploads/2021/10/9489155876.png)
-:::
-:::
-
-# Privacidad y confidencialidad
-
-![](img/RGPD.png){fig-align="center"}
-
-# Registros electrónicos de salud (EHR)
-
-## Antecedentes
-
-::: columns
-::: {.column width="50%"}
-![](img/HistoriaClinica1.jpg)
-:::
-
-::: {.column width="50%"}
-![](img/HistoriaClinica2.jpg)
-:::
-:::
-
-::: notes
-Notes
-:::
-
-## Problemas de la historia clínica en papel
-
--   Accesibilidad limitada
-
--   Riesgo de pérdida o daño
-
--   Dificultad para mantener actualizada la información
-
--   Espacio de almacenamiento y organización
-
--   Limitaciones en la compartición y colaboración
-
-::: notes
-Notes
-:::
-
-## Componentes de los EHR
-
--   Módulos de Registro y Documentación
-
--   Pedidos y Resultados de laboratorio
-
--   Gestión de Medicamentos
-
--   Integración de Imágenes Médicas (PACS)
-
-::: notes
-Notes
-:::
-
-## SAP 1
-
-![](img/SAP_1.png)
-
-::: notes
-Notes
-:::
-
-## SAP 2
-
-![](img/SAP_2.png)
-
-::: notes
-Notes
-:::
-
-## SAP 3
-
-![](img/SAP_3.png)
-
-::: notes
-Notes
-:::
-
-## ARIA
-
-![](img/ARIA.PNG)
-
-::: notes
-Notes
-:::
-
-# Preprocesado de datos médicos
-
-![](img/ProcesadoDeDatos1.png){fig-align="center"}
-
-::: notes
-Notes
-:::
-
-## Limpieza de datos
-
--   Eliminación de observaciones incompletas
--   Imputación de valores
--   Análisis de patrones de datos faltantes
--   Uso de modelos predictivos
--   Técnicas de imputación múltiple
-
-::: notes
-Notes
-:::
-
-## Normalización de variables continuas
-
--   Las variables continuas pueden tener diferentes escalas y rangos de valores
--   La normalización ayuda a mitigar este problema al transformar las variables para que estén en una escala similar
-
-::: notes
-Notes
-:::
-
-## Técnicas de normalización
-
--   Datos con una media de 0 y desviación estándar 1
--   Normalización min-max (0-1)
--   Puede mejorar la convergencia
-
-::: callout-warning
-Es importante aplicar la misma transformación de normalización tanto al conjunto de entrenamiento como al conjunto de prueba para evitar sesgos en los datos.
-:::
-
-::: notes
-Notes
-:::
-
-## Integración de datos
-
--   Fuentes de Datos Diversas
--   Resolución de inconsistencias
--   Limpieza de Datos
--   Gestión de Datos Temporales
-
-::: notes
-Notes
-:::
-
-## La ingeniería de características
-
--   Creación de Nuevas características
--   Selección de Características Relevantes
-
-::: notes
-Por ejemplo el índice de masa corporal
-:::
-
-## Anonimización de los datos
-
--   La anonimización es el proceso de eliminar o modificar datos personales de tal manera que ya no sea posible identificar a un individuo a partir de los datos.
-
--   La anonimización está vinculada a lo que dicen las leyes de protección de datos en la UE (RGPD)
-
-::: notes
-Notes
-:::
-
-## Técnicas de anonimización
-
--   Eliminación de identificadores directos
--   Pseudonimización
--   Enmascaramiento
--   Agregación
-
-::: notes
-Notes
-:::
-
-## Consideraciones al elegir una técnica de anonimización
-
--   El tipo de datos que se procesan
--   El nivel de riesgo de reidentificación
--   Los fines para los que se utilizarán los datos anonimizados
-
-::: notes
-Notes
-:::
-
-## *Data Augmentation*
-
-Es una técnica que consiste en crear nuevas muestras de datos a partir de datos existentes. Estas nuevas muestras se generan mediante la aplicación de transformaciones predefinidas a los datos originales
-
-![](https://dawn.cs.stanford.edu/assets/img/2017-08-11-tanda/data_aug_basic.png)
-
-::: notes
-Notes
-:::
-
-## Ventajas de *Data Augmentation*
-
--   Aumenta el tamaño del conjunto de datos
--   Mejora la generalización del modelo
--   Reduce el sesgo del modelo
-
-::: notes
-Notes
-:::
-
-## *Data Augmentation* en imágenes médicas
-
--   Rotaciones
--   Zoom
--   Cambio de contraste
--   Adición de ruido
--   Simulación de artefactos
-
-::: notes
-Notes
-:::
-
-## *Data Augmentation* en señales biomédicas
-
-Como el Electrocardiograma o el Electroencefalograma
-
--   Adición de ruido
--   Cambio de escala
--   Segmentación de señales
--   Simulación de artefactos
-
-# Vectorizaciones (*Embeddings*)
-
-## Ángulo entre dos vectores
-
-![](https://www.mathsisfun.com/algebra/images/dot-product-ex2.gif){fig-align="center"}
-
-## ¿Qué son las vectorizaciones?
-
-![](https://daleonai.com/images/word2vec.png){fig-align="center"}
-
-## Práctica
-
-[Notebook](https://colab.research.google.com/drive/17hAP1ePCEOxDMREzNHQi1SwT0FYNa42n?usp=sharing)
-
-[juego](https://colab.research.google.com/drive/1r3e5MLJ7KuIF55yXr4L4bWxSh5udQ9rx?usp=sharing)

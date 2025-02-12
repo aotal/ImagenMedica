@@ -2,13 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.549">
+<meta name="generator" content="quarto-1.6.40">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-02-12">
 
-<title>Imagen Médica - Word Embeddings</title>
+<title>Word Embeddings – UdL AI 2025</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -34,7 +33,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -70,10 +69,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-7bd38dde212b5dc988a7b669665f0c57.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -114,11 +113,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../index.html">
-    <span class="navbar-title">Imagen Médica</span>
+    <span class="navbar-title">UdL AI 2025</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Buscar"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -134,7 +133,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
-          <div class="quarto-navbar-tools">
+            <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -157,7 +156,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div>
       <div class="quarto-title-meta-heading">Fecha de publicación</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">2024-02-12</p>
+        <p class="date">12 de febrero de 2024</p>
       </div>
     </div>
     
@@ -176,8 +175,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<section id="copyright-2019-the-tensorflow-authors." class="level5">
-<h5 class="anchored" data-anchor-id="copyright-2019-the-tensorflow-authors.">Copyright 2019 The TensorFlow Authors.</h5>
 <div id="cell-1" class="cell" data-cellview="form">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#@title Licensed under the Apache License, Version 2.0 (the "License");</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># you may not use this file except in compliance with the License.</span></span>
@@ -193,7 +190,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>Colab</p>
 <p><a href="https://colab.research.google.com/github/aotal/ImagenMedica/blob/master/posts/code/word_embeddings.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a></p>
-</section>
 <section id="word-embeddings" class="level1">
 <h1><em>Word Embeddings</em></h1>
 <div class="quarto-figure quarto-figure-center">
@@ -232,7 +228,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="preparación" class="level2">
 <h2 class="anchored" data-anchor-id="preparación">Preparación</h2>
-<div id="cell-8" class="cell">
+<div id="cell-7" class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> io</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
@@ -248,7 +244,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="descargar-el-conjunto-de-datos-imdb">Descargar el conjunto de datos IMDb</h3>
 <p>Utilizaremos el <a href="http://ai.stanford.edu/~amaas/data/sentiment/">Large Movie Review Dataset</a> a lo largo del tutorial. Entrenarás un modelo clasificador de sentimientos en este conjunto de datos y en el proceso aprenderás word embeddings desde cero. Para leer más sobre cómo cargar un conjunto de datos desde cero, consulta el <a href="https://www.tensorflow.org/tutorials/load_data/text">Loading text tutorial</a>.</p>
 <p>Descarga el conjunto de datos usando la utilidad de archivos de Keras y echa un vistazo a los directorios.</p>
-<div id="cell-10" class="cell">
+<div id="cell-9" class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">"https://ai.stanford.edu/~amaas/data/sentiment/aclImdb_v1.tar.gz"</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>dataset <span class="op">=</span> tf.keras.utils.get_file(<span class="st">"aclImdb_v1.tar.gz"</span>, url,</span>
@@ -259,18 +255,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>os.listdir(dataset_dir)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Echa un vistazo al directorio train/. Tiene carpetas pos y neg con reseñas de películas etiquetadas como positivas y negativas, respectivamente. Utilizarás las reseñas de las carpetas pos y neg para entrenar un modelo de clasificación binaria.</p>
-<div id="cell-12" class="cell">
+<div id="cell-11" class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>train_dir <span class="op">=</span> os.path.join(dataset_dir, <span class="st">'train'</span>)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>os.listdir(train_dir)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The <code>train</code> directory also has additional folders which should be removed before creating training dataset.</p>
-<div id="cell-14" class="cell">
+<div id="cell-13" class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>remove_dir <span class="op">=</span> os.path.join(train_dir, <span class="st">'unsup'</span>)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>shutil.rmtree(remove_dir)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>A continuación, crea un tf.data.Dataset usando tf.keras.utils.text_dataset_from_directory. Puedes leer más sobre el uso de esta utilidad en este <a href="https://www.tensorflow.org/tutorials/keras/text_classification">text classification tutorial</a>.</p>
 <p>Utiliza el directorio train para crear conjuntos de datos de entrenamiento y validación con una división del 20% para la validación.</p>
-<div id="cell-16" class="cell">
+<div id="cell-15" class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>batch_size <span class="op">=</span> <span class="dv">1024</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>seed <span class="op">=</span> <span class="dv">123</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>train_ds <span class="op">=</span> tf.keras.utils.text_dataset_from_directory(</span>
@@ -281,7 +277,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    subset<span class="op">=</span><span class="st">'validation'</span>, seed<span class="op">=</span>seed)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Echa un vistazo a algunas reseñas de películas y sus etiquetas (1: positivo, 0: negativo) del conjunto de datos de entrenamiento.</p>
-<div id="cell-18" class="cell">
+<div id="cell-17" class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> text_batch, label_batch <span class="kw">in</span> train_ds.take(<span class="dv">1</span>):</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(label_batch[i].numpy(), text_batch.numpy()[i])</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -293,7 +289,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><code>.cache()</code> mantiene los datos en la memoria después de que se cargan desde el disco. Esto asegurará que el conjunto de datos no se convierta en un cuello de botella mientras se entrena tu modelo. Si tu conjunto de datos es demasiado grande para caber en la memoria, también puedes usar este método para crear una caché en disco de alto rendimiento, que es más eficiente de leer que muchos archivos pequeños.</p>
 <p><code>.prefetch()</code> superpone el preprocesamiento de datos y la ejecución del modelo durante el entrenamiento.</p>
 <p>Puedes obtener más información sobre ambos métodos, así como sobre cómo almacenar en caché los datos en el disco en la <a href="https://www.tensorflow.org/guide/data_performance">data performance guide</a>.</p>
-<div id="cell-20" class="cell">
+<div id="cell-19" class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>AUTOTUNE <span class="op">=</span> tf.data.AUTOTUNE</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>train_ds <span class="op">=</span> train_ds.cache().prefetch(buffer_size<span class="op">=</span>AUTOTUNE)</span>
@@ -305,19 +301,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="usando-la-capa-embedding">Usando la capa Embedding</h2>
 <p>Keras facilita el uso de word embeddings. Echa un vistazo a la capa <a href="https://www.tensorflow.org/api_docs/python/tf/keras/layers/Embedding">Embedding</a>.</p>
 <p>La capa Embedding se puede entender como una tabla de búsqueda que mapea desde índices enteros (que representan palabras específicas) a vectores densos (sus incrustaciones - embeddings). La dimensionalidad (o ancho) de la incrustación es un parámetro con el que puedes experimentar para ver qué funciona bien para tu problema, de la misma manera que experimentarías con la cantidad de neuronas en una capa densa.</p>
-<div id="cell-22" class="cell">
+<div id="cell-21" class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Embed a 1,000 word vocabulary into 5 dimensions.</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>embedding_layer <span class="op">=</span> tf.keras.layers.Embedding(<span class="dv">1000</span>, <span class="dv">5</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Cuando creas una capa Embedding, los pesos para la incrustación se inicializan aleatoriamente (como cualquier otra capa). Durante el entrenamiento, se ajustan gradualmente mediante retropropagación. Una vez entrenados, los word embeddings aprendidos codificarán aproximadamente las similitudes entre las palabras (ya que se aprendieron para el problema específico en el que se entrena tu modelo).</p>
 <p>Si pasas un entero a una capa Embedding, el resultado reemplaza cada entero con el vector de la tabla de incrustaciones:</p>
-<div id="cell-24" class="cell">
+<div id="cell-23" class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> embedding_layer(tf.constant([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]))</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>result.numpy()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Para problemas de texto o secuencia, la capa Embedding toma un tensor 2D de enteros, de forma <code>(muestras, longitud_de_secuencia)</code>, donde cada entrada es una secuencia de enteros. Puede incrustar secuencias de longitudes variables. Podrías alimentar a la capa de incrustación anterior lotes con formas <code>(32, 10)</code> (lote de 32 secuencias de longitud 10) or <code>(64, 15)</code> (lote de 64 secuencias de longitud 15).</p>
 <p>El tensor devuelto tiene un eje más que la entrada, los vectores de incrustación se alinean a lo largo del nuevo último eje. Pásale un lote de entrada <code>(2, 3)</code> y la salida es <code>(2, 3, N)</code></p>
-<div id="cell-26" class="cell">
+<div id="cell-25" class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> embedding_layer(tf.constant([[<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]]))</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>result.shape</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -326,7 +322,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="preprocesamiento-de-texto" class="level2">
 <h2 class="anchored" data-anchor-id="preprocesamiento-de-texto">Preprocesamiento de texto</h2>
 <p>A continuación, define los pasos de preprocesamiento del conjunto de datos necesarios para tu modelo de clasificación de sentimientos. Inicializa una capa TextVectorization con los parámetros deseados para vectorizar las reseñas de películas. Puedes obtener más información sobre el uso de esta capa en el tutorial <a href="https://www.tensorflow.org/tutorials/keras/text_classification">Text Classification</a>.</p>
-<div id="cell-30" class="cell">
+<div id="cell-29" class="cell">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a custom standardization function to strip HTML break tags '&lt;br /&gt;'.</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> custom_standardization(input_data):</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  lowercase <span class="op">=</span> tf.strings.lower(input_data)</span>
@@ -362,7 +358,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>La última capa está densamente conectada con un solo nodo de salida.</p></li>
 </ul>
 <p>Precaución: Este modelo no utiliza enmascaramiento, por lo que el relleno de ceros se utiliza como parte de la entrada y, por lo tanto, la longitud del relleno puede afectar la salida. Para solucionar esto, consulta <a href="https://www.tensorflow.org/guide/keras/masking_and_padding">masking and padding guide</a>.</p>
-<div id="cell-32" class="cell">
+<div id="cell-31" class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>embedding_dim<span class="op">=</span><span class="dv">16</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> Sequential([</span>
@@ -377,16 +373,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="compila-y-entrena-el-modelo" class="level2">
 <h2 class="anchored" data-anchor-id="compila-y-entrena-el-modelo">Compila y entrena el modelo</h2>
 <p>Utilizarás <a href="https://www.tensorflow.org/tensorboard">TensorBoard</a> ara visualizar métricas, incluidas la pérdida y la precisión. Crea un tf.keras.callbacks.TensorBoard.</p>
-<div id="cell-35" class="cell">
+<div id="cell-34" class="cell">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>tensorboard_callback <span class="op">=</span> tf.keras.callbacks.TensorBoard(log_dir<span class="op">=</span><span class="st">"logs"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Compila y entrena el modelo utilizando el optimizador Adam y la pérdida BinaryCrossentropy.</p>
-<div id="cell-37" class="cell">
+<div id="cell-36" class="cell">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>model.<span class="bu">compile</span>(optimizer<span class="op">=</span><span class="st">'adam'</span>,</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>              loss<span class="op">=</span>tf.keras.losses.BinaryCrossentropy(from_logits<span class="op">=</span><span class="va">True</span>),</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>              metrics<span class="op">=</span>[<span class="st">'accuracy'</span>])</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-38" class="cell">
+<div id="cell-37" class="cell">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>model.fit(</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    train_ds,</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    validation_data<span class="op">=</span>val_ds,</span>
@@ -396,11 +392,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Con este enfoque, el modelo alcanza una precisión de validación de alrededor del 78% (ten en cuenta que el modelo está sobreajustado ya que la precisión del entrenamiento es mayor).</p>
 <p>Nota: Tus resultados pueden ser un poco diferentes, dependiendo de cómo se inicializaron aleatoriamente los pesos antes de entrenar la capa Embedding.</p>
 <p>Puedes consultar el resumen del modelo para obtener más información sobre cada capa del modelo.</p>
-<div id="cell-40" class="cell">
+<div id="cell-39" class="cell">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>model.summary()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Visualiza las métricas del modelo en TensorBoard.</p>
-<div id="cell-42" class="cell">
+<div id="cell-41" class="cell">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co">#docs_infra: no_execute</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>load_ext tensorboard</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>tensorboard <span class="op">--</span>logdir logs</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -416,12 +412,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="recupere-las-incrustaciones-de-palabras-entrenadas-y-guárdelas-en-el-disco">Recupere las incrustaciones de palabras entrenadas y guárdelas en el disco</h2>
 <p>A continuación, recupere las incrustaciones de palabras aprendidas durante el entrenamiento. Las incrustaciones son pesos de la capa de incrustación en el modelo. La matriz de ponderaciones tiene la forma (vocab_size, embedding_dimension) .</p>
 <p>Obtenga los pesos del modelo usando get_layer() y get_weights() . La función get_vocabulary() proporciona el vocabulario para crear un archivo de metadatos con un token por línea.</p>
-<div id="cell-46" class="cell">
+<div id="cell-45" class="cell">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>weights <span class="op">=</span> model.get_layer(<span class="st">'embedding'</span>).get_weights()[<span class="dv">0</span>]</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>vocab <span class="op">=</span> vectorize_layer.get_vocabulary()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Escriba los pesos en el disco. Para utilizar el proyector de incrustaciones , deberá cargar dos archivos en formato separado por tabulaciones: un archivo de vectores (que contiene la incrustación) y un archivo de metadatos (que contiene las palabras).</p>
-<div id="cell-48" class="cell">
+<div id="cell-47" class="cell">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>out_v <span class="op">=</span> io.<span class="bu">open</span>(<span class="st">'vectors.tsv'</span>, <span class="st">'w'</span>, encoding<span class="op">=</span><span class="st">'utf-8'</span>)</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>out_m <span class="op">=</span> io.<span class="bu">open</span>(<span class="st">'metadata.tsv'</span>, <span class="st">'w'</span>, encoding<span class="op">=</span><span class="st">'utf-8'</span>)</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -435,7 +431,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>out_m.close()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Si está ejecutando este tutorial en Colaboratory , puede usar el siguiente fragmento para descargar estos archivos a su máquina local (o usar el explorador de archivos, Ver -&gt; Tabla de contenido -&gt; Explorador de archivos ).</p>
-<div id="cell-50" class="cell">
+<div id="cell-49" class="cell">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="im">from</span> google.colab <span class="im">import</span> files</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  files.download(<span class="st">'vectors.tsv'</span>)</span>
@@ -504,18 +500,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -547,7 +532,45 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/aotal\.github\.io\/ImagenMedica\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -582,7 +605,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
@@ -630,7 +657,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
