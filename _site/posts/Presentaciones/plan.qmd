@@ -1,5 +1,5 @@
 ---
-title: "TEXTO DATOS E IMAGEN"
+title: "TEXTO, DATOS E IMAGEN"
 date: "2025-02-12"
 categories: [Introducción]
 image: img/presentacion_bloque.jpg
@@ -23,7 +23,7 @@ jupyter: python3
 
 # Hoja de Ruta
 - [LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO](/posts/Presentaciones/LLMs.html)
-- DATOS EN EL ÁMBITO SANITARIO
+- [DATOS EN EL ÁMBITO SANITARIO](/posts/Presentaciones/Datos_1.html)
 - EJEMPLO DE DATOS NO ESTRUCTURADOS A ESTRUCTURADOS
 - MODALIDADES DE IMAGEN
 - AI APLICADA A LA IMÁGEN MÉDICA

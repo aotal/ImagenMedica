@@ -256,7 +256,7 @@ Notes
 :::
 
 
-## Bases de Datos Relacionales (RDBMS)
+## Bases de Datos Relacionales: Relational DB Management System (RDBMS)
 
 - **Modelo:** Tabular. Datos organizados en *tablas* con *filas* (registros) y *columnas* (atributos).
 - **Esquema:** Rígido. La estructura se define *antes* de insertar datos.
@@ -268,25 +268,25 @@ Notes
     - Fuertes garantías ACID (Atomicidad, Consistencia, Aislamiento, Durabilidad).
     - Ideal para datos estructurados y transacciones.
 - **Desventajas:**
-    - La escalabilidad vertical puede ser costosa.
+    - La escalabilidad vertical puede ser costosa (sistemas monoservidor).
     - Dificultad para manejar datos no estructurados o semiestructurados a gran escala.
 
 ::: notes
-Notes
+Las transacciones ACID son un conjunto de cuatro propiedades (Atomicidad, Consistencia, Aislamiento y Durabilidad) que garantizan la fiabilidad de las operaciones en una base de datos. Atomicidad asegura que una transacción se ejecute completa o no se ejecute; Consistencia mantiene la validez de los datos según las reglas definidas; Aislamiento evita interferencias entre transacciones concurrentes; y Durabilidad asegura que los cambios sean permanentes incluso ante fallos. En esencia, ACID proporciona un mecanismo para que las bases de datos manejen operaciones de forma segura y predecible, manteniendo la integridad de los datos en todo momento, siendo fundamental en aplicaciones donde la precisión y la fiabilidad son críticas.
 :::
 
 ## Bases de Datos NoSQL
 
-- **Modelo:** Variado (ver siguientes diapositivas).  Alternativas al modelo tabular.
+- **Modelo:**  Alternativas al modelo tabular.
 - **Esquema:** Flexible o sin esquema. Mayor adaptabilidad a cambios en los datos.
 - **Relaciones:** Implícitas o mediante referencias (varía según el tipo).
-- **Lenguaje:** Varía según el tipo. Algunas usan lenguajes tipo SQL, otras APIs.
+- **Lenguaje:** Varía según el tipo. Algunas usan lenguajes tipo SQL, otras APIs(Application Programming Interface).
 - **Ventajas:**
     - Escalabilidad horizontal (más fácil y económico añadir servidores).
     - Flexibilidad para datos no estructurados, semiestructurados o cambiantes.
     - Alto rendimiento para ciertas operaciones (lectura/escritura rápida).
 - **Desventajas:**
-    - Generalmente, menor soporte para transacciones ACID completas (hay excepciones).
+    - Generalmente, menor soporte para transacciones ACID completas (En general las documentales).
     - Mayor complejidad en consultas complejas que requieran "unir" datos.
 
 ::: notes
@@ -730,7 +730,7 @@ Como el Electrocardiograma o el Electroencefalograma
 
 # Radiomics
 
-### La Imagenología Médica: Más Allá de lo Visual
+## La Imagen Médica: Más Allá de lo Visual
 
 - **Modalidades tradicionales:**
     - Rayos X
@@ -749,11 +749,15 @@ Esta diapositiva establece el contexto, recordando las modalidades de imagen que
 
 ## ¿Qué es la Radiómica?
 
-<img src="images/radiomics_definition.png" width="600">  :::
+<blockquote cite='https://insightsimaging.springeropen.com/articles/10.1186/s13244-020-00887-2'>
 
-- Transformar imágenes médicas en **datos cuantitativos**.
+La radiómica es un enfoque cuantitativo de la imagenología médica, que tiene como objetivo mejorar los datos existentes disponibles para los clínicos mediante análisis matemáticos avanzados. A través de la extracción matemática de la distribución espacial de las intensidades de señal y las interrelaciones de los píxeles, la radiómica cuantifica la información textural utilizando métodos de análisis del campo de la inteligencia artificial.
 
--  "Biopsia virtual": extraer información sin procedimientos invasivos.
+</blockquote>
+
+- Transforma imágenes médicas en **datos cuantitativos**.
+
+-  "Biopsia virtual": extraer información **sin** procedimientos invasivos.
 
 -  La imagen como un *gran conjunto de datos* a explotar.
 
@@ -765,64 +769,47 @@ Usamos un *r-stack* para revelar la definición paso a paso, manteniendo el inte
 ## ¿Por qué es Importante para Futuros Médicos?
 
 - **Mejora de la precisión diagnóstica.**
-- **Personalización del tratamiento** (medicina de precisión).
-- **Herramienta emergente** clave en la práctica clínica futura.
+- **Personalización del tratamiento:** Medicina de precisión.
+- **Herramienta emergente:** clave en la práctica clínica futura.
 
 
 ::: notes
-Lista incremental para destacar cada punto de forma individual.
+
 :::
 
 ## Flujo de Trabajo de la Radiómica
 
-::: {.r-stack}
-::: {.fragment}
 
-#### 1. Adquisición de Imágenes
+ 1. Adquisición de Imágenes
 
-- Imágenes médicas estándar (TC, RM, etc.).
-- ¡Importancia de la **estandarización**!
-- <img src="images/acquisition.jpg" width="400">
-:::
+    - Imágenes médicas estándar (TC, RM, etc.).
+    - ¡Importancia de la **estandarización**!
 
-::: {.fragment}
-#### 2. Segmentación (ROI)
+2. Segmentación (ROI)
 
-- Delimitar la región de interés (tumor, órgano...).
-- Manual, semiautomática o automática.
-- <img src="images/segmentation.png" width="400">
-:::
+    - Delimitar la región de interés (tumor, órgano...).
+    - Manual, semiautomática o automática.
 
-::: {.fragment}
-#### 3. Extracción de Características
+3. Extracción de Características
 
-- ¡La "magia" de la radiómica! Algoritmos extraen *miles* de características.
-- Tipos (sin fórmulas!):
-    - **Forma:** Tamaño, esfericidad...
-    - **Intensidad:** Distribución de valores.
-    - **Textura:** Patrones espaciales.
-- <img src="images/feature_extraction.png" width="400">
-:::
+    - Algoritmos extraen *miles* de características.
+        - **Forma:** Tamaño, esfericidad...
+        - **Intensidad:** Distribución de valores.
+        - **Textura:** Patrones espaciales.
 
-::: {.fragment}
-#### 4. Selección y Modelado
+4. Selección y Modelado
 
 - No todas las características son útiles.
 - **Selección:** quedarnos con las más relevantes.
 - **Modelado:** crear algoritmos predictivos (Machine Learning).
-- <img src="images/modeling.png" width="400">
 
-:::
 
-::: {.fragment}
-#### 5. Validación del Modelo
+5. Validación del Modelo
 
-- Probar con datos "nuevos".
-- Asegurar la **generalización** (evitar sobreajuste).
-- Métricas: Precisión, Sensibilidad, Especificidad.
-- <img src="images/validation.png" width="400">
-:::
-:::
+    - Probar con datos "nuevos".
+    - Asegurar la **generalización** (evitar sobreajuste).
+    - Métricas: Precisión, Sensibilidad, Especificidad.
+
 
 :::{.notes}
 Usamos *r-stack* y fragmentos para mostrar cada paso del flujo de trabajo de forma secuencial, con imágenes ilustrativas.  Usa imágenes *reales* (pero anonimizadas!) si tienes acceso.
@@ -834,7 +821,6 @@ Usamos *r-stack* y fragmentos para mostrar cada paso del flujo de trabajo de for
 - **Diferenciación** benigno/maligno.
 - **Predicción de respuesta** a tratamientos.
 - **Pronóstico** y supervivencia.
-- [Caso de estudio breve y visual].
 
 :::{.notes}
 Diapositiva específica para oncología.  Un caso de estudio real, aunque sea simplificado, sería muy potente.
@@ -868,7 +854,6 @@ Usamos *columns* para presentar varias áreas de forma compacta.
 - Adaptar el tratamiento a *cada paciente*.
 - Considerar las características únicas de su enfermedad.
 - El objetivo final de la medicina moderna.
-- <img src="images/personalized_medicine.png" width="500">
 
 ## Desafíos y Limitaciones
 
@@ -890,22 +875,9 @@ Lista incremental, para ir punto por punto.
 
 ## Perspectivas Futuras
 
-::: {.incremental}
 - Mayor adopción en la práctica clínica.
 - Investigación continua.
 - Colaboración interdisciplinaria.
-:::
 
-## Mensaje Final
-
-- La radiómica impactará vuestro futuro profesional.
-- **¡Manteneos informados y abiertos al cambio!**
-
-## Preguntas
-
-- ¿Qué tipo de características se extraen de una imagen?
-- ¿Qué diferencia a la radiómica de la interpretación visual tradicional?
-
----
 
 
