@@ -242,14 +242,14 @@
     "href": "posts/Presentaciones/LLMs.html#límites-de-los-llm-clásicos",
     "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
     "section": "Límites de los LLM (Clásicos)",
-    "text": "Límites de los LLM (Clásicos)\n\nFalta de comprensión del mundo real: Un LLM podría tener dificultades para responder preguntas sobre eventos actuales, lugares geográficos o conceptos abstractos.\nSesgo: Los LLMs pueden perpetuar y amplificar los sesgos presentes en los datos de entrenamiento. Esto puede resultar en respuestas discriminatorias, ofensivas o estereotipadas. Es importante abordar el sesgo en los LLMs para garantizar la equidad y la inclusión en las aplicaciones de IA.\n\nIncapacidad para razonar: Un LLM podría tener dificultades para resolver un problema matemático o para comprender las relaciones causales entre diferentes eventos.\nDificultad para manejar información nueva o inesperada: Los LLMs se basan en los datos con los que fueron entrenados y pueden tener dificultades para procesar información nueva o inesperada. Esto puede llevar a respuestas inexactas o irrelevantes cuando se enfrentan a situaciones novedosas.\nDificultad con el lenguaje complejo: Los LLMs pueden tener dificultades para comprender y procesar el lenguaje complejo o matizado, como el sarcasmo, las metáforas y otras figuras retóricas..\nLimitaciones en la creatividad: Los LLMs pueden generar diferentes tipos de contenido creativo de formato textual, como poemas, guiones, piezas musicales y correos electrónicos. Sin embargo, su capacidad para producir contenido verdaderamente original y creativo es limitada."
+    "text": "Límites de los LLM (Clásicos)\n\nFalta de comprensión del mundo real: Un LLM podría tener dificultades para responder preguntas sobre eventos actuales, lugares geográficos o conceptos abstractos.\nSesgo: Los LLMs pueden perpetuar y amplificar los sesgos presentes en los datos de entrenamiento. Esto puede resultar en respuestas discriminatorias, ofensivas o estereotipadas. Es importante abordar el sesgo en los LLMs para garantizar la equidad y la inclusión en las aplicaciones de IA.\n\nIncapacidad para razonar: Un LLM podría tener dificultades para resolver un problema matemático o para comprender las relaciones causales entre diferentes eventos.\n\nNotes"
   },
   {
-    "objectID": "posts/Presentaciones/LLMs.html#notebook-lm",
-    "href": "posts/Presentaciones/LLMs.html#notebook-lm",
+    "objectID": "posts/Presentaciones/LLMs.html#límites-de-los-llm-clásicos-ii",
+    "href": "posts/Presentaciones/LLMs.html#límites-de-los-llm-clásicos-ii",
     "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
-    "section": "NOtebook LM",
-    "text": "NOtebook LM\nEnlace"
+    "section": "Límites de los LLM (Clásicos) II",
+    "text": "Límites de los LLM (Clásicos) II\nDificultad para manejar información nueva o inesperada: Los LLMs se basan en los datos con los que fueron entrenados y pueden tener dificultades para procesar información nueva o inesperada. Esto puede llevar a respuestas inexactas o irrelevantes cuando se enfrentan a situaciones novedosas.\nDificultad con el lenguaje complejo: Los LLMs pueden tener dificultades para comprender y procesar el lenguaje complejo o matizado, como el sarcasmo, las metáforas y otras figuras retóricas..\nLimitaciones en la creatividad: Los LLMs pueden generar diferentes tipos de contenido creativo de formato textual, como poemas, guiones, piezas musicales y correos electrónicos. Sin embargo, su capacidad para producir contenido verdaderamente original y creativo es limitada.\n\nNotes"
   },
   {
     "objectID": "posts/code/word_embeddings.html",
@@ -326,7 +326,7 @@
     "href": "index.html",
     "title": "Intel·ligència artificial en medicina",
     "section": "",
-    "text": "TEXTO DATOS E IMAGEN\n\n\n\n\n\n\nIntroducción\n\n\n\n\n\n\n\n\n\n12 feb 2025\n\n\nAntonio Otal Palacín\n\n\n\n\n\n\n\n\n\n\n\n\nLARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO\n\n\n\n\n\n\nPresentación\n\n\n\n\n\n\n\n\n\n12 feb 2025\n\n\nAntonio Otal Palacín\n\n\n\n\n\n\n\n\n\n\n\n\nEmbeddings\n\n\n\n\n\n\nColab\n\n\n\n\n\n\n\n\n\n19 feb 2024\n\n\n\n\n\n\n\n\n\n\n\n\nWord Embeddings\n\n\n\n\n\n\nColab\n\n\n\n\n\n\n\n\n\n12 feb 2024\n\n\n\n\n\n\nNo hay resultados"
+    "text": "TEXTO DATOS E IMAGEN\n\n\n\n\n\n\nIntroducción\n\n\n\n\n\n\n\n\n\n12 feb 2025\n\n\nAntonio Otal Palacín\n\n\n\n\n\n\n\n\n\n\n\n\nLARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO\n\n\n\n\n\n\nPresentación\n\n\n\n\n\n\n\n\n\n12 feb 2025\n\n\nAntonio Otal Palacín\n\n\n\n\n\n\n\n\n\n\n\n\nEmbeddings\n\n\n\n\n\n\nColab\n\n\n\n\n\n\n\n\n\n19 feb 2024\n\n\n\n\n\n\n\n\n\n\n\n\nDatos en el ámbito de la salud\n\n\n\n\n\n\nPresentación\n\n\n\n\n\n\n\n\n\n14 feb 2024\n\n\nAntonio Otal Palacín\n\n\n\n\n\n\n\n\n\n\n\n\nWord Embeddings\n\n\n\n\n\n\nColab\n\n\n\n\n\n\n\n\n\n12 feb 2024\n\n\n\n\n\n\nNo hay resultados"
   },
   {
     "objectID": "pre-post/Presentaciones/Datos_1.html#índice",
@@ -1006,5 +1006,453 @@
     "title": "Embeddings",
     "section": "",
     "text": "Colab\n\n\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom transformers import BertTokenizer, BertModel\nimport torch\nfrom scipy.spatial.distance import cosine\n\nimport torchvision\nimport torchvision.transforms as transforms\nimport torch.nn.functional as F\nimport random\nimport torchvision.models as models\n\nDefinimos vectores\n\nvector_1 = np.array([1, 2, 3])\nvector_2 = np.array([4, 5, 6])\nvector_3 = np.array([2, -1, 0])\nvector_4 = np.array([2, 4, 6])\n\nCalculamos la similitud del coseno de dos vectores\n\n\n\nSimilitud de dos vectores\n\n\n\ndef cosine_similarity(v1, v2):\n    dot_product = np.dot(v1, v2)\n    norm_v1 = np.linalg.norm(v1)\n    norm_v2 = np.linalg.norm(v2)\n    return dot_product / (norm_v1 * norm_v2)\n\n\nsimilarity_1_2 = cosine_similarity(vector_1, vector_2)\nsimilarity_1_3 = cosine_similarity(vector_1, vector_3)\nsimilarity_2_3 = cosine_similarity(vector_2, vector_3)\nsimilarity_1_4 = cosine_similarity(vector_1, vector_4)\n\nMostramos los resultados\n\nprint(\"Similitud de coseno entre vector_1 y vector_2:\", similarity_1_2)\nprint(\"Similitud de coseno entre vector_1 y vector_3:\", similarity_1_3)\nprint(\"Similitud de coseno entre vector_2 y vector_3:\", similarity_2_3)\nprint(\"Similitud de coseno entre vector_1 y vector_4:\", similarity_1_4)\n\nSimilitud de coseno entre vector_1 y vector_2: 0.9746318461970762\nSimilitud de coseno entre vector_1 y vector_3: 0.0\nSimilitud de coseno entre vector_2 y vector_3: 0.15289415743128765\nSimilitud de coseno entre vector_1 y vector_4: 1.0\n\n\nVamos ahora a por un modelo de texto.Cargamos el modelo\n\nmodel_name_bert = 'bert-base-uncased'\ntokenizer = BertTokenizer.from_pretrained(model_name_bert)\nmodel = BertModel.from_pretrained(model_name_bert)\n\n/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_token.py:88: UserWarning: \nThe secret `HF_TOKEN` does not exist in your Colab secrets.\nTo authenticate with the Hugging Face Hub, create a token in your settings tab (https://huggingface.co/settings/tokens), set it as secret in your Google Colab and restart your session.\nYou will be able to reuse this secret in all of your notebooks.\nPlease note that authentication is recommended but still optional to access public models or datasets.\n  warnings.warn(\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ndef cosine_similarity(v1, v2):\n    return 1 - cosine(v1, v2)\n\n\ndef get_bert_embeddings(text):\n    inputs = tokenizer(text, return_tensors='pt', padding=True, truncation=True)\n    with torch.no_grad():\n        outputs = model(**inputs)\n    embeddings = outputs.last_hidden_state.mean(dim=1).squeeze().numpy()\n    return embeddings\n\n\ndef calculate_text_similarity(text1, text2):\n    \"\"\"\n    Función para calcular la similitud de coseno entre dos textos basada en sus representaciones vectoriales BERT.\n\n    Args:\n        text1 (str): Primer texto.\n        text2 (str): Segundo texto.\n\n    Returns:\n        float: Similitud de coseno entre las representaciones vectoriales de los dos textos.\n    \"\"\"\n    # Obtener las representaciones vectoriales BERT para ambos textos\n    embeddings_text1 = get_bert_embeddings(text1)\n    embeddings_text2 = get_bert_embeddings(text2)\n\n    # Calcular la similitud de coseno entre las representaciones vectoriales\n    similarity = cosine_similarity(embeddings_text1, embeddings_text2)\n    return similarity\n\n\n# Ejemplo de uso:\ntext1 = \"orange is a color\"\ntext2 = \"orange is a fruit\"\nsimilarity = calculate_text_similarity(text1, text2)\nprint(\"Similarity:\", similarity)\n\nSimilarity: 0.8144723176956177\n\n\nProbemos ahora con un modelo de imágenes\nPrimero bajamos las imágenes de nuestra querida base de datos MNIST\n\n# Transformación para las imágenes\ntransform = transforms.Compose([\n    transforms.ToTensor(),\n])\n\n# Descargar la base de datos MNIST y aplicar transformaciones\ntrain_dataset = torchvision.datasets.MNIST(root='./data', train=True, transform=transform, download=True)\ntest_dataset = torchvision.datasets.MNIST(root='./data', train=False, transform=transform, download=True)\n\n# Crear cargadores de datos para acceder a los datos por lotes\ntrain_loader = torch.utils.data.DataLoader(dataset=train_dataset, batch_size=1, shuffle=True)\ntest_loader = torch.utils.data.DataLoader(dataset=test_dataset, batch_size=1, shuffle=True)\n\n\n\nDownloading http://yann.lecun.com/exdb/mnist/train-images-idx3-ubyte.gz\nDownloading http://yann.lecun.com/exdb/mnist/train-images-idx3-ubyte.gz to ./data/MNIST/raw/train-images-idx3-ubyte.gz\n\n\n100%|██████████| 9912422/9912422 [00:00&lt;00:00, 175017306.71it/s]\n\n\nExtracting ./data/MNIST/raw/train-images-idx3-ubyte.gz to ./data/MNIST/raw\n\nDownloading http://yann.lecun.com/exdb/mnist/train-labels-idx1-ubyte.gz\nDownloading http://yann.lecun.com/exdb/mnist/train-labels-idx1-ubyte.gz to ./data/MNIST/raw/train-labels-idx1-ubyte.gz\n\n\n100%|██████████| 28881/28881 [00:00&lt;00:00, 26847449.87it/s]\n\n\nExtracting ./data/MNIST/raw/train-labels-idx1-ubyte.gz to ./data/MNIST/raw\n\nDownloading http://yann.lecun.com/exdb/mnist/t10k-images-idx3-ubyte.gz\nDownloading http://yann.lecun.com/exdb/mnist/t10k-images-idx3-ubyte.gz to ./data/MNIST/raw/t10k-images-idx3-ubyte.gz\n\n\n100%|██████████| 1648877/1648877 [00:00&lt;00:00, 43325866.23it/s]\n\n\nExtracting ./data/MNIST/raw/t10k-images-idx3-ubyte.gz to ./data/MNIST/raw\n\n\n\n\n\n\nDownloading http://yann.lecun.com/exdb/mnist/t10k-labels-idx1-ubyte.gz\nDownloading http://yann.lecun.com/exdb/mnist/t10k-labels-idx1-ubyte.gz to ./data/MNIST/raw/t10k-labels-idx1-ubyte.gz\n\n\n100%|██████████| 4542/4542 [00:00&lt;00:00, 4608255.63it/s]\n\n\nExtracting ./data/MNIST/raw/t10k-labels-idx1-ubyte.gz to ./data/MNIST/raw\n\n\n\n\ndef get_random_images(number1, number2, dataset=test_dataset, seed=42):\n    \"\"\"\n    Función para obtener dos imágenes al azar de un conjunto de datos para dos números específicos.\n\n    Args:\n        dataset: Conjunto de datos del que se seleccionarán las imágenes.\n        number1: Primer número para seleccionar imágenes.\n        number2: Segundo número para seleccionar imágenes.\n        seed: Semilla para reproducibilidad. Por defecto, 42.\n\n    Returns:\n        tuple: Tupla de dos imágenes y etiquetas seleccionadas al azar.\n    \"\"\"\n    # Obtener los índices de las imágenes para cada número\n    indices1 = [i for i, (image, label) in enumerate(dataset) if label == number1]\n    indices2 = [i for i, (image, label) in enumerate(dataset) if label == number2]\n\n    # Seleccionar dos índices al azar para cada número\n    random.seed(seed)\n    rand_idx1 = random.randint(0, len(indices1) - 1)\n    rand_idx2 = random.randint(0, len(indices2) - 1)\n\n    # Obtener los datos de las imágenes seleccionadas\n    image1, label1 = dataset[indices1[rand_idx1]]\n    image2, label2 = dataset[indices2[rand_idx2]]\n\n    return (image1, label1), (image2, label2)\n\ndef show_images(image_label1, image_label2):\n    \"\"\"\n    Función para mostrar dos imágenes junto con sus etiquetas en la misma ventana.\n\n    Args:\n        image_label1: Tupla que contiene la primera imagen y su etiqueta.\n        image_label2: Tupla que contiene la segunda imagen y su etiqueta.\n    \"\"\"\n    plt.figure(figsize=(8, 4))\n\n    plt.subplot(1, 2, 1)\n    plt.imshow(image_label1[0].squeeze(), cmap='gray')\n    plt.title('Label: {}'.format(image_label1[1]))\n    plt.axis('off')\n\n    plt.subplot(1, 2, 2)\n    plt.imshow(image_label2[0].squeeze(), cmap='gray')\n    plt.title('Label: {}'.format(image_label2[1]))\n    plt.axis('off')\n\n    plt.show()\n\n\ntupla1,tupla2=get_random_images(1,5)\n\n\nshow_images(tupla1,tupla2)\n\n\n\n\n\n\n\n\nCargamos un modelo genérico, en nuestro caso ResNet\n\n# Cargar el modelo pre-entrenado\nmodel_resnet = models.resnet18(pretrained=True)\n# Eliminar la capa de clasificación\nmodel_resnet = torch.nn.Sequential(*(list(model_resnet.children())[:-1]))\nmodel_resnet.eval()\n\nSequential(\n  (0): Conv2d(3, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3), bias=False)\n  (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n  (2): ReLU(inplace=True)\n  (3): MaxPool2d(kernel_size=3, stride=2, padding=1, dilation=1, ceil_mode=False)\n  (4): Sequential(\n    (0): BasicBlock(\n      (conv1): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)\n      (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n      (relu): ReLU(inplace=True)\n      (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)\n      (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n    )\n    (1): BasicBlock(\n      (conv1): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)\n      (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n      (relu): ReLU(inplace=True)\n      (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)\n      (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n    )\n  )\n  (5): Sequential(\n    (0): BasicBlock(\n      (conv1): Conv2d(64, 128, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)\n      (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n      (relu): ReLU(inplace=True)\n      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)\n      (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n      (downsample): Sequential(\n        (0): Conv2d(64, 128, kernel_size=(1, 1), stride=(2, 2), bias=False)\n        (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n      )\n    )\n    (1): BasicBlock(\n      (conv1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)\n      (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n      (relu): ReLU(inplace=True)\n      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)\n      (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n    )\n  )\n  (6): Sequential(\n    (0): BasicBlock(\n      (conv1): Conv2d(128, 256, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)\n      (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n      (relu): ReLU(inplace=True)\n      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)\n      (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n      (downsample): Sequential(\n        (0): Conv2d(128, 256, kernel_size=(1, 1), stride=(2, 2), bias=False)\n        (1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n      )\n    )\n    (1): BasicBlock(\n      (conv1): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)\n      (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n      (relu): ReLU(inplace=True)\n      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)\n      (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n    )\n  )\n  (7): Sequential(\n    (0): BasicBlock(\n      (conv1): Conv2d(256, 512, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)\n      (bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n      (relu): ReLU(inplace=True)\n      (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)\n      (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n      (downsample): Sequential(\n        (0): Conv2d(256, 512, kernel_size=(1, 1), stride=(2, 2), bias=False)\n        (1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n      )\n    )\n    (1): BasicBlock(\n      (conv1): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)\n      (bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n      (relu): ReLU(inplace=True)\n      (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)\n      (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n    )\n  )\n  (8): AdaptiveAvgPool2d(output_size=(1, 1))\n)\n\n\n\ndef calculate_image_similarity(image_label1, image_label2, model=model_resnet):\n    \"\"\"\n    Función para calcular la similitud de coseno entre dos imágenes basadas en sus representaciones vectoriales.\n\n    Args:\n        image_label1: Tupla que contiene la primera imagen y su etiqueta.\n        image_label2: Tupla que contiene la segunda imagen y su etiqueta.\n        model: Modelo utilizado para obtener las representaciones vectoriales de las imágenes.\n\n    Returns:\n        float: Similitud de coseno entre las representaciones vectoriales de las dos imágenes.\n    \"\"\"\n    def get_image_embeddings(image_tensor):\n        with torch.no_grad():\n            # Expande la dimensión de los canales para que coincida con lo que el modelo espera (de 1 a 3 canales)\n            image_tensor = image_tensor.repeat(1, 3, 1, 1)\n            # Pasar la imagen a través del modelo y obtener la representación vectorial\n            output = model(image_tensor)\n            # Aplanar la salida\n            output = output.view(output.size(0), -1)\n            # Normalizar la salida\n            output = F.normalize(output, p=2, dim=1)\n        return output\n\n    # Obtener los tensores de imagen de las tuplas\n    image_tensor1, _ = image_label1\n    image_tensor2, _ = image_label2\n\n    # Obtener las representaciones vectoriales de las imágenes\n    image1_embedding = get_image_embeddings(image_tensor1.unsqueeze(0))\n    image2_embedding = get_image_embeddings(image_tensor2.unsqueeze(0))\n\n    # Calcular la similitud de coseno entre las representaciones vectoriales\n    similarity = F.cosine_similarity(image1_embedding, image2_embedding)\n    return similarity.item()\n\n\ncalculate_image_similarity(tupla1,tupla2)\n\n0.6484431028366089\n\n\nCargamos ahora un modelo finetuneado para el conjunto MNIST\n\ndef preprocess_input(input_tensor, target_size=(224, 224)):\n    \"\"\"\n    Función para preprocesar un tensor de entrada para que coincida con el tamaño y formato esperado por el modelo.\n\n    Args:\n        input_tensor (torch.Tensor): Tensor de entrada con un solo canal.\n        target_size (tuple): Tamaño al que se debe redimensionar la imagen. Por defecto, (224, 224).\n\n    Returns:\n        torch.Tensor: Tensor de entrada preprocesado con el tamaño y formato correctos.\n    \"\"\"\n    # Definir una transformación para redimensionar la imagen\n    resize_transform = transforms.Compose([\n        transforms.Resize(target_size),  # Redimensionar la imagen al tamaño objetivo\n    ])\n\n    # Redimensionar el tensor de entrada\n    input_tensor_resized = resize_transform(input_tensor)\n\n    # Replicar el canal único en tres canales\n    input_tensor_rgb = input_tensor_resized.expand(1, 3, *target_size)  # Expandir el tensor a tres canales\n\n    return input_tensor_rgb\n\n\ndef preprocess_and_infer(tupla1, tupla2, model=model_mnist2):\n    \"\"\"\n    Función para preprocesar dos imágenes de entrada y realizar inferencia con un modelo dado.\n\n    Args:\n        tupla1: Tupla que contiene la primera imagen y su etiqueta.\n        tupla2: Tupla que contiene la segunda imagen y su etiqueta.\n        model: Modelo utilizado para la inferencia.\n\n    Returns:\n        torch.Tensor: Salida del modelo para la primera imagen.\n        torch.Tensor: Salida del modelo para la segunda imagen.\n    \"\"\"\n    # Añadir un nuevo eje de canal a las imágenes y realizar la inferencia con el modelo\n    with torch.no_grad():\n        image1_tensor = preprocess_input(tupla1[0])\n        image2_tensor = preprocess_input(tupla2[0])\n        outputs1 = model(image1_tensor)\n        outputs2 = model(image2_tensor)\n\n    return F.cosine_similarity(outputs1.to_tuple()[0], outputs2.to_tuple()[0], dim=1)\n\n# Ejemplo de uso:\n# outputs1, outputs2 = preprocess_and_infer(tupla1, tupla2, model_mnist2)\n\n\npreprocess_and_infer(tupla1, tupla2)\n\n/usr/local/lib/python3.10/dist-packages/torchvision/transforms/functional.py:1603: UserWarning: The default value of the antialias parameter of all the resizing transforms (Resize(), RandomResizedCrop(), etc.) will change from None to True in v0.17, in order to be consistent across the PIL and Tensor backends. To suppress this warning, directly pass antialias=True (recommended, future default), antialias=None (current default, which means False for Tensors and True for PIL), or antialias=False (only works on Tensors - PIL will still use antialiasing). This also applies if you are using the inference transforms from the models weights: update the call to weights.transforms(antialias=True).\n  warnings.warn(\n\n\ntensor([-0.1767])"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#índice",
+    "href": "posts/Presentaciones/Datos_1.html#índice",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Índice",
+    "text": "Índice\n\nIntroducción\nClasificación de los datos\nBases de datos\nAnotación de datos\nPrivacidad y confidencialidad\nRegistros electrónicos de salud\nPreprocesado de datos médicos\nRadiómica (Radiomics)\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#disponibilidad-masiva-de-datos",
+    "href": "posts/Presentaciones/Datos_1.html#disponibilidad-masiva-de-datos",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Disponibilidad masiva de datos",
+    "text": "Disponibilidad masiva de datos\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#machine-learning",
+    "href": "posts/Presentaciones/Datos_1.html#machine-learning",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Machine learning",
+    "text": "Machine learning\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#problema-con-los-datos",
+    "href": "posts/Presentaciones/Datos_1.html#problema-con-los-datos",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Problema con los datos",
+    "text": "Problema con los datos\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#por-tipos-de-datos",
+    "href": "posts/Presentaciones/Datos_1.html#por-tipos-de-datos",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Por tipos de datos",
+    "text": "Por tipos de datos\n\n\n\nDatos estructurados\nDatos no estructurados\nDatos semiestructurados\n\n\n\n\n\n\n\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#datos-estructurados",
+    "href": "posts/Presentaciones/Datos_1.html#datos-estructurados",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Datos estructurados",
+    "text": "Datos estructurados\n\n\n\n\n\n\n\n\n\n\n\nA_id\nSize\nWeight\nSweetness\nCrunchiness\nJuiciness\nRipeness\nAcidity\nQuality\n\n\n\n\n0\n0.0\n-3.970049\n-2.512336\n5.346330\n-1.012009\n1.844900\n0.329840\n-0.491590483\ngood\n\n\n1\n1.0\n-1.195217\n-2.839257\n3.664059\n1.588232\n0.853286\n0.867530\n-0.722809367\ngood\n\n\n2\n2.0\n-0.292024\n-1.351282\n-1.738429\n-0.342616\n2.838636\n-0.038033\n2.621636473\nbad\n\n\n3\n3.0\n-0.657196\n-2.271627\n1.324874\n-0.097875\n3.637970\n-3.413761\n0.790723217\ngood\n\n\n4\n4.0\n1.364217\n-1.296612\n-0.384658\n-0.553006\n3.030874\n-1.303849\n0.501984036\ngood\n\n\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n\n\n3996\n3996.0\n-0.293118\n1.949253\n-0.204020\n-0.640196\n0.024523\n-1.087900\n1.854235285\ngood\n\n\n3997\n3997.0\n-2.634515\n-2.138247\n-2.440461\n0.657223\n2.199709\n4.763859\n-1.334611391\nbad\n\n\n3998\n3998.0\n-4.008004\n-1.779337\n2.366397\n-0.200329\n2.161435\n0.214488\n-2.229719806\ngood\n\n\n3999\n3999.0\n0.278540\n-1.715505\n0.121217\n-1.154075\n1.266677\n-0.776571\n1.599796456\ngood\n\n\n4000\nNaN\nNaN\nNaN\nNaN\nNaN\nNaN\nNaN\nCreated_by_Nidula_Elgiriyewithana\nNaN\n\n\n\n\n4001 rows × 9 columns\n\n\n\n\n\n\n\n\n\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#ejemplos-de-datos-estructurados",
+    "href": "posts/Presentaciones/Datos_1.html#ejemplos-de-datos-estructurados",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Ejemplos de datos estructurados",
+    "text": "Ejemplos de datos estructurados\n\nRegistros Electrónicos de Salud\nDatos de Laboratorio Clínico"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#datos-no-estructurados",
+    "href": "posts/Presentaciones/Datos_1.html#datos-no-estructurados",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Datos no estructurados",
+    "text": "Datos no estructurados\n\n\n\nTexto\nImágenes\nAudio\nVideo\n…\n\n\n\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#datos-semiestructurados",
+    "href": "posts/Presentaciones/Datos_1.html#datos-semiestructurados",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Datos semiestructurados",
+    "text": "Datos semiestructurados\n\n\n\n\n\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#por-naturaleza-de-los-datos",
+    "href": "posts/Presentaciones/Datos_1.html#por-naturaleza-de-los-datos",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Por naturaleza de los datos",
+    "text": "Por naturaleza de los datos\n\nCategóricos\nNuméricos\nTemporales\nEspaciales\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#por-granularidad-de-los-datos",
+    "href": "posts/Presentaciones/Datos_1.html#por-granularidad-de-los-datos",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Por granularidad de los datos",
+    "text": "Por granularidad de los datos\n\nDatos a nivel de instancia: Datos individuales que representan observaciones o eventos específicos, como registros de pacientes o imágenes médicas.\nDatos a nivel de atributo: Datos que representan características o atributos de las instancias, como la edad, el peso o los síntomas clínicos.\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#fuente-de-los-datos",
+    "href": "posts/Presentaciones/Datos_1.html#fuente-de-los-datos",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Fuente de los datos",
+    "text": "Fuente de los datos\n\nDatos primarios: Datos recopilados directamente de la fuente original, como registros médicos electrónicos (EHR) o resultados de pruebas de laboratorio.\nDatos secundarios: Datos que han sido recopilados o procesados por terceros, como conjuntos de datos disponibles en repositorios públicos o bases de datos comerciales.\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#datos-anotados-vs-no-anotados",
+    "href": "posts/Presentaciones/Datos_1.html#datos-anotados-vs-no-anotados",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Datos anotados vs no anotados",
+    "text": "Datos anotados vs no anotados\n\nEstructura semántica: Los datos anotados tienen metadatos adicionales que proporcionan contexto y significado, como las etiquetas que marcan entidades nombradas.\nInteroperabilidad y procesabilidad: Los datos anotados son más interoperables y procesables, lo que facilita su integración con otros sistemas y su procesamiento automatizado.\nFacilidad de búsqueda y recuperación: Los datos anotados son más fáciles de buscar y recuperar, ya que las anotaciones permiten identificar elementos específicos.\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#qué-es-la-anotación-de-datos",
+    "href": "posts/Presentaciones/Datos_1.html#qué-es-la-anotación-de-datos",
+    "title": "Datos en el ámbito de la salud",
+    "section": "¿Qué es la anotación de datos?",
+    "text": "¿Qué es la anotación de datos?\nLa anotación de datos es el proceso de atribución o etiquetado de datos para ayudar a los algoritmos de aprendizaje automático a comprender y clasificar la información que procesan.\n\nTexto\nImágenes\nAudio\nVideo"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#anotación-de-imágenes",
+    "href": "posts/Presentaciones/Datos_1.html#anotación-de-imágenes",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Anotación de imágenes",
+    "text": "Anotación de imágenes\n\n\n\nClasificación\nReconocimiento/Detección\nSegmentación\n\n\n\nVGG"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#anotación-de-audio",
+    "href": "posts/Presentaciones/Datos_1.html#anotación-de-audio",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Anotación de audio",
+    "text": "Anotación de audio"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#anotación-de-video",
+    "href": "posts/Presentaciones/Datos_1.html#anotación-de-video",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Anotación de video",
+    "text": "Anotación de video"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#anotación-de-texto",
+    "href": "posts/Presentaciones/Datos_1.html#anotación-de-texto",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Anotación de texto",
+    "text": "Anotación de texto\n\n\n\nSemántica\nIntención\nOpinión\n\ntabula"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#antecedentes",
+    "href": "posts/Presentaciones/Datos_1.html#antecedentes",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Antecedentes",
+    "text": "Antecedentes\n\n\n\n\n\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#problemas-de-la-historia-clínica-en-papel",
+    "href": "posts/Presentaciones/Datos_1.html#problemas-de-la-historia-clínica-en-papel",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Problemas de la historia clínica en papel",
+    "text": "Problemas de la historia clínica en papel\n\nAccesibilidad limitada\nRiesgo de pérdida o daño\nDificultad para mantener actualizada la información\nEspacio de almacenamiento y organización\nLimitaciones en la compartición y colaboración\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#componentes-de-los-ehr",
+    "href": "posts/Presentaciones/Datos_1.html#componentes-de-los-ehr",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Componentes de los EHR",
+    "text": "Componentes de los EHR\n\nMódulos de Registro y Documentación\nPedidos y Resultados de laboratorio\nGestión de Medicamentos\nIntegración de Imágenes Médicas (PACS)\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#sap-1",
+    "href": "posts/Presentaciones/Datos_1.html#sap-1",
+    "title": "Datos en el ámbito de la salud",
+    "section": "SAP 1",
+    "text": "SAP 1\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#sap-2",
+    "href": "posts/Presentaciones/Datos_1.html#sap-2",
+    "title": "Datos en el ámbito de la salud",
+    "section": "SAP 2",
+    "text": "SAP 2\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#sap-3",
+    "href": "posts/Presentaciones/Datos_1.html#sap-3",
+    "title": "Datos en el ámbito de la salud",
+    "section": "SAP 3",
+    "text": "SAP 3\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#aria",
+    "href": "posts/Presentaciones/Datos_1.html#aria",
+    "title": "Datos en el ámbito de la salud",
+    "section": "ARIA",
+    "text": "ARIA\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#limpieza-de-datos",
+    "href": "posts/Presentaciones/Datos_1.html#limpieza-de-datos",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Limpieza de datos",
+    "text": "Limpieza de datos\n\nEliminación de observaciones incompletas\nImputación de valores\nAnálisis de patrones de datos faltantes\nUso de modelos predictivos\nTécnicas de imputación múltiple\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#normalización-de-variables-continuas",
+    "href": "posts/Presentaciones/Datos_1.html#normalización-de-variables-continuas",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Normalización de variables continuas",
+    "text": "Normalización de variables continuas\n\nLas variables continuas pueden tener diferentes escalas y rangos de valores\nLa normalización ayuda a mitigar este problema al transformar las variables para que estén en una escala similar\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#técnicas-de-normalización",
+    "href": "posts/Presentaciones/Datos_1.html#técnicas-de-normalización",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Técnicas de normalización",
+    "text": "Técnicas de normalización\n\nDatos con una media de 0 y desviación estándar 1\nNormalización min-max (0-1)\nPuede mejorar la convergencia\n\n\n\n\n\n\n\nAdvertencia\n\n\nEs importante aplicar la misma transformación de normalización tanto al conjunto de entrenamiento como al conjunto de prueba para evitar sesgos en los datos.\n\n\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#integración-de-datos",
+    "href": "posts/Presentaciones/Datos_1.html#integración-de-datos",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Integración de datos",
+    "text": "Integración de datos\n\nFuentes de Datos Diversas\nResolución de inconsistencias\nLimpieza de Datos\nGestión de Datos Temporales\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#la-ingeniería-de-características",
+    "href": "posts/Presentaciones/Datos_1.html#la-ingeniería-de-características",
+    "title": "Datos en el ámbito de la salud",
+    "section": "La ingeniería de características",
+    "text": "La ingeniería de características\n\nCreación de Nuevas características\nSelección de Características Relevantes\n\n\nPor ejemplo el índice de masa corporal"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#anonimización-de-los-datos",
+    "href": "posts/Presentaciones/Datos_1.html#anonimización-de-los-datos",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Anonimización de los datos",
+    "text": "Anonimización de los datos\n\nLa anonimización es el proceso de eliminar o modificar datos personales de tal manera que ya no sea posible identificar a un individuo a partir de los datos.\nLa anonimización está vinculada a lo que dicen las leyes de protección de datos en la UE (RGPD)\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#técnicas-de-anonimización",
+    "href": "posts/Presentaciones/Datos_1.html#técnicas-de-anonimización",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Técnicas de anonimización",
+    "text": "Técnicas de anonimización\n\nEliminación de identificadores directos\nPseudonimización\nEnmascaramiento\nAgregación\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#consideraciones-al-elegir-una-técnica-de-anonimización",
+    "href": "posts/Presentaciones/Datos_1.html#consideraciones-al-elegir-una-técnica-de-anonimización",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Consideraciones al elegir una técnica de anonimización",
+    "text": "Consideraciones al elegir una técnica de anonimización\n\nEl tipo de datos que se procesan\nEl nivel de riesgo de reidentificación\nLos fines para los que se utilizarán los datos anonimizados\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#data-augmentation",
+    "href": "posts/Presentaciones/Datos_1.html#data-augmentation",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Data Augmentation",
+    "text": "Data Augmentation\nEs una técnica que consiste en crear nuevas muestras de datos a partir de datos existentes. Estas nuevas muestras se generan mediante la aplicación de transformaciones predefinidas a los datos originales\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#ventajas-de-data-augmentation",
+    "href": "posts/Presentaciones/Datos_1.html#ventajas-de-data-augmentation",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Ventajas de Data Augmentation",
+    "text": "Ventajas de Data Augmentation\n\nAumenta el tamaño del conjunto de datos\nMejora la generalización del modelo\nReduce el sesgo del modelo\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#data-augmentation-en-imágenes-médicas",
+    "href": "posts/Presentaciones/Datos_1.html#data-augmentation-en-imágenes-médicas",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Data Augmentation en imágenes médicas",
+    "text": "Data Augmentation en imágenes médicas\n\nRotaciones\nZoom\nCambio de contraste\nAdición de ruido\nSimulación de artefactos\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#data-augmentation-en-señales-biomédicas",
+    "href": "posts/Presentaciones/Datos_1.html#data-augmentation-en-señales-biomédicas",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Data Augmentation en señales biomédicas",
+    "text": "Data Augmentation en señales biomédicas\nComo el Electrocardiograma o el Electroencefalograma\n\nAdición de ruido\nCambio de escala\nSegmentación de señales\nSimulación de artefactos"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#ángulo-entre-dos-vectores",
+    "href": "posts/Presentaciones/Datos_1.html#ángulo-entre-dos-vectores",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Ángulo entre dos vectores",
+    "text": "Ángulo entre dos vectores"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#qué-son-las-vectorizaciones",
+    "href": "posts/Presentaciones/Datos_1.html#qué-son-las-vectorizaciones",
+    "title": "Datos en el ámbito de la salud",
+    "section": "¿Qué son las vectorizaciones?",
+    "text": "¿Qué son las vectorizaciones?"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#práctica",
+    "href": "posts/Presentaciones/Datos_1.html#práctica",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Práctica",
+    "text": "Práctica\nNotebook\njuego"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#introducción-a-las-bases-de-datos",
+    "href": "posts/Presentaciones/Datos_1.html#introducción-a-las-bases-de-datos",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Introducción a las Bases de Datos",
+    "text": "Introducción a las Bases de Datos\n\nLas bases de datos son herramientas fundamentales en el mundo digital actual. Permiten almacenar, organizar y acceder a grandes cantidades de información de manera eficiente… Desde las redes sociales hasta las instituciones financieras, las bases de datos son esenciales para el funcionamiento de innumerables aplicaciones y sistemas.\nUna base de datos es, en esencia, una colección organizada de información estructurada, almacenada electrónicamente en un sistema informático… Esta información puede incluir cualquier tipo de datos, como texto, números, imágenes, videos y archivos…\nPara crear, editar y mantener los archivos y registros de una base de datos, se utiliza un software de base de datos, también llamado sistema de gestión de bases de datos (DBMS). Un DBMS actúa como intermediario entre la base de datos y los usuarios o programas que la utilizan, permitiendo realizar operaciones como agregar, modificar, eliminar y organizar datos.\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#tipos-de-bases-de-datos",
+    "href": "posts/Presentaciones/Datos_1.html#tipos-de-bases-de-datos",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Tipos de Bases de Datos",
+    "text": "Tipos de Bases de Datos\nExisten diferentes tipos de bases de datos, cada una con sus propias características y usos. Algunos de los tipos más comunes son:\n\nRelacionales\nNoSQL\nOrientadas a Objetos\nGrafos (KG)\nVectoriales\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#tipos-de-bases-de-datos-1",
+    "href": "posts/Presentaciones/Datos_1.html#tipos-de-bases-de-datos-1",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Tipos de Bases de Datos",
+    "text": "Tipos de Bases de Datos\nExisten diferentes tipos de bases de datos, cada una con sus propias características y usos. Algunos de los tipos más comunes son:\n\nRelacionales\nNoSQL\nOrientadas a Objetos\nGrafos (KG)\nVectoriales\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#bases-de-datos-relacionales-rdbms",
+    "href": "posts/Presentaciones/Datos_1.html#bases-de-datos-relacionales-rdbms",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Bases de Datos Relacionales (RDBMS)",
+    "text": "Bases de Datos Relacionales (RDBMS)\n\nModelo: Tabular. Datos organizados en tablas con filas (registros) y columnas (atributos).\nEsquema: Rígido. La estructura se define antes de insertar datos.\nRelaciones: Explícitas, a través de claves primarias y claves foráneas.\nLenguaje: SQL (Structured Query Language).\nEjemplos: MySQL, PostgreSQL, Oracle, SQL Server, MariaDB.\nVentajas:\n\nMadurez, amplia adopción y gran cantidad de herramientas.\nFuertes garantías ACID (Atomicidad, Consistencia, Aislamiento, Durabilidad).\nIdeal para datos estructurados y transacciones.\n\nDesventajas:\n\nLa escalabilidad vertical puede ser costosa.\nDificultad para manejar datos no estructurados o semiestructurados a gran escala.\n\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#bases-de-datos-nosql",
+    "href": "posts/Presentaciones/Datos_1.html#bases-de-datos-nosql",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Bases de Datos NoSQL",
+    "text": "Bases de Datos NoSQL\n\nModelo: Variado (ver siguientes diapositivas). Alternativas al modelo tabular.\nEsquema: Flexible o sin esquema. Mayor adaptabilidad a cambios en los datos.\nRelaciones: Implícitas o mediante referencias (varía según el tipo).\nLenguaje: Varía según el tipo. Algunas usan lenguajes tipo SQL, otras APIs.\nVentajas:\n\nEscalabilidad horizontal (más fácil y económico añadir servidores).\nFlexibilidad para datos no estructurados, semiestructurados o cambiantes.\nAlto rendimiento para ciertas operaciones (lectura/escritura rápida).\n\nDesventajas:\n\nGeneralmente, menor soporte para transacciones ACID completas (hay excepciones).\nMayor complejidad en consultas complejas que requieran “unir” datos.\n\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#nosql-documentales",
+    "href": "posts/Presentaciones/Datos_1.html#nosql-documentales",
+    "title": "Datos en el ámbito de la salud",
+    "section": "NoSQL: Documentales",
+    "text": "NoSQL: Documentales\n\nModelo: Documentos (JSON o BSON). Colecciones de pares clave-valor.\nEjemplos: MongoDB, Couchbase, Amazon DocumentDB.\nCasos de Uso:\n\nAplicaciones web y móviles.\nGestión de contenido (CMS).\nCatálogos de productos.\nDatos de sesión.\n\nVentajas:\n\nFlexibilidad para esquemas cambiantes.\nBuena escalabilidad horizontal.\nDesarrollo ágil.\n\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#nosql-clave-valor",
+    "href": "posts/Presentaciones/Datos_1.html#nosql-clave-valor",
+    "title": "Datos en el ámbito de la salud",
+    "section": "NoSQL: Clave-Valor",
+    "text": "NoSQL: Clave-Valor\n\nModelo: Pares clave-valor. El tipo más simple de NoSQL.\nEjemplos: Redis, Memcached, Amazon DynamoDB (con capacidades clave-valor).\nCasos de Uso:\n\nCaché (almacenamiento temporal de datos de acceso frecuente).\nGestión de sesiones.\nContadores.\n\nVentajas:\n\nExtremadamente rápidas para búsquedas por clave.\nAlta escalabilidad.\n\nDesventajas:\n\nFuncionalidad muy limitada más allá de la búsqueda por clave.\n\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#nosql-columnares",
+    "href": "posts/Presentaciones/Datos_1.html#nosql-columnares",
+    "title": "Datos en el ámbito de la salud",
+    "section": "NoSQL: Columnares",
+    "text": "NoSQL: Columnares\n\nModelo: Columnar. Almacenamiento optimizado por columnas, no por filas.\nEjemplos: Cassandra, HBase, Google Cloud Bigtable.\nCasos de Uso:\n\nBig Data y análisis.\nSeries temporales.\nAplicaciones con alta carga de escritura.\n\nVentajas:\n\nEficientes para leer un subconjunto de columnas de muchas filas.\nCompresión eficiente.\nEscalabilidad horizontal.\n\nDesventajas:\n\nMenos eficientes para leer filas completas.\n\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#nosql-de-grafos",
+    "href": "posts/Presentaciones/Datos_1.html#nosql-de-grafos",
+    "title": "Datos en el ámbito de la salud",
+    "section": "NoSQL: De Grafos",
+    "text": "NoSQL: De Grafos\n\nModelo: Grafos (nodos y aristas). Representan entidades y relaciones.\nEjemplos: Neo4j, Amazon Neptune, JanusGraph.\nCasos de Uso:\n\nRedes sociales.\nSistemas de recomendación.\nAnálisis de fraude.\nGestión del conocimiento.\n\nVentajas:\n\nOptimizadas para consultar y explorar relaciones.\nLenguajes de consulta especializados (Cypher, Gremlin).\n\nDesventajas:\n\nPueden ser menos eficientes si las relaciones no son el foco principal de las consultas."
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#bases-de-datos-orientadas-a-objetos-oodbms",
+    "href": "posts/Presentaciones/Datos_1.html#bases-de-datos-orientadas-a-objetos-oodbms",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Bases de Datos Orientadas a Objetos (OODBMS)",
+    "text": "Bases de Datos Orientadas a Objetos (OODBMS)\n\nModelo: Objetos (atributos y métodos). Integración con la POO.\nEsquema: Definido por clases.\nLenguaje: Extensiones de lenguajes de POO o lenguajes específicos.\nEjemplos: db4o, ObjectDB, Versant.\nCasos de Uso (Nichos):\n\nCAD/CAM.\nModelado científico.\nMultimedia.\n\nVentajas:\n\nBuena integración con POO.\nManejo de objetos complejos.\n\nDesventajas:\n\nMenor adopción que RDBMS y NoSQL.\nFalta de estandarización como SQL.\n\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#bases-de-datos-vectoriales",
+    "href": "posts/Presentaciones/Datos_1.html#bases-de-datos-vectoriales",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Bases de Datos Vectoriales",
+    "text": "Bases de Datos Vectoriales\n\nModelo: Vectores de alta dimensión (embeddings).\nEsquema: Flexible (dimensión fija del vector, datos originales variables).\nLenguaje: APIs y, a veces, extensiones de SQL.\nEjemplos: Pinecone, Weaviate, Qdrant, Milvus, Faiss, Chroma.\nCasos de Uso:\n\nBúsqueda semántica.\nSistemas de recomendación.\nRAG (Retrieval-Augmented Generation) para LLMs.\nDetección de anomalías.\n\nVentajas:\n\nBúsqueda por similitud.\nAlgoritmos ANN (Approximate Nearest Neighbor).\nOptimizadas para altas dimensiones.\n\nDesventajas:\n\nTecnología relativamente nueva.\nGeneralmente no ofrecen transacciones ACID completas.\n\n\n\nLas transacciones ACID son un conjunto de cuatro propiedades (Atomicidad, Consistencia, Aislamiento y Durabilidad) que garantizan la fiabilidad de las operaciones en una base de datos. Atomicidad asegura que una transacción se ejecute completa o no se ejecute; Consistencia mantiene la validez de los datos según las reglas definidas; Aislamiento evita interferencias entre transacciones concurrentes; y Durabilidad asegura que los cambios sean permanentes incluso ante fallos. En esencia, ACID proporciona un mecanismo para que las bases de datos manejen operaciones de forma segura y predecible, manteniendo la integridad de los datos en todo momento, siendo fundamental en aplicaciones donde la precisión y la fiabilidad son críticas."
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#la-elección-de-una-base-de-datos-depende-de",
+    "href": "posts/Presentaciones/Datos_1.html#la-elección-de-una-base-de-datos-depende-de",
+    "title": "Datos en el ámbito de la salud",
+    "section": "La elección de una base de datos depende de:",
+    "text": "La elección de una base de datos depende de:\n\nLa estructura de los datos.\nLas necesidades de la aplicación (escalabilidad, transacciones, etc.).\nEl tipo de consultas que se realizarán.\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#nosql-de-grafos-kg",
+    "href": "posts/Presentaciones/Datos_1.html#nosql-de-grafos-kg",
+    "title": "Datos en el ámbito de la salud",
+    "section": "NoSQL: De Grafos (KG)",
+    "text": "NoSQL: De Grafos (KG)\n\nModelo: Grafos (nodos y aristas). Representan entidades y relaciones.\nEjemplos: Neo4j, Amazon Neptune, JanusGraph.\nCasos de Uso:\n\nRedes sociales.\nSistemas de recomendación.\nAnálisis de fraude.\nGestión del conocimiento.\n\nVentajas:\n\nOptimizadas para consultar y explorar relaciones.\nLenguajes de consulta especializados (Cypher, Gremlin).\n\nDesventajas:\n\nPueden ser menos eficientes si las relaciones no son el foco principal de las consultas.\n\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#qué-es-la-radiómica",
+    "href": "posts/Presentaciones/Datos_1.html#qué-es-la-radiómica",
+    "title": "Datos en el ámbito de la salud",
+    "section": "¿Qué es la Radiómica?",
+    "text": "¿Qué es la Radiómica?\n :::\n\nTransformar imágenes médicas en datos cuantitativos.\n“Biopsia virtual”: extraer información sin procedimientos invasivos.\nLa imagen como un gran conjunto de datos a explotar.\n\n\nUsamos un r-stack para revelar la definición paso a paso, manteniendo el interés. Una imagen relevante es crucial."
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#por-qué-es-importante-para-futuros-médicos",
+    "href": "posts/Presentaciones/Datos_1.html#por-qué-es-importante-para-futuros-médicos",
+    "title": "Datos en el ámbito de la salud",
+    "section": "¿Por qué es Importante para Futuros Médicos?",
+    "text": "¿Por qué es Importante para Futuros Médicos?\n\nMejora de la precisión diagnóstica.\nPersonalización del tratamiento (medicina de precisión).\nHerramienta emergente clave en la práctica clínica futura.\n\n\nLista incremental para destacar cada punto de forma individual."
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#flujo-de-trabajo-de-la-radiómica",
+    "href": "posts/Presentaciones/Datos_1.html#flujo-de-trabajo-de-la-radiómica",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Flujo de Trabajo de la Radiómica",
+    "text": "Flujo de Trabajo de la Radiómica\n\n\n1. Adquisición de Imágenes\n\nImágenes médicas estándar (TC, RM, etc.).\n¡Importancia de la estandarización!\n\n\n\n\n2. Segmentación (ROI)\n\nDelimitar la región de interés (tumor, órgano…).\nManual, semiautomática o automática.\n\n\n\n\n3. Extracción de Características\n\n¡La “magia” de la radiómica! Algoritmos extraen miles de características.\nTipos (sin fórmulas!):\n\nForma: Tamaño, esfericidad…\nIntensidad: Distribución de valores.\nTextura: Patrones espaciales.\n\n\n\n\n\n4. Selección y Modelado\n\nNo todas las características son útiles.\nSelección: quedarnos con las más relevantes.\nModelado: crear algoritmos predictivos (Machine Learning).\n\n\n\n\n5. Validación del Modelo\n\nProbar con datos “nuevos”.\nAsegurar la generalización (evitar sobreajuste).\nMétricas: Precisión, Sensibilidad, Especificidad.\n\n\n\n\n\nUsamos r-stack y fragmentos para mostrar cada paso del flujo de trabajo de forma secuencial, con imágenes ilustrativas. Usa imágenes reales (pero anonimizadas!) si tienes acceso."
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#aplicaciones-clínicas-oncología",
+    "href": "posts/Presentaciones/Datos_1.html#aplicaciones-clínicas-oncología",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Aplicaciones Clínicas: Oncología",
+    "text": "Aplicaciones Clínicas: Oncología\n\nDetección temprana.\nDiferenciación benigno/maligno.\nPredicción de respuesta a tratamientos.\nPronóstico y supervivencia.\n[Caso de estudio breve y visual].\n\n\nDiapositiva específica para oncología. Un caso de estudio real, aunque sea simplificado, sería muy potente."
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#aplicaciones-clínicas-otras-áreas",
+    "href": "posts/Presentaciones/Datos_1.html#aplicaciones-clínicas-otras-áreas",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Aplicaciones Clínicas: Otras Áreas",
+    "text": "Aplicaciones Clínicas: Otras Áreas\n\n\nCardiovasculares\n\nCaracterización de placas.\n\nNeurológicas\n\nAlzheimer.\nEsclerosis múltiple.\n\n\nPulmonares\n\nEPOC.\nFibrosis.\n\n\n\nUsamos columns para presentar varias áreas de forma compacta."
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#medicina-personalizada",
+    "href": "posts/Presentaciones/Datos_1.html#medicina-personalizada",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Medicina Personalizada",
+    "text": "Medicina Personalizada\n\nAdaptar el tratamiento a cada paciente.\nConsiderar las características únicas de su enfermedad.\nEl objetivo final de la medicina moderna."
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#desafíos-y-limitaciones",
+    "href": "posts/Presentaciones/Datos_1.html#desafíos-y-limitaciones",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Desafíos y Limitaciones",
+    "text": "Desafíos y Limitaciones\n\n\nEstandarización: protocolos consistentes.\n“Caja Negra”: interpretabilidad de los modelos.\nGrandes Datos: necesidad de muchos datos de calidad.\nIntegración Clínica: herramientas fáciles de usar.\n\n\n\nLista incremental, para ir punto por punto."
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#conclusiones",
+    "href": "posts/Presentaciones/Datos_1.html#conclusiones",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Conclusiones",
+    "text": "Conclusiones\n\nLa radiómica: información cuantitativa desde imágenes.\nPotencial para transformar el diagnóstico y tratamiento.\nCampo en rápida evolución."
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#perspectivas-futuras",
+    "href": "posts/Presentaciones/Datos_1.html#perspectivas-futuras",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Perspectivas Futuras",
+    "text": "Perspectivas Futuras\n\n\nMayor adopción en la práctica clínica.\nInvestigación continua.\nColaboración interdisciplinaria."
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#mensaje-final",
+    "href": "posts/Presentaciones/Datos_1.html#mensaje-final",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Mensaje Final",
+    "text": "Mensaje Final\n\nLa radiómica impactará vuestro futuro profesional.\n¡Manteneos informados y abiertos al cambio!"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#preguntas",
+    "href": "posts/Presentaciones/Datos_1.html#preguntas",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Preguntas",
+    "text": "Preguntas\n\n¿Qué tipo de características se extraen de una imagen?\n¿Qué diferencia a la radiómica de la interpretación visual tradicional?"
   }
 ]
