@@ -73,5 +73,11 @@
   },
   "pre-post/code/unet_segmentation.ipynb": {
     "unet_segmentation.html": "ab5cc97f"
+  },
+  "posts/code/Titanic.ipynb": {
+    "Titanic.html": "27e06a9a"
+  },
+  "posts/code/Radiomics_Feature_Extraction.ipynb": {
+    "Radiomics_Feature_Extraction.html": "7bd01aa3"
   }
 }

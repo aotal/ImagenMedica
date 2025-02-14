@@ -256,9 +256,9 @@ Notes
 :::
 
 
-## Bases de Datos Relacionales: Relational DB Management System (RDBMS)
+## Bases de Datos Relacionales(RDBMS)
 
-- **Modelo:** Tabular. Datos organizados en *tablas* con *filas* (registros) y *columnas* (atributos).
+- **Modelo:** Datos organizados en *tablas* con *filas* (registros) y *columnas* (atributos).
 - **Esquema:** Rígido. La estructura se define *antes* de insertar datos.
 - **Relaciones:** Explícitas, a través de *claves primarias* y *claves foráneas*.
 - **Lenguaje:** SQL (Structured Query Language).
@@ -280,17 +280,15 @@ Las transacciones ACID son un conjunto de cuatro propiedades (Atomicidad, Consis
 - **Modelo:**  Alternativas al modelo tabular.
 - **Esquema:** Flexible o sin esquema. Mayor adaptabilidad a cambios en los datos.
 - **Relaciones:** Implícitas o mediante referencias (varía según el tipo).
-- **Lenguaje:** Varía según el tipo. Algunas usan lenguajes tipo SQL, otras APIs(Application Programming Interface).
+- **Lenguaje:** Algunas usan lenguajes tipo SQL, otras APIs.
 - **Ventajas:**
     - Escalabilidad horizontal (más fácil y económico añadir servidores).
     - Flexibilidad para datos no estructurados, semiestructurados o cambiantes.
     - Alto rendimiento para ciertas operaciones (lectura/escritura rápida).
-- **Desventajas:**
-    - Generalmente, menor soporte para transacciones ACID completas (En general las documentales).
-    - Mayor complejidad en consultas complejas que requieran "unir" datos.
+- **Desventajas:**Generalmente, menor soporte para transacciones ACID completas (En general las documentales). Mayor complejidad en consultas complejas que requieran "unir" datos.
 
 ::: notes
-Notes
+(Application Programming Interface)
 :::
 
 ## NoSQL: Documentales
@@ -315,15 +313,9 @@ Notes
 
 - **Modelo:** Pares clave-valor.  El tipo más simple de NoSQL.
 - **Ejemplos:** Redis, Memcached, Amazon DynamoDB (con capacidades clave-valor).
-- **Casos de Uso:**
-    - Caché (almacenamiento temporal de datos de acceso frecuente).
-    - Gestión de sesiones.
-    - Contadores.
-- **Ventajas:**
-    - Extremadamente rápidas para búsquedas por clave.
-    - Alta escalabilidad.
-- **Desventajas:**
-    - Funcionalidad muy limitada más allá de la búsqueda por clave.
+- **Casos de Uso:** Caché (almacenamiento temporal de datos de acceso frecuente), gestión de sesiones, contadores.
+- **Ventajas:** Extremadamente rápidas para búsquedas por clave, alta escalabilidad.
+- **Desventajas:** Funcionalidad muy limitada más allá de la búsqueda por clave.
 
 ::: notes
 Notes
@@ -333,16 +325,9 @@ Notes
 
 - **Modelo:** Columnar. Almacenamiento optimizado por columnas, no por filas.
 - **Ejemplos:** Cassandra, HBase, Google Cloud Bigtable.
-- **Casos de Uso:**
-    - Big Data y análisis.
-    - Series temporales.
-    - Aplicaciones con alta carga de escritura.
-- **Ventajas:**
-    - Eficientes para leer un subconjunto de columnas de muchas filas.
-    - Compresión eficiente.
-    - Escalabilidad horizontal.
-- **Desventajas:**
-    - Menos eficientes para leer filas completas.
+- **Casos de Uso:** Big Data y análisis, series temporales, aplicaciones con alta carga de escritura.
+- **Ventajas:** Eficientes para leer un subconjunto de columnas de muchas filas, compresión eficiente, escalabilidad horizontal.
+- **Desventajas:** Menos eficientes para leer filas completas.
 
 ::: notes
 Notes
@@ -352,37 +337,23 @@ Notes
 
 - **Modelo:** Grafos (nodos y aristas).  Representan entidades y relaciones.
 - **Ejemplos:** Neo4j, Amazon Neptune, JanusGraph.
-- **Casos de Uso:**
-    - Redes sociales.
-    - Sistemas de recomendación.
-    - Análisis de fraude.
-    - Gestión del conocimiento.
-- **Ventajas:**
-    - Optimizadas para consultar y explorar relaciones.
-    - Lenguajes de consulta especializados (Cypher, Gremlin).
-- **Desventajas:**
-  -  Pueden ser menos eficientes si las relaciones no son el foco principal de las consultas.
+- **Casos de Uso:** Redes sociales, sistemas de recomendación, análisis de fraude, gestión del conocimiento.
+- **Ventajas:** Optimizadas para consultar y explorar relaciones, lenguajes de consulta especializados (Cypher, Gremlin).
+- **Desventajas:** Pueden ser menos eficientes si las relaciones no son el foco principal de las consultas.
 
 ::: notes
 Notes
 :::
 
-## Bases de Datos Orientadas a Objetos (OODBMS)
+## Bases de Datos Orientadas a Objetos
 
 - **Modelo:** Objetos (atributos y métodos).  Integración con la POO.
 - **Esquema:** Definido por clases.
 - **Lenguaje:** Extensiones de lenguajes de POO o lenguajes específicos.
 - **Ejemplos:** db4o, ObjectDB, Versant.
-- **Casos de Uso (Nichos):**
-    - CAD/CAM.
-    - Modelado científico.
-    - Multimedia.
-- **Ventajas:**
-    - Buena integración con POO.
-    - Manejo de objetos complejos.
-- **Desventajas:**
-    - Menor adopción que RDBMS y NoSQL.
-    - Falta de estandarización como SQL.
+- **Casos de Uso (Nichos):** CAD/CAM,Modelado científico y Multimedia.
+- **Ventajas:** Buena integración con POO, manejo de objetos complejos.
+- **Desventajas:** Menor adopción que RDBMS y NoSQL, falta de estandarización como SQL.
 
 ::: notes
 Notes
@@ -394,18 +365,9 @@ Notes
 - **Esquema:** Flexible (dimensión fija del vector, datos originales variables).
 - **Lenguaje:** APIs y, a veces, extensiones de SQL.
 - **Ejemplos:** Pinecone, Weaviate, Qdrant, Milvus, Faiss, Chroma.
-- **Casos de Uso:**
-    - Búsqueda semántica.
-    - Sistemas de recomendación.
-    - RAG (Retrieval-Augmented Generation) para LLMs.
-    - Detección de anomalías.
-- **Ventajas:**
-    - Búsqueda por *similitud*.
-    - Algoritmos ANN (Approximate Nearest Neighbor).
-    - Optimizadas para altas dimensiones.
-- **Desventajas:**
-    - Tecnología relativamente nueva.
-    - Generalmente no ofrecen transacciones ACID completas.
+- **Casos de Uso:** Búsqueda semántica, sistemas de recomendación, RAG (Retrieval-Augmented Generation) para LLMs, Detección de anomalías.
+- **Ventajas:** Búsqueda por *similitud*, algoritmos ANN (Approximate Nearest Neighbor), optimizadas para altas dimensiones.
+- **Desventajas:** Tecnología relativamente nueva, generalmente no ofrecen transacciones ACID completas.
 
 ::: notes
 Las transacciones ACID son un conjunto de cuatro propiedades (Atomicidad, Consistencia, Aislamiento y Durabilidad) que garantizan la fiabilidad de las operaciones en una base de datos. Atomicidad asegura que una transacción se ejecute completa o no se ejecute; Consistencia mantiene la validez de los datos según las reglas definidas; Aislamiento evita interferencias entre transacciones concurrentes; y Durabilidad asegura que los cambios sean permanentes incluso ante fallos. En esencia, ACID proporciona un mecanismo para que las bases de datos manejen operaciones de forma segura y predecible, manteniendo la integridad de los datos en todo momento, siendo fundamental en aplicaciones donde la precisión y la fiabilidad son críticas.
@@ -728,7 +690,7 @@ Como el Electrocardiograma o el Electroencefalograma
 
 
 
-# Radiomics
+# Radiómica
 
 ## La Imagen Médica: Más Allá de lo Visual
 
@@ -744,7 +706,7 @@ Como el Electrocardiograma o el Electroencefalograma
 
 
 ::: notes
-Esta diapositiva establece el contexto, recordando las modalidades de imagen que ya conocen y sus limitaciones.
+
 :::
 
 ## ¿Qué es la Radiómica?
@@ -757,27 +719,24 @@ La radiómica es un enfoque cuantitativo de la imagenología médica, que tiene 
 
 - Transforma imágenes médicas en **datos cuantitativos**.
 
--  "Biopsia virtual": extraer información **sin** procedimientos invasivos.
+- "Biopsia virtual": extraer información **sin** procedimientos invasivos.
 
--  La imagen como un *gran conjunto de datos* a explotar.
-
-
-::: notes
-Usamos un *r-stack* para revelar la definición paso a paso, manteniendo el interés. Una imagen relevante es crucial.
-:::
-
-## ¿Por qué es Importante para Futuros Médicos?
-
-- **Mejora de la precisión diagnóstica.**
-- **Personalización del tratamiento:** Medicina de precisión.
-- **Herramienta emergente:** clave en la práctica clínica futura.
+- La imagen como un *gran conjunto de datos* a explotar.
 
 
 ::: notes
 
 :::
 
-## Flujo de Trabajo de la Radiómica
+## ¿Qué es la Radiómica?
+
+![](https://www.physik.uzh.ch/physik/dam/jcr:a8adea1e-6aa0-4895-b0e0-0677e0b7adca/radiomics_01072019.2019-07-15-13-37-21.png)
+
+::: notes
+
+:::
+
+## Flujo de Trabajo de la Radiómica: Imagen
 
 
  1. Adquisición de Imágenes
@@ -790,21 +749,46 @@ Usamos un *r-stack* para revelar la definición paso a paso, manteniendo el inte
     - Delimitar la región de interés (tumor, órgano...).
     - Manual, semiautomática o automática.
 
-3. Extracción de Características
 
-    - Algoritmos extraen *miles* de características.
-        - **Forma:** Tamaño, esfericidad...
-        - **Intensidad:** Distribución de valores.
-        - **Textura:** Patrones espaciales.
+:::{.notes}
 
-4. Selección y Modelado
+:::
 
-- No todas las características son útiles.
-- **Selección:** quedarnos con las más relevantes.
-- **Modelado:** crear algoritmos predictivos (Machine Learning).
+## Flujo de Trabajo de la Radiómica: Parte Radiómica
+
+::::: columns
+
+::: {.column width="70%"}
 
 
-5. Validación del Modelo
+- **Extracción de Características:** Los algoritmos extraen *miles* de características.
+- **Forma:** Tamaño, esfericidad...
+- **Intensidad:** Distribución de valores.
+- **Textura:** Patrones espaciales.
+
+:::
+
+::: {.column width="30%" }
+ [![](https://theibsi.github.io/assets/images/ibsi.png){width=300px}](https://theibsi.github.io/){preview-links="true"}
+:::
+
+:::::
+
+::: notes
+Notes
+:::
+
+
+## Flujo de Trabajo de la Radiómica: Análisis
+
+- Selección y Modelado
+
+  - No todas las características son útiles.
+  - **Selección:** quedarnos con las más relevantes.
+  - **Modelado:** crear algoritmos predictivos (Machine Learning).
+
+
+- Validación del Modelo
 
     - Probar con datos "nuevos".
     - Asegurar la **generalización** (evitar sobreajuste).
@@ -812,18 +796,18 @@ Usamos un *r-stack* para revelar la definición paso a paso, manteniendo el inte
 
 
 :::{.notes}
-Usamos *r-stack* y fragmentos para mostrar cada paso del flujo de trabajo de forma secuencial, con imágenes ilustrativas.  Usa imágenes *reales* (pero anonimizadas!) si tienes acceso.
+
 :::
 
 ## Aplicaciones Clínicas: Oncología
 
-- **Detección temprana.**
+- **Detección temprana**
 - **Diferenciación** benigno/maligno.
 - **Predicción de respuesta** a tratamientos.
 - **Pronóstico** y supervivencia.
 
 :::{.notes}
-Diapositiva específica para oncología.  Un caso de estudio real, aunque sea simplificado, sería muy potente.
+
 :::
 
 ## Aplicaciones Clínicas: Otras Áreas
@@ -846,14 +830,8 @@ Diapositiva específica para oncología.  Un caso de estudio real, aunque sea si
 :::
 
 :::{.notes}
-Usamos *columns* para presentar varias áreas de forma compacta.
 :::
 
-## Medicina Personalizada
-
-- Adaptar el tratamiento a *cada paciente*.
-- Considerar las características únicas de su enfermedad.
-- El objetivo final de la medicina moderna.
 
 ## Desafíos y Limitaciones
 
@@ -864,20 +842,10 @@ Usamos *columns* para presentar varias áreas de forma compacta.
 - **Integración Clínica:** herramientas fáciles de usar.
 :::
 :::{.notes}
-Lista incremental, para ir punto por punto.
 :::
 
-## Conclusiones
 
-- La radiómica: **información cuantitativa** desde imágenes.
-- Potencial para **transformar** el diagnóstico y tratamiento.
-- Campo en **rápida evolución**.
-
-## Perspectivas Futuras
-
-- Mayor adopción en la práctica clínica.
-- Investigación continua.
-- Colaboración interdisciplinaria.
+# GRACIAS POR VUESTRA ATENCIÓN
 
 
 
