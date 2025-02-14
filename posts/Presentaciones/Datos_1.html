@@ -13,8 +13,8 @@
   <meta name="generator" content="quarto-1.6.40">
 
   <meta name="author" content="Antonio Otal Palacín">
-  <meta name="dcterms.date" content="2024-02-19">
-  <title>Imagen Médica – Datos en el ámbito de la salud</title>
+  <meta name="dcterms.date" content="2024-02-14">
+  <title>UdL AI 2025 – Datos en el ámbito de la salud</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -148,18 +148,18 @@
     </div>
 </div>
 
-  <p class="date">2024-02-19</p>
+  <p class="date">2024-02-14</p>
 </section>
 <section id="índice" class="slide level2">
 <h2>Índice</h2>
 <ul>
 <li>Introducción</li>
 <li>Clasificación de los datos</li>
+<li>Bases de datos</li>
 <li>Anotación de datos</li>
 <li>Privacidad y confidencialidad</li>
 <li>Registros electrónicos de salud</li>
 <li>Preprocesado de datos médicos</li>
-<li>Vectorizaciones (<em>Embeddings</em>)</li>
 <li>Radiómica (<em>Radiomics</em>)</li>
 </ul>
 <aside class="notes">
@@ -283,8 +283,8 @@
 <h2>Datos estructurados</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div id="c1b55e20" class="cell" data-execution_count="1">
-<div class="cell-output cell-output-display" data-execution_count="1">
+<div id="831d6244" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display" data-execution_count="12">
 <div>
 <style scoped="">
     .dataframe tbody tr th:only-of-type {
@@ -601,6 +601,292 @@
 <li><p><strong>Estructura semántica</strong>: Los datos anotados tienen metadatos adicionales que proporcionan contexto y significado, como las etiquetas que marcan entidades nombradas.</p></li>
 <li><p><strong>Interoperabilidad y procesabilidad</strong>: Los datos anotados son más interoperables y procesables, lo que facilita su integración con otros sistemas y su procesamiento automatizado.</p></li>
 <li><p><strong>Facilidad de búsqueda y recuperación</strong>: Los datos anotados son más fáciles de buscar y recuperar, ya que las anotaciones permiten identificar elementos específicos.</p></li>
+</ul>
+<aside class="notes">
+<p>Notes</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section></section>
+<section>
+<section id="bases-de-datos" class="title-slide slide level1 center">
+<h1>Bases de datos</h1>
+
+</section>
+<section id="introducción-a-las-bases-de-datos" class="slide level2">
+<h2>Introducción a las Bases de Datos</h2>
+<ul>
+<li><p>Las bases de datos son herramientas fundamentales en el mundo digital actual. Permiten almacenar, organizar y acceder a grandes cantidades de información de manera eficiente… Desde las redes sociales hasta las instituciones financieras, las bases de datos son esenciales para el funcionamiento de innumerables aplicaciones y sistemas.</p></li>
+<li><p>Una base de datos es, en esencia, una colección organizada de información estructurada, almacenada electrónicamente en un sistema informático… Esta información puede incluir cualquier tipo de datos, como texto, números, imágenes, videos y archivos…</p></li>
+<li><p>Para crear, editar y mantener los archivos y registros de una base de datos, se utiliza un software de base de datos, también llamado sistema de gestión de bases de datos (DBMS). Un DBMS actúa como intermediario entre la base de datos y los usuarios o programas que la utilizan, permitiendo realizar operaciones como agregar, modificar, eliminar y organizar datos.</p></li>
+</ul>
+<aside class="notes">
+<p>Notes</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="tipos-de-bases-de-datos" class="slide level2">
+<h2>Tipos de Bases de Datos</h2>
+<p>Existen diferentes tipos de bases de datos, cada una con sus propias características y usos. Algunos de los tipos más comunes son:</p>
+<ul>
+<li>Relacionales</li>
+<li>NoSQL</li>
+<li>Orientadas a Objetos</li>
+<li>Grafos (KG)</li>
+<li>Vectoriales</li>
+</ul>
+<aside class="notes">
+<p>Notes</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="bases-de-datos-relacionalesrdbms" class="slide level2">
+<h2>Bases de Datos Relacionales(RDBMS)</h2>
+<ul>
+<li><strong>Modelo:</strong> Datos organizados en <em>tablas</em> con <em>filas</em> (registros) y <em>columnas</em> (atributos).</li>
+<li><strong>Esquema:</strong> Rígido. La estructura se define <em>antes</em> de insertar datos.</li>
+<li><strong>Relaciones:</strong> Explícitas, a través de <em>claves primarias</em> y <em>claves foráneas</em>.</li>
+<li><strong>Lenguaje:</strong> SQL (Structured Query Language).</li>
+<li><strong>Ejemplos:</strong> MySQL, PostgreSQL, Oracle, SQL Server, MariaDB.</li>
+<li><strong>Ventajas:</strong>
+<ul>
+<li>Madurez, amplia adopción y gran cantidad de herramientas.</li>
+<li>Fuertes garantías ACID (Atomicidad, Consistencia, Aislamiento, Durabilidad).</li>
+<li>Ideal para datos estructurados y transacciones.</li>
+</ul></li>
+<li><strong>Desventajas:</strong>
+<ul>
+<li>La escalabilidad vertical puede ser costosa (sistemas monoservidor).</li>
+<li>Dificultad para manejar datos no estructurados o semiestructurados a gran escala.</li>
+</ul></li>
+</ul>
+<aside class="notes">
+<p>Las transacciones ACID son un conjunto de cuatro propiedades (Atomicidad, Consistencia, Aislamiento y Durabilidad) que garantizan la fiabilidad de las operaciones en una base de datos. Atomicidad asegura que una transacción se ejecute completa o no se ejecute; Consistencia mantiene la validez de los datos según las reglas definidas; Aislamiento evita interferencias entre transacciones concurrentes; y Durabilidad asegura que los cambios sean permanentes incluso ante fallos. En esencia, ACID proporciona un mecanismo para que las bases de datos manejen operaciones de forma segura y predecible, manteniendo la integridad de los datos en todo momento, siendo fundamental en aplicaciones donde la precisión y la fiabilidad son críticas.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="bases-de-datos-nosql" class="slide level2">
+<h2>Bases de Datos NoSQL</h2>
+<ul>
+<li><strong>Modelo:</strong> Alternativas al modelo tabular.</li>
+<li><strong>Esquema:</strong> Flexible o sin esquema. Mayor adaptabilidad a cambios en los datos.</li>
+<li><strong>Relaciones:</strong> Implícitas o mediante referencias (varía según el tipo).</li>
+<li><strong>Lenguaje:</strong> Algunas usan lenguajes tipo SQL, otras APIs.</li>
+<li><strong>Ventajas:</strong>
+<ul>
+<li>Escalabilidad horizontal (más fácil y económico añadir servidores).</li>
+<li>Flexibilidad para datos no estructurados, semiestructurados o cambiantes.</li>
+<li>Alto rendimiento para ciertas operaciones (lectura/escritura rápida).</li>
+</ul></li>
+<li><strong>Desventajas:</strong>Generalmente, menor soporte para transacciones ACID completas (En general las documentales). Mayor complejidad en consultas complejas que requieran “unir” datos.</li>
+</ul>
+<aside class="notes">
+<p>(Application Programming Interface)</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="nosql-documentales" class="slide level2">
+<h2>NoSQL: Documentales</h2>
+<ul>
+<li><strong>Modelo:</strong> Documentos (JSON o BSON). Colecciones de pares clave-valor.</li>
+<li><strong>Ejemplos:</strong> MongoDB, Couchbase, Amazon DocumentDB.</li>
+<li><strong>Casos de Uso:</strong>
+<ul>
+<li>Aplicaciones web y móviles.</li>
+<li>Gestión de contenido (CMS).</li>
+<li>Catálogos de productos.</li>
+<li>Datos de sesión.</li>
+</ul></li>
+<li><strong>Ventajas:</strong>
+<ul>
+<li>Flexibilidad para esquemas cambiantes.</li>
+<li>Buena escalabilidad horizontal.</li>
+<li>Desarrollo ágil.</li>
+</ul></li>
+</ul>
+<aside class="notes">
+<p>Notes</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="nosql-clave-valor" class="slide level2">
+<h2>NoSQL: Clave-Valor</h2>
+<ul>
+<li><strong>Modelo:</strong> Pares clave-valor. El tipo más simple de NoSQL.</li>
+<li><strong>Ejemplos:</strong> Redis, Memcached, Amazon DynamoDB (con capacidades clave-valor).</li>
+<li><strong>Casos de Uso:</strong> Caché (almacenamiento temporal de datos de acceso frecuente), gestión de sesiones, contadores.</li>
+<li><strong>Ventajas:</strong> Extremadamente rápidas para búsquedas por clave, alta escalabilidad.</li>
+<li><strong>Desventajas:</strong> Funcionalidad muy limitada más allá de la búsqueda por clave.</li>
+</ul>
+<aside class="notes">
+<p>Notes</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="nosql-columnares" class="slide level2">
+<h2>NoSQL: Columnares</h2>
+<ul>
+<li><strong>Modelo:</strong> Columnar. Almacenamiento optimizado por columnas, no por filas.</li>
+<li><strong>Ejemplos:</strong> Cassandra, HBase, Google Cloud Bigtable.</li>
+<li><strong>Casos de Uso:</strong> Big Data y análisis, series temporales, aplicaciones con alta carga de escritura.</li>
+<li><strong>Ventajas:</strong> Eficientes para leer un subconjunto de columnas de muchas filas, compresión eficiente, escalabilidad horizontal.</li>
+<li><strong>Desventajas:</strong> Menos eficientes para leer filas completas.</li>
+</ul>
+<aside class="notes">
+<p>Notes</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="nosql-de-grafos-kg" class="slide level2">
+<h2>NoSQL: De Grafos (KG)</h2>
+<ul>
+<li><strong>Modelo:</strong> Grafos (nodos y aristas). Representan entidades y relaciones.</li>
+<li><strong>Ejemplos:</strong> Neo4j, Amazon Neptune, JanusGraph.</li>
+<li><strong>Casos de Uso:</strong> Redes sociales, sistemas de recomendación, análisis de fraude, gestión del conocimiento.</li>
+<li><strong>Ventajas:</strong> Optimizadas para consultar y explorar relaciones, lenguajes de consulta especializados (Cypher, Gremlin).</li>
+<li><strong>Desventajas:</strong> Pueden ser menos eficientes si las relaciones no son el foco principal de las consultas.</li>
+</ul>
+<aside class="notes">
+<p>Notes</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="bases-de-datos-orientadas-a-objetos" class="slide level2">
+<h2>Bases de Datos Orientadas a Objetos</h2>
+<ul>
+<li><strong>Modelo:</strong> Objetos (atributos y métodos). Integración con la POO.</li>
+<li><strong>Esquema:</strong> Definido por clases.</li>
+<li><strong>Lenguaje:</strong> Extensiones de lenguajes de POO o lenguajes específicos.</li>
+<li><strong>Ejemplos:</strong> db4o, ObjectDB, Versant.</li>
+<li><strong>Casos de Uso (Nichos):</strong> CAD/CAM,Modelado científico y Multimedia.</li>
+<li><strong>Ventajas:</strong> Buena integración con POO, manejo de objetos complejos.</li>
+<li><strong>Desventajas:</strong> Menor adopción que RDBMS y NoSQL, falta de estandarización como SQL.</li>
+</ul>
+<aside class="notes">
+<p>Notes</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="bases-de-datos-vectoriales" class="slide level2">
+<h2>Bases de Datos Vectoriales</h2>
+<ul>
+<li><strong>Modelo:</strong> Vectores de alta dimensión (embeddings).</li>
+<li><strong>Esquema:</strong> Flexible (dimensión fija del vector, datos originales variables).</li>
+<li><strong>Lenguaje:</strong> APIs y, a veces, extensiones de SQL.</li>
+<li><strong>Ejemplos:</strong> Pinecone, Weaviate, Qdrant, Milvus, Faiss, Chroma.</li>
+<li><strong>Casos de Uso:</strong> Búsqueda semántica, sistemas de recomendación, RAG (Retrieval-Augmented Generation) para LLMs, Detección de anomalías.</li>
+<li><strong>Ventajas:</strong> Búsqueda por <em>similitud</em>, algoritmos ANN (Approximate Nearest Neighbor), optimizadas para altas dimensiones.</li>
+<li><strong>Desventajas:</strong> Tecnología relativamente nueva, generalmente no ofrecen transacciones ACID completas.</li>
+</ul>
+<aside class="notes">
+<p>Las transacciones ACID son un conjunto de cuatro propiedades (Atomicidad, Consistencia, Aislamiento y Durabilidad) que garantizan la fiabilidad de las operaciones en una base de datos. Atomicidad asegura que una transacción se ejecute completa o no se ejecute; Consistencia mantiene la validez de los datos según las reglas definidas; Aislamiento evita interferencias entre transacciones concurrentes; y Durabilidad asegura que los cambios sean permanentes incluso ante fallos. En esencia, ACID proporciona un mecanismo para que las bases de datos manejen operaciones de forma segura y predecible, manteniendo la integridad de los datos en todo momento, siendo fundamental en aplicaciones donde la precisión y la fiabilidad son críticas.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="la-elección-de-una-base-de-datos-depende-de" class="slide level2">
+<h2>La elección de una base de datos depende de:</h2>
+<ul>
+<li>La estructura de los datos.</li>
+<li>Las necesidades de la aplicación (escalabilidad, transacciones, etc.).</li>
+<li>El tipo de consultas que se realizarán.</li>
 </ul>
 <aside class="notes">
 <p>Notes</p>
@@ -1085,22 +1371,249 @@
 </ul>
 </section></section>
 <section>
-<section id="vectorizaciones-embeddings" class="title-slide slide level1 center">
-<h1>Vectorizaciones (<em>Embeddings</em>)</h1>
+<section id="radiómica" class="title-slide slide level1 center">
+<h1>Radiómica</h1>
 
 </section>
-<section id="ángulo-entre-dos-vectores" class="slide level2">
-<h2>Ángulo entre dos vectores</h2>
+<section id="la-imagen-médica-más-allá-de-lo-visual" class="slide level2">
+<h2>La Imagen Médica: Más Allá de lo Visual</h2>
+<ul>
+<li><strong>Modalidades tradicionales:</strong>
+<ul>
+<li>Rayos X</li>
+<li>Tomografía Computarizada (TC)</li>
+<li>Resonancia Magnética (RM)</li>
+<li>Medicina Nuclear (PET/CT)</li>
+</ul></li>
+<li><strong>Interpretación:</strong> Principalmente <em>cualitativa</em> y <em>subjetiva</em>.</li>
+<li><strong>Limitaciones:</strong>
+<ul>
+<li>Variabilidad inter-observador.</li>
+<li>Información potencialmente oculta.</li>
+</ul></li>
+</ul>
+<aside class="notes">
 
-<img data-src="https://www.mathsisfun.com/algebra/images/dot-product-ex2.gif" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="qué-son-las-vectorizaciones" class="slide level2">
-<h2>¿Qué son las vectorizaciones?</h2>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="qué-es-la-radiómica" class="slide level2">
+<h2>¿Qué es la Radiómica?</h2>
+<blockquote cite="https://insightsimaging.springeropen.com/articles/10.1186/s13244-020-00887-2">
+<p>La radiómica es un enfoque cuantitativo de la imagenología médica, que tiene como objetivo mejorar los datos existentes disponibles para los clínicos mediante análisis matemáticos avanzados. A través de la extracción matemática de la distribución espacial de las intensidades de señal y las interrelaciones de los píxeles, la radiómica cuantifica la información textural utilizando métodos de análisis del campo de la inteligencia artificial.</p>
+</blockquote>
+<ul>
+<li><p>Transforma imágenes médicas en <strong>datos cuantitativos</strong>.</p></li>
+<li><p>“Biopsia virtual”: extraer información <strong>sin</strong> procedimientos invasivos.</p></li>
+<li><p>La imagen como un <em>gran conjunto de datos</em> a explotar.</p></li>
+</ul>
+<aside class="notes">
 
-<img data-src="https://daleonai.com/images/word2vec.png" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="práctica" class="slide level2">
-<h2>Práctica</h2>
-<p><a href="https://colab.research.google.com/drive/17hAP1ePCEOxDMREzNHQi1SwT0FYNa42n?usp=sharing">Notebook</a></p>
-<p><a href="https://colab.research.google.com/drive/1r3e5MLJ7KuIF55yXr4L4bWxSh5udQ9rx?usp=sharing">juego</a></p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="qué-es-la-radiómica-1" class="slide level2">
+<h2>¿Qué es la Radiómica?</h2>
+
+<img data-src="https://www.physik.uzh.ch/physik/dam/jcr:a8adea1e-6aa0-4895-b0e0-0677e0b7adca/radiomics_01072019.2019-07-15-13-37-21.png" class="r-stretch"><aside class="notes">
+
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="flujo-de-trabajo-de-la-radiómica-imagen" class="slide level2">
+<h2>Flujo de Trabajo de la Radiómica: Imagen</h2>
+<ol type="1">
+<li><p>Adquisición de Imágenes</p>
+<ul>
+<li>Imágenes médicas estándar (TC, RM, etc.).</li>
+<li>¡Importancia de la <strong>estandarización</strong>!</li>
+</ul></li>
+<li><p>Segmentación (ROI)</p>
+<ul>
+<li>Delimitar la región de interés (tumor, órgano…).</li>
+<li>Manual, semiautomática o automática.</li>
+</ul></li>
+</ol>
+<aside class="notes">
+
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="flujo-de-trabajo-de-la-radiómica-parte-radiómica" class="slide level2">
+<h2>Flujo de Trabajo de la Radiómica: Parte Radiómica</h2>
+<div class="columns">
+<div class="column" style="width:70%;">
+<ul>
+<li><strong>Extracción de Características:</strong> Los algoritmos extraen <em>miles</em> de características.</li>
+<li><strong>Forma:</strong> Tamaño, esfericidad…</li>
+<li><strong>Intensidad:</strong> Distribución de valores.</li>
+<li><strong>Textura:</strong> Patrones espaciales.</li>
+</ul>
+</div><div class="column" style="width:30%;">
+<p><a href="https://theibsi.github.io/" data-preview-links="true"><img data-src="https://theibsi.github.io/assets/images/ibsi.png" width="300"></a></p>
+</div></div>
+<aside class="notes">
+<p>Notes</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="flujo-de-trabajo-de-la-radiómica-análisis" class="slide level2">
+<h2>Flujo de Trabajo de la Radiómica: Análisis</h2>
+<ul>
+<li><p>Selección y Modelado</p>
+<ul>
+<li>No todas las características son útiles.</li>
+<li><strong>Selección:</strong> quedarnos con las más relevantes.</li>
+<li><strong>Modelado:</strong> crear algoritmos predictivos (Machine Learning).</li>
+</ul></li>
+<li><p>Validación del Modelo</p>
+<ul>
+<li>Probar con datos “nuevos”.</li>
+<li>Asegurar la <strong>generalización</strong> (evitar sobreajuste).</li>
+<li>Métricas: Precisión, Sensibilidad, Especificidad.</li>
+</ul></li>
+</ul>
+<aside class="notes">
+
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="aplicaciones-clínicas-oncología" class="slide level2">
+<h2>Aplicaciones Clínicas: Oncología</h2>
+<ul>
+<li><strong>Detección temprana</strong></li>
+<li><strong>Diferenciación</strong> benigno/maligno.</li>
+<li><strong>Predicción de respuesta</strong> a tratamientos.</li>
+<li><strong>Pronóstico</strong> y supervivencia.</li>
+</ul>
+<aside class="notes">
+
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="aplicaciones-clínicas-otras-áreas" class="slide level2">
+<h2>Aplicaciones Clínicas: Otras Áreas</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h4 id="cardiovasculares">Cardiovasculares</h4>
+<ul>
+<li>Caracterización de placas.</li>
+</ul>
+<h4 id="neurológicas">Neurológicas</h4>
+<ul>
+<li>Alzheimer.</li>
+<li>Esclerosis múltiple.</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<h4 id="pulmonares">Pulmonares</h4>
+<ul>
+<li>EPOC.</li>
+<li>Fibrosis.</li>
+</ul>
+</div></div>
+<aside class="notes">
+
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="desafíos-y-limitaciones" class="slide level2">
+<h2>Desafíos y Limitaciones</h2>
+<div>
+<ul>
+<li class="fragment"><strong>Estandarización:</strong> protocolos consistentes.</li>
+<li class="fragment"><strong>“Caja Negra”:</strong> interpretabilidad de los modelos.</li>
+<li class="fragment"><strong>Grandes Datos:</strong> necesidad de <em>muchos</em> datos de calidad.</li>
+<li class="fragment"><strong>Integración Clínica:</strong> herramientas fáciles de usar.</li>
+</ul>
+</div>
+<aside class="notes">
+
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section></section>
+<section id="gracias-por-vuestra-atención" class="title-slide slide level1 center">
+<h1>GRACIAS POR VUESTRA ATENCIÓN</h1>
 
 
 <div class="reveal-header">
@@ -1117,7 +1630,7 @@
 <p> </p>
 </div>
 </div>
-</section></section>
+</section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <p><img src="https://cdn0.iconfinder.com/data/icons/modern-ui-glyph-1/64/modern-ui-glyph-1-03-512.png" class="slide-logo"></p>
@@ -1155,7 +1668,7 @@
 'autoAnimateUnmatched': true,
 'jumpToSlide': true,
 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
-'smaller': false,
+'smaller': true,
  
         // Display controls in the bottom right corner
         controls: false,
@@ -1277,7 +1790,7 @@
         hideCursorTime: 5000,
 
         // Opens links in an iframe preview overlay
-        previewLinks: false,
+        previewLinks: true,
 
         // Transition style (none/fade/slide/convex/concave/zoom)
         transition: 'none',
@@ -1421,7 +1934,7 @@
       }
         var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
         var mailtoRegex = new RegExp(/^mailto:/);
-          var filterRegex = new RegExp('/' + window.location.host + '/');
+          var filterRegex = new RegExp("https:\/\/aotal\.github\.io\/ImagenMedica\/");
         var isInternal = (href) => {
             return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
         }

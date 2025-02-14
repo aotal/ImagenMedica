@@ -2,9 +2,12 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/code/Titanic.html",
+      "/posts/code/Radiomics_Feature_Extraction.html",
       "/posts/Presentaciones/plan.html",
       "/posts/Presentaciones/LLMs.html",
       "/posts/code/Embedding.html",
+      "/posts/Presentaciones/Datos_1.html",
       "/posts/code/word_embeddings.html"
     ]
   }

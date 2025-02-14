@@ -1,6 +1,6 @@
 ---
 title: "Datos en el ámbito de la salud"
-date: "2024-02-19"
+date: "2024-02-14"
 categories: [Presentación]
 image: img/Intro1.jpg
 author: "[Antonio Otal Palacín](antonio.otal@udl.cat)"
@@ -15,6 +15,8 @@ format:
         number-sections: false
         slide-number: false
         center: false
+        preview-links: true
+        smaller: true
 filters:
   - reveal-header        
 jupyter: python3   
@@ -24,11 +26,11 @@ jupyter: python3
 
 -   Introducción
 -   Clasificación de los datos
+-   Bases de datos
 -   Anotación de datos
 -   Privacidad y confidencialidad
 -   Registros electrónicos de salud
 -   Preprocesado de datos médicos
--   Vectorizaciones (*Embeddings*)
 -   Radiómica (*Radiomics*)
 
 ::: notes
@@ -217,6 +219,165 @@ Notes
 
 - **Facilidad de búsqueda y recuperación**: Los datos anotados son más fáciles de buscar y recuperar, ya que las anotaciones permiten identificar elementos específicos.
   
+
+::: notes
+Notes
+:::
+
+# Bases de datos
+
+## Introducción a las Bases de Datos
+
+- Las bases de datos son herramientas fundamentales en el mundo digital actual. Permiten almacenar, organizar y acceder a grandes cantidades de información de manera eficiente... Desde las redes sociales hasta las instituciones financieras, las bases de datos son esenciales para el funcionamiento de innumerables aplicaciones y sistemas.
+
+
+- Una base de datos es, en esencia, una colección organizada de información estructurada, almacenada electrónicamente en un sistema informático... Esta información puede incluir cualquier tipo de datos, como texto, números, imágenes, videos y archivos...
+
+
+
+- Para crear, editar y mantener los archivos y registros de una base de datos, se utiliza un software de base de datos, también llamado sistema de gestión de bases de datos (DBMS). Un DBMS actúa como intermediario entre la base de datos y los usuarios o programas que la utilizan, permitiendo realizar operaciones como agregar, modificar, eliminar y organizar datos.
+
+::: notes
+Notes
+:::
+
+## Tipos de Bases de Datos
+
+Existen diferentes tipos de bases de datos, cada una con sus propias características y usos. Algunos de los tipos más comunes son:
+
+- Relacionales
+- NoSQL
+- Orientadas a Objetos
+- Grafos (KG)
+- Vectoriales
+
+::: notes
+Notes
+:::
+
+
+## Bases de Datos Relacionales(RDBMS)
+
+- **Modelo:** Datos organizados en *tablas* con *filas* (registros) y *columnas* (atributos).
+- **Esquema:** Rígido. La estructura se define *antes* de insertar datos.
+- **Relaciones:** Explícitas, a través de *claves primarias* y *claves foráneas*.
+- **Lenguaje:** SQL (Structured Query Language).
+- **Ejemplos:** MySQL, PostgreSQL, Oracle, SQL Server, MariaDB.
+- **Ventajas:**
+    - Madurez, amplia adopción y gran cantidad de herramientas.
+    - Fuertes garantías ACID (Atomicidad, Consistencia, Aislamiento, Durabilidad).
+    - Ideal para datos estructurados y transacciones.
+- **Desventajas:**
+    - La escalabilidad vertical puede ser costosa (sistemas monoservidor).
+    - Dificultad para manejar datos no estructurados o semiestructurados a gran escala.
+
+::: notes
+Las transacciones ACID son un conjunto de cuatro propiedades (Atomicidad, Consistencia, Aislamiento y Durabilidad) que garantizan la fiabilidad de las operaciones en una base de datos. Atomicidad asegura que una transacción se ejecute completa o no se ejecute; Consistencia mantiene la validez de los datos según las reglas definidas; Aislamiento evita interferencias entre transacciones concurrentes; y Durabilidad asegura que los cambios sean permanentes incluso ante fallos. En esencia, ACID proporciona un mecanismo para que las bases de datos manejen operaciones de forma segura y predecible, manteniendo la integridad de los datos en todo momento, siendo fundamental en aplicaciones donde la precisión y la fiabilidad son críticas.
+:::
+
+## Bases de Datos NoSQL
+
+- **Modelo:**  Alternativas al modelo tabular.
+- **Esquema:** Flexible o sin esquema. Mayor adaptabilidad a cambios en los datos.
+- **Relaciones:** Implícitas o mediante referencias (varía según el tipo).
+- **Lenguaje:** Algunas usan lenguajes tipo SQL, otras APIs.
+- **Ventajas:**
+    - Escalabilidad horizontal (más fácil y económico añadir servidores).
+    - Flexibilidad para datos no estructurados, semiestructurados o cambiantes.
+    - Alto rendimiento para ciertas operaciones (lectura/escritura rápida).
+- **Desventajas:**Generalmente, menor soporte para transacciones ACID completas (En general las documentales). Mayor complejidad en consultas complejas que requieran "unir" datos.
+
+::: notes
+(Application Programming Interface)
+:::
+
+## NoSQL: Documentales
+
+- **Modelo:** Documentos (JSON o BSON). Colecciones de pares clave-valor.
+- **Ejemplos:** MongoDB, Couchbase, Amazon DocumentDB.
+- **Casos de Uso:**
+    - Aplicaciones web y móviles.
+    - Gestión de contenido (CMS).
+    - Catálogos de productos.
+    - Datos de sesión.
+- **Ventajas:**
+    - Flexibilidad para esquemas cambiantes.
+    - Buena escalabilidad horizontal.
+    - Desarrollo ágil.
+
+::: notes
+Notes
+:::
+
+## NoSQL: Clave-Valor
+
+- **Modelo:** Pares clave-valor.  El tipo más simple de NoSQL.
+- **Ejemplos:** Redis, Memcached, Amazon DynamoDB (con capacidades clave-valor).
+- **Casos de Uso:** Caché (almacenamiento temporal de datos de acceso frecuente), gestión de sesiones, contadores.
+- **Ventajas:** Extremadamente rápidas para búsquedas por clave, alta escalabilidad.
+- **Desventajas:** Funcionalidad muy limitada más allá de la búsqueda por clave.
+
+::: notes
+Notes
+:::
+
+## NoSQL: Columnares
+
+- **Modelo:** Columnar. Almacenamiento optimizado por columnas, no por filas.
+- **Ejemplos:** Cassandra, HBase, Google Cloud Bigtable.
+- **Casos de Uso:** Big Data y análisis, series temporales, aplicaciones con alta carga de escritura.
+- **Ventajas:** Eficientes para leer un subconjunto de columnas de muchas filas, compresión eficiente, escalabilidad horizontal.
+- **Desventajas:** Menos eficientes para leer filas completas.
+
+::: notes
+Notes
+:::
+
+## NoSQL: De Grafos (KG)
+
+- **Modelo:** Grafos (nodos y aristas).  Representan entidades y relaciones.
+- **Ejemplos:** Neo4j, Amazon Neptune, JanusGraph.
+- **Casos de Uso:** Redes sociales, sistemas de recomendación, análisis de fraude, gestión del conocimiento.
+- **Ventajas:** Optimizadas para consultar y explorar relaciones, lenguajes de consulta especializados (Cypher, Gremlin).
+- **Desventajas:** Pueden ser menos eficientes si las relaciones no son el foco principal de las consultas.
+
+::: notes
+Notes
+:::
+
+## Bases de Datos Orientadas a Objetos
+
+- **Modelo:** Objetos (atributos y métodos).  Integración con la POO.
+- **Esquema:** Definido por clases.
+- **Lenguaje:** Extensiones de lenguajes de POO o lenguajes específicos.
+- **Ejemplos:** db4o, ObjectDB, Versant.
+- **Casos de Uso (Nichos):** CAD/CAM,Modelado científico y Multimedia.
+- **Ventajas:** Buena integración con POO, manejo de objetos complejos.
+- **Desventajas:** Menor adopción que RDBMS y NoSQL, falta de estandarización como SQL.
+
+::: notes
+Notes
+:::
+
+## Bases de Datos Vectoriales
+
+- **Modelo:** Vectores de alta dimensión (embeddings).
+- **Esquema:** Flexible (dimensión fija del vector, datos originales variables).
+- **Lenguaje:** APIs y, a veces, extensiones de SQL.
+- **Ejemplos:** Pinecone, Weaviate, Qdrant, Milvus, Faiss, Chroma.
+- **Casos de Uso:** Búsqueda semántica, sistemas de recomendación, RAG (Retrieval-Augmented Generation) para LLMs, Detección de anomalías.
+- **Ventajas:** Búsqueda por *similitud*, algoritmos ANN (Approximate Nearest Neighbor), optimizadas para altas dimensiones.
+- **Desventajas:** Tecnología relativamente nueva, generalmente no ofrecen transacciones ACID completas.
+
+::: notes
+Las transacciones ACID son un conjunto de cuatro propiedades (Atomicidad, Consistencia, Aislamiento y Durabilidad) que garantizan la fiabilidad de las operaciones en una base de datos. Atomicidad asegura que una transacción se ejecute completa o no se ejecute; Consistencia mantiene la validez de los datos según las reglas definidas; Aislamiento evita interferencias entre transacciones concurrentes; y Durabilidad asegura que los cambios sean permanentes incluso ante fallos. En esencia, ACID proporciona un mecanismo para que las bases de datos manejen operaciones de forma segura y predecible, manteniendo la integridad de los datos en todo momento, siendo fundamental en aplicaciones donde la precisión y la fiabilidad son críticas.
+:::
+
+## La elección de una base de datos depende de:
+
+-   La estructura de los datos.
+-   Las necesidades de la aplicación (escalabilidad, transacciones, etc.).
+-   El tipo de consultas que se realizarán.
 
 ::: notes
 Notes
@@ -528,19 +689,163 @@ Como el Electrocardiograma o el Electroencefalograma
 - Simulación de artefactos
 
 
-# Vectorizaciones (*Embeddings*)
 
-## Ángulo entre dos vectores
+# Radiómica
 
-![](https://www.mathsisfun.com/algebra/images/dot-product-ex2.gif){fig-align="center"}
+## La Imagen Médica: Más Allá de lo Visual
 
-## ¿Qué son las vectorizaciones?
+- **Modalidades tradicionales:**
+    - Rayos X
+    - Tomografía Computarizada (TC)
+    - Resonancia Magnética (RM)
+    - Medicina Nuclear (PET/CT)
+- **Interpretación:** Principalmente *cualitativa* y *subjetiva*.
+- **Limitaciones:**
+    - Variabilidad inter-observador.
+    - Información potencialmente oculta.
 
-![](https://daleonai.com/images/word2vec.png){fig-align="center"}
 
-## Práctica
+::: notes
 
-[Notebook](https://colab.research.google.com/drive/17hAP1ePCEOxDMREzNHQi1SwT0FYNa42n?usp=sharing)
+:::
 
-[juego](https://colab.research.google.com/drive/1r3e5MLJ7KuIF55yXr4L4bWxSh5udQ9rx?usp=sharing)
+## ¿Qué es la Radiómica?
+
+<blockquote cite='https://insightsimaging.springeropen.com/articles/10.1186/s13244-020-00887-2'>
+
+La radiómica es un enfoque cuantitativo de la imagenología médica, que tiene como objetivo mejorar los datos existentes disponibles para los clínicos mediante análisis matemáticos avanzados. A través de la extracción matemática de la distribución espacial de las intensidades de señal y las interrelaciones de los píxeles, la radiómica cuantifica la información textural utilizando métodos de análisis del campo de la inteligencia artificial.
+
+</blockquote>
+
+- Transforma imágenes médicas en **datos cuantitativos**.
+
+- "Biopsia virtual": extraer información **sin** procedimientos invasivos.
+
+- La imagen como un *gran conjunto de datos* a explotar.
+
+
+::: notes
+
+:::
+
+## ¿Qué es la Radiómica?
+
+![](https://www.physik.uzh.ch/physik/dam/jcr:a8adea1e-6aa0-4895-b0e0-0677e0b7adca/radiomics_01072019.2019-07-15-13-37-21.png)
+
+::: notes
+
+:::
+
+## Flujo de Trabajo de la Radiómica: Imagen
+
+
+ 1. Adquisición de Imágenes
+
+    - Imágenes médicas estándar (TC, RM, etc.).
+    - ¡Importancia de la **estandarización**!
+
+2. Segmentación (ROI)
+
+    - Delimitar la región de interés (tumor, órgano...).
+    - Manual, semiautomática o automática.
+
+
+:::{.notes}
+
+:::
+
+## Flujo de Trabajo de la Radiómica: Parte Radiómica
+
+::::: columns
+
+::: {.column width="70%"}
+
+
+- **Extracción de Características:** Los algoritmos extraen *miles* de características.
+- **Forma:** Tamaño, esfericidad...
+- **Intensidad:** Distribución de valores.
+- **Textura:** Patrones espaciales.
+
+:::
+
+::: {.column width="30%" }
+ [![](https://theibsi.github.io/assets/images/ibsi.png){width=300px}](https://theibsi.github.io/){preview-links="true"}
+:::
+
+:::::
+
+::: notes
+Notes
+:::
+
+
+## Flujo de Trabajo de la Radiómica: Análisis
+
+- Selección y Modelado
+
+  - No todas las características son útiles.
+  - **Selección:** quedarnos con las más relevantes.
+  - **Modelado:** crear algoritmos predictivos (Machine Learning).
+
+
+- Validación del Modelo
+
+    - Probar con datos "nuevos".
+    - Asegurar la **generalización** (evitar sobreajuste).
+    - Métricas: Precisión, Sensibilidad, Especificidad.
+
+
+:::{.notes}
+
+:::
+
+## Aplicaciones Clínicas: Oncología
+
+- **Detección temprana**
+- **Diferenciación** benigno/maligno.
+- **Predicción de respuesta** a tratamientos.
+- **Pronóstico** y supervivencia.
+
+:::{.notes}
+
+:::
+
+## Aplicaciones Clínicas: Otras Áreas
+
+::: {.columns}
+::: {.column width="50%"}
+#### Cardiovasculares
+- Caracterización de placas.
+
+#### Neurológicas
+- Alzheimer.
+- Esclerosis múltiple.
+:::
+
+::: {.column width="50%"}
+#### Pulmonares
+- EPOC.
+- Fibrosis.
+:::
+:::
+
+:::{.notes}
+:::
+
+
+## Desafíos y Limitaciones
+
+::: {.incremental}
+- **Estandarización:** protocolos consistentes.
+- **"Caja Negra":** interpretabilidad de los modelos.
+- **Grandes Datos:** necesidad de *muchos* datos de calidad.
+- **Integración Clínica:** herramientas fáciles de usar.
+:::
+:::{.notes}
+:::
+
+
+# GRACIAS POR VUESTRA ATENCIÓN
+
+
 

@@ -1,612 +1,430 @@
 [
   {
-    "objectID": "posts/Presentaciones/LLMs.html#índice",
-    "href": "posts/Presentaciones/LLMs.html#índice",
-    "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
-    "section": "Índice",
-    "text": "Índice\n\nIntroducción breve a los LLM\nEmbedding Systems\nKnowledge Graphs\nFine-Tuning y Retrieval Augmentation Generation (RAG)\nLímites de los LLM\n\n\nNotes"
-  },
-  {
-    "objectID": "posts/Presentaciones/LLMs.html#llm",
-    "href": "posts/Presentaciones/LLMs.html#llm",
-    "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
-    "section": "LLM",
-    "text": "LLM\n\n\nNotes"
-  },
-  {
-    "objectID": "posts/Presentaciones/LLMs.html#llm-pretraining",
-    "href": "posts/Presentaciones/LLMs.html#llm-pretraining",
-    "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
-    "section": "LLM Pretraining",
-    "text": "LLM Pretraining\nA una velocidad de 1000 millones de operaciones por segundo entrenar a GPT3 nos costaría 100 millones de años. Se hubiese tenido que empezar a entrenar el modelo en el cretácico.\n\n\n\n\n\n\nNotes"
-  },
-  {
-    "objectID": "posts/Presentaciones/LLMs.html#llm-reinforcement-learning-with-human-feedback",
-    "href": "posts/Presentaciones/LLMs.html#llm-reinforcement-learning-with-human-feedback",
-    "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
-    "section": "LLM Reinforcement Learning with Human Feedback",
-    "text": "LLM Reinforcement Learning with Human Feedback\n\n\nNotes"
-  },
-  {
-    "objectID": "posts/Presentaciones/LLMs.html#llm-gpu",
-    "href": "posts/Presentaciones/LLMs.html#llm-gpu",
-    "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
-    "section": "LLM GPU",
-    "text": "LLM GPU\n\n\nNotes"
-  },
-  {
-    "objectID": "posts/Presentaciones/LLMs.html#transformers",
-    "href": "posts/Presentaciones/LLMs.html#transformers",
-    "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
-    "section": "TRANSFORMERS",
-    "text": "TRANSFORMERS\n\n\n  \n\nCodificaciones posicionales: Los transformers agregan un número a cada palabra para indicar su posición en la oración. Esto ayuda al modelo a comprender el orden de las palabras, lo cual es crucial para el significado.\nAtención: Permite al modelo considerar todas las palabras de la oración al traducir o analizar una palabra específica. Esto ayuda a capturar relaciones complejas entre palabras y mejora la precisión de la traducción y la comprensión.\nAutoatención: Permite al modelo comprender una palabra en el contexto de las palabras que la rodean, lo que ayuda a desambiguar palabras con múltiples significados y captar matices del lenguaje.\n\n\nNotes"
-  },
-  {
-    "objectID": "posts/Presentaciones/LLMs.html#codificación-posicional",
-    "href": "posts/Presentaciones/LLMs.html#codificación-posicional",
-    "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
-    "section": "Codificación Posicional",
-    "text": "Codificación Posicional\n\nProblema: A diferencia de las RNNs, los Transformers procesan palabras en paralelo, perdiendo información sobre el orden de las palabras.\nSolución: La codificación posicional añade información sobre la posición de cada palabra mediante vectores que se suman a los embeddings de las palabras.\nBeneficio: Permite al modelo distinguir oraciones con las mismas palabras en diferente orden, crucial para la interpretación del significado.\n\n\nNotes"
-  },
-  {
-    "objectID": "posts/Presentaciones/LLMs.html#mecanismo-de-atención-attention",
-    "href": "posts/Presentaciones/LLMs.html#mecanismo-de-atención-attention",
-    "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
-    "section": "Mecanismo de Atención (Attention)",
-    "text": "Mecanismo de Atención (Attention)\n\nPropósito: Permite al modelo enfocarse en las partes más relevantes de la secuencia de entrada al generar la salida.\nFuncionamiento: Asigna pesos a cada palabra de la entrada, indicando cuánto debe “prestar atención” el modelo.\nCálculo: Se computan matrices Query (Q), Key (K) y Value (V). La atención se calcula como una función de Q y K, ponderando los valores en V para generar un vector de contexto.\nBeneficio: Mejora el rendimiento en tareas de secuencia a secuencia al proporcionar información contextualmente relevante.\n\n\nNotes"
-  },
-  {
-    "objectID": "posts/Presentaciones/LLMs.html#autoatención-self-attention",
-    "href": "posts/Presentaciones/LLMs.html#autoatención-self-attention",
-    "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
-    "section": "Autoatención (Self-Attention)",
-    "text": "Autoatención (Self-Attention)\n\nPropósito: Permite a cada palabra prestar atención a todas las demás palabras dentro de la misma secuencia.\nFuncionamiento: Las matrices Q, K y V se calculan a partir de la misma secuencia de entrada.\nBeneficio: Permite el procesamiento paralelo y la captura de dependencias a largo alcance, superando las limitaciones de las RNNs.\nRelación con Atención: La autoatención es un caso particular del mecanismo de atención.\n\n\nNotes"
-  },
-  {
-    "objectID": "posts/Presentaciones/LLMs.html#embedding",
-    "href": "posts/Presentaciones/LLMs.html#embedding",
-    "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
-    "section": "EMBEDDING",
-    "text": "EMBEDDING\n\nVector embeddings son representaciones numéricas de información, como texto, documentos, imágenes o audio. Capturan el significado semántico de la información\n\n\n\n\n\n\n\nNotes"
-  },
-  {
-    "objectID": "posts/Presentaciones/LLMs.html#vectores",
-    "href": "posts/Presentaciones/LLMs.html#vectores",
-    "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
-    "section": "VECTORES",
-    "text": "VECTORES\n\n\n\nNotes"
-  },
-  {
-    "objectID": "posts/Presentaciones/LLMs.html#embedding-machine",
-    "href": "posts/Presentaciones/LLMs.html#embedding-machine",
-    "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
-    "section": "EMBEDDING MACHINE",
-    "text": "EMBEDDING MACHINE\n\n\nNotes"
-  },
-  {
-    "objectID": "posts/Presentaciones/LLMs.html#chunks",
-    "href": "posts/Presentaciones/LLMs.html#chunks",
-    "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
-    "section": "CHUNKS",
-    "text": "CHUNKS\n\nUn chunk es una unidad discreta de información extraída de un cuerpo de texto más grande. Puede ser una frase, un párrafo, una sección de un documento o incluso un documento completo, dependiendo del sistema y la aplicación. La idea principal es dividir la información en partes más pequeñas que sean más fáciles de procesar y analizar para la IA.\n\n\n\n\n\n\n\nNotes"
-  },
-  {
-    "objectID": "posts/Presentaciones/LLMs.html#métodos-de-división-en-chunks",
-    "href": "posts/Presentaciones/LLMs.html#métodos-de-división-en-chunks",
-    "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
-    "section": "Métodos de División en Chunks",
-    "text": "Métodos de División en Chunks\n\nPor encabezados: Se usan los encabezados y subtítulos del documento para crear chunks.\nPor párrafos: Se divide el texto en chunks según los párrafos.\nVentanas deslizantes: Una ventana captura texto al desplazarse, creando chunks que se superponen.\nSegmentación semántica: Se usan algoritmos para identificar unidades de significado y dividir el texto en chunks.\n\n\nNotes"
-  },
-  {
-    "objectID": "posts/Presentaciones/LLMs.html#cómo-los-llms-utilizan-los-chunks",
-    "href": "posts/Presentaciones/LLMs.html#cómo-los-llms-utilizan-los-chunks",
-    "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
-    "section": "¿Cómo los LLMs Utilizan los Chunks?",
-    "text": "¿Cómo los LLMs Utilizan los Chunks?\nLos LLMs utilizan los chunks para comprender el contexto y generar texto coherente. Al procesar un chunk, el LLM puede:\n\nIdentificar las ideas principales: Extraer la información más relevante del chunk.\nEstablecer conexiones: Relacionar la información del chunk con otros chunks o con el conocimiento previo del LLM. Para lograr esto, los LLMs utilizan mecanismos como la atención y la codificación posicional. La atención permite al modelo enfocarse en las partes más relevantes de la información dentro de un chunk y entre diferentes chunks. La codificación posicional proporciona información sobre la ubicación de las palabras dentro de un chunk y en relación con otros chunks, lo que ayuda al modelo a comprender el orden y la secuencia de la información.\nGenerar resúmenes: Condensar la información del chunk en un resumen conciso.\nResponder preguntas: Proporcionar respuestas precisas y relevantes a las preguntas basadas en la información del chunk.\n\n\nNotes"
-  },
-  {
-    "objectID": "posts/Presentaciones/LLMs.html#desafíos-de-los-chunks-en-llms",
-    "href": "posts/Presentaciones/LLMs.html#desafíos-de-los-chunks-en-llms",
-    "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
-    "section": "Desafíos de los Chunks en LLMs",
-    "text": "Desafíos de los Chunks en LLMs\n\nPérdida de contexto: Dividir el texto en chunks puede dificultar la comprensión de relaciones entre datos, afectando la precisión de las respuestas.\nSesgo: La selección de chunks puede introducir sesgos, llevando a resultados incompletos o inexactos.\nInformación compleja: Cierta información (imágenes, datos, etc.) es difícil de representar en chunks.\nTamaño del chunk: Encontrar el tamaño óptimo es crucial para el rendimiento del modelo.\n\n\nNotes"
-  },
-  {
-    "objectID": "posts/Presentaciones/LLMs.html#word-embeddings-métodos-basados-en-frecuencia",
-    "href": "posts/Presentaciones/LLMs.html#word-embeddings-métodos-basados-en-frecuencia",
-    "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
-    "section": "Word Embeddings: Métodos Basados en Frecuencia",
-    "text": "Word Embeddings: Métodos Basados en Frecuencia\n\nBag-of-Words (BoW): Conjunto no ordenado de palabras y sus frecuencias. Simple pero ignora el orden y la semántica.\nTF-IDF: Asigna pesos a las palabras según su frecuencia en un documento y en el corpus. Mejora BoW pero ignora el contexto.\nN-gramas: Considera secuencias de n palabras. Captura contexto local pero basado en frecuencia.\nMatrices de Co-ocurrencia: Capturan la frecuencia con la que las palabras aparecen juntas. Base para generar embeddings.\nOne-Hot Encoding: Vector binario para cada palabra. Sencillo pero de alta dimensionalidad y sin relaciones semánticas.\n\n\nNotes"
-  },
-  {
-    "objectID": "posts/Presentaciones/LLMs.html#word-embeddings-embeddings-estáticos",
-    "href": "posts/Presentaciones/LLMs.html#word-embeddings-embeddings-estáticos",
-    "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
-    "section": "Word Embeddings: Embeddings Estáticos",
-    "text": "Word Embeddings: Embeddings Estáticos\nGeneran un vector único por palabra, independientemente del contexto.\n\nWord2Vec (CBOW y Skip-gram): Redes neuronales para predecir palabras a partir de su contexto.\nGloVe: Combina métodos de conteo y predicción, capturando relaciones semánticas locales y globales.\nFastText: Mejora Word2Vec considerando la estructura interna de las palabras.\n\n\nNotes"
-  },
-  {
-    "objectID": "posts/Presentaciones/LLMs.html#word-embeddings-embeddings-contextuales",
-    "href": "posts/Presentaciones/LLMs.html#word-embeddings-embeddings-contextuales",
-    "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
-    "section": "Word Embeddings: Embeddings Contextuales",
-    "text": "Word Embeddings: Embeddings Contextuales\nGeneran embeddings que varían según el contexto, capturando la polisemia.\n\nSelf-Attention: Permite a cada palabra relacionarse con todas las demás. Fundamental en Transformers.\nELMo: Considera todo el contexto de la oración para embeddings dinámicos.\nBERT: Arquitectura Transformer para embeddings contextuales, capturando contexto izquierdo y derecho.\n\n\nNotes"
-  },
-  {
-    "objectID": "posts/Presentaciones/LLMs.html#word-embeddings-embeddings-contextuales-1",
-    "href": "posts/Presentaciones/LLMs.html#word-embeddings-embeddings-contextuales-1",
-    "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
-    "section": "Word Embeddings: Embeddings Contextuales",
-    "text": "Word Embeddings: Embeddings Contextuales\nGeneran embeddings que varían según el contexto, capturando la polisemia.\n\nSelf-Attention: Permite a cada palabra relacionarse con todas las demás. Fundamental en Transformers.\nELMo: Considera todo el contexto de la oración para embeddings dinámicos.\nBERT: Arquitectura Transformer para embeddings contextuales, capturando contexto izquierdo y derecho.\n\n\nNotes"
-  },
-  {
-    "objectID": "posts/Presentaciones/LLMs.html#qué-son-los-kg",
-    "href": "posts/Presentaciones/LLMs.html#qué-son-los-kg",
-    "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
-    "section": "¿QUÉ SON LOS KG?",
-    "text": "¿QUÉ SON LOS KG?\n\nLos grafos de conocimiento son bases de datos inteligentes que representan el conocimiento médico de manera estructurada, permitiendo a la IA comprender y razonar sobre la información de forma más efectiva.\n\n\n\n\nLord of the rings\n\n\n\nNotes"
-  },
-  {
-    "objectID": "posts/Presentaciones/LLMs.html#componentes-principales-de-un-grafo-de-conocimiento",
-    "href": "posts/Presentaciones/LLMs.html#componentes-principales-de-un-grafo-de-conocimiento",
-    "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
-    "section": "Componentes principales de un grafo de conocimiento",
-    "text": "Componentes principales de un grafo de conocimiento\n\n\n\n\n\nNodos: Representan entidades, conceptos u objetos, como enfermedades, síntomas, genes o medicamentos.\nAristas: Representan las relaciones entre los nodos, como “causa”, “trata”, “se asocia con” o “es un tipo de”.\nEtiquetas: Proporcionan información adicional sobre los nodos y las aristas, como nombres, descripciones o atributos.\n\n\n\nNotes"
-  },
-  {
-    "objectID": "posts/Presentaciones/LLMs.html#beneficios-de-los-grafos-de-conocimiento",
-    "href": "posts/Presentaciones/LLMs.html#beneficios-de-los-grafos-de-conocimiento",
-    "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
-    "section": "Beneficios de los Grafos de Conocimiento",
-    "text": "Beneficios de los Grafos de Conocimiento\n\n\n\n\n\nPrecisión en el diagnóstico: Integración de información de diversas fuentes.\nPersonalización de tratamientos: Uso de información genómica, clínica y de estilo de vida.\nDescubrimiento de fármacos: Identificación de nuevas relaciones entre genes, proteínas y enfermedades.\n\n\n\nNotes"
-  },
-  {
-    "objectID": "posts/Presentaciones/LLMs.html#limitaciones-de-los-grafos-de-conocimiento",
-    "href": "posts/Presentaciones/LLMs.html#limitaciones-de-los-grafos-de-conocimiento",
-    "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
-    "section": "Limitaciones de los Grafos de Conocimiento",
-    "text": "Limitaciones de los Grafos de Conocimiento\n\n\n\n\n\nCalidad de los datos: La precisión y completitud son cruciales.\nEscalabilidad: Construcción y mantenimiento a gran escala pueden ser complejos.\nInteroperabilidad: Integración con otros sistemas y bases de datos puede ser un desafío.\n\n\n\nNotes"
-  },
-  {
-    "objectID": "posts/Presentaciones/LLMs.html#fine-tunning",
-    "href": "posts/Presentaciones/LLMs.html#fine-tunning",
-    "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
-    "section": "FINE-TUNNING",
-    "text": "FINE-TUNNING\n\nEl ajuste fino de un LLM es una técnica de aprendizaje por transferencia en la que se toma un modelo pre-entrenado con un gran conjunto de datos para una tarea general, y se realizan pequeños ajustes a sus parámetros internos para optimizar su rendimiento en una nueva tarea específica\n\n\n\n\n\n\n\nNotes"
-  },
-  {
-    "objectID": "posts/Presentaciones/LLMs.html#transfer-learning",
-    "href": "posts/Presentaciones/LLMs.html#transfer-learning",
-    "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
-    "section": "TRANSFER LEARNING",
-    "text": "TRANSFER LEARNING\n\n\nNotes"
-  },
-  {
-    "objectID": "posts/Presentaciones/LLMs.html#fine-tunning-esquema",
-    "href": "posts/Presentaciones/LLMs.html#fine-tunning-esquema",
-    "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
-    "section": "FINE-TUNNING (ESQUEMA)",
-    "text": "FINE-TUNNING (ESQUEMA)\n\n\nNotes"
-  },
-  {
-    "objectID": "posts/Presentaciones/LLMs.html#fine-tunning-esquema-1",
-    "href": "posts/Presentaciones/LLMs.html#fine-tunning-esquema-1",
-    "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
-    "section": "FINE-TUNNING (ESQUEMA)",
-    "text": "FINE-TUNNING (ESQUEMA)\n\n\nNotes"
-  },
-  {
-    "objectID": "posts/Presentaciones/LLMs.html#fine-tuning-demostración",
-    "href": "posts/Presentaciones/LLMs.html#fine-tuning-demostración",
-    "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
-    "section": "FINE-TUNING (DEMOSTRACIÓN)",
-    "text": "FINE-TUNING (DEMOSTRACIÓN)\n\n\n\n\n\nBioMistral/BioMistral-7B\nmistralai/Mistral-7B-Instruct-v0.1\n\nEjemplo\n\n\n\nNotes"
-  },
-  {
-    "objectID": "posts/Presentaciones/LLMs.html#rag-2020",
-    "href": "posts/Presentaciones/LLMs.html#rag-2020",
-    "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
-    "section": "RAG (2020)",
-    "text": "RAG (2020)\n\nVectorización del contenido: Cada fragmento de texto se convierte en un vector numérico utilizando un modelo de embeddings. Estos vectores representan el significado semántico del texto en un espacio multidimensional.\nBúsqueda de similitud: Cuando se realiza una consulta, esta también se vectoriza, y se busca en la base de datos vectorial los fragmentos cuyos vectores sean más cercanos al de la consulta (similaridad coseno, distancia euclidiana, etc.).\n\n\nNotes"
-  },
-  {
-    "objectID": "posts/Presentaciones/LLMs.html#esquema-rag",
-    "href": "posts/Presentaciones/LLMs.html#esquema-rag",
-    "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
-    "section": "ESQUEMA RAG",
-    "text": "ESQUEMA RAG\n\n\nNotes"
-  },
-  {
-    "objectID": "posts/Presentaciones/LLMs.html#fine-tunning-vs-rag",
-    "href": "posts/Presentaciones/LLMs.html#fine-tunning-vs-rag",
-    "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
-    "section": "FINE-TUNNING VS RAG",
-    "text": "FINE-TUNNING VS RAG\nhttps://notebooklm.google.com/notebook/d40fef92-ed62-4659-9b3e-0e5cde949f45 https://notebooklm.google.com/notebook/35c43bd2-d012-45fb-a514-aa2958b1fdda\n\n\n\n\nCaracterística\n\n\nFine-tuning\n\n\nRAG\n\n\n\n\nEnfoque principal\n\n\nAdaptación del modelo\n\n\nAumento de la información\n\n\n\n\nMétodo\n\n\nAjuste de parámetros\n\n\nRecuperación de información externa\n\n\n\n\nVentajas\n\n\nPersonalización del modelo, eficiencia\n\n\nRespuestas contextualmente relevantes, precisión\n\n\n\n\nLimitaciones\n\n\nDificultad con datos cambiantes, adaptación de estilo limitada\n\n\nAdaptación de estilo limitada, enfoque en recuperación\n\n\n\n\n\nNotes"
-  },
-  {
-    "objectID": "posts/Presentaciones/LLMs.html#fine-tunning-vs-rag-1",
-    "href": "posts/Presentaciones/LLMs.html#fine-tunning-vs-rag-1",
-    "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
-    "section": "FINE-TUNNING VS RAG",
-    "text": "FINE-TUNNING VS RAG\n\n\n\n\n\n\n\n\n\nFinne-tunning\n\n\n\n\n \n\n\n\n\n\nRAG\n\n\n\n\n\n\nNotes"
-  },
-  {
-    "objectID": "posts/Presentaciones/LLMs.html#ejemplo-rag",
-    "href": "posts/Presentaciones/LLMs.html#ejemplo-rag",
-    "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
-    "section": "Ejemplo RAG",
-    "text": "Ejemplo RAG\nPregunta:Basándote en la historia clínica proporcionada, ¿cuáles son los tres factores de riesgo cardiovascular más relevantes para la paciente María Pérez y por qué son importantes en este caso específico?\nHistoria mal estructurada\nHistoria bien estructurada"
-  },
-  {
-    "objectID": "posts/Presentaciones/LLMs.html#límites-de-los-llm-clásicos",
-    "href": "posts/Presentaciones/LLMs.html#límites-de-los-llm-clásicos",
-    "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
-    "section": "Límites de los LLM (Clásicos)",
-    "text": "Límites de los LLM (Clásicos)\n\nFalta de comprensión del mundo real: Un LLM podría tener dificultades para responder preguntas sobre eventos actuales, lugares geográficos o conceptos abstractos.\nSesgo: Los LLMs pueden perpetuar y amplificar los sesgos presentes en los datos de entrenamiento. Esto puede resultar en respuestas discriminatorias, ofensivas o estereotipadas. Es importante abordar el sesgo en los LLMs para garantizar la equidad y la inclusión en las aplicaciones de IA.\n\nIncapacidad para razonar: Un LLM podría tener dificultades para resolver un problema matemático o para comprender las relaciones causales entre diferentes eventos.\n\nNotes"
-  },
-  {
-    "objectID": "posts/Presentaciones/LLMs.html#límites-de-los-llm-clásicos-ii",
-    "href": "posts/Presentaciones/LLMs.html#límites-de-los-llm-clásicos-ii",
-    "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
-    "section": "Límites de los LLM (Clásicos) II",
-    "text": "Límites de los LLM (Clásicos) II\nDificultad para manejar información nueva o inesperada: Los LLMs se basan en los datos con los que fueron entrenados y pueden tener dificultades para procesar información nueva o inesperada. Esto puede llevar a respuestas inexactas o irrelevantes cuando se enfrentan a situaciones novedosas.\nDificultad con el lenguaje complejo: Los LLMs pueden tener dificultades para comprender y procesar el lenguaje complejo o matizado, como el sarcasmo, las metáforas y otras figuras retóricas..\nLimitaciones en la creatividad: Los LLMs pueden generar diferentes tipos de contenido creativo de formato textual, como poemas, guiones, piezas musicales y correos electrónicos. Sin embargo, su capacidad para producir contenido verdaderamente original y creativo es limitada.\n\nNotes"
-  },
-  {
-    "objectID": "posts/code/word_embeddings.html",
-    "href": "posts/code/word_embeddings.html",
-    "title": "Word Embeddings",
-    "section": "",
-    "text": "#@title Licensed under the Apache License, Version 2.0 (the \"License\");\n# you may not use this file except in compliance with the License.\n# You may obtain a copy of the License at\n#\n# https://www.apache.org/licenses/LICENSE-2.0\n#\n# Unless required by applicable law or agreed to in writing, software\n# distributed under the License is distributed on an \"AS IS\" BASIS,\n# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n# See the License for the specific language governing permissions and\n# limitations under the License.\nColab"
-  },
-  {
-    "objectID": "posts/code/word_embeddings.html#representación-de-texto-como-números",
-    "href": "posts/code/word_embeddings.html#representación-de-texto-como-números",
-    "title": "Word Embeddings",
-    "section": "Representación de texto como números",
-    "text": "Representación de texto como números\nLos modelos de aprendizaje automático toman vectores (matrices de números) como entrada. Cuando se trabaja con texto, lo primero que debes hacer es idear una estrategia para convertir cadenas en números (o “vectorizar” el texto) antes de introducirlo en el modelo. En esta sección, veremos tres estrategias para hacerlo.\n\nCodificaciones One-hot\nComo primera idea, podrías codificar cada palabra en tu vocabulario con “one-hot”. Considera la frase “El gato se sentó en el tapete”. El vocabulario (o palabras únicas) en esta frase es (gato, tapete, en, sentó, el). Para representar cada palabra, crearás un vector cero con una longitud igual al vocabulario y luego colocarás un uno en el índice que corresponde a la palabra. Este enfoque se muestra en el siguiente diagrama.\nPara crear un vector que contenga la codificación de la frase, podrías concatenar los vectores one-hot para cada palabra.\nPunto clave: Este enfoque es ineficiente. Un vector codificado con one-hot es disperso (es decir, la mayoría de los índices son cero). Imagina que tienes 10000 palabras en el vocabulario. Para codificar cada palabra con one-hot, crearías un vector donde el 99.99% de los elementos son cero.\n\n\n\nCodifica cada palabra con un número único\nUn segundo enfoque que podrías intentar es codificar cada palabra usando un número único. Continuando con el ejemplo anterior, podrías asignar 1 a “gato”, 2 a “tapete”, y así sucesivamente. Luego, podrías codificar la frase “El gato se sentó en el tapete” como un vector denso como [5, 1, 4, 3, 5, 2]. Este enfoque es eficiente. En lugar de un vector disperso, ahora tienes uno denso (donde todos los elementos están llenos).\nSin embargo, hay dos desventajas en este enfoque:\n\nLa codificación de enteros es arbitraria (no captura ninguna relación entre palabras).\nUna codificación de enteros puede ser difícil de interpretar para un modelo. Un clasificador lineal, por ejemplo, aprende un solo peso para cada característica. Debido a que no existe una relación entre la similitud de dos palabras y la similitud de sus codificaciones, esta combinación de peso de característica no tiene sentido.\n\n\n\nWord embeddings\nLos word embeddings nos brindan una forma de usar una representación eficiente y densa en la que palabras similares tienen una codificación similar. Es importante destacar que no tienes que especificar esta codificación manualmente. Una incrustación (embedding) es un vector denso de valores de punto flotante (la longitud del vector es un parámetro que especificas). En lugar de especificar los valores para la incrustación manualmente, son parámetros entrenables (pesos aprendidos por el modelo durante el entrenamiento, de la misma manera que un modelo aprende pesos para una capa densa). Es común ver word embeddings que son de 8 dimensiones (para conjuntos de datos pequeños), hasta 1024 dimensiones cuando se trabaja con conjuntos de datos grandes. Una incrustación de mayor dimensión puede capturar relaciones detalladas entre palabras, pero se necesitan más datos para aprender.\n\nArriba hay un diagrama para una incrustación de palabras (word embedding). Cada palabra se representa como un vector de 4 dimensiones de valores de punto flotante. Otra forma de pensar en una incrustación (embedding) es como una “tabla de búsqueda”. Después de que se han aprendido estos pesos, puedes codificar cada palabra buscando el vector denso al que corresponde en la tabla."
-  },
-  {
-    "objectID": "posts/code/word_embeddings.html#preparación",
-    "href": "posts/code/word_embeddings.html#preparación",
-    "title": "Word Embeddings",
-    "section": "Preparación",
-    "text": "Preparación\n\nimport io\nimport os\nimport re\nimport shutil\nimport string\nimport tensorflow as tf\n\nfrom tensorflow.keras import Sequential\nfrom tensorflow.keras.layers import Dense, Embedding, GlobalAveragePooling1D\nfrom tensorflow.keras.layers import TextVectorization\n\n\nDescargar el conjunto de datos IMDb\nUtilizaremos el Large Movie Review Dataset a lo largo del tutorial. Entrenarás un modelo clasificador de sentimientos en este conjunto de datos y en el proceso aprenderás word embeddings desde cero. Para leer más sobre cómo cargar un conjunto de datos desde cero, consulta el Loading text tutorial.\nDescarga el conjunto de datos usando la utilidad de archivos de Keras y echa un vistazo a los directorios.\n\nurl = \"https://ai.stanford.edu/~amaas/data/sentiment/aclImdb_v1.tar.gz\"\n\ndataset = tf.keras.utils.get_file(\"aclImdb_v1.tar.gz\", url,\n                                  untar=True, cache_dir='.',\n                                  cache_subdir='')\n\ndataset_dir = os.path.join(os.path.dirname(dataset), 'aclImdb')\nos.listdir(dataset_dir)\n\nEcha un vistazo al directorio train/. Tiene carpetas pos y neg con reseñas de películas etiquetadas como positivas y negativas, respectivamente. Utilizarás las reseñas de las carpetas pos y neg para entrenar un modelo de clasificación binaria.\n\ntrain_dir = os.path.join(dataset_dir, 'train')\nos.listdir(train_dir)\n\nThe train directory also has additional folders which should be removed before creating training dataset.\n\nremove_dir = os.path.join(train_dir, 'unsup')\nshutil.rmtree(remove_dir)\n\nA continuación, crea un tf.data.Dataset usando tf.keras.utils.text_dataset_from_directory. Puedes leer más sobre el uso de esta utilidad en este text classification tutorial.\nUtiliza el directorio train para crear conjuntos de datos de entrenamiento y validación con una división del 20% para la validación.\n\nbatch_size = 1024\nseed = 123\ntrain_ds = tf.keras.utils.text_dataset_from_directory(\n    'aclImdb/train', batch_size=batch_size, validation_split=0.2,\n    subset='training', seed=seed)\nval_ds = tf.keras.utils.text_dataset_from_directory(\n    'aclImdb/train', batch_size=batch_size, validation_split=0.2,\n    subset='validation', seed=seed)\n\nEcha un vistazo a algunas reseñas de películas y sus etiquetas (1: positivo, 0: negativo) del conjunto de datos de entrenamiento.\n\nfor text_batch, label_batch in train_ds.take(1):\n  for i in range(5):\n    print(label_batch[i].numpy(), text_batch.numpy()[i])\n\n\n\nConfigurar el conjunto de datos para el rendimiento\nEstos son dos métodos importantes que debes usar al cargar datos para asegurarte de que la E/S no se bloquee.\n.cache() mantiene los datos en la memoria después de que se cargan desde el disco. Esto asegurará que el conjunto de datos no se convierta en un cuello de botella mientras se entrena tu modelo. Si tu conjunto de datos es demasiado grande para caber en la memoria, también puedes usar este método para crear una caché en disco de alto rendimiento, que es más eficiente de leer que muchos archivos pequeños.\n.prefetch() superpone el preprocesamiento de datos y la ejecución del modelo durante el entrenamiento.\nPuedes obtener más información sobre ambos métodos, así como sobre cómo almacenar en caché los datos en el disco en la data performance guide.\n\nAUTOTUNE = tf.data.AUTOTUNE\n\ntrain_ds = train_ds.cache().prefetch(buffer_size=AUTOTUNE)\nval_ds = val_ds.cache().prefetch(buffer_size=AUTOTUNE)"
-  },
-  {
-    "objectID": "posts/code/word_embeddings.html#usando-la-capa-embedding",
-    "href": "posts/code/word_embeddings.html#usando-la-capa-embedding",
-    "title": "Word Embeddings",
-    "section": "Usando la capa Embedding",
-    "text": "Usando la capa Embedding\nKeras facilita el uso de word embeddings. Echa un vistazo a la capa Embedding.\nLa capa Embedding se puede entender como una tabla de búsqueda que mapea desde índices enteros (que representan palabras específicas) a vectores densos (sus incrustaciones - embeddings). La dimensionalidad (o ancho) de la incrustación es un parámetro con el que puedes experimentar para ver qué funciona bien para tu problema, de la misma manera que experimentarías con la cantidad de neuronas en una capa densa.\n\n# Embed a 1,000 word vocabulary into 5 dimensions.\nembedding_layer = tf.keras.layers.Embedding(1000, 5)\n\nCuando creas una capa Embedding, los pesos para la incrustación se inicializan aleatoriamente (como cualquier otra capa). Durante el entrenamiento, se ajustan gradualmente mediante retropropagación. Una vez entrenados, los word embeddings aprendidos codificarán aproximadamente las similitudes entre las palabras (ya que se aprendieron para el problema específico en el que se entrena tu modelo).\nSi pasas un entero a una capa Embedding, el resultado reemplaza cada entero con el vector de la tabla de incrustaciones:\n\nresult = embedding_layer(tf.constant([1, 2, 3]))\nresult.numpy()\n\nPara problemas de texto o secuencia, la capa Embedding toma un tensor 2D de enteros, de forma (muestras, longitud_de_secuencia), donde cada entrada es una secuencia de enteros. Puede incrustar secuencias de longitudes variables. Podrías alimentar a la capa de incrustación anterior lotes con formas (32, 10) (lote de 32 secuencias de longitud 10) or (64, 15) (lote de 64 secuencias de longitud 15).\nEl tensor devuelto tiene un eje más que la entrada, los vectores de incrustación se alinean a lo largo del nuevo último eje. Pásale un lote de entrada (2, 3) y la salida es (2, 3, N)\n\nresult = embedding_layer(tf.constant([[0, 1, 2], [3, 4, 5]]))\nresult.shape\n\nCuando se le da un lote de secuencias como entrada, una capa Embedding devuelve un tensor de punto flotante 3D, de forma (muestras, longitud_de_secuencia, dimensionalidad_de_la_incrustación). Para convertir de esta secuencia de longitud variable a una representación fija, hay una variedad de enfoques estándar. Podrías usar una RNN, Atención o una capa de agrupación antes de pasarla a una capa Densa. Este tutorial utiliza la agrupación porque es la más simple. ElText Classification with an RNN es un buen siguiente paso."
-  },
-  {
-    "objectID": "posts/code/word_embeddings.html#preprocesamiento-de-texto",
-    "href": "posts/code/word_embeddings.html#preprocesamiento-de-texto",
-    "title": "Word Embeddings",
-    "section": "Preprocesamiento de texto",
-    "text": "Preprocesamiento de texto\nA continuación, define los pasos de preprocesamiento del conjunto de datos necesarios para tu modelo de clasificación de sentimientos. Inicializa una capa TextVectorization con los parámetros deseados para vectorizar las reseñas de películas. Puedes obtener más información sobre el uso de esta capa en el tutorial Text Classification.\n\n# Create a custom standardization function to strip HTML break tags '&lt;br /&gt;'.\ndef custom_standardization(input_data):\n  lowercase = tf.strings.lower(input_data)\n  stripped_html = tf.strings.regex_replace(lowercase, '&lt;br /&gt;', ' ')\n  return tf.strings.regex_replace(stripped_html,\n                                  '[%s]' % re.escape(string.punctuation), '')\n\n\n# Vocabulary size and number of words in a sequence.\nvocab_size = 10000\nsequence_length = 100\n\n# Use the text vectorization layer to normalize, split, and map strings to\n# integers. Note that the layer uses the custom standardization defined above.\n# Set maximum_sequence length as all samples are not of the same length.\nvectorize_layer = TextVectorization(\n    standardize=custom_standardization,\n    max_tokens=vocab_size,\n    output_mode='int',\n    output_sequence_length=sequence_length)\n\n# Make a text-only dataset (no labels) and call adapt to build the vocabulary.\ntext_ds = train_ds.map(lambda x, y: x)\nvectorize_layer.adapt(text_ds)"
-  },
-  {
-    "objectID": "posts/code/word_embeddings.html#crea-un-modelo-de-clasificación",
-    "href": "posts/code/word_embeddings.html#crea-un-modelo-de-clasificación",
-    "title": "Word Embeddings",
-    "section": "Crea un modelo de clasificación",
-    "text": "Crea un modelo de clasificación\nUtiliza la Keras Sequential API para definir el modelo de clasificación de sentimientos. En este caso, es un modelo de estilo “bolsa de palabras continua”. * La capa TextVectorization transforma cadenas en índices de vocabulario. Ya has inicializado vectorize_layer como una capa TextVectorization y has creado su vocabulario llamando a adapt en text_ds. Ahora vectorize_layer se puede utilizar como la primera capa de tu modelo de clasificación de extremo a extremo, alimentando cadenas transformadas en la capa. * La capa Embedding toma el vocabulario codificado en enteros y busca el vector de incrustación (embedding) para cada índice de palabra. Estos vectores se aprenden a medida que se entrena el modelo. Los vectores agregan una dimensión a la matriz de salida. Las dimensiones resultantes son: (batch, sequence, embedding).\n\nLa capa GlobalAveragePooling1D devuelve un vector de salida de longitud fija para cada ejemplo promediando sobre la dimensión de la secuencia. Esto permite que el modelo maneje la entrada de longitud variable, de la manera más simple posible.\nEl vector de salida de longitud fija se canaliza a través de una capa completamente conectada (Dense) con 16 unidades ocultas.\nLa última capa está densamente conectada con un solo nodo de salida.\n\nPrecaución: Este modelo no utiliza enmascaramiento, por lo que el relleno de ceros se utiliza como parte de la entrada y, por lo tanto, la longitud del relleno puede afectar la salida. Para solucionar esto, consulta masking and padding guide.\n\nembedding_dim=16\n\nmodel = Sequential([\n  vectorize_layer,\n  Embedding(vocab_size, embedding_dim, name=\"embedding\"),\n  GlobalAveragePooling1D(),\n  Dense(16, activation='relu'),\n  Dense(1)\n])"
-  },
-  {
-    "objectID": "posts/code/word_embeddings.html#compila-y-entrena-el-modelo",
-    "href": "posts/code/word_embeddings.html#compila-y-entrena-el-modelo",
-    "title": "Word Embeddings",
-    "section": "Compila y entrena el modelo",
-    "text": "Compila y entrena el modelo\nUtilizarás TensorBoard ara visualizar métricas, incluidas la pérdida y la precisión. Crea un tf.keras.callbacks.TensorBoard.\n\ntensorboard_callback = tf.keras.callbacks.TensorBoard(log_dir=\"logs\")\n\nCompila y entrena el modelo utilizando el optimizador Adam y la pérdida BinaryCrossentropy.\n\nmodel.compile(optimizer='adam',\n              loss=tf.keras.losses.BinaryCrossentropy(from_logits=True),\n              metrics=['accuracy'])\n\n\nmodel.fit(\n    train_ds,\n    validation_data=val_ds,\n    epochs=15,\n    callbacks=[tensorboard_callback])\n\nCon este enfoque, el modelo alcanza una precisión de validación de alrededor del 78% (ten en cuenta que el modelo está sobreajustado ya que la precisión del entrenamiento es mayor).\nNota: Tus resultados pueden ser un poco diferentes, dependiendo de cómo se inicializaron aleatoriamente los pesos antes de entrenar la capa Embedding.\nPuedes consultar el resumen del modelo para obtener más información sobre cada capa del modelo.\n\nmodel.summary()\n\nVisualiza las métricas del modelo en TensorBoard.\n\n#docs_infra: no_execute\n%load_ext tensorboard\n%tensorboard --logdir logs\n\n\n\n\nembeddings_classifier_accuracy.png"
-  },
-  {
-    "objectID": "posts/code/word_embeddings.html#recupere-las-incrustaciones-de-palabras-entrenadas-y-guárdelas-en-el-disco",
-    "href": "posts/code/word_embeddings.html#recupere-las-incrustaciones-de-palabras-entrenadas-y-guárdelas-en-el-disco",
-    "title": "Word Embeddings",
-    "section": "Recupere las incrustaciones de palabras entrenadas y guárdelas en el disco",
-    "text": "Recupere las incrustaciones de palabras entrenadas y guárdelas en el disco\nA continuación, recupere las incrustaciones de palabras aprendidas durante el entrenamiento. Las incrustaciones son pesos de la capa de incrustación en el modelo. La matriz de ponderaciones tiene la forma (vocab_size, embedding_dimension) .\nObtenga los pesos del modelo usando get_layer() y get_weights() . La función get_vocabulary() proporciona el vocabulario para crear un archivo de metadatos con un token por línea.\n\nweights = model.get_layer('embedding').get_weights()[0]\nvocab = vectorize_layer.get_vocabulary()\n\nEscriba los pesos en el disco. Para utilizar el proyector de incrustaciones , deberá cargar dos archivos en formato separado por tabulaciones: un archivo de vectores (que contiene la incrustación) y un archivo de metadatos (que contiene las palabras).\n\nout_v = io.open('vectors.tsv', 'w', encoding='utf-8')\nout_m = io.open('metadata.tsv', 'w', encoding='utf-8')\n\nfor index, word in enumerate(vocab):\n  if index == 0:\n    continue  # skip 0, it's padding.\n  vec = weights[index]\n  out_v.write('\\t'.join([str(x) for x in vec]) + \"\\n\")\n  out_m.write(word + \"\\n\")\nout_v.close()\nout_m.close()\n\nSi está ejecutando este tutorial en Colaboratory , puede usar el siguiente fragmento para descargar estos archivos a su máquina local (o usar el explorador de archivos, Ver -&gt; Tabla de contenido -&gt; Explorador de archivos ).\n\ntry:\n  from google.colab import files\n  files.download('vectors.tsv')\n  files.download('metadata.tsv')\nexcept Exception:\n  pass"
-  },
-  {
-    "objectID": "posts/code/word_embeddings.html#visualiza-las-incrustaciones",
-    "href": "posts/code/word_embeddings.html#visualiza-las-incrustaciones",
-    "title": "Word Embeddings",
-    "section": "Visualiza las incrustaciones",
-    "text": "Visualiza las incrustaciones\nPara visualizar las incrustaciones, súbalas al proyector de incrustaciones.\nAbra el Embedding Projector (esto también se puede ejecutar en una instancia local de TensorBoard)).\n\nHaga clic en “Cargar datos”.\nCargue los dos archivos que creó anteriormente: vecs.tsv and meta.tsv.\n\nAhora se mostrarán las incrustaciones que ha entrenado. Puede buscar palabras para encontrar a sus vecinos más cercanos. Por ejemplo, intente buscar “hermoso”. Es posible que vea vecinos como “maravilloso”.\nNota: Experimentalmente, es posible que pueda producir incrustaciones más interpretables mediante el uso de un modelo más simple. Intente eliminar la capa Dense(16) , vuelva a entrenar el modelo y visualice las incrustaciones nuevamente.\nNota: Por lo general, se necesita un conjunto de datos mucho más grande para entrenar incrustaciones de palabras más interpretables. Este tutorial utiliza un pequeño conjunto de datos de IMDb con fines de demostración."
-  },
-  {
-    "objectID": "posts/code/word_embeddings.html#próximos-pasos",
-    "href": "posts/code/word_embeddings.html#próximos-pasos",
-    "title": "Word Embeddings",
-    "section": "Próximos pasos",
-    "text": "Próximos pasos\nEste tutorial le ha mostrado cómo entrenar y visualizar incrustaciones de palabras desde cero en un pequeño conjunto de datos.\n\nPara entrenar incrustaciones de palabras usando el algoritmo de Word2Vec, pruebe el tutorial deWord2Vec .\nPara obtener más información sobre el procesamiento de texto avanzado, lea el modelo de Transformer para la comprensión del lenguaje."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Intel·ligència artificial en medicina",
-    "section": "",
-    "text": "TEXTO DATOS E IMAGEN\n\n\n\n\n\n\nIntroducción\n\n\n\n\n\n\n\n\n\n12 feb 2025\n\n\nAntonio Otal Palacín\n\n\n\n\n\n\n\n\n\n\n\n\nLARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO\n\n\n\n\n\n\nPresentación\n\n\n\n\n\n\n\n\n\n12 feb 2025\n\n\nAntonio Otal Palacín\n\n\n\n\n\n\n\n\n\n\n\n\nEmbeddings\n\n\n\n\n\n\nColab\n\n\n\n\n\n\n\n\n\n19 feb 2024\n\n\n\n\n\n\n\n\n\n\n\n\nWord Embeddings\n\n\n\n\n\n\nColab\n\n\n\n\n\n\n\n\n\n12 feb 2024\n\n\n\n\n\n\nNo hay resultados"
-  },
-  {
-    "objectID": "pre-post/Presentaciones/Datos_1.html#índice",
-    "href": "pre-post/Presentaciones/Datos_1.html#índice",
+    "objectID": "posts/Presentaciones/Datos_1.html#índice",
+    "href": "posts/Presentaciones/Datos_1.html#índice",
     "title": "Datos en el ámbito de la salud",
     "section": "Índice",
-    "text": "Índice\n\nIntroducción\nClasificación de los datos\nAnotación de datos\nPrivacidad y confidencialidad\nRegistros electrónicos de salud\nPreprocesado de datos médicos\nVectorizaciones (Embeddings)\nRadiómica (Radiomics)\n\n\nNotes"
+    "text": "Índice\n\nIntroducción\nClasificación de los datos\nBases de datos\nAnotación de datos\nPrivacidad y confidencialidad\nRegistros electrónicos de salud\nPreprocesado de datos médicos\nRadiómica (Radiomics)\n\n\nNotes"
   },
   {
-    "objectID": "pre-post/Presentaciones/Datos_1.html#disponibilidad-masiva-de-datos",
-    "href": "pre-post/Presentaciones/Datos_1.html#disponibilidad-masiva-de-datos",
+    "objectID": "posts/Presentaciones/Datos_1.html#disponibilidad-masiva-de-datos",
+    "href": "posts/Presentaciones/Datos_1.html#disponibilidad-masiva-de-datos",
     "title": "Datos en el ámbito de la salud",
     "section": "Disponibilidad masiva de datos",
     "text": "Disponibilidad masiva de datos\n\n\nNotes"
   },
   {
-    "objectID": "pre-post/Presentaciones/Datos_1.html#machine-learning",
-    "href": "pre-post/Presentaciones/Datos_1.html#machine-learning",
+    "objectID": "posts/Presentaciones/Datos_1.html#machine-learning",
+    "href": "posts/Presentaciones/Datos_1.html#machine-learning",
     "title": "Datos en el ámbito de la salud",
     "section": "Machine learning",
     "text": "Machine learning\n\n\nNotes"
   },
   {
-    "objectID": "pre-post/Presentaciones/Datos_1.html#problema-con-los-datos",
-    "href": "pre-post/Presentaciones/Datos_1.html#problema-con-los-datos",
+    "objectID": "posts/Presentaciones/Datos_1.html#problema-con-los-datos",
+    "href": "posts/Presentaciones/Datos_1.html#problema-con-los-datos",
     "title": "Datos en el ámbito de la salud",
     "section": "Problema con los datos",
     "text": "Problema con los datos\n\n\nNotes"
   },
   {
-    "objectID": "pre-post/Presentaciones/Datos_1.html#por-tipos-de-datos",
-    "href": "pre-post/Presentaciones/Datos_1.html#por-tipos-de-datos",
+    "objectID": "posts/Presentaciones/Datos_1.html#por-tipos-de-datos",
+    "href": "posts/Presentaciones/Datos_1.html#por-tipos-de-datos",
     "title": "Datos en el ámbito de la salud",
     "section": "Por tipos de datos",
     "text": "Por tipos de datos\n\n\n\nDatos estructurados\nDatos no estructurados\nDatos semiestructurados\n\n\n\n\n\n\n\n\n\nNotes"
   },
   {
-    "objectID": "pre-post/Presentaciones/Datos_1.html#datos-estructurados",
-    "href": "pre-post/Presentaciones/Datos_1.html#datos-estructurados",
+    "objectID": "posts/Presentaciones/Datos_1.html#datos-estructurados",
+    "href": "posts/Presentaciones/Datos_1.html#datos-estructurados",
     "title": "Datos en el ámbito de la salud",
     "section": "Datos estructurados",
     "text": "Datos estructurados\n\n\n\n\n\n\n\n\n\n\n\nA_id\nSize\nWeight\nSweetness\nCrunchiness\nJuiciness\nRipeness\nAcidity\nQuality\n\n\n\n\n0\n0.0\n-3.970049\n-2.512336\n5.346330\n-1.012009\n1.844900\n0.329840\n-0.491590483\ngood\n\n\n1\n1.0\n-1.195217\n-2.839257\n3.664059\n1.588232\n0.853286\n0.867530\n-0.722809367\ngood\n\n\n2\n2.0\n-0.292024\n-1.351282\n-1.738429\n-0.342616\n2.838636\n-0.038033\n2.621636473\nbad\n\n\n3\n3.0\n-0.657196\n-2.271627\n1.324874\n-0.097875\n3.637970\n-3.413761\n0.790723217\ngood\n\n\n4\n4.0\n1.364217\n-1.296612\n-0.384658\n-0.553006\n3.030874\n-1.303849\n0.501984036\ngood\n\n\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n\n\n3996\n3996.0\n-0.293118\n1.949253\n-0.204020\n-0.640196\n0.024523\n-1.087900\n1.854235285\ngood\n\n\n3997\n3997.0\n-2.634515\n-2.138247\n-2.440461\n0.657223\n2.199709\n4.763859\n-1.334611391\nbad\n\n\n3998\n3998.0\n-4.008004\n-1.779337\n2.366397\n-0.200329\n2.161435\n0.214488\n-2.229719806\ngood\n\n\n3999\n3999.0\n0.278540\n-1.715505\n0.121217\n-1.154075\n1.266677\n-0.776571\n1.599796456\ngood\n\n\n4000\nNaN\nNaN\nNaN\nNaN\nNaN\nNaN\nNaN\nCreated_by_Nidula_Elgiriyewithana\nNaN\n\n\n\n\n4001 rows × 9 columns\n\n\n\n\n\n\n\n\n\n\n\nNotes"
   },
   {
-    "objectID": "pre-post/Presentaciones/Datos_1.html#ejemplos-de-datos-estructurados",
-    "href": "pre-post/Presentaciones/Datos_1.html#ejemplos-de-datos-estructurados",
+    "objectID": "posts/Presentaciones/Datos_1.html#ejemplos-de-datos-estructurados",
+    "href": "posts/Presentaciones/Datos_1.html#ejemplos-de-datos-estructurados",
     "title": "Datos en el ámbito de la salud",
     "section": "Ejemplos de datos estructurados",
     "text": "Ejemplos de datos estructurados\n\nRegistros Electrónicos de Salud\nDatos de Laboratorio Clínico"
   },
   {
-    "objectID": "pre-post/Presentaciones/Datos_1.html#datos-no-estructurados",
-    "href": "pre-post/Presentaciones/Datos_1.html#datos-no-estructurados",
+    "objectID": "posts/Presentaciones/Datos_1.html#datos-no-estructurados",
+    "href": "posts/Presentaciones/Datos_1.html#datos-no-estructurados",
     "title": "Datos en el ámbito de la salud",
     "section": "Datos no estructurados",
     "text": "Datos no estructurados\n\n\n\nTexto\nImágenes\nAudio\nVideo\n…\n\n\n\n\n\nNotes"
   },
   {
-    "objectID": "pre-post/Presentaciones/Datos_1.html#datos-semiestructurados",
-    "href": "pre-post/Presentaciones/Datos_1.html#datos-semiestructurados",
+    "objectID": "posts/Presentaciones/Datos_1.html#datos-semiestructurados",
+    "href": "posts/Presentaciones/Datos_1.html#datos-semiestructurados",
     "title": "Datos en el ámbito de la salud",
     "section": "Datos semiestructurados",
     "text": "Datos semiestructurados\n\n\n\n\n\n\n\nNotes"
   },
   {
-    "objectID": "pre-post/Presentaciones/Datos_1.html#por-naturaleza-de-los-datos",
-    "href": "pre-post/Presentaciones/Datos_1.html#por-naturaleza-de-los-datos",
+    "objectID": "posts/Presentaciones/Datos_1.html#por-naturaleza-de-los-datos",
+    "href": "posts/Presentaciones/Datos_1.html#por-naturaleza-de-los-datos",
     "title": "Datos en el ámbito de la salud",
     "section": "Por naturaleza de los datos",
     "text": "Por naturaleza de los datos\n\nCategóricos\nNuméricos\nTemporales\nEspaciales\n\n\nNotes"
   },
   {
-    "objectID": "pre-post/Presentaciones/Datos_1.html#por-granularidad-de-los-datos",
-    "href": "pre-post/Presentaciones/Datos_1.html#por-granularidad-de-los-datos",
+    "objectID": "posts/Presentaciones/Datos_1.html#por-granularidad-de-los-datos",
+    "href": "posts/Presentaciones/Datos_1.html#por-granularidad-de-los-datos",
     "title": "Datos en el ámbito de la salud",
     "section": "Por granularidad de los datos",
     "text": "Por granularidad de los datos\n\nDatos a nivel de instancia: Datos individuales que representan observaciones o eventos específicos, como registros de pacientes o imágenes médicas.\nDatos a nivel de atributo: Datos que representan características o atributos de las instancias, como la edad, el peso o los síntomas clínicos.\n\n\nNotes"
   },
   {
-    "objectID": "pre-post/Presentaciones/Datos_1.html#fuente-de-los-datos",
-    "href": "pre-post/Presentaciones/Datos_1.html#fuente-de-los-datos",
+    "objectID": "posts/Presentaciones/Datos_1.html#fuente-de-los-datos",
+    "href": "posts/Presentaciones/Datos_1.html#fuente-de-los-datos",
     "title": "Datos en el ámbito de la salud",
     "section": "Fuente de los datos",
     "text": "Fuente de los datos\n\nDatos primarios: Datos recopilados directamente de la fuente original, como registros médicos electrónicos (EHR) o resultados de pruebas de laboratorio.\nDatos secundarios: Datos que han sido recopilados o procesados por terceros, como conjuntos de datos disponibles en repositorios públicos o bases de datos comerciales.\n\n\nNotes"
   },
   {
-    "objectID": "pre-post/Presentaciones/Datos_1.html#datos-anotados-vs-no-anotados",
-    "href": "pre-post/Presentaciones/Datos_1.html#datos-anotados-vs-no-anotados",
+    "objectID": "posts/Presentaciones/Datos_1.html#datos-anotados-vs-no-anotados",
+    "href": "posts/Presentaciones/Datos_1.html#datos-anotados-vs-no-anotados",
     "title": "Datos en el ámbito de la salud",
     "section": "Datos anotados vs no anotados",
     "text": "Datos anotados vs no anotados\n\nEstructura semántica: Los datos anotados tienen metadatos adicionales que proporcionan contexto y significado, como las etiquetas que marcan entidades nombradas.\nInteroperabilidad y procesabilidad: Los datos anotados son más interoperables y procesables, lo que facilita su integración con otros sistemas y su procesamiento automatizado.\nFacilidad de búsqueda y recuperación: Los datos anotados son más fáciles de buscar y recuperar, ya que las anotaciones permiten identificar elementos específicos.\n\n\nNotes"
   },
   {
-    "objectID": "pre-post/Presentaciones/Datos_1.html#qué-es-la-anotación-de-datos",
-    "href": "pre-post/Presentaciones/Datos_1.html#qué-es-la-anotación-de-datos",
+    "objectID": "posts/Presentaciones/Datos_1.html#introducción-a-las-bases-de-datos",
+    "href": "posts/Presentaciones/Datos_1.html#introducción-a-las-bases-de-datos",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Introducción a las Bases de Datos",
+    "text": "Introducción a las Bases de Datos\n\nLas bases de datos son herramientas fundamentales en el mundo digital actual. Permiten almacenar, organizar y acceder a grandes cantidades de información de manera eficiente… Desde las redes sociales hasta las instituciones financieras, las bases de datos son esenciales para el funcionamiento de innumerables aplicaciones y sistemas.\nUna base de datos es, en esencia, una colección organizada de información estructurada, almacenada electrónicamente en un sistema informático… Esta información puede incluir cualquier tipo de datos, como texto, números, imágenes, videos y archivos…\nPara crear, editar y mantener los archivos y registros de una base de datos, se utiliza un software de base de datos, también llamado sistema de gestión de bases de datos (DBMS). Un DBMS actúa como intermediario entre la base de datos y los usuarios o programas que la utilizan, permitiendo realizar operaciones como agregar, modificar, eliminar y organizar datos.\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#tipos-de-bases-de-datos",
+    "href": "posts/Presentaciones/Datos_1.html#tipos-de-bases-de-datos",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Tipos de Bases de Datos",
+    "text": "Tipos de Bases de Datos\nExisten diferentes tipos de bases de datos, cada una con sus propias características y usos. Algunos de los tipos más comunes son:\n\nRelacionales\nNoSQL\nOrientadas a Objetos\nGrafos (KG)\nVectoriales\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#bases-de-datos-relacionalesrdbms",
+    "href": "posts/Presentaciones/Datos_1.html#bases-de-datos-relacionalesrdbms",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Bases de Datos Relacionales(RDBMS)",
+    "text": "Bases de Datos Relacionales(RDBMS)\n\nModelo: Datos organizados en tablas con filas (registros) y columnas (atributos).\nEsquema: Rígido. La estructura se define antes de insertar datos.\nRelaciones: Explícitas, a través de claves primarias y claves foráneas.\nLenguaje: SQL (Structured Query Language).\nEjemplos: MySQL, PostgreSQL, Oracle, SQL Server, MariaDB.\nVentajas:\n\nMadurez, amplia adopción y gran cantidad de herramientas.\nFuertes garantías ACID (Atomicidad, Consistencia, Aislamiento, Durabilidad).\nIdeal para datos estructurados y transacciones.\n\nDesventajas:\n\nLa escalabilidad vertical puede ser costosa (sistemas monoservidor).\nDificultad para manejar datos no estructurados o semiestructurados a gran escala.\n\n\n\nLas transacciones ACID son un conjunto de cuatro propiedades (Atomicidad, Consistencia, Aislamiento y Durabilidad) que garantizan la fiabilidad de las operaciones en una base de datos. Atomicidad asegura que una transacción se ejecute completa o no se ejecute; Consistencia mantiene la validez de los datos según las reglas definidas; Aislamiento evita interferencias entre transacciones concurrentes; y Durabilidad asegura que los cambios sean permanentes incluso ante fallos. En esencia, ACID proporciona un mecanismo para que las bases de datos manejen operaciones de forma segura y predecible, manteniendo la integridad de los datos en todo momento, siendo fundamental en aplicaciones donde la precisión y la fiabilidad son críticas."
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#bases-de-datos-nosql",
+    "href": "posts/Presentaciones/Datos_1.html#bases-de-datos-nosql",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Bases de Datos NoSQL",
+    "text": "Bases de Datos NoSQL\n\nModelo: Alternativas al modelo tabular.\nEsquema: Flexible o sin esquema. Mayor adaptabilidad a cambios en los datos.\nRelaciones: Implícitas o mediante referencias (varía según el tipo).\nLenguaje: Algunas usan lenguajes tipo SQL, otras APIs.\nVentajas:\n\nEscalabilidad horizontal (más fácil y económico añadir servidores).\nFlexibilidad para datos no estructurados, semiestructurados o cambiantes.\nAlto rendimiento para ciertas operaciones (lectura/escritura rápida).\n\nDesventajas:Generalmente, menor soporte para transacciones ACID completas (En general las documentales). Mayor complejidad en consultas complejas que requieran “unir” datos.\n\n\n(Application Programming Interface)"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#nosql-documentales",
+    "href": "posts/Presentaciones/Datos_1.html#nosql-documentales",
+    "title": "Datos en el ámbito de la salud",
+    "section": "NoSQL: Documentales",
+    "text": "NoSQL: Documentales\n\nModelo: Documentos (JSON o BSON). Colecciones de pares clave-valor.\nEjemplos: MongoDB, Couchbase, Amazon DocumentDB.\nCasos de Uso:\n\nAplicaciones web y móviles.\nGestión de contenido (CMS).\nCatálogos de productos.\nDatos de sesión.\n\nVentajas:\n\nFlexibilidad para esquemas cambiantes.\nBuena escalabilidad horizontal.\nDesarrollo ágil.\n\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#nosql-clave-valor",
+    "href": "posts/Presentaciones/Datos_1.html#nosql-clave-valor",
+    "title": "Datos en el ámbito de la salud",
+    "section": "NoSQL: Clave-Valor",
+    "text": "NoSQL: Clave-Valor\n\nModelo: Pares clave-valor. El tipo más simple de NoSQL.\nEjemplos: Redis, Memcached, Amazon DynamoDB (con capacidades clave-valor).\nCasos de Uso: Caché (almacenamiento temporal de datos de acceso frecuente), gestión de sesiones, contadores.\nVentajas: Extremadamente rápidas para búsquedas por clave, alta escalabilidad.\nDesventajas: Funcionalidad muy limitada más allá de la búsqueda por clave.\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#nosql-columnares",
+    "href": "posts/Presentaciones/Datos_1.html#nosql-columnares",
+    "title": "Datos en el ámbito de la salud",
+    "section": "NoSQL: Columnares",
+    "text": "NoSQL: Columnares\n\nModelo: Columnar. Almacenamiento optimizado por columnas, no por filas.\nEjemplos: Cassandra, HBase, Google Cloud Bigtable.\nCasos de Uso: Big Data y análisis, series temporales, aplicaciones con alta carga de escritura.\nVentajas: Eficientes para leer un subconjunto de columnas de muchas filas, compresión eficiente, escalabilidad horizontal.\nDesventajas: Menos eficientes para leer filas completas.\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#nosql-de-grafos-kg",
+    "href": "posts/Presentaciones/Datos_1.html#nosql-de-grafos-kg",
+    "title": "Datos en el ámbito de la salud",
+    "section": "NoSQL: De Grafos (KG)",
+    "text": "NoSQL: De Grafos (KG)\n\nModelo: Grafos (nodos y aristas). Representan entidades y relaciones.\nEjemplos: Neo4j, Amazon Neptune, JanusGraph.\nCasos de Uso: Redes sociales, sistemas de recomendación, análisis de fraude, gestión del conocimiento.\nVentajas: Optimizadas para consultar y explorar relaciones, lenguajes de consulta especializados (Cypher, Gremlin).\nDesventajas: Pueden ser menos eficientes si las relaciones no son el foco principal de las consultas.\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#bases-de-datos-orientadas-a-objetos",
+    "href": "posts/Presentaciones/Datos_1.html#bases-de-datos-orientadas-a-objetos",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Bases de Datos Orientadas a Objetos",
+    "text": "Bases de Datos Orientadas a Objetos\n\nModelo: Objetos (atributos y métodos). Integración con la POO.\nEsquema: Definido por clases.\nLenguaje: Extensiones de lenguajes de POO o lenguajes específicos.\nEjemplos: db4o, ObjectDB, Versant.\nCasos de Uso (Nichos): CAD/CAM,Modelado científico y Multimedia.\nVentajas: Buena integración con POO, manejo de objetos complejos.\nDesventajas: Menor adopción que RDBMS y NoSQL, falta de estandarización como SQL.\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#bases-de-datos-vectoriales",
+    "href": "posts/Presentaciones/Datos_1.html#bases-de-datos-vectoriales",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Bases de Datos Vectoriales",
+    "text": "Bases de Datos Vectoriales\n\nModelo: Vectores de alta dimensión (embeddings).\nEsquema: Flexible (dimensión fija del vector, datos originales variables).\nLenguaje: APIs y, a veces, extensiones de SQL.\nEjemplos: Pinecone, Weaviate, Qdrant, Milvus, Faiss, Chroma.\nCasos de Uso: Búsqueda semántica, sistemas de recomendación, RAG (Retrieval-Augmented Generation) para LLMs, Detección de anomalías.\nVentajas: Búsqueda por similitud, algoritmos ANN (Approximate Nearest Neighbor), optimizadas para altas dimensiones.\nDesventajas: Tecnología relativamente nueva, generalmente no ofrecen transacciones ACID completas.\n\n\nLas transacciones ACID son un conjunto de cuatro propiedades (Atomicidad, Consistencia, Aislamiento y Durabilidad) que garantizan la fiabilidad de las operaciones en una base de datos. Atomicidad asegura que una transacción se ejecute completa o no se ejecute; Consistencia mantiene la validez de los datos según las reglas definidas; Aislamiento evita interferencias entre transacciones concurrentes; y Durabilidad asegura que los cambios sean permanentes incluso ante fallos. En esencia, ACID proporciona un mecanismo para que las bases de datos manejen operaciones de forma segura y predecible, manteniendo la integridad de los datos en todo momento, siendo fundamental en aplicaciones donde la precisión y la fiabilidad son críticas."
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#la-elección-de-una-base-de-datos-depende-de",
+    "href": "posts/Presentaciones/Datos_1.html#la-elección-de-una-base-de-datos-depende-de",
+    "title": "Datos en el ámbito de la salud",
+    "section": "La elección de una base de datos depende de:",
+    "text": "La elección de una base de datos depende de:\n\nLa estructura de los datos.\nLas necesidades de la aplicación (escalabilidad, transacciones, etc.).\nEl tipo de consultas que se realizarán.\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#qué-es-la-anotación-de-datos",
+    "href": "posts/Presentaciones/Datos_1.html#qué-es-la-anotación-de-datos",
     "title": "Datos en el ámbito de la salud",
     "section": "¿Qué es la anotación de datos?",
     "text": "¿Qué es la anotación de datos?\nLa anotación de datos es el proceso de atribución o etiquetado de datos para ayudar a los algoritmos de aprendizaje automático a comprender y clasificar la información que procesan.\n\nTexto\nImágenes\nAudio\nVideo"
   },
   {
-    "objectID": "pre-post/Presentaciones/Datos_1.html#anotación-de-imágenes",
-    "href": "pre-post/Presentaciones/Datos_1.html#anotación-de-imágenes",
+    "objectID": "posts/Presentaciones/Datos_1.html#anotación-de-imágenes",
+    "href": "posts/Presentaciones/Datos_1.html#anotación-de-imágenes",
     "title": "Datos en el ámbito de la salud",
     "section": "Anotación de imágenes",
     "text": "Anotación de imágenes\n\n\n\nClasificación\nReconocimiento/Detección\nSegmentación\n\n\n\nVGG"
   },
   {
-    "objectID": "pre-post/Presentaciones/Datos_1.html#anotación-de-audio",
-    "href": "pre-post/Presentaciones/Datos_1.html#anotación-de-audio",
+    "objectID": "posts/Presentaciones/Datos_1.html#anotación-de-audio",
+    "href": "posts/Presentaciones/Datos_1.html#anotación-de-audio",
     "title": "Datos en el ámbito de la salud",
     "section": "Anotación de audio",
     "text": "Anotación de audio"
   },
   {
-    "objectID": "pre-post/Presentaciones/Datos_1.html#anotación-de-video",
-    "href": "pre-post/Presentaciones/Datos_1.html#anotación-de-video",
+    "objectID": "posts/Presentaciones/Datos_1.html#anotación-de-video",
+    "href": "posts/Presentaciones/Datos_1.html#anotación-de-video",
     "title": "Datos en el ámbito de la salud",
     "section": "Anotación de video",
     "text": "Anotación de video"
   },
   {
-    "objectID": "pre-post/Presentaciones/Datos_1.html#anotación-de-texto",
-    "href": "pre-post/Presentaciones/Datos_1.html#anotación-de-texto",
+    "objectID": "posts/Presentaciones/Datos_1.html#anotación-de-texto",
+    "href": "posts/Presentaciones/Datos_1.html#anotación-de-texto",
     "title": "Datos en el ámbito de la salud",
     "section": "Anotación de texto",
     "text": "Anotación de texto\n\n\n\nSemántica\nIntención\nOpinión\n\ntabula"
   },
   {
-    "objectID": "pre-post/Presentaciones/Datos_1.html#antecedentes",
-    "href": "pre-post/Presentaciones/Datos_1.html#antecedentes",
+    "objectID": "posts/Presentaciones/Datos_1.html#antecedentes",
+    "href": "posts/Presentaciones/Datos_1.html#antecedentes",
     "title": "Datos en el ámbito de la salud",
     "section": "Antecedentes",
     "text": "Antecedentes\n\n\n\n\n\n\n\nNotes"
   },
   {
-    "objectID": "pre-post/Presentaciones/Datos_1.html#problemas-de-la-historia-clínica-en-papel",
-    "href": "pre-post/Presentaciones/Datos_1.html#problemas-de-la-historia-clínica-en-papel",
+    "objectID": "posts/Presentaciones/Datos_1.html#problemas-de-la-historia-clínica-en-papel",
+    "href": "posts/Presentaciones/Datos_1.html#problemas-de-la-historia-clínica-en-papel",
     "title": "Datos en el ámbito de la salud",
     "section": "Problemas de la historia clínica en papel",
     "text": "Problemas de la historia clínica en papel\n\nAccesibilidad limitada\nRiesgo de pérdida o daño\nDificultad para mantener actualizada la información\nEspacio de almacenamiento y organización\nLimitaciones en la compartición y colaboración\n\n\nNotes"
   },
   {
-    "objectID": "pre-post/Presentaciones/Datos_1.html#componentes-de-los-ehr",
-    "href": "pre-post/Presentaciones/Datos_1.html#componentes-de-los-ehr",
+    "objectID": "posts/Presentaciones/Datos_1.html#componentes-de-los-ehr",
+    "href": "posts/Presentaciones/Datos_1.html#componentes-de-los-ehr",
     "title": "Datos en el ámbito de la salud",
     "section": "Componentes de los EHR",
     "text": "Componentes de los EHR\n\nMódulos de Registro y Documentación\nPedidos y Resultados de laboratorio\nGestión de Medicamentos\nIntegración de Imágenes Médicas (PACS)\n\n\nNotes"
   },
   {
-    "objectID": "pre-post/Presentaciones/Datos_1.html#sap-1",
-    "href": "pre-post/Presentaciones/Datos_1.html#sap-1",
+    "objectID": "posts/Presentaciones/Datos_1.html#sap-1",
+    "href": "posts/Presentaciones/Datos_1.html#sap-1",
     "title": "Datos en el ámbito de la salud",
     "section": "SAP 1",
     "text": "SAP 1\n\n\nNotes"
   },
   {
-    "objectID": "pre-post/Presentaciones/Datos_1.html#sap-2",
-    "href": "pre-post/Presentaciones/Datos_1.html#sap-2",
+    "objectID": "posts/Presentaciones/Datos_1.html#sap-2",
+    "href": "posts/Presentaciones/Datos_1.html#sap-2",
     "title": "Datos en el ámbito de la salud",
     "section": "SAP 2",
     "text": "SAP 2\n\n\nNotes"
   },
   {
-    "objectID": "pre-post/Presentaciones/Datos_1.html#sap-3",
-    "href": "pre-post/Presentaciones/Datos_1.html#sap-3",
+    "objectID": "posts/Presentaciones/Datos_1.html#sap-3",
+    "href": "posts/Presentaciones/Datos_1.html#sap-3",
     "title": "Datos en el ámbito de la salud",
     "section": "SAP 3",
     "text": "SAP 3\n\n\nNotes"
   },
   {
-    "objectID": "pre-post/Presentaciones/Datos_1.html#aria",
-    "href": "pre-post/Presentaciones/Datos_1.html#aria",
+    "objectID": "posts/Presentaciones/Datos_1.html#aria",
+    "href": "posts/Presentaciones/Datos_1.html#aria",
     "title": "Datos en el ámbito de la salud",
     "section": "ARIA",
     "text": "ARIA\n\n\nNotes"
   },
   {
-    "objectID": "pre-post/Presentaciones/Datos_1.html#limpieza-de-datos",
-    "href": "pre-post/Presentaciones/Datos_1.html#limpieza-de-datos",
+    "objectID": "posts/Presentaciones/Datos_1.html#limpieza-de-datos",
+    "href": "posts/Presentaciones/Datos_1.html#limpieza-de-datos",
     "title": "Datos en el ámbito de la salud",
     "section": "Limpieza de datos",
     "text": "Limpieza de datos\n\nEliminación de observaciones incompletas\nImputación de valores\nAnálisis de patrones de datos faltantes\nUso de modelos predictivos\nTécnicas de imputación múltiple\n\n\nNotes"
   },
   {
-    "objectID": "pre-post/Presentaciones/Datos_1.html#normalización-de-variables-continuas",
-    "href": "pre-post/Presentaciones/Datos_1.html#normalización-de-variables-continuas",
+    "objectID": "posts/Presentaciones/Datos_1.html#normalización-de-variables-continuas",
+    "href": "posts/Presentaciones/Datos_1.html#normalización-de-variables-continuas",
     "title": "Datos en el ámbito de la salud",
     "section": "Normalización de variables continuas",
     "text": "Normalización de variables continuas\n\nLas variables continuas pueden tener diferentes escalas y rangos de valores\nLa normalización ayuda a mitigar este problema al transformar las variables para que estén en una escala similar\n\n\nNotes"
   },
   {
-    "objectID": "pre-post/Presentaciones/Datos_1.html#técnicas-de-normalización",
-    "href": "pre-post/Presentaciones/Datos_1.html#técnicas-de-normalización",
+    "objectID": "posts/Presentaciones/Datos_1.html#técnicas-de-normalización",
+    "href": "posts/Presentaciones/Datos_1.html#técnicas-de-normalización",
     "title": "Datos en el ámbito de la salud",
     "section": "Técnicas de normalización",
     "text": "Técnicas de normalización\n\nDatos con una media de 0 y desviación estándar 1\nNormalización min-max (0-1)\nPuede mejorar la convergencia\n\n\n\n\n\n\n\nAdvertencia\n\n\nEs importante aplicar la misma transformación de normalización tanto al conjunto de entrenamiento como al conjunto de prueba para evitar sesgos en los datos.\n\n\n\n\nNotes"
   },
   {
-    "objectID": "pre-post/Presentaciones/Datos_1.html#integración-de-datos",
-    "href": "pre-post/Presentaciones/Datos_1.html#integración-de-datos",
+    "objectID": "posts/Presentaciones/Datos_1.html#integración-de-datos",
+    "href": "posts/Presentaciones/Datos_1.html#integración-de-datos",
     "title": "Datos en el ámbito de la salud",
     "section": "Integración de datos",
     "text": "Integración de datos\n\nFuentes de Datos Diversas\nResolución de inconsistencias\nLimpieza de Datos\nGestión de Datos Temporales\n\n\nNotes"
   },
   {
-    "objectID": "pre-post/Presentaciones/Datos_1.html#la-ingeniería-de-características",
-    "href": "pre-post/Presentaciones/Datos_1.html#la-ingeniería-de-características",
+    "objectID": "posts/Presentaciones/Datos_1.html#la-ingeniería-de-características",
+    "href": "posts/Presentaciones/Datos_1.html#la-ingeniería-de-características",
     "title": "Datos en el ámbito de la salud",
     "section": "La ingeniería de características",
     "text": "La ingeniería de características\n\nCreación de Nuevas características\nSelección de Características Relevantes\n\n\nPor ejemplo el índice de masa corporal"
   },
   {
-    "objectID": "pre-post/Presentaciones/Datos_1.html#anonimización-de-los-datos",
-    "href": "pre-post/Presentaciones/Datos_1.html#anonimización-de-los-datos",
+    "objectID": "posts/Presentaciones/Datos_1.html#anonimización-de-los-datos",
+    "href": "posts/Presentaciones/Datos_1.html#anonimización-de-los-datos",
     "title": "Datos en el ámbito de la salud",
     "section": "Anonimización de los datos",
     "text": "Anonimización de los datos\n\nLa anonimización es el proceso de eliminar o modificar datos personales de tal manera que ya no sea posible identificar a un individuo a partir de los datos.\nLa anonimización está vinculada a lo que dicen las leyes de protección de datos en la UE (RGPD)\n\n\nNotes"
   },
   {
-    "objectID": "pre-post/Presentaciones/Datos_1.html#técnicas-de-anonimización",
-    "href": "pre-post/Presentaciones/Datos_1.html#técnicas-de-anonimización",
+    "objectID": "posts/Presentaciones/Datos_1.html#técnicas-de-anonimización",
+    "href": "posts/Presentaciones/Datos_1.html#técnicas-de-anonimización",
     "title": "Datos en el ámbito de la salud",
     "section": "Técnicas de anonimización",
     "text": "Técnicas de anonimización\n\nEliminación de identificadores directos\nPseudonimización\nEnmascaramiento\nAgregación\n\n\nNotes"
   },
   {
-    "objectID": "pre-post/Presentaciones/Datos_1.html#consideraciones-al-elegir-una-técnica-de-anonimización",
-    "href": "pre-post/Presentaciones/Datos_1.html#consideraciones-al-elegir-una-técnica-de-anonimización",
+    "objectID": "posts/Presentaciones/Datos_1.html#consideraciones-al-elegir-una-técnica-de-anonimización",
+    "href": "posts/Presentaciones/Datos_1.html#consideraciones-al-elegir-una-técnica-de-anonimización",
     "title": "Datos en el ámbito de la salud",
     "section": "Consideraciones al elegir una técnica de anonimización",
     "text": "Consideraciones al elegir una técnica de anonimización\n\nEl tipo de datos que se procesan\nEl nivel de riesgo de reidentificación\nLos fines para los que se utilizarán los datos anonimizados\n\n\nNotes"
   },
   {
-    "objectID": "pre-post/Presentaciones/Datos_1.html#data-augmentation",
-    "href": "pre-post/Presentaciones/Datos_1.html#data-augmentation",
+    "objectID": "posts/Presentaciones/Datos_1.html#data-augmentation",
+    "href": "posts/Presentaciones/Datos_1.html#data-augmentation",
     "title": "Datos en el ámbito de la salud",
     "section": "Data Augmentation",
     "text": "Data Augmentation\nEs una técnica que consiste en crear nuevas muestras de datos a partir de datos existentes. Estas nuevas muestras se generan mediante la aplicación de transformaciones predefinidas a los datos originales\n\n\nNotes"
   },
   {
-    "objectID": "pre-post/Presentaciones/Datos_1.html#ventajas-de-data-augmentation",
-    "href": "pre-post/Presentaciones/Datos_1.html#ventajas-de-data-augmentation",
+    "objectID": "posts/Presentaciones/Datos_1.html#ventajas-de-data-augmentation",
+    "href": "posts/Presentaciones/Datos_1.html#ventajas-de-data-augmentation",
     "title": "Datos en el ámbito de la salud",
     "section": "Ventajas de Data Augmentation",
     "text": "Ventajas de Data Augmentation\n\nAumenta el tamaño del conjunto de datos\nMejora la generalización del modelo\nReduce el sesgo del modelo\n\n\nNotes"
   },
   {
-    "objectID": "pre-post/Presentaciones/Datos_1.html#data-augmentation-en-imágenes-médicas",
-    "href": "pre-post/Presentaciones/Datos_1.html#data-augmentation-en-imágenes-médicas",
+    "objectID": "posts/Presentaciones/Datos_1.html#data-augmentation-en-imágenes-médicas",
+    "href": "posts/Presentaciones/Datos_1.html#data-augmentation-en-imágenes-médicas",
     "title": "Datos en el ámbito de la salud",
     "section": "Data Augmentation en imágenes médicas",
     "text": "Data Augmentation en imágenes médicas\n\nRotaciones\nZoom\nCambio de contraste\nAdición de ruido\nSimulación de artefactos\n\n\nNotes"
   },
   {
-    "objectID": "pre-post/Presentaciones/Datos_1.html#data-augmentation-en-señales-biomédicas",
-    "href": "pre-post/Presentaciones/Datos_1.html#data-augmentation-en-señales-biomédicas",
+    "objectID": "posts/Presentaciones/Datos_1.html#data-augmentation-en-señales-biomédicas",
+    "href": "posts/Presentaciones/Datos_1.html#data-augmentation-en-señales-biomédicas",
     "title": "Datos en el ámbito de la salud",
     "section": "Data Augmentation en señales biomédicas",
     "text": "Data Augmentation en señales biomédicas\nComo el Electrocardiograma o el Electroencefalograma\n\nAdición de ruido\nCambio de escala\nSegmentación de señales\nSimulación de artefactos"
   },
   {
-    "objectID": "pre-post/Presentaciones/Datos_1.html#ángulo-entre-dos-vectores",
-    "href": "pre-post/Presentaciones/Datos_1.html#ángulo-entre-dos-vectores",
+    "objectID": "posts/Presentaciones/Datos_1.html#la-imagen-médica-más-allá-de-lo-visual",
+    "href": "posts/Presentaciones/Datos_1.html#la-imagen-médica-más-allá-de-lo-visual",
     "title": "Datos en el ámbito de la salud",
-    "section": "Ángulo entre dos vectores",
-    "text": "Ángulo entre dos vectores"
+    "section": "La Imagen Médica: Más Allá de lo Visual",
+    "text": "La Imagen Médica: Más Allá de lo Visual\n\nModalidades tradicionales:\n\nRayos X\nTomografía Computarizada (TC)\nResonancia Magnética (RM)\nMedicina Nuclear (PET/CT)\n\nInterpretación: Principalmente cualitativa y subjetiva.\nLimitaciones:\n\nVariabilidad inter-observador.\nInformación potencialmente oculta."
   },
   {
-    "objectID": "pre-post/Presentaciones/Datos_1.html#qué-son-las-vectorizaciones",
-    "href": "pre-post/Presentaciones/Datos_1.html#qué-son-las-vectorizaciones",
+    "objectID": "posts/Presentaciones/Datos_1.html#qué-es-la-radiómica",
+    "href": "posts/Presentaciones/Datos_1.html#qué-es-la-radiómica",
     "title": "Datos en el ámbito de la salud",
-    "section": "¿Qué son las vectorizaciones?",
-    "text": "¿Qué son las vectorizaciones?"
+    "section": "¿Qué es la Radiómica?",
+    "text": "¿Qué es la Radiómica?\n\nLa radiómica es un enfoque cuantitativo de la imagenología médica, que tiene como objetivo mejorar los datos existentes disponibles para los clínicos mediante análisis matemáticos avanzados. A través de la extracción matemática de la distribución espacial de las intensidades de señal y las interrelaciones de los píxeles, la radiómica cuantifica la información textural utilizando métodos de análisis del campo de la inteligencia artificial.\n\n\nTransforma imágenes médicas en datos cuantitativos.\n“Biopsia virtual”: extraer información sin procedimientos invasivos.\nLa imagen como un gran conjunto de datos a explotar."
   },
   {
-    "objectID": "pre-post/Presentaciones/Datos_1.html#práctica",
-    "href": "pre-post/Presentaciones/Datos_1.html#práctica",
+    "objectID": "posts/Presentaciones/Datos_1.html#qué-es-la-radiómica-1",
+    "href": "posts/Presentaciones/Datos_1.html#qué-es-la-radiómica-1",
     "title": "Datos en el ámbito de la salud",
-    "section": "Práctica",
-    "text": "Práctica\nNotebook\njuego"
+    "section": "¿Qué es la Radiómica?",
+    "text": "¿Qué es la Radiómica?"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#flujo-de-trabajo-de-la-radiómica-imagen",
+    "href": "posts/Presentaciones/Datos_1.html#flujo-de-trabajo-de-la-radiómica-imagen",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Flujo de Trabajo de la Radiómica: Imagen",
+    "text": "Flujo de Trabajo de la Radiómica: Imagen\n\nAdquisición de Imágenes\n\nImágenes médicas estándar (TC, RM, etc.).\n¡Importancia de la estandarización!\n\nSegmentación (ROI)\n\nDelimitar la región de interés (tumor, órgano…).\nManual, semiautomática o automática."
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#flujo-de-trabajo-de-la-radiómica-parte-radiómica",
+    "href": "posts/Presentaciones/Datos_1.html#flujo-de-trabajo-de-la-radiómica-parte-radiómica",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Flujo de Trabajo de la Radiómica: Parte Radiómica",
+    "text": "Flujo de Trabajo de la Radiómica: Parte Radiómica\n\n\n\nExtracción de Características: Los algoritmos extraen miles de características.\nForma: Tamaño, esfericidad…\nIntensidad: Distribución de valores.\nTextura: Patrones espaciales.\n\n\n\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#flujo-de-trabajo-de-la-radiómica-análisis",
+    "href": "posts/Presentaciones/Datos_1.html#flujo-de-trabajo-de-la-radiómica-análisis",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Flujo de Trabajo de la Radiómica: Análisis",
+    "text": "Flujo de Trabajo de la Radiómica: Análisis\n\nSelección y Modelado\n\nNo todas las características son útiles.\nSelección: quedarnos con las más relevantes.\nModelado: crear algoritmos predictivos (Machine Learning).\n\nValidación del Modelo\n\nProbar con datos “nuevos”.\nAsegurar la generalización (evitar sobreajuste).\nMétricas: Precisión, Sensibilidad, Especificidad."
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#aplicaciones-clínicas-oncología",
+    "href": "posts/Presentaciones/Datos_1.html#aplicaciones-clínicas-oncología",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Aplicaciones Clínicas: Oncología",
+    "text": "Aplicaciones Clínicas: Oncología\n\nDetección temprana\nDiferenciación benigno/maligno.\nPredicción de respuesta a tratamientos.\nPronóstico y supervivencia."
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#aplicaciones-clínicas-otras-áreas",
+    "href": "posts/Presentaciones/Datos_1.html#aplicaciones-clínicas-otras-áreas",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Aplicaciones Clínicas: Otras Áreas",
+    "text": "Aplicaciones Clínicas: Otras Áreas\n\n\nCardiovasculares\n\nCaracterización de placas.\n\nNeurológicas\n\nAlzheimer.\nEsclerosis múltiple.\n\n\nPulmonares\n\nEPOC.\nFibrosis."
+  },
+  {
+    "objectID": "posts/Presentaciones/Datos_1.html#desafíos-y-limitaciones",
+    "href": "posts/Presentaciones/Datos_1.html#desafíos-y-limitaciones",
+    "title": "Datos en el ámbito de la salud",
+    "section": "Desafíos y Limitaciones",
+    "text": "Desafíos y Limitaciones\n\n\nEstandarización: protocolos consistentes.\n“Caja Negra”: interpretabilidad de los modelos.\nGrandes Datos: necesidad de muchos datos de calidad.\nIntegración Clínica: herramientas fáciles de usar."
+  },
+  {
+    "objectID": "posts/code/Radiomics_Feature_Extraction.html",
+    "href": "posts/code/Radiomics_Feature_Extraction.html",
+    "title": "Extracción de características radiómicas",
+    "section": "",
+    "text": "Colab\nEn este notebook, te mostraremos cómo extraer características en modo batch utilizando el enfoque de la interfaz de línea de comandos (cli).\nUtilizaremos datos del repositorio https://github.com/rcuocolo/PROSTATEx_masks\nPrimero, necesitamos verificar e instalar las bibliotecas necesarias para realizar estos pasos más fácilmente.\n!pip install --progress-bar off -q gdown\n!pip install --upgrade --pre SimpleITK --find-links https://github.com/SimpleITK/SimpleITK/releases/tag/latest --progress-bar off -q\n!pip install --progress-bar off -q matplotlib\n!pip install --progress-bar off -q pyradiomics\n!pip install --progress-bar off -q pyyaml\n!pip install --progress-bar off -q pandas\n\n  Installing build dependencies ... done\n  Getting requirements to build wheel ... done\n  Preparing metadata (pyproject.toml) ... done\n  Preparing metadata (setup.py) ... done\n  Preparing metadata (setup.py) ... done\n  Building wheel for pyradiomics (setup.py) ... done\n  Building wheel for docopt (setup.py) ... done"
+  },
+  {
+    "objectID": "posts/code/Radiomics_Feature_Extraction.html#importar-librerías-necesarias",
+    "href": "posts/code/Radiomics_Feature_Extraction.html#importar-librerías-necesarias",
+    "title": "Extracción de características radiómicas",
+    "section": "Importar librerías necesarias",
+    "text": "Importar librerías necesarias\n\nimport os\nimport pandas as pd\nimport csv\nimport yaml\nimport SimpleITK as sitk\nimport radiomics\nimport matplotlib.pyplot as plt\nimport gdown\nimport random\nimport numpy as np\nimport ipywidgets as widgets\nfrom ipywidgets import interact, fixed, Layout, Button, HBox\nfrom IPython.display import display, clear_output"
+  },
+  {
+    "objectID": "posts/code/Embedding.html",
+    "href": "posts/code/Embedding.html",
+    "title": "Embeddings",
+    "section": "",
+    "text": "Colab\n\n\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom transformers import BertTokenizer, BertModel\nimport torch\nfrom scipy.spatial.distance import cosine\n\nimport torchvision\nimport torchvision.transforms as transforms\nimport torch.nn.functional as F\nimport random\nimport torchvision.models as models\n\nDefinimos vectores\n\nvector_1 = np.array([1, 2, 3])\nvector_2 = np.array([4, 5, 6])\nvector_3 = np.array([2, -1, 0])\nvector_4 = np.array([2, 4, 6])\n\nCalculamos la similitud del coseno de dos vectores\n\n\n\nSimilitud de dos vectores\n\n\n\ndef cosine_similarity(v1, v2):\n    dot_product = np.dot(v1, v2)\n    norm_v1 = np.linalg.norm(v1)\n    norm_v2 = np.linalg.norm(v2)\n    return dot_product / (norm_v1 * norm_v2)\n\n\nsimilarity_1_2 = cosine_similarity(vector_1, vector_2)\nsimilarity_1_3 = cosine_similarity(vector_1, vector_3)\nsimilarity_2_3 = cosine_similarity(vector_2, vector_3)\nsimilarity_1_4 = cosine_similarity(vector_1, vector_4)\n\nMostramos los resultados\n\nprint(\"Similitud de coseno entre vector_1 y vector_2:\", similarity_1_2)\nprint(\"Similitud de coseno entre vector_1 y vector_3:\", similarity_1_3)\nprint(\"Similitud de coseno entre vector_2 y vector_3:\", similarity_2_3)\nprint(\"Similitud de coseno entre vector_1 y vector_4:\", similarity_1_4)\n\nSimilitud de coseno entre vector_1 y vector_2: 0.9746318461970762\nSimilitud de coseno entre vector_1 y vector_3: 0.0\nSimilitud de coseno entre vector_2 y vector_3: 0.15289415743128765\nSimilitud de coseno entre vector_1 y vector_4: 1.0\n\n\nVamos ahora a por un modelo de texto.Cargamos el modelo\n\nmodel_name_bert = 'bert-base-uncased'\ntokenizer = BertTokenizer.from_pretrained(model_name_bert)\nmodel = BertModel.from_pretrained(model_name_bert)\n\n/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_token.py:88: UserWarning: \nThe secret `HF_TOKEN` does not exist in your Colab secrets.\nTo authenticate with the Hugging Face Hub, create a token in your settings tab (https://huggingface.co/settings/tokens), set it as secret in your Google Colab and restart your session.\nYou will be able to reuse this secret in all of your notebooks.\nPlease note that authentication is recommended but still optional to access public models or datasets.\n  warnings.warn(\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ndef cosine_similarity(v1, v2):\n    return 1 - cosine(v1, v2)\n\n\ndef get_bert_embeddings(text):\n    inputs = tokenizer(text, return_tensors='pt', padding=True, truncation=True)\n    with torch.no_grad():\n        outputs = model(**inputs)\n    embeddings = outputs.last_hidden_state.mean(dim=1).squeeze().numpy()\n    return embeddings\n\n\ndef calculate_text_similarity(text1, text2):\n    \"\"\"\n    Función para calcular la similitud de coseno entre dos textos basada en sus representaciones vectoriales BERT.\n\n    Args:\n        text1 (str): Primer texto.\n        text2 (str): Segundo texto.\n\n    Returns:\n        float: Similitud de coseno entre las representaciones vectoriales de los dos textos.\n    \"\"\"\n    # Obtener las representaciones vectoriales BERT para ambos textos\n    embeddings_text1 = get_bert_embeddings(text1)\n    embeddings_text2 = get_bert_embeddings(text2)\n\n    # Calcular la similitud de coseno entre las representaciones vectoriales\n    similarity = cosine_similarity(embeddings_text1, embeddings_text2)\n    return similarity\n\n\n# Ejemplo de uso:\ntext1 = \"orange is a color\"\ntext2 = \"orange is a fruit\"\nsimilarity = calculate_text_similarity(text1, text2)\nprint(\"Similarity:\", similarity)\n\nSimilarity: 0.8144723176956177\n\n\nProbemos ahora con un modelo de imágenes\nPrimero bajamos las imágenes de nuestra querida base de datos MNIST\n\n# Transformación para las imágenes\ntransform = transforms.Compose([\n    transforms.ToTensor(),\n])\n\n# Descargar la base de datos MNIST y aplicar transformaciones\ntrain_dataset = torchvision.datasets.MNIST(root='./data', train=True, transform=transform, download=True)\ntest_dataset = torchvision.datasets.MNIST(root='./data', train=False, transform=transform, download=True)\n\n# Crear cargadores de datos para acceder a los datos por lotes\ntrain_loader = torch.utils.data.DataLoader(dataset=train_dataset, batch_size=1, shuffle=True)\ntest_loader = torch.utils.data.DataLoader(dataset=test_dataset, batch_size=1, shuffle=True)\n\n\n\nDownloading http://yann.lecun.com/exdb/mnist/train-images-idx3-ubyte.gz\nDownloading http://yann.lecun.com/exdb/mnist/train-images-idx3-ubyte.gz to ./data/MNIST/raw/train-images-idx3-ubyte.gz\n\n\n100%|██████████| 9912422/9912422 [00:00&lt;00:00, 175017306.71it/s]\n\n\nExtracting ./data/MNIST/raw/train-images-idx3-ubyte.gz to ./data/MNIST/raw\n\nDownloading http://yann.lecun.com/exdb/mnist/train-labels-idx1-ubyte.gz\nDownloading http://yann.lecun.com/exdb/mnist/train-labels-idx1-ubyte.gz to ./data/MNIST/raw/train-labels-idx1-ubyte.gz\n\n\n100%|██████████| 28881/28881 [00:00&lt;00:00, 26847449.87it/s]\n\n\nExtracting ./data/MNIST/raw/train-labels-idx1-ubyte.gz to ./data/MNIST/raw\n\nDownloading http://yann.lecun.com/exdb/mnist/t10k-images-idx3-ubyte.gz\nDownloading http://yann.lecun.com/exdb/mnist/t10k-images-idx3-ubyte.gz to ./data/MNIST/raw/t10k-images-idx3-ubyte.gz\n\n\n100%|██████████| 1648877/1648877 [00:00&lt;00:00, 43325866.23it/s]\n\n\nExtracting ./data/MNIST/raw/t10k-images-idx3-ubyte.gz to ./data/MNIST/raw\n\n\n\n\n\n\nDownloading http://yann.lecun.com/exdb/mnist/t10k-labels-idx1-ubyte.gz\nDownloading http://yann.lecun.com/exdb/mnist/t10k-labels-idx1-ubyte.gz to ./data/MNIST/raw/t10k-labels-idx1-ubyte.gz\n\n\n100%|██████████| 4542/4542 [00:00&lt;00:00, 4608255.63it/s]\n\n\nExtracting ./data/MNIST/raw/t10k-labels-idx1-ubyte.gz to ./data/MNIST/raw\n\n\n\n\ndef get_random_images(number1, number2, dataset=test_dataset, seed=42):\n    \"\"\"\n    Función para obtener dos imágenes al azar de un conjunto de datos para dos números específicos.\n\n    Args:\n        dataset: Conjunto de datos del que se seleccionarán las imágenes.\n        number1: Primer número para seleccionar imágenes.\n        number2: Segundo número para seleccionar imágenes.\n        seed: Semilla para reproducibilidad. Por defecto, 42.\n\n    Returns:\n        tuple: Tupla de dos imágenes y etiquetas seleccionadas al azar.\n    \"\"\"\n    # Obtener los índices de las imágenes para cada número\n    indices1 = [i for i, (image, label) in enumerate(dataset) if label == number1]\n    indices2 = [i for i, (image, label) in enumerate(dataset) if label == number2]\n\n    # Seleccionar dos índices al azar para cada número\n    random.seed(seed)\n    rand_idx1 = random.randint(0, len(indices1) - 1)\n    rand_idx2 = random.randint(0, len(indices2) - 1)\n\n    # Obtener los datos de las imágenes seleccionadas\n    image1, label1 = dataset[indices1[rand_idx1]]\n    image2, label2 = dataset[indices2[rand_idx2]]\n\n    return (image1, label1), (image2, label2)\n\ndef show_images(image_label1, image_label2):\n    \"\"\"\n    Función para mostrar dos imágenes junto con sus etiquetas en la misma ventana.\n\n    Args:\n        image_label1: Tupla que contiene la primera imagen y su etiqueta.\n        image_label2: Tupla que contiene la segunda imagen y su etiqueta.\n    \"\"\"\n    plt.figure(figsize=(8, 4))\n\n    plt.subplot(1, 2, 1)\n    plt.imshow(image_label1[0].squeeze(), cmap='gray')\n    plt.title('Label: {}'.format(image_label1[1]))\n    plt.axis('off')\n\n    plt.subplot(1, 2, 2)\n    plt.imshow(image_label2[0].squeeze(), cmap='gray')\n    plt.title('Label: {}'.format(image_label2[1]))\n    plt.axis('off')\n\n    plt.show()\n\n\ntupla1,tupla2=get_random_images(1,5)\n\n\nshow_images(tupla1,tupla2)\n\n\n\n\n\n\n\n\nCargamos un modelo genérico, en nuestro caso ResNet\n\n# Cargar el modelo pre-entrenado\nmodel_resnet = models.resnet18(pretrained=True)\n# Eliminar la capa de clasificación\nmodel_resnet = torch.nn.Sequential(*(list(model_resnet.children())[:-1]))\nmodel_resnet.eval()\n\nSequential(\n  (0): Conv2d(3, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3), bias=False)\n  (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n  (2): ReLU(inplace=True)\n  (3): MaxPool2d(kernel_size=3, stride=2, padding=1, dilation=1, ceil_mode=False)\n  (4): Sequential(\n    (0): BasicBlock(\n      (conv1): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)\n      (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n      (relu): ReLU(inplace=True)\n      (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)\n      (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n    )\n    (1): BasicBlock(\n      (conv1): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)\n      (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n      (relu): ReLU(inplace=True)\n      (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)\n      (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n    )\n  )\n  (5): Sequential(\n    (0): BasicBlock(\n      (conv1): Conv2d(64, 128, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)\n      (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n      (relu): ReLU(inplace=True)\n      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)\n      (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n      (downsample): Sequential(\n        (0): Conv2d(64, 128, kernel_size=(1, 1), stride=(2, 2), bias=False)\n        (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n      )\n    )\n    (1): BasicBlock(\n      (conv1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)\n      (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n      (relu): ReLU(inplace=True)\n      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)\n      (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n    )\n  )\n  (6): Sequential(\n    (0): BasicBlock(\n      (conv1): Conv2d(128, 256, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)\n      (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n      (relu): ReLU(inplace=True)\n      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)\n      (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n      (downsample): Sequential(\n        (0): Conv2d(128, 256, kernel_size=(1, 1), stride=(2, 2), bias=False)\n        (1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n      )\n    )\n    (1): BasicBlock(\n      (conv1): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)\n      (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n      (relu): ReLU(inplace=True)\n      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)\n      (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n    )\n  )\n  (7): Sequential(\n    (0): BasicBlock(\n      (conv1): Conv2d(256, 512, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)\n      (bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n      (relu): ReLU(inplace=True)\n      (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)\n      (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n      (downsample): Sequential(\n        (0): Conv2d(256, 512, kernel_size=(1, 1), stride=(2, 2), bias=False)\n        (1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n      )\n    )\n    (1): BasicBlock(\n      (conv1): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)\n      (bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n      (relu): ReLU(inplace=True)\n      (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)\n      (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n    )\n  )\n  (8): AdaptiveAvgPool2d(output_size=(1, 1))\n)\n\n\n\ndef calculate_image_similarity(image_label1, image_label2, model=model_resnet):\n    \"\"\"\n    Función para calcular la similitud de coseno entre dos imágenes basadas en sus representaciones vectoriales.\n\n    Args:\n        image_label1: Tupla que contiene la primera imagen y su etiqueta.\n        image_label2: Tupla que contiene la segunda imagen y su etiqueta.\n        model: Modelo utilizado para obtener las representaciones vectoriales de las imágenes.\n\n    Returns:\n        float: Similitud de coseno entre las representaciones vectoriales de las dos imágenes.\n    \"\"\"\n    def get_image_embeddings(image_tensor):\n        with torch.no_grad():\n            # Expande la dimensión de los canales para que coincida con lo que el modelo espera (de 1 a 3 canales)\n            image_tensor = image_tensor.repeat(1, 3, 1, 1)\n            # Pasar la imagen a través del modelo y obtener la representación vectorial\n            output = model(image_tensor)\n            # Aplanar la salida\n            output = output.view(output.size(0), -1)\n            # Normalizar la salida\n            output = F.normalize(output, p=2, dim=1)\n        return output\n\n    # Obtener los tensores de imagen de las tuplas\n    image_tensor1, _ = image_label1\n    image_tensor2, _ = image_label2\n\n    # Obtener las representaciones vectoriales de las imágenes\n    image1_embedding = get_image_embeddings(image_tensor1.unsqueeze(0))\n    image2_embedding = get_image_embeddings(image_tensor2.unsqueeze(0))\n\n    # Calcular la similitud de coseno entre las representaciones vectoriales\n    similarity = F.cosine_similarity(image1_embedding, image2_embedding)\n    return similarity.item()\n\n\ncalculate_image_similarity(tupla1,tupla2)\n\n0.6484431028366089\n\n\nCargamos ahora un modelo finetuneado para el conjunto MNIST\n\ndef preprocess_input(input_tensor, target_size=(224, 224)):\n    \"\"\"\n    Función para preprocesar un tensor de entrada para que coincida con el tamaño y formato esperado por el modelo.\n\n    Args:\n        input_tensor (torch.Tensor): Tensor de entrada con un solo canal.\n        target_size (tuple): Tamaño al que se debe redimensionar la imagen. Por defecto, (224, 224).\n\n    Returns:\n        torch.Tensor: Tensor de entrada preprocesado con el tamaño y formato correctos.\n    \"\"\"\n    # Definir una transformación para redimensionar la imagen\n    resize_transform = transforms.Compose([\n        transforms.Resize(target_size),  # Redimensionar la imagen al tamaño objetivo\n    ])\n\n    # Redimensionar el tensor de entrada\n    input_tensor_resized = resize_transform(input_tensor)\n\n    # Replicar el canal único en tres canales\n    input_tensor_rgb = input_tensor_resized.expand(1, 3, *target_size)  # Expandir el tensor a tres canales\n\n    return input_tensor_rgb\n\n\ndef preprocess_and_infer(tupla1, tupla2, model=model_mnist2):\n    \"\"\"\n    Función para preprocesar dos imágenes de entrada y realizar inferencia con un modelo dado.\n\n    Args:\n        tupla1: Tupla que contiene la primera imagen y su etiqueta.\n        tupla2: Tupla que contiene la segunda imagen y su etiqueta.\n        model: Modelo utilizado para la inferencia.\n\n    Returns:\n        torch.Tensor: Salida del modelo para la primera imagen.\n        torch.Tensor: Salida del modelo para la segunda imagen.\n    \"\"\"\n    # Añadir un nuevo eje de canal a las imágenes y realizar la inferencia con el modelo\n    with torch.no_grad():\n        image1_tensor = preprocess_input(tupla1[0])\n        image2_tensor = preprocess_input(tupla2[0])\n        outputs1 = model(image1_tensor)\n        outputs2 = model(image2_tensor)\n\n    return F.cosine_similarity(outputs1.to_tuple()[0], outputs2.to_tuple()[0], dim=1)\n\n# Ejemplo de uso:\n# outputs1, outputs2 = preprocess_and_infer(tupla1, tupla2, model_mnist2)\n\n\npreprocess_and_infer(tupla1, tupla2)\n\n/usr/local/lib/python3.10/dist-packages/torchvision/transforms/functional.py:1603: UserWarning: The default value of the antialias parameter of all the resizing transforms (Resize(), RandomResizedCrop(), etc.) will change from None to True in v0.17, in order to be consistent across the PIL and Tensor backends. To suppress this warning, directly pass antialias=True (recommended, future default), antialias=None (current default, which means False for Tensors and True for PIL), or antialias=False (only works on Tensors - PIL will still use antialiasing). This also applies if you are using the inference transforms from the models weights: update the call to weights.transforms(antialias=True).\n  warnings.warn(\n\n\ntensor([-0.1767])"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Acerca de el autor",
+    "section": "",
+    "text": "Material del curso"
   },
   {
     "objectID": "pre-post/Presentaciones/ImagenAI.html#índice",
@@ -994,17 +812,339 @@
     "text": "Instalar 3DSlicer y darse de alta en Huggingface\n\nDescargar el programa\nSeguir las intrucciones del ejecutable\nIr a la página de Huggingface\nDarse de alta"
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "Acerca de el autor",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Intel·ligència artificial en medicina",
     "section": "",
-    "text": "Material del curso"
+    "text": "Datos sobre el desastre del Titanic\n\n\n\n\n\n\nColab\n\n\n\n\n\n\n\n\n\n14 feb 2025\n\n\n\n\n\n\n\n\n\n\n\n\nExtracción de características radiómicas\n\n\n\n\n\n\nColab\n\n\n\n\n\n\n\n\n\n14 feb 2025\n\n\n\n\n\n\n\n\n\n\n\n\nTEXTO, DATOS E IMAGEN\n\n\n\n\n\n\nIntroducción\n\n\n\n\n\n\n\n\n\n12 feb 2025\n\n\nAntonio Otal Palacín\n\n\n\n\n\n\n\n\n\n\n\n\nLARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO\n\n\n\n\n\n\nPresentación\n\n\n\n\n\n\n\n\n\n12 feb 2025\n\n\nAntonio Otal Palacín\n\n\n\n\n\n\n\n\n\n\n\n\nEmbeddings\n\n\n\n\n\n\nColab\n\n\n\n\n\n\n\n\n\n19 feb 2024\n\n\n\n\n\n\n\n\n\n\n\n\nDatos en el ámbito de la salud\n\n\n\n\n\n\nPresentación\n\n\n\n\n\n\n\n\n\n14 feb 2024\n\n\nAntonio Otal Palacín\n\n\n\n\n\n\n\n\n\n\n\n\nWord Embeddings\n\n\n\n\n\n\nColab\n\n\n\n\n\n\n\n\n\n12 feb 2024\n\n\n\n\n\n\nNo hay resultados"
   },
   {
-    "objectID": "posts/code/Embedding.html",
-    "href": "posts/code/Embedding.html",
-    "title": "Embeddings",
+    "objectID": "posts/code/Titanic.html",
+    "href": "posts/code/Titanic.html",
+    "title": "Datos sobre el desastre del Titanic",
     "section": "",
-    "text": "Colab\n\n\nimport numpy as np\nimport matplotlib.pyplot as plt\nfrom transformers import BertTokenizer, BertModel\nimport torch\nfrom scipy.spatial.distance import cosine\n\nimport torchvision\nimport torchvision.transforms as transforms\nimport torch.nn.functional as F\nimport random\nimport torchvision.models as models\n\nDefinimos vectores\n\nvector_1 = np.array([1, 2, 3])\nvector_2 = np.array([4, 5, 6])\nvector_3 = np.array([2, -1, 0])\nvector_4 = np.array([2, 4, 6])\n\nCalculamos la similitud del coseno de dos vectores\n\n\n\nSimilitud de dos vectores\n\n\n\ndef cosine_similarity(v1, v2):\n    dot_product = np.dot(v1, v2)\n    norm_v1 = np.linalg.norm(v1)\n    norm_v2 = np.linalg.norm(v2)\n    return dot_product / (norm_v1 * norm_v2)\n\n\nsimilarity_1_2 = cosine_similarity(vector_1, vector_2)\nsimilarity_1_3 = cosine_similarity(vector_1, vector_3)\nsimilarity_2_3 = cosine_similarity(vector_2, vector_3)\nsimilarity_1_4 = cosine_similarity(vector_1, vector_4)\n\nMostramos los resultados\n\nprint(\"Similitud de coseno entre vector_1 y vector_2:\", similarity_1_2)\nprint(\"Similitud de coseno entre vector_1 y vector_3:\", similarity_1_3)\nprint(\"Similitud de coseno entre vector_2 y vector_3:\", similarity_2_3)\nprint(\"Similitud de coseno entre vector_1 y vector_4:\", similarity_1_4)\n\nSimilitud de coseno entre vector_1 y vector_2: 0.9746318461970762\nSimilitud de coseno entre vector_1 y vector_3: 0.0\nSimilitud de coseno entre vector_2 y vector_3: 0.15289415743128765\nSimilitud de coseno entre vector_1 y vector_4: 1.0\n\n\nVamos ahora a por un modelo de texto.Cargamos el modelo\n\nmodel_name_bert = 'bert-base-uncased'\ntokenizer = BertTokenizer.from_pretrained(model_name_bert)\nmodel = BertModel.from_pretrained(model_name_bert)\n\n/usr/local/lib/python3.10/dist-packages/huggingface_hub/utils/_token.py:88: UserWarning: \nThe secret `HF_TOKEN` does not exist in your Colab secrets.\nTo authenticate with the Hugging Face Hub, create a token in your settings tab (https://huggingface.co/settings/tokens), set it as secret in your Google Colab and restart your session.\nYou will be able to reuse this secret in all of your notebooks.\nPlease note that authentication is recommended but still optional to access public models or datasets.\n  warnings.warn(\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ndef cosine_similarity(v1, v2):\n    return 1 - cosine(v1, v2)\n\n\ndef get_bert_embeddings(text):\n    inputs = tokenizer(text, return_tensors='pt', padding=True, truncation=True)\n    with torch.no_grad():\n        outputs = model(**inputs)\n    embeddings = outputs.last_hidden_state.mean(dim=1).squeeze().numpy()\n    return embeddings\n\n\ndef calculate_text_similarity(text1, text2):\n    \"\"\"\n    Función para calcular la similitud de coseno entre dos textos basada en sus representaciones vectoriales BERT.\n\n    Args:\n        text1 (str): Primer texto.\n        text2 (str): Segundo texto.\n\n    Returns:\n        float: Similitud de coseno entre las representaciones vectoriales de los dos textos.\n    \"\"\"\n    # Obtener las representaciones vectoriales BERT para ambos textos\n    embeddings_text1 = get_bert_embeddings(text1)\n    embeddings_text2 = get_bert_embeddings(text2)\n\n    # Calcular la similitud de coseno entre las representaciones vectoriales\n    similarity = cosine_similarity(embeddings_text1, embeddings_text2)\n    return similarity\n\n\n# Ejemplo de uso:\ntext1 = \"orange is a color\"\ntext2 = \"orange is a fruit\"\nsimilarity = calculate_text_similarity(text1, text2)\nprint(\"Similarity:\", similarity)\n\nSimilarity: 0.8144723176956177\n\n\nProbemos ahora con un modelo de imágenes\nPrimero bajamos las imágenes de nuestra querida base de datos MNIST\n\n# Transformación para las imágenes\ntransform = transforms.Compose([\n    transforms.ToTensor(),\n])\n\n# Descargar la base de datos MNIST y aplicar transformaciones\ntrain_dataset = torchvision.datasets.MNIST(root='./data', train=True, transform=transform, download=True)\ntest_dataset = torchvision.datasets.MNIST(root='./data', train=False, transform=transform, download=True)\n\n# Crear cargadores de datos para acceder a los datos por lotes\ntrain_loader = torch.utils.data.DataLoader(dataset=train_dataset, batch_size=1, shuffle=True)\ntest_loader = torch.utils.data.DataLoader(dataset=test_dataset, batch_size=1, shuffle=True)\n\n\n\nDownloading http://yann.lecun.com/exdb/mnist/train-images-idx3-ubyte.gz\nDownloading http://yann.lecun.com/exdb/mnist/train-images-idx3-ubyte.gz to ./data/MNIST/raw/train-images-idx3-ubyte.gz\n\n\n100%|██████████| 9912422/9912422 [00:00&lt;00:00, 175017306.71it/s]\n\n\nExtracting ./data/MNIST/raw/train-images-idx3-ubyte.gz to ./data/MNIST/raw\n\nDownloading http://yann.lecun.com/exdb/mnist/train-labels-idx1-ubyte.gz\nDownloading http://yann.lecun.com/exdb/mnist/train-labels-idx1-ubyte.gz to ./data/MNIST/raw/train-labels-idx1-ubyte.gz\n\n\n100%|██████████| 28881/28881 [00:00&lt;00:00, 26847449.87it/s]\n\n\nExtracting ./data/MNIST/raw/train-labels-idx1-ubyte.gz to ./data/MNIST/raw\n\nDownloading http://yann.lecun.com/exdb/mnist/t10k-images-idx3-ubyte.gz\nDownloading http://yann.lecun.com/exdb/mnist/t10k-images-idx3-ubyte.gz to ./data/MNIST/raw/t10k-images-idx3-ubyte.gz\n\n\n100%|██████████| 1648877/1648877 [00:00&lt;00:00, 43325866.23it/s]\n\n\nExtracting ./data/MNIST/raw/t10k-images-idx3-ubyte.gz to ./data/MNIST/raw\n\n\n\n\n\n\nDownloading http://yann.lecun.com/exdb/mnist/t10k-labels-idx1-ubyte.gz\nDownloading http://yann.lecun.com/exdb/mnist/t10k-labels-idx1-ubyte.gz to ./data/MNIST/raw/t10k-labels-idx1-ubyte.gz\n\n\n100%|██████████| 4542/4542 [00:00&lt;00:00, 4608255.63it/s]\n\n\nExtracting ./data/MNIST/raw/t10k-labels-idx1-ubyte.gz to ./data/MNIST/raw\n\n\n\n\ndef get_random_images(number1, number2, dataset=test_dataset, seed=42):\n    \"\"\"\n    Función para obtener dos imágenes al azar de un conjunto de datos para dos números específicos.\n\n    Args:\n        dataset: Conjunto de datos del que se seleccionarán las imágenes.\n        number1: Primer número para seleccionar imágenes.\n        number2: Segundo número para seleccionar imágenes.\n        seed: Semilla para reproducibilidad. Por defecto, 42.\n\n    Returns:\n        tuple: Tupla de dos imágenes y etiquetas seleccionadas al azar.\n    \"\"\"\n    # Obtener los índices de las imágenes para cada número\n    indices1 = [i for i, (image, label) in enumerate(dataset) if label == number1]\n    indices2 = [i for i, (image, label) in enumerate(dataset) if label == number2]\n\n    # Seleccionar dos índices al azar para cada número\n    random.seed(seed)\n    rand_idx1 = random.randint(0, len(indices1) - 1)\n    rand_idx2 = random.randint(0, len(indices2) - 1)\n\n    # Obtener los datos de las imágenes seleccionadas\n    image1, label1 = dataset[indices1[rand_idx1]]\n    image2, label2 = dataset[indices2[rand_idx2]]\n\n    return (image1, label1), (image2, label2)\n\ndef show_images(image_label1, image_label2):\n    \"\"\"\n    Función para mostrar dos imágenes junto con sus etiquetas en la misma ventana.\n\n    Args:\n        image_label1: Tupla que contiene la primera imagen y su etiqueta.\n        image_label2: Tupla que contiene la segunda imagen y su etiqueta.\n    \"\"\"\n    plt.figure(figsize=(8, 4))\n\n    plt.subplot(1, 2, 1)\n    plt.imshow(image_label1[0].squeeze(), cmap='gray')\n    plt.title('Label: {}'.format(image_label1[1]))\n    plt.axis('off')\n\n    plt.subplot(1, 2, 2)\n    plt.imshow(image_label2[0].squeeze(), cmap='gray')\n    plt.title('Label: {}'.format(image_label2[1]))\n    plt.axis('off')\n\n    plt.show()\n\n\ntupla1,tupla2=get_random_images(1,5)\n\n\nshow_images(tupla1,tupla2)\n\n\n\n\n\n\n\n\nCargamos un modelo genérico, en nuestro caso ResNet\n\n# Cargar el modelo pre-entrenado\nmodel_resnet = models.resnet18(pretrained=True)\n# Eliminar la capa de clasificación\nmodel_resnet = torch.nn.Sequential(*(list(model_resnet.children())[:-1]))\nmodel_resnet.eval()\n\nSequential(\n  (0): Conv2d(3, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3), bias=False)\n  (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n  (2): ReLU(inplace=True)\n  (3): MaxPool2d(kernel_size=3, stride=2, padding=1, dilation=1, ceil_mode=False)\n  (4): Sequential(\n    (0): BasicBlock(\n      (conv1): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)\n      (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n      (relu): ReLU(inplace=True)\n      (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)\n      (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n    )\n    (1): BasicBlock(\n      (conv1): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)\n      (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n      (relu): ReLU(inplace=True)\n      (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)\n      (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n    )\n  )\n  (5): Sequential(\n    (0): BasicBlock(\n      (conv1): Conv2d(64, 128, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)\n      (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n      (relu): ReLU(inplace=True)\n      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)\n      (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n      (downsample): Sequential(\n        (0): Conv2d(64, 128, kernel_size=(1, 1), stride=(2, 2), bias=False)\n        (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n      )\n    )\n    (1): BasicBlock(\n      (conv1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)\n      (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n      (relu): ReLU(inplace=True)\n      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)\n      (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n    )\n  )\n  (6): Sequential(\n    (0): BasicBlock(\n      (conv1): Conv2d(128, 256, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)\n      (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n      (relu): ReLU(inplace=True)\n      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)\n      (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n      (downsample): Sequential(\n        (0): Conv2d(128, 256, kernel_size=(1, 1), stride=(2, 2), bias=False)\n        (1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n      )\n    )\n    (1): BasicBlock(\n      (conv1): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)\n      (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n      (relu): ReLU(inplace=True)\n      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)\n      (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n    )\n  )\n  (7): Sequential(\n    (0): BasicBlock(\n      (conv1): Conv2d(256, 512, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)\n      (bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n      (relu): ReLU(inplace=True)\n      (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)\n      (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n      (downsample): Sequential(\n        (0): Conv2d(256, 512, kernel_size=(1, 1), stride=(2, 2), bias=False)\n        (1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n      )\n    )\n    (1): BasicBlock(\n      (conv1): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)\n      (bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n      (relu): ReLU(inplace=True)\n      (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)\n      (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)\n    )\n  )\n  (8): AdaptiveAvgPool2d(output_size=(1, 1))\n)\n\n\n\ndef calculate_image_similarity(image_label1, image_label2, model=model_resnet):\n    \"\"\"\n    Función para calcular la similitud de coseno entre dos imágenes basadas en sus representaciones vectoriales.\n\n    Args:\n        image_label1: Tupla que contiene la primera imagen y su etiqueta.\n        image_label2: Tupla que contiene la segunda imagen y su etiqueta.\n        model: Modelo utilizado para obtener las representaciones vectoriales de las imágenes.\n\n    Returns:\n        float: Similitud de coseno entre las representaciones vectoriales de las dos imágenes.\n    \"\"\"\n    def get_image_embeddings(image_tensor):\n        with torch.no_grad():\n            # Expande la dimensión de los canales para que coincida con lo que el modelo espera (de 1 a 3 canales)\n            image_tensor = image_tensor.repeat(1, 3, 1, 1)\n            # Pasar la imagen a través del modelo y obtener la representación vectorial\n            output = model(image_tensor)\n            # Aplanar la salida\n            output = output.view(output.size(0), -1)\n            # Normalizar la salida\n            output = F.normalize(output, p=2, dim=1)\n        return output\n\n    # Obtener los tensores de imagen de las tuplas\n    image_tensor1, _ = image_label1\n    image_tensor2, _ = image_label2\n\n    # Obtener las representaciones vectoriales de las imágenes\n    image1_embedding = get_image_embeddings(image_tensor1.unsqueeze(0))\n    image2_embedding = get_image_embeddings(image_tensor2.unsqueeze(0))\n\n    # Calcular la similitud de coseno entre las representaciones vectoriales\n    similarity = F.cosine_similarity(image1_embedding, image2_embedding)\n    return similarity.item()\n\n\ncalculate_image_similarity(tupla1,tupla2)\n\n0.6484431028366089\n\n\nCargamos ahora un modelo finetuneado para el conjunto MNIST\n\ndef preprocess_input(input_tensor, target_size=(224, 224)):\n    \"\"\"\n    Función para preprocesar un tensor de entrada para que coincida con el tamaño y formato esperado por el modelo.\n\n    Args:\n        input_tensor (torch.Tensor): Tensor de entrada con un solo canal.\n        target_size (tuple): Tamaño al que se debe redimensionar la imagen. Por defecto, (224, 224).\n\n    Returns:\n        torch.Tensor: Tensor de entrada preprocesado con el tamaño y formato correctos.\n    \"\"\"\n    # Definir una transformación para redimensionar la imagen\n    resize_transform = transforms.Compose([\n        transforms.Resize(target_size),  # Redimensionar la imagen al tamaño objetivo\n    ])\n\n    # Redimensionar el tensor de entrada\n    input_tensor_resized = resize_transform(input_tensor)\n\n    # Replicar el canal único en tres canales\n    input_tensor_rgb = input_tensor_resized.expand(1, 3, *target_size)  # Expandir el tensor a tres canales\n\n    return input_tensor_rgb\n\n\ndef preprocess_and_infer(tupla1, tupla2, model=model_mnist2):\n    \"\"\"\n    Función para preprocesar dos imágenes de entrada y realizar inferencia con un modelo dado.\n\n    Args:\n        tupla1: Tupla que contiene la primera imagen y su etiqueta.\n        tupla2: Tupla que contiene la segunda imagen y su etiqueta.\n        model: Modelo utilizado para la inferencia.\n\n    Returns:\n        torch.Tensor: Salida del modelo para la primera imagen.\n        torch.Tensor: Salida del modelo para la segunda imagen.\n    \"\"\"\n    # Añadir un nuevo eje de canal a las imágenes y realizar la inferencia con el modelo\n    with torch.no_grad():\n        image1_tensor = preprocess_input(tupla1[0])\n        image2_tensor = preprocess_input(tupla2[0])\n        outputs1 = model(image1_tensor)\n        outputs2 = model(image2_tensor)\n\n    return F.cosine_similarity(outputs1.to_tuple()[0], outputs2.to_tuple()[0], dim=1)\n\n# Ejemplo de uso:\n# outputs1, outputs2 = preprocess_and_infer(tupla1, tupla2, model_mnist2)\n\n\npreprocess_and_infer(tupla1, tupla2)\n\n/usr/local/lib/python3.10/dist-packages/torchvision/transforms/functional.py:1603: UserWarning: The default value of the antialias parameter of all the resizing transforms (Resize(), RandomResizedCrop(), etc.) will change from None to True in v0.17, in order to be consistent across the PIL and Tensor backends. To suppress this warning, directly pass antialias=True (recommended, future default), antialias=None (current default, which means False for Tensors and True for PIL), or antialias=False (only works on Tensors - PIL will still use antialiasing). This also applies if you are using the inference transforms from the models weights: update the call to weights.transforms(antialias=True).\n  warnings.warn(\n\n\ntensor([-0.1767])"
+    "text": "Colab\n\nEste notebook está basado en un reto planteado por Kaggle titulado Titanic:Machine Learning from Disaster. En ese enlace teneis lo que significa cada elemento de la tabla. Nosotros simplemente nos centraremos en el pre-procesado de datos y no haremos nada de machine learning\nNo hace falta modificar el código, solamente hay que contestar a las preguntas planteadas.\nHaz una copia del colab en tu espacio personal\nSi tienes dudas está permitido preguntar al LLM que utilices habitualmente.\nImportar librerías necesarias\n\nimport numpy as np\nimport pandas as pd\nfrom sklearn.preprocessing import OneHotEncoder\nfrom sklearn.impute import KNNImputer\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nimport gdown\n\nBajar los ficheros de datos\n\ngdown.download(\"https://drive.google.com/uc?id=1cMIDGxAwhM_U5KOPPYacLhgZB5jdJesP\")\ngdown.download(\"https://drive.google.com/uc?id=1pNBx8OWEzZEAwAH5Ge-bBu-wnlBICfrt\")\n\nDownloading...\nFrom: https://drive.google.com/uc?id=1cMIDGxAwhM_U5KOPPYacLhgZB5jdJesP\nTo: /content/train.csv\n100%|██████████| 61.2k/61.2k [00:00&lt;00:00, 25.1MB/s]\nDownloading...\nFrom: https://drive.google.com/uc?id=1pNBx8OWEzZEAwAH5Ge-bBu-wnlBICfrt\nTo: /content/test.csv\n100%|██████████| 28.6k/28.6k [00:00&lt;00:00, 31.5MB/s]\n\n\n'test.csv'\n\n\nLeer los datos de entrenamiento y de prueba\n\ntrain_data = pd.read_csv('train.csv')\ntest_data = pd.read_csv('test.csv')\n\nMostrar las primeras filas del conjunto de datos de entrenamiento\n\ntrain_data.head()\n\n\n  \n    \n\n\n\n\n\n\nPassengerId\nSurvived\nPclass\nName\nSex\nAge\nSibSp\nParch\nTicket\nFare\nCabin\nEmbarked\n\n\n\n\n0\n1\n0\n3\nBraund, Mr. Owen Harris\nmale\n22.0\n1\n0\nA/5 21171\n7.2500\nNaN\nS\n\n\n1\n2\n1\n1\nCumings, Mrs. John Bradley (Florence Briggs Th...\nfemale\n38.0\n1\n0\nPC 17599\n71.2833\nC85\nC\n\n\n2\n3\n1\n3\nHeikkinen, Miss. Laina\nfemale\n26.0\n0\n0\nSTON/O2. 3101282\n7.9250\nNaN\nS\n\n\n3\n4\n1\n1\nFutrelle, Mrs. Jacques Heath (Lily May Peel)\nfemale\n35.0\n1\n0\n113803\n53.1000\nC123\nS\n\n\n4\n5\n0\n3\nAllen, Mr. William Henry\nmale\n35.0\n0\n0\n373450\n8.0500\nNaN\nS\n\n\n\n\n\n    \n\n  \n    \n\n  \n    \n  \n    \n\n  \n\n    \n  \n\n\n\n  \n\n\n    \n        \n    \n\n  \n\n\n\n  \n\n\n    \n  \n\n\nAgregar una columna ‘source’ para indicar si los datos son de entrenamiento o de prueba\n\ntrain_data['source'] = 'train'\ntest_data['source'] = 'test'\n\nConcatenar los conjuntos de datos de entrenamiento y de prueba\n\ntotal_data = pd.concat((train_data, test_data), axis=0)\ntotal_data.reset_index(inplace=True, drop=True)\n\n\n# @title Q1 ¿Por qué unimos los dos conjuntos en un mismo dataframe?\nQ1 = \"Para que el procesamiento de los datos sea el mismo en ambos conjuntos.\" # @param [\"_\",\"Para reducir el tamaño de los conjuntos de datos.\", \"Porque es una práctica estándar en la ciencia de datos.\", \"Para simplificar el análisis de los datos.\", \"Para que el procesamiento de los datos sea el mismo en ambos conjuntos.\", \"Porque es más eficiente computacionalmente.\"]\n\n\nInformación sobre el conjunto de datos combinado\n\ntotal_data.info()\n\n&lt;class 'pandas.core.frame.DataFrame'&gt;\nRangeIndex: 1309 entries, 0 to 1308\nData columns (total 13 columns):\n #   Column       Non-Null Count  Dtype  \n---  ------       --------------  -----  \n 0   PassengerId  1309 non-null   int64  \n 1   Survived     891 non-null    float64\n 2   Pclass       1309 non-null   int64  \n 3   Name         1309 non-null   object \n 4   Sex          1309 non-null   object \n 5   Age          1046 non-null   float64\n 6   SibSp        1309 non-null   int64  \n 7   Parch        1309 non-null   int64  \n 8   Ticket       1309 non-null   object \n 9   Fare         1308 non-null   float64\n 10  Cabin        295 non-null    object \n 11  Embarked     1307 non-null   object \n 12  source       1309 non-null   object \ndtypes: float64(3), int64(4), object(6)\nmemory usage: 133.1+ KB\n\n\nCrear una nueva característica ‘HasCabin’ que indica si el pasajero tiene una cabina\n\ntotal_data[\"HasCabin\"] = pd.notna(total_data[\"Cabin\"])\n\nEliminar la columna original ‘Cabin’\n\ntotal_data.drop(['Cabin'], axis=1, inplace=True)\n\n\n# @title Q2: ¿Por qué hemos cambiado la variable Cabin por la variable HasCabin?\nQ2 = \"_\" # @param [\"_\", \"Porque la variable cabin era redundante.\", \"Para simplificar el conjunto de datos.\", \"Porque la variable hascabin ofrece más información relevante.\", \"Para mejorar la visualización de los datos.\", \"Porque no aporta nada saber en qué cabina iba el pasajero o si viajaba en camarote o no.\"]\n\nCrear una nueva característica ‘IsAlone’ que indica si el pasajero viaja solo\n\ntotal_data['IsAlone'] = (total_data['SibSp'] + total_data['Parch'] == 0)\n\nManejar valores faltantes: completar con el valor más frecuente para ‘Embarked’\n\ntotal_data[\"Embarked\"]\n\n\n\n\n\n\n\n\nEmbarked\n\n\n\n\n0\nS\n\n\n1\nC\n\n\n2\nS\n\n\n3\nS\n\n\n4\nS\n\n\n...\n...\n\n\n1304\nS\n\n\n1305\nC\n\n\n1306\nS\n\n\n1307\nS\n\n\n1308\nC\n\n\n\n\n1309 rows × 1 columns\ndtype: object\n\n\n\nembarked_top = total_data[\"Embarked\"].describe().top\ntotal_data[\"Embarked\"] = total_data[\"Embarked\"].fillna(embarked_top)\n\n\ntotal_data[\"Embarked\"].describe()\n\n\n\n\n\n\n\n\nEmbarked\n\n\n\n\ncount\n1309\n\n\nunique\n3\n\n\ntop\nS\n\n\nfreq\n916\n\n\n\n\ndtype: object\n\n\n\n# @title Q3:¿Por qué se ha tomado el valor más frecuente para llenar los huecos en la columna Embarked?\nQ3 = \"_\" # @param [\"_\", \"Por tomar una al azar.\", \"Para simplificar el procesamiento de los datos.\", \"Porque es mucho más frecuente subir en Southampton que en las otras dos opciones.\", \"Para mejorar la visualización de los datos.\", \"Por una cuestión alfabética.\"]\n\nCodificación One-Hot.\nLa codificación OneHot es una técnica para convertir variables categóricas en vectores binarios. Cada categoría única se representa con una columna binaria, donde un valor de 1 indica la presencia de la categoría y 0 su ausencia. Es ampliamente utilizada en el procesamiento de datos para preparar variables categóricas para su uso en algoritmos de aprendizaje automático.\n\n# Creamos una instancia de OneHotEncoder\nohe = OneHotEncoder()\n\n# Codificación One-Hot para la variable 'Sex'\nsex_column = total_data['Sex'].values.reshape(-1, 1)\nsex_encoded = ohe.fit_transform(sex_column)\nsex_df = pd.DataFrame(sex_encoded.toarray(), columns=ohe.get_feature_names_out())\n\n# Codificación One-Hot para la variable 'HasCabin'\nhas_cabin_column = total_data['HasCabin'].values.reshape(-1, 1)\nhas_cabin_encoded = ohe.fit_transform(has_cabin_column)\nhas_cabin_df = pd.DataFrame(has_cabin_encoded.toarray(), columns=ohe.get_feature_names_out())\n\n# Codificación One-Hot para la variable 'Embarked'\nembarked_column = total_data['Embarked'].values.reshape(-1, 1)\nembarked_encoded = ohe.fit_transform(embarked_column)\nembarked_df = pd.DataFrame(embarked_encoded.toarray(), columns=ohe.get_feature_names_out())\n\n\n# @title Q4: ¿Por qué crees que se han codificado así las variables Sex, HasCabin y Embarked?\nQ4 = \"_\" # @param [\"_\", \"Para aumentar la complejidad de los datos.\", \"Porque las variables originales eran numéricas y necesitaban ser transformadas.\", \"Porque son variables categóricas y son más fáciles de tratar así.\", \"Para reducir el tamaño del conjunto de datos.\", \"Porque las variables originales no eran relevantes para el análisis.\"]\n\nBorrar las columnas no necesarias\n\ntotal_data.drop(['Name', 'Ticket'], axis=1, inplace=True)\n\nEliminar las columnas originales después de la codificación One-Hot\n\ntotal_data.drop(['Sex', 'HasCabin', 'Embarked'], axis=1, inplace=True)\n\nConcatenar las nuevas características codificadas con el conjunto de datos\n\ntotal_data = pd.concat([total_data, sex_df, has_cabin_df, embarked_df], axis=1)\n\nSeparar el conjunto de datos combinado en conjuntos de entrenamiento y prueba\n\ntrain_data_p = total_data[total_data[\"source\"]==\"train\"]\ntest_data_p  = total_data[total_data[\"source\"]==\"test\"]\n\nEliminar la columna ‘source’\n\ntrain_data_p = train_data_p.drop(['source'], axis=1)  # Crear una copia del DataFrame sin la columna 'source'\ntest_data_p = test_data_p.drop(['source'], axis=1)  # Crear una copia del DataFrame sin la columna 'source'\n\nImputación de valores faltantes usando KNNImputer\nAyuda. Preguntadle a ChatGPT qué significa el código de la celda siguiente\n\nfrom sklearn.impute import KNNImputer\n\nimputer = KNNImputer(n_neighbors=8)\n\n# learn the parameters of kNN and apply the model\n# on train_data which includes target variable (Survived)\ntrain_data_p = pd.DataFrame(imputer.fit_transform(train_data_p), columns = train_data_p.columns)\n\n# Apply the kNN model on test_data to predict the missing Age values\ntest_data_p = pd.DataFrame(imputer.transform(test_data_p), columns = test_data_p.columns)\n\n\n# @title Q5: ¿Qué estrategia se ha seguido para llenar las edades faltantes?\nQ5 = \"_\" # @param [\"_\", \"Dividir el conjunto de datos en grupos basados en otras características y luego asignar una edad promedio a cada grupo.\", \"Utilizar técnicas de imputación basadas en la media o la mediana de las edades existentes.\", \"Eliminar las filas con valores de edad faltantes.\", \"Aplicar un promedio de las edades existentes.\", \"Utilizar técnicas de estimación de los valores faltantes con un algoritmo no supervisado.\"]\n\n\ntest_data_p\n\n\n  \n    \n\n\n\n\n\n\nPassengerId\nSurvived\nPclass\nAge\nSibSp\nParch\nFare\nIsAlone\nx0_female\nx0_male\nx0_False\nx0_True\nx0_C\nx0_Q\nx0_S\n\n\n\n\n891\n892\nNaN\n3\n34.5\n0\n0\n7.8292\nTrue\n0.0\n1.0\n1.0\n0.0\n0.0\n1.0\n0.0\n\n\n892\n893\nNaN\n3\n47.0\n1\n0\n7.0000\nFalse\n1.0\n0.0\n1.0\n0.0\n0.0\n0.0\n1.0\n\n\n893\n894\nNaN\n2\n62.0\n0\n0\n9.6875\nTrue\n0.0\n1.0\n1.0\n0.0\n0.0\n1.0\n0.0\n\n\n894\n895\nNaN\n3\n27.0\n0\n0\n8.6625\nTrue\n0.0\n1.0\n1.0\n0.0\n0.0\n0.0\n1.0\n\n\n895\n896\nNaN\n3\n22.0\n1\n1\n12.2875\nFalse\n1.0\n0.0\n1.0\n0.0\n0.0\n0.0\n1.0\n\n\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n\n\n1304\n1305\nNaN\n3\nNaN\n0\n0\n8.0500\nTrue\n0.0\n1.0\n1.0\n0.0\n0.0\n0.0\n1.0\n\n\n1305\n1306\nNaN\n1\n39.0\n0\n0\n108.9000\nTrue\n1.0\n0.0\n0.0\n1.0\n1.0\n0.0\n0.0\n\n\n1306\n1307\nNaN\n3\n38.5\n0\n0\n7.2500\nTrue\n0.0\n1.0\n1.0\n0.0\n0.0\n0.0\n1.0\n\n\n1307\n1308\nNaN\n3\nNaN\n0\n0\n8.0500\nTrue\n0.0\n1.0\n1.0\n0.0\n0.0\n0.0\n1.0\n\n\n1308\n1309\nNaN\n3\nNaN\n1\n1\n22.3583\nFalse\n0.0\n1.0\n1.0\n0.0\n1.0\n0.0\n0.0\n\n\n\n\n418 rows × 15 columns\n\n    \n\n  \n    \n\n  \n    \n  \n    \n\n  \n\n    \n  \n\n\n\n  \n\n\n    \n        \n    \n\n  \n\n\n\n  \n\n\n  \n    \n    \n\n  \n    \n  \n    \n    \n  \n\n    \n  \n\n\nVisualización de la correlación entre características\n\nplt.figure(figsize=(15,15))\nsns.heatmap(train_data_p.corr(), cbar=True, cmap='vlag', vmin=-1, vmax=1, annot=True)\n\n\n\n\n\n\n\n\nCalcular las tasas de supervivencia para mujeres y hombres en el conjunto de datos de entrenamiento\n\nwomen = train_data[train_data.Sex==\"female\"][\"Survived\"]\nmen = train_data[train_data.Sex==\"male\"][\"Survived\"]\nsurvivalRateForWomen = sum(women)/len(women)\nsurvivalRateForMen = sum(men)/len(men)\nprint(\"Tasa de supervivencia para mujeres: \", survivalRateForWomen)\nprint(\"Tasa de supervivencia para hombres: \", survivalRateForMen)\n\nTasa de supervivencia para mujeres:  0.7420382165605095\nTasa de supervivencia para hombres:  0.18890814558058924"
+  },
+  {
+    "objectID": "posts/code/word_embeddings.html",
+    "href": "posts/code/word_embeddings.html",
+    "title": "Word Embeddings",
+    "section": "",
+    "text": "#@title Licensed under the Apache License, Version 2.0 (the \"License\");\n# you may not use this file except in compliance with the License.\n# You may obtain a copy of the License at\n#\n# https://www.apache.org/licenses/LICENSE-2.0\n#\n# Unless required by applicable law or agreed to in writing, software\n# distributed under the License is distributed on an \"AS IS\" BASIS,\n# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n# See the License for the specific language governing permissions and\n# limitations under the License.\nColab"
+  },
+  {
+    "objectID": "posts/code/word_embeddings.html#representación-de-texto-como-números",
+    "href": "posts/code/word_embeddings.html#representación-de-texto-como-números",
+    "title": "Word Embeddings",
+    "section": "Representación de texto como números",
+    "text": "Representación de texto como números\nLos modelos de aprendizaje automático toman vectores (matrices de números) como entrada. Cuando se trabaja con texto, lo primero que debes hacer es idear una estrategia para convertir cadenas en números (o “vectorizar” el texto) antes de introducirlo en el modelo. En esta sección, veremos tres estrategias para hacerlo.\n\nCodificaciones One-hot\nComo primera idea, podrías codificar cada palabra en tu vocabulario con “one-hot”. Considera la frase “El gato se sentó en el tapete”. El vocabulario (o palabras únicas) en esta frase es (gato, tapete, en, sentó, el). Para representar cada palabra, crearás un vector cero con una longitud igual al vocabulario y luego colocarás un uno en el índice que corresponde a la palabra. Este enfoque se muestra en el siguiente diagrama.\nPara crear un vector que contenga la codificación de la frase, podrías concatenar los vectores one-hot para cada palabra.\nPunto clave: Este enfoque es ineficiente. Un vector codificado con one-hot es disperso (es decir, la mayoría de los índices son cero). Imagina que tienes 10000 palabras en el vocabulario. Para codificar cada palabra con one-hot, crearías un vector donde el 99.99% de los elementos son cero.\n\n\n\nCodifica cada palabra con un número único\nUn segundo enfoque que podrías intentar es codificar cada palabra usando un número único. Continuando con el ejemplo anterior, podrías asignar 1 a “gato”, 2 a “tapete”, y así sucesivamente. Luego, podrías codificar la frase “El gato se sentó en el tapete” como un vector denso como [5, 1, 4, 3, 5, 2]. Este enfoque es eficiente. En lugar de un vector disperso, ahora tienes uno denso (donde todos los elementos están llenos).\nSin embargo, hay dos desventajas en este enfoque:\n\nLa codificación de enteros es arbitraria (no captura ninguna relación entre palabras).\nUna codificación de enteros puede ser difícil de interpretar para un modelo. Un clasificador lineal, por ejemplo, aprende un solo peso para cada característica. Debido a que no existe una relación entre la similitud de dos palabras y la similitud de sus codificaciones, esta combinación de peso de característica no tiene sentido.\n\n\n\nWord embeddings\nLos word embeddings nos brindan una forma de usar una representación eficiente y densa en la que palabras similares tienen una codificación similar. Es importante destacar que no tienes que especificar esta codificación manualmente. Una incrustación (embedding) es un vector denso de valores de punto flotante (la longitud del vector es un parámetro que especificas). En lugar de especificar los valores para la incrustación manualmente, son parámetros entrenables (pesos aprendidos por el modelo durante el entrenamiento, de la misma manera que un modelo aprende pesos para una capa densa). Es común ver word embeddings que son de 8 dimensiones (para conjuntos de datos pequeños), hasta 1024 dimensiones cuando se trabaja con conjuntos de datos grandes. Una incrustación de mayor dimensión puede capturar relaciones detalladas entre palabras, pero se necesitan más datos para aprender.\n\nArriba hay un diagrama para una incrustación de palabras (word embedding). Cada palabra se representa como un vector de 4 dimensiones de valores de punto flotante. Otra forma de pensar en una incrustación (embedding) es como una “tabla de búsqueda”. Después de que se han aprendido estos pesos, puedes codificar cada palabra buscando el vector denso al que corresponde en la tabla."
+  },
+  {
+    "objectID": "posts/code/word_embeddings.html#preparación",
+    "href": "posts/code/word_embeddings.html#preparación",
+    "title": "Word Embeddings",
+    "section": "Preparación",
+    "text": "Preparación\n\nimport io\nimport os\nimport re\nimport shutil\nimport string\nimport tensorflow as tf\n\nfrom tensorflow.keras import Sequential\nfrom tensorflow.keras.layers import Dense, Embedding, GlobalAveragePooling1D\nfrom tensorflow.keras.layers import TextVectorization\n\n\nDescargar el conjunto de datos IMDb\nUtilizaremos el Large Movie Review Dataset a lo largo del tutorial. Entrenarás un modelo clasificador de sentimientos en este conjunto de datos y en el proceso aprenderás word embeddings desde cero. Para leer más sobre cómo cargar un conjunto de datos desde cero, consulta el Loading text tutorial.\nDescarga el conjunto de datos usando la utilidad de archivos de Keras y echa un vistazo a los directorios.\n\nurl = \"https://ai.stanford.edu/~amaas/data/sentiment/aclImdb_v1.tar.gz\"\n\ndataset = tf.keras.utils.get_file(\"aclImdb_v1.tar.gz\", url,\n                                  untar=True, cache_dir='.',\n                                  cache_subdir='')\n\ndataset_dir = os.path.join(os.path.dirname(dataset), 'aclImdb')\nos.listdir(dataset_dir)\n\nEcha un vistazo al directorio train/. Tiene carpetas pos y neg con reseñas de películas etiquetadas como positivas y negativas, respectivamente. Utilizarás las reseñas de las carpetas pos y neg para entrenar un modelo de clasificación binaria.\n\ntrain_dir = os.path.join(dataset_dir, 'train')\nos.listdir(train_dir)\n\nThe train directory also has additional folders which should be removed before creating training dataset.\n\nremove_dir = os.path.join(train_dir, 'unsup')\nshutil.rmtree(remove_dir)\n\nA continuación, crea un tf.data.Dataset usando tf.keras.utils.text_dataset_from_directory. Puedes leer más sobre el uso de esta utilidad en este text classification tutorial.\nUtiliza el directorio train para crear conjuntos de datos de entrenamiento y validación con una división del 20% para la validación.\n\nbatch_size = 1024\nseed = 123\ntrain_ds = tf.keras.utils.text_dataset_from_directory(\n    'aclImdb/train', batch_size=batch_size, validation_split=0.2,\n    subset='training', seed=seed)\nval_ds = tf.keras.utils.text_dataset_from_directory(\n    'aclImdb/train', batch_size=batch_size, validation_split=0.2,\n    subset='validation', seed=seed)\n\nEcha un vistazo a algunas reseñas de películas y sus etiquetas (1: positivo, 0: negativo) del conjunto de datos de entrenamiento.\n\nfor text_batch, label_batch in train_ds.take(1):\n  for i in range(5):\n    print(label_batch[i].numpy(), text_batch.numpy()[i])\n\n\n\nConfigurar el conjunto de datos para el rendimiento\nEstos son dos métodos importantes que debes usar al cargar datos para asegurarte de que la E/S no se bloquee.\n.cache() mantiene los datos en la memoria después de que se cargan desde el disco. Esto asegurará que el conjunto de datos no se convierta en un cuello de botella mientras se entrena tu modelo. Si tu conjunto de datos es demasiado grande para caber en la memoria, también puedes usar este método para crear una caché en disco de alto rendimiento, que es más eficiente de leer que muchos archivos pequeños.\n.prefetch() superpone el preprocesamiento de datos y la ejecución del modelo durante el entrenamiento.\nPuedes obtener más información sobre ambos métodos, así como sobre cómo almacenar en caché los datos en el disco en la data performance guide.\n\nAUTOTUNE = tf.data.AUTOTUNE\n\ntrain_ds = train_ds.cache().prefetch(buffer_size=AUTOTUNE)\nval_ds = val_ds.cache().prefetch(buffer_size=AUTOTUNE)"
+  },
+  {
+    "objectID": "posts/code/word_embeddings.html#usando-la-capa-embedding",
+    "href": "posts/code/word_embeddings.html#usando-la-capa-embedding",
+    "title": "Word Embeddings",
+    "section": "Usando la capa Embedding",
+    "text": "Usando la capa Embedding\nKeras facilita el uso de word embeddings. Echa un vistazo a la capa Embedding.\nLa capa Embedding se puede entender como una tabla de búsqueda que mapea desde índices enteros (que representan palabras específicas) a vectores densos (sus incrustaciones - embeddings). La dimensionalidad (o ancho) de la incrustación es un parámetro con el que puedes experimentar para ver qué funciona bien para tu problema, de la misma manera que experimentarías con la cantidad de neuronas en una capa densa.\n\n# Embed a 1,000 word vocabulary into 5 dimensions.\nembedding_layer = tf.keras.layers.Embedding(1000, 5)\n\nCuando creas una capa Embedding, los pesos para la incrustación se inicializan aleatoriamente (como cualquier otra capa). Durante el entrenamiento, se ajustan gradualmente mediante retropropagación. Una vez entrenados, los word embeddings aprendidos codificarán aproximadamente las similitudes entre las palabras (ya que se aprendieron para el problema específico en el que se entrena tu modelo).\nSi pasas un entero a una capa Embedding, el resultado reemplaza cada entero con el vector de la tabla de incrustaciones:\n\nresult = embedding_layer(tf.constant([1, 2, 3]))\nresult.numpy()\n\nPara problemas de texto o secuencia, la capa Embedding toma un tensor 2D de enteros, de forma (muestras, longitud_de_secuencia), donde cada entrada es una secuencia de enteros. Puede incrustar secuencias de longitudes variables. Podrías alimentar a la capa de incrustación anterior lotes con formas (32, 10) (lote de 32 secuencias de longitud 10) or (64, 15) (lote de 64 secuencias de longitud 15).\nEl tensor devuelto tiene un eje más que la entrada, los vectores de incrustación se alinean a lo largo del nuevo último eje. Pásale un lote de entrada (2, 3) y la salida es (2, 3, N)\n\nresult = embedding_layer(tf.constant([[0, 1, 2], [3, 4, 5]]))\nresult.shape\n\nCuando se le da un lote de secuencias como entrada, una capa Embedding devuelve un tensor de punto flotante 3D, de forma (muestras, longitud_de_secuencia, dimensionalidad_de_la_incrustación). Para convertir de esta secuencia de longitud variable a una representación fija, hay una variedad de enfoques estándar. Podrías usar una RNN, Atención o una capa de agrupación antes de pasarla a una capa Densa. Este tutorial utiliza la agrupación porque es la más simple. ElText Classification with an RNN es un buen siguiente paso."
+  },
+  {
+    "objectID": "posts/code/word_embeddings.html#preprocesamiento-de-texto",
+    "href": "posts/code/word_embeddings.html#preprocesamiento-de-texto",
+    "title": "Word Embeddings",
+    "section": "Preprocesamiento de texto",
+    "text": "Preprocesamiento de texto\nA continuación, define los pasos de preprocesamiento del conjunto de datos necesarios para tu modelo de clasificación de sentimientos. Inicializa una capa TextVectorization con los parámetros deseados para vectorizar las reseñas de películas. Puedes obtener más información sobre el uso de esta capa en el tutorial Text Classification.\n\n# Create a custom standardization function to strip HTML break tags '&lt;br /&gt;'.\ndef custom_standardization(input_data):\n  lowercase = tf.strings.lower(input_data)\n  stripped_html = tf.strings.regex_replace(lowercase, '&lt;br /&gt;', ' ')\n  return tf.strings.regex_replace(stripped_html,\n                                  '[%s]' % re.escape(string.punctuation), '')\n\n\n# Vocabulary size and number of words in a sequence.\nvocab_size = 10000\nsequence_length = 100\n\n# Use the text vectorization layer to normalize, split, and map strings to\n# integers. Note that the layer uses the custom standardization defined above.\n# Set maximum_sequence length as all samples are not of the same length.\nvectorize_layer = TextVectorization(\n    standardize=custom_standardization,\n    max_tokens=vocab_size,\n    output_mode='int',\n    output_sequence_length=sequence_length)\n\n# Make a text-only dataset (no labels) and call adapt to build the vocabulary.\ntext_ds = train_ds.map(lambda x, y: x)\nvectorize_layer.adapt(text_ds)"
+  },
+  {
+    "objectID": "posts/code/word_embeddings.html#crea-un-modelo-de-clasificación",
+    "href": "posts/code/word_embeddings.html#crea-un-modelo-de-clasificación",
+    "title": "Word Embeddings",
+    "section": "Crea un modelo de clasificación",
+    "text": "Crea un modelo de clasificación\nUtiliza la Keras Sequential API para definir el modelo de clasificación de sentimientos. En este caso, es un modelo de estilo “bolsa de palabras continua”. * La capa TextVectorization transforma cadenas en índices de vocabulario. Ya has inicializado vectorize_layer como una capa TextVectorization y has creado su vocabulario llamando a adapt en text_ds. Ahora vectorize_layer se puede utilizar como la primera capa de tu modelo de clasificación de extremo a extremo, alimentando cadenas transformadas en la capa. * La capa Embedding toma el vocabulario codificado en enteros y busca el vector de incrustación (embedding) para cada índice de palabra. Estos vectores se aprenden a medida que se entrena el modelo. Los vectores agregan una dimensión a la matriz de salida. Las dimensiones resultantes son: (batch, sequence, embedding).\n\nLa capa GlobalAveragePooling1D devuelve un vector de salida de longitud fija para cada ejemplo promediando sobre la dimensión de la secuencia. Esto permite que el modelo maneje la entrada de longitud variable, de la manera más simple posible.\nEl vector de salida de longitud fija se canaliza a través de una capa completamente conectada (Dense) con 16 unidades ocultas.\nLa última capa está densamente conectada con un solo nodo de salida.\n\nPrecaución: Este modelo no utiliza enmascaramiento, por lo que el relleno de ceros se utiliza como parte de la entrada y, por lo tanto, la longitud del relleno puede afectar la salida. Para solucionar esto, consulta masking and padding guide.\n\nembedding_dim=16\n\nmodel = Sequential([\n  vectorize_layer,\n  Embedding(vocab_size, embedding_dim, name=\"embedding\"),\n  GlobalAveragePooling1D(),\n  Dense(16, activation='relu'),\n  Dense(1)\n])"
+  },
+  {
+    "objectID": "posts/code/word_embeddings.html#compila-y-entrena-el-modelo",
+    "href": "posts/code/word_embeddings.html#compila-y-entrena-el-modelo",
+    "title": "Word Embeddings",
+    "section": "Compila y entrena el modelo",
+    "text": "Compila y entrena el modelo\nUtilizarás TensorBoard ara visualizar métricas, incluidas la pérdida y la precisión. Crea un tf.keras.callbacks.TensorBoard.\n\ntensorboard_callback = tf.keras.callbacks.TensorBoard(log_dir=\"logs\")\n\nCompila y entrena el modelo utilizando el optimizador Adam y la pérdida BinaryCrossentropy.\n\nmodel.compile(optimizer='adam',\n              loss=tf.keras.losses.BinaryCrossentropy(from_logits=True),\n              metrics=['accuracy'])\n\n\nmodel.fit(\n    train_ds,\n    validation_data=val_ds,\n    epochs=15,\n    callbacks=[tensorboard_callback])\n\nCon este enfoque, el modelo alcanza una precisión de validación de alrededor del 78% (ten en cuenta que el modelo está sobreajustado ya que la precisión del entrenamiento es mayor).\nNota: Tus resultados pueden ser un poco diferentes, dependiendo de cómo se inicializaron aleatoriamente los pesos antes de entrenar la capa Embedding.\nPuedes consultar el resumen del modelo para obtener más información sobre cada capa del modelo.\n\nmodel.summary()\n\nVisualiza las métricas del modelo en TensorBoard.\n\n#docs_infra: no_execute\n%load_ext tensorboard\n%tensorboard --logdir logs\n\n\n\n\nembeddings_classifier_accuracy.png"
+  },
+  {
+    "objectID": "posts/code/word_embeddings.html#recupere-las-incrustaciones-de-palabras-entrenadas-y-guárdelas-en-el-disco",
+    "href": "posts/code/word_embeddings.html#recupere-las-incrustaciones-de-palabras-entrenadas-y-guárdelas-en-el-disco",
+    "title": "Word Embeddings",
+    "section": "Recupere las incrustaciones de palabras entrenadas y guárdelas en el disco",
+    "text": "Recupere las incrustaciones de palabras entrenadas y guárdelas en el disco\nA continuación, recupere las incrustaciones de palabras aprendidas durante el entrenamiento. Las incrustaciones son pesos de la capa de incrustación en el modelo. La matriz de ponderaciones tiene la forma (vocab_size, embedding_dimension) .\nObtenga los pesos del modelo usando get_layer() y get_weights() . La función get_vocabulary() proporciona el vocabulario para crear un archivo de metadatos con un token por línea.\n\nweights = model.get_layer('embedding').get_weights()[0]\nvocab = vectorize_layer.get_vocabulary()\n\nEscriba los pesos en el disco. Para utilizar el proyector de incrustaciones , deberá cargar dos archivos en formato separado por tabulaciones: un archivo de vectores (que contiene la incrustación) y un archivo de metadatos (que contiene las palabras).\n\nout_v = io.open('vectors.tsv', 'w', encoding='utf-8')\nout_m = io.open('metadata.tsv', 'w', encoding='utf-8')\n\nfor index, word in enumerate(vocab):\n  if index == 0:\n    continue  # skip 0, it's padding.\n  vec = weights[index]\n  out_v.write('\\t'.join([str(x) for x in vec]) + \"\\n\")\n  out_m.write(word + \"\\n\")\nout_v.close()\nout_m.close()\n\nSi está ejecutando este tutorial en Colaboratory , puede usar el siguiente fragmento para descargar estos archivos a su máquina local (o usar el explorador de archivos, Ver -&gt; Tabla de contenido -&gt; Explorador de archivos ).\n\ntry:\n  from google.colab import files\n  files.download('vectors.tsv')\n  files.download('metadata.tsv')\nexcept Exception:\n  pass"
+  },
+  {
+    "objectID": "posts/code/word_embeddings.html#visualiza-las-incrustaciones",
+    "href": "posts/code/word_embeddings.html#visualiza-las-incrustaciones",
+    "title": "Word Embeddings",
+    "section": "Visualiza las incrustaciones",
+    "text": "Visualiza las incrustaciones\nPara visualizar las incrustaciones, súbalas al proyector de incrustaciones.\nAbra el Embedding Projector (esto también se puede ejecutar en una instancia local de TensorBoard)).\n\nHaga clic en “Cargar datos”.\nCargue los dos archivos que creó anteriormente: vecs.tsv and meta.tsv.\n\nAhora se mostrarán las incrustaciones que ha entrenado. Puede buscar palabras para encontrar a sus vecinos más cercanos. Por ejemplo, intente buscar “hermoso”. Es posible que vea vecinos como “maravilloso”.\nNota: Experimentalmente, es posible que pueda producir incrustaciones más interpretables mediante el uso de un modelo más simple. Intente eliminar la capa Dense(16) , vuelva a entrenar el modelo y visualice las incrustaciones nuevamente.\nNota: Por lo general, se necesita un conjunto de datos mucho más grande para entrenar incrustaciones de palabras más interpretables. Este tutorial utiliza un pequeño conjunto de datos de IMDb con fines de demostración."
+  },
+  {
+    "objectID": "posts/code/word_embeddings.html#próximos-pasos",
+    "href": "posts/code/word_embeddings.html#próximos-pasos",
+    "title": "Word Embeddings",
+    "section": "Próximos pasos",
+    "text": "Próximos pasos\nEste tutorial le ha mostrado cómo entrenar y visualizar incrustaciones de palabras desde cero en un pequeño conjunto de datos.\n\nPara entrenar incrustaciones de palabras usando el algoritmo de Word2Vec, pruebe el tutorial deWord2Vec .\nPara obtener más información sobre el procesamiento de texto avanzado, lea el modelo de Transformer para la comprensión del lenguaje."
+  },
+  {
+    "objectID": "posts/Presentaciones/LLMs.html#índice",
+    "href": "posts/Presentaciones/LLMs.html#índice",
+    "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
+    "section": "Índice",
+    "text": "Índice\n\nIntroducción breve a los LLM\nEmbedding Systems\nKnowledge Graphs\nFine-Tuning y Retrieval Augmentation Generation (RAG)\nLímites de los LLM\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/LLMs.html#llm",
+    "href": "posts/Presentaciones/LLMs.html#llm",
+    "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
+    "section": "LLM",
+    "text": "LLM\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/LLMs.html#llm-pretraining",
+    "href": "posts/Presentaciones/LLMs.html#llm-pretraining",
+    "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
+    "section": "LLM Pretraining",
+    "text": "LLM Pretraining\nA una velocidad de 1000 millones de operaciones por segundo entrenar a GPT3 nos costaría 100 millones de años. Se hubiese tenido que empezar a entrenar el modelo en el cretácico.\n\n\n\n\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/LLMs.html#llm-reinforcement-learning-with-human-feedback",
+    "href": "posts/Presentaciones/LLMs.html#llm-reinforcement-learning-with-human-feedback",
+    "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
+    "section": "LLM Reinforcement Learning with Human Feedback",
+    "text": "LLM Reinforcement Learning with Human Feedback\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/LLMs.html#llm-gpu",
+    "href": "posts/Presentaciones/LLMs.html#llm-gpu",
+    "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
+    "section": "LLM GPU",
+    "text": "LLM GPU\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/LLMs.html#transformers",
+    "href": "posts/Presentaciones/LLMs.html#transformers",
+    "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
+    "section": "TRANSFORMERS",
+    "text": "TRANSFORMERS\n\n\n  \n\nCodificaciones posicionales: Los transformers agregan un número a cada palabra para indicar su posición en la oración. Esto ayuda al modelo a comprender el orden de las palabras, lo cual es crucial para el significado.\nAtención: Permite al modelo considerar todas las palabras de la oración al traducir o analizar una palabra específica. Esto ayuda a capturar relaciones complejas entre palabras y mejora la precisión de la traducción y la comprensión.\nAutoatención: Permite al modelo comprender una palabra en el contexto de las palabras que la rodean, lo que ayuda a desambiguar palabras con múltiples significados y captar matices del lenguaje.\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/LLMs.html#codificación-posicional",
+    "href": "posts/Presentaciones/LLMs.html#codificación-posicional",
+    "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
+    "section": "Codificación Posicional",
+    "text": "Codificación Posicional\n\nProblema: A diferencia de las RNNs, los Transformers procesan palabras en paralelo, perdiendo información sobre el orden de las palabras.\nSolución: La codificación posicional añade información sobre la posición de cada palabra mediante vectores que se suman a los embeddings de las palabras.\nBeneficio: Permite al modelo distinguir oraciones con las mismas palabras en diferente orden, crucial para la interpretación del significado.\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/LLMs.html#mecanismo-de-atención-attention",
+    "href": "posts/Presentaciones/LLMs.html#mecanismo-de-atención-attention",
+    "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
+    "section": "Mecanismo de Atención (Attention)",
+    "text": "Mecanismo de Atención (Attention)\n\nPropósito: Permite al modelo enfocarse en las partes más relevantes de la secuencia de entrada al generar la salida.\nFuncionamiento: Asigna pesos a cada palabra de la entrada, indicando cuánto debe “prestar atención” el modelo.\nCálculo: Se computan matrices Query (Q), Key (K) y Value (V). La atención se calcula como una función de Q y K, ponderando los valores en V para generar un vector de contexto.\nBeneficio: Mejora el rendimiento en tareas de secuencia a secuencia al proporcionar información contextualmente relevante.\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/LLMs.html#autoatención-self-attention",
+    "href": "posts/Presentaciones/LLMs.html#autoatención-self-attention",
+    "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
+    "section": "Autoatención (Self-Attention)",
+    "text": "Autoatención (Self-Attention)\n\nPropósito: Permite a cada palabra prestar atención a todas las demás palabras dentro de la misma secuencia.\nFuncionamiento: Las matrices Q, K y V se calculan a partir de la misma secuencia de entrada.\nBeneficio: Permite el procesamiento paralelo y la captura de dependencias a largo alcance, superando las limitaciones de las RNNs.\nRelación con Atención: La autoatención es un caso particular del mecanismo de atención.\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/LLMs.html#embedding",
+    "href": "posts/Presentaciones/LLMs.html#embedding",
+    "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
+    "section": "EMBEDDING",
+    "text": "EMBEDDING\n\nVector embeddings son representaciones numéricas de información, como texto, documentos, imágenes o audio. Capturan el significado semántico de la información\n\n\n\n\n\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/LLMs.html#vectores",
+    "href": "posts/Presentaciones/LLMs.html#vectores",
+    "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
+    "section": "VECTORES",
+    "text": "VECTORES\n\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/LLMs.html#embedding-machine",
+    "href": "posts/Presentaciones/LLMs.html#embedding-machine",
+    "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
+    "section": "EMBEDDING MACHINE",
+    "text": "EMBEDDING MACHINE\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/LLMs.html#chunks",
+    "href": "posts/Presentaciones/LLMs.html#chunks",
+    "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
+    "section": "CHUNKS",
+    "text": "CHUNKS\n\nUn chunk es una unidad discreta de información extraída de un cuerpo de texto más grande. Puede ser una frase, un párrafo, una sección de un documento o incluso un documento completo, dependiendo del sistema y la aplicación. La idea principal es dividir la información en partes más pequeñas que sean más fáciles de procesar y analizar para la IA.\n\n\n\n\n\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/LLMs.html#métodos-de-división-en-chunks",
+    "href": "posts/Presentaciones/LLMs.html#métodos-de-división-en-chunks",
+    "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
+    "section": "Métodos de División en Chunks",
+    "text": "Métodos de División en Chunks\n\nPor encabezados: Se usan los encabezados y subtítulos del documento para crear chunks.\nPor párrafos: Se divide el texto en chunks según los párrafos.\nVentanas deslizantes: Una ventana captura texto al desplazarse, creando chunks que se superponen.\nSegmentación semántica: Se usan algoritmos para identificar unidades de significado y dividir el texto en chunks.\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/LLMs.html#cómo-los-llms-utilizan-los-chunks",
+    "href": "posts/Presentaciones/LLMs.html#cómo-los-llms-utilizan-los-chunks",
+    "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
+    "section": "¿Cómo los LLMs Utilizan los Chunks?",
+    "text": "¿Cómo los LLMs Utilizan los Chunks?\nLos LLMs utilizan los chunks para comprender el contexto y generar texto coherente. Al procesar un chunk, el LLM puede:\n\nIdentificar las ideas principales: Extraer la información más relevante del chunk.\nEstablecer conexiones: Relacionar la información del chunk con otros chunks o con el conocimiento previo del LLM. Para lograr esto, los LLMs utilizan mecanismos como la atención y la codificación posicional. La atención permite al modelo enfocarse en las partes más relevantes de la información dentro de un chunk y entre diferentes chunks. La codificación posicional proporciona información sobre la ubicación de las palabras dentro de un chunk y en relación con otros chunks, lo que ayuda al modelo a comprender el orden y la secuencia de la información.\nGenerar resúmenes: Condensar la información del chunk en un resumen conciso.\nResponder preguntas: Proporcionar respuestas precisas y relevantes a las preguntas basadas en la información del chunk.\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/LLMs.html#desafíos-de-los-chunks-en-llms",
+    "href": "posts/Presentaciones/LLMs.html#desafíos-de-los-chunks-en-llms",
+    "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
+    "section": "Desafíos de los Chunks en LLMs",
+    "text": "Desafíos de los Chunks en LLMs\n\nPérdida de contexto: Dividir el texto en chunks puede dificultar la comprensión de relaciones entre datos, afectando la precisión de las respuestas.\nSesgo: La selección de chunks puede introducir sesgos, llevando a resultados incompletos o inexactos.\nInformación compleja: Cierta información (imágenes, datos, etc.) es difícil de representar en chunks.\nTamaño del chunk: Encontrar el tamaño óptimo es crucial para el rendimiento del modelo.\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/LLMs.html#word-embeddings-métodos-basados-en-frecuencia",
+    "href": "posts/Presentaciones/LLMs.html#word-embeddings-métodos-basados-en-frecuencia",
+    "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
+    "section": "Word Embeddings: Métodos Basados en Frecuencia",
+    "text": "Word Embeddings: Métodos Basados en Frecuencia\n\nBag-of-Words (BoW): Conjunto no ordenado de palabras y sus frecuencias. Simple pero ignora el orden y la semántica.\nTF-IDF: Asigna pesos a las palabras según su frecuencia en un documento y en el corpus. Mejora BoW pero ignora el contexto.\nN-gramas: Considera secuencias de n palabras. Captura contexto local pero basado en frecuencia.\nMatrices de Co-ocurrencia: Capturan la frecuencia con la que las palabras aparecen juntas. Base para generar embeddings.\nOne-Hot Encoding: Vector binario para cada palabra. Sencillo pero de alta dimensionalidad y sin relaciones semánticas.\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/LLMs.html#word-embeddings-embeddings-estáticos",
+    "href": "posts/Presentaciones/LLMs.html#word-embeddings-embeddings-estáticos",
+    "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
+    "section": "Word Embeddings: Embeddings Estáticos",
+    "text": "Word Embeddings: Embeddings Estáticos\nGeneran un vector único por palabra, independientemente del contexto.\n\nWord2Vec (CBOW y Skip-gram): Redes neuronales para predecir palabras a partir de su contexto.\nGloVe: Combina métodos de conteo y predicción, capturando relaciones semánticas locales y globales.\nFastText: Mejora Word2Vec considerando la estructura interna de las palabras.\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/LLMs.html#word-embeddings-embeddings-contextuales",
+    "href": "posts/Presentaciones/LLMs.html#word-embeddings-embeddings-contextuales",
+    "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
+    "section": "Word Embeddings: Embeddings Contextuales",
+    "text": "Word Embeddings: Embeddings Contextuales\nGeneran embeddings que varían según el contexto, capturando la polisemia.\n\nSelf-Attention: Permite a cada palabra relacionarse con todas las demás. Fundamental en Transformers.\nELMo: Considera todo el contexto de la oración para embeddings dinámicos.\nBERT: Arquitectura Transformer para embeddings contextuales, capturando contexto izquierdo y derecho.\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/LLMs.html#word-embeddings-embeddings-contextuales-1",
+    "href": "posts/Presentaciones/LLMs.html#word-embeddings-embeddings-contextuales-1",
+    "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
+    "section": "Word Embeddings: Embeddings Contextuales",
+    "text": "Word Embeddings: Embeddings Contextuales\nGeneran embeddings que varían según el contexto, capturando la polisemia.\n\nSelf-Attention: Permite a cada palabra relacionarse con todas las demás. Fundamental en Transformers.\nELMo: Considera todo el contexto de la oración para embeddings dinámicos.\nBERT: Arquitectura Transformer para embeddings contextuales, capturando contexto izquierdo y derecho.\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/LLMs.html#qué-son-los-kg",
+    "href": "posts/Presentaciones/LLMs.html#qué-son-los-kg",
+    "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
+    "section": "¿QUÉ SON LOS KG?",
+    "text": "¿QUÉ SON LOS KG?\n\nLos grafos de conocimiento son bases de datos inteligentes que representan el conocimiento médico de manera estructurada, permitiendo a la IA comprender y razonar sobre la información de forma más efectiva.\n\n\n\n\nLord of the rings\n\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/LLMs.html#componentes-principales-de-un-grafo-de-conocimiento",
+    "href": "posts/Presentaciones/LLMs.html#componentes-principales-de-un-grafo-de-conocimiento",
+    "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
+    "section": "Componentes principales de un grafo de conocimiento",
+    "text": "Componentes principales de un grafo de conocimiento\n\n\n\n\n\nNodos: Representan entidades, conceptos u objetos, como enfermedades, síntomas, genes o medicamentos.\nAristas: Representan las relaciones entre los nodos, como “causa”, “trata”, “se asocia con” o “es un tipo de”.\nEtiquetas: Proporcionan información adicional sobre los nodos y las aristas, como nombres, descripciones o atributos.\n\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/LLMs.html#beneficios-de-los-grafos-de-conocimiento",
+    "href": "posts/Presentaciones/LLMs.html#beneficios-de-los-grafos-de-conocimiento",
+    "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
+    "section": "Beneficios de los Grafos de Conocimiento",
+    "text": "Beneficios de los Grafos de Conocimiento\n\n\n\n\n\nPrecisión en el diagnóstico: Integración de información de diversas fuentes.\nPersonalización de tratamientos: Uso de información genómica, clínica y de estilo de vida.\nDescubrimiento de fármacos: Identificación de nuevas relaciones entre genes, proteínas y enfermedades.\n\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/LLMs.html#limitaciones-de-los-grafos-de-conocimiento",
+    "href": "posts/Presentaciones/LLMs.html#limitaciones-de-los-grafos-de-conocimiento",
+    "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
+    "section": "Limitaciones de los Grafos de Conocimiento",
+    "text": "Limitaciones de los Grafos de Conocimiento\n\n\n\n\n\nCalidad de los datos: La precisión y completitud son cruciales.\nEscalabilidad: Construcción y mantenimiento a gran escala pueden ser complejos.\nInteroperabilidad: Integración con otros sistemas y bases de datos puede ser un desafío.\n\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/LLMs.html#fine-tunning",
+    "href": "posts/Presentaciones/LLMs.html#fine-tunning",
+    "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
+    "section": "FINE-TUNNING",
+    "text": "FINE-TUNNING\n\nEl ajuste fino de un LLM es una técnica de aprendizaje por transferencia en la que se toma un modelo pre-entrenado con un gran conjunto de datos para una tarea general, y se realizan pequeños ajustes a sus parámetros internos para optimizar su rendimiento en una nueva tarea específica\n\n\n\n\n\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/LLMs.html#transfer-learning",
+    "href": "posts/Presentaciones/LLMs.html#transfer-learning",
+    "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
+    "section": "TRANSFER LEARNING",
+    "text": "TRANSFER LEARNING\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/LLMs.html#fine-tunning-esquema",
+    "href": "posts/Presentaciones/LLMs.html#fine-tunning-esquema",
+    "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
+    "section": "FINE-TUNNING (ESQUEMA)",
+    "text": "FINE-TUNNING (ESQUEMA)\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/LLMs.html#fine-tunning-esquema-1",
+    "href": "posts/Presentaciones/LLMs.html#fine-tunning-esquema-1",
+    "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
+    "section": "FINE-TUNNING (ESQUEMA)",
+    "text": "FINE-TUNNING (ESQUEMA)\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/LLMs.html#fine-tuning-demostración",
+    "href": "posts/Presentaciones/LLMs.html#fine-tuning-demostración",
+    "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
+    "section": "FINE-TUNING (DEMOSTRACIÓN)",
+    "text": "FINE-TUNING (DEMOSTRACIÓN)\n\n\n\n\n\nBioMistral/BioMistral-7B\nmistralai/Mistral-7B-Instruct-v0.1\n\nEjemplo\n\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/LLMs.html#rag-2020",
+    "href": "posts/Presentaciones/LLMs.html#rag-2020",
+    "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
+    "section": "RAG (2020)",
+    "text": "RAG (2020)\n\nVectorización del contenido: Cada fragmento de texto se convierte en un vector numérico utilizando un modelo de embeddings. Estos vectores representan el significado semántico del texto en un espacio multidimensional.\nBúsqueda de similitud: Cuando se realiza una consulta, esta también se vectoriza, y se busca en la base de datos vectorial los fragmentos cuyos vectores sean más cercanos al de la consulta (similaridad coseno, distancia euclidiana, etc.).\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/LLMs.html#esquema-rag",
+    "href": "posts/Presentaciones/LLMs.html#esquema-rag",
+    "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
+    "section": "ESQUEMA RAG",
+    "text": "ESQUEMA RAG\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/LLMs.html#fine-tunning-vs-rag",
+    "href": "posts/Presentaciones/LLMs.html#fine-tunning-vs-rag",
+    "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
+    "section": "FINE-TUNNING VS RAG",
+    "text": "FINE-TUNNING VS RAG\nhttps://notebooklm.google.com/notebook/d40fef92-ed62-4659-9b3e-0e5cde949f45 https://notebooklm.google.com/notebook/35c43bd2-d012-45fb-a514-aa2958b1fdda\n\n\n\n\nCaracterística\n\n\nFine-tuning\n\n\nRAG\n\n\n\n\nEnfoque principal\n\n\nAdaptación del modelo\n\n\nAumento de la información\n\n\n\n\nMétodo\n\n\nAjuste de parámetros\n\n\nRecuperación de información externa\n\n\n\n\nVentajas\n\n\nPersonalización del modelo, eficiencia\n\n\nRespuestas contextualmente relevantes, precisión\n\n\n\n\nLimitaciones\n\n\nDificultad con datos cambiantes, adaptación de estilo limitada\n\n\nAdaptación de estilo limitada, enfoque en recuperación\n\n\n\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/LLMs.html#fine-tunning-vs-rag-1",
+    "href": "posts/Presentaciones/LLMs.html#fine-tunning-vs-rag-1",
+    "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
+    "section": "FINE-TUNNING VS RAG",
+    "text": "FINE-TUNNING VS RAG\n\n\n\n\n\n\n\n\n\nFinne-tunning\n\n\n\n\n \n\n\n\n\n\nRAG\n\n\n\n\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/LLMs.html#ejemplo-rag",
+    "href": "posts/Presentaciones/LLMs.html#ejemplo-rag",
+    "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
+    "section": "Ejemplo RAG",
+    "text": "Ejemplo RAG\nPregunta:Basándote en la historia clínica proporcionada, ¿cuáles son los tres factores de riesgo cardiovascular más relevantes para la paciente María Pérez y por qué son importantes en este caso específico?\nHistoria mal estructurada\nHistoria bien estructurada"
+  },
+  {
+    "objectID": "posts/Presentaciones/LLMs.html#límites-de-los-llm-clásicos",
+    "href": "posts/Presentaciones/LLMs.html#límites-de-los-llm-clásicos",
+    "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
+    "section": "Límites de los LLM (Clásicos)",
+    "text": "Límites de los LLM (Clásicos)\n\nFalta de comprensión del mundo real: Un LLM podría tener dificultades para responder preguntas sobre eventos actuales, lugares geográficos o conceptos abstractos.\nSesgo: Los LLMs pueden perpetuar y amplificar los sesgos presentes en los datos de entrenamiento. Esto puede resultar en respuestas discriminatorias, ofensivas o estereotipadas. Es importante abordar el sesgo en los LLMs para garantizar la equidad y la inclusión en las aplicaciones de IA.\n\nIncapacidad para razonar: Un LLM podría tener dificultades para resolver un problema matemático o para comprender las relaciones causales entre diferentes eventos.\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/LLMs.html#límites-de-los-llm-clásicos-ii",
+    "href": "posts/Presentaciones/LLMs.html#límites-de-los-llm-clásicos-ii",
+    "title": "LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO",
+    "section": "Límites de los LLM (Clásicos) II",
+    "text": "Límites de los LLM (Clásicos) II\nDificultad para manejar información nueva o inesperada: Los LLMs se basan en los datos con los que fueron entrenados y pueden tener dificultades para procesar información nueva o inesperada. Esto puede llevar a respuestas inexactas o irrelevantes cuando se enfrentan a situaciones novedosas.\nDificultad con el lenguaje complejo: Los LLMs pueden tener dificultades para comprender y procesar el lenguaje complejo o matizado, como el sarcasmo, las metáforas y otras figuras retóricas..\nLimitaciones en la creatividad: Los LLMs pueden generar diferentes tipos de contenido creativo de formato textual, como poemas, guiones, piezas musicales y correos electrónicos. Sin embargo, su capacidad para producir contenido verdaderamente original y creativo es limitada.\n\nNotes"
   }
 ]

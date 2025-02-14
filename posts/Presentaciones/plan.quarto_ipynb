@@ -1,0 +1,53 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "title: \"TEXTO DATOS E IMAGEN\"\n",
+        "date: \"2025-02-12\"\n",
+        "categories: [Introducción]\n",
+        "image: img/presentacion_bloque.jpg\n",
+        "author: \"[Antonio Otal Palacín](antonio.otal@udl.cat)\"\n",
+        "institute: Hospital Universitari Arnau de Vilanova (Lleida)\n",
+        "lang: es\n",
+        "format: \n",
+        "    revealjs:\n",
+        "        logo: 'https://cdn0.iconfinder.com/data/icons/modern-ui-glyph-1/64/modern-ui-glyph-1-03-512.png'\n",
+        "        footer-logo-link: \"/\"\n",
+        "        footer: \"[IAMED](https://cv.udl.cat/portal/site/100794-2324/tool/3d5c2c81-a50b-43ce-a0bf-ecbfd152350b)\"\n",
+        "        css: styles.css\n",
+        "        number-sections: false\n",
+        "        slide-number: false\n",
+        "        center: false\n",
+        "        preview-links: true\n",
+        "filters:\n",
+        "  - reveal-header        \n",
+        "jupyter: python3   \n",
+        "---\n",
+        "\n",
+        "\n",
+        "# Hoja de Ruta\n",
+        "- [LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO](/posts/Presentaciones/LLMs.html)\n",
+        "- DATOS EN EL ÁMBITO SANITARIO\n",
+        "- EJEMPLO DE DATOS NO ESTRUCTURADOS A ESTRUCTURADOS\n",
+        "- MODALIDADES DE IMAGEN\n",
+        "- AI APLICADA A LA IMÁGEN MÉDICA\n",
+        "\n",
+        "# LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO"
+      ],
+      "id": "1c5eaf0c"
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "name": "python3",
+      "language": "python",
+      "display_name": "Python 3 (ipykernel)",
+      "path": "/home/aotal/anaconda3/share/jupyter/kernels/python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}
