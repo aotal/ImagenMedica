@@ -2,12 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.40">
+<meta name="generator" content="quarto-1.4.549">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2025-02-14">
 
-<title>Datos sobre el desastre del Titanic – UdL AI 2025</title>
+<title>UdL AI 2025 - Datos sobre el desastre del Titanic</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -33,7 +34,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -69,10 +70,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-7bd38dde212b5dc988a7b669665f0c57.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -120,7 +121,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </a>
   </div>
             <div id="quarto-search" class="" title="Buscar"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -136,7 +137,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
-            <div class="quarto-navbar-tools">
+          <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -159,7 +160,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div>
       <div class="quarto-title-meta-heading">Fecha de publicación</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">14 de febrero de 2025</p>
+        <p class="date">2025-02-14</p>
       </div>
     </div>
     
@@ -178,6 +179,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
+<p><a href="https://colab.research.google.com/github/aotal/ImagenMedica/blob/master/posts/code/Titanic.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a></p>
 <p>Colab</p>
 <p><a href="https://colab.research.google.com/github/aotal/ImagenMedica/blob/master/posts/code/titanic.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a></p>
 <p>Este notebook está basado en un reto planteado por Kaggle titulado <a href="https://www.kaggle.com/c/titanic/overview">Titanic:Machine Learning from Disaster</a>. En ese enlace teneis lo que significa cada elemento de la tabla. Nosotros simplemente nos centraremos en el pre-procesado de datos y no haremos nada de <em>machine learning</em></p>
@@ -185,7 +187,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Haz una copia del <em>colab</em> en tu espacio personal</p>
 <p>Si tienes dudas <em>está permitido preguntar al <a href="https://chat.openai.com/">LLM</a> que utilices habitualmente</em>.</p>
 <p>Importar librerías necesarias</p>
-<div id="01b9fcd4-6fea-4d67-9dba-0864d705ba29" class="cell">
+<div id="01b9fcd4-6fea-4d67-9dba-0864d705ba29" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> OneHotEncoder</span>
@@ -195,38 +197,38 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> gdown</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Bajar los ficheros de datos</p>
-<div id="oRsJ3AFD7-qm" class="cell" data-outputid="4be134ad-82d8-4e2c-b919-724a4a92dae0">
+<div id="oRsJ3AFD7-qm" class="cell" data-outputid="60651b4e-e43c-4af9-c0f1-fbdcd120ef6b" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>gdown.download(<span class="st">"https://drive.google.com/uc?id=1cMIDGxAwhM_U5KOPPYacLhgZB5jdJesP"</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>gdown.download(<span class="st">"https://drive.google.com/uc?id=1pNBx8OWEzZEAwAH5Ge-bBu-wnlBICfrt"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Downloading...
 From: https://drive.google.com/uc?id=1cMIDGxAwhM_U5KOPPYacLhgZB5jdJesP
 To: /content/train.csv
-100%|██████████| 61.2k/61.2k [00:00&lt;00:00, 25.1MB/s]
+100%|██████████| 61.2k/61.2k [00:00&lt;00:00, 46.8MB/s]
 Downloading...
 From: https://drive.google.com/uc?id=1pNBx8OWEzZEAwAH5Ge-bBu-wnlBICfrt
 To: /content/test.csv
-100%|██████████| 28.6k/28.6k [00:00&lt;00:00, 31.5MB/s]</code></pre>
+100%|██████████| 28.6k/28.6k [00:00&lt;00:00, 41.1MB/s]</code></pre>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="2">
+<div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>'test.csv'</code></pre>
 </div>
 </div>
 <p>Leer los datos de entrenamiento y de prueba</p>
-<div id="713a464c-85ab-4197-935d-33bae0ff40b0" class="cell">
+<div id="713a464c-85ab-4197-935d-33bae0ff40b0" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>train_data <span class="op">=</span> pd.read_csv(<span class="st">'train.csv'</span>)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>test_data <span class="op">=</span> pd.read_csv(<span class="st">'test.csv'</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Mostrar las primeras filas del conjunto de datos de entrenamiento</p>
-<div id="caf5eb59-e317-4ef4-a8f9-ce589e9560d2" class="cell" data-outputid="1e5101d8-ec3c-4fe5-dc69-90731039fe97">
+<div id="caf5eb59-e317-4ef4-a8f9-ce589e9560d2" class="cell" data-outputid="71c76748-6fbc-489c-f5d4-0bffa2bd002f" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>train_data.head()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="4">
+<div class="cell-output cell-output-display" data-execution_count="5">
 
-  <div id="df-cdc1a5f3-acdd-476d-8466-4347f4799049" class="colab-df-container">
+  <div id="df-350a6be0-b535-4532-b6e3-aecaeddd6ec0" class="colab-df-container">
     <div>
 
 
-<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -327,7 +329,7 @@ To: /content/test.csv
     <div class="colab-df-buttons">
 
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-cdc1a5f3-acdd-476d-8466-4347f4799049')" title="Convert this dataframe to an interactive table." style="display:none;">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-350a6be0-b535-4532-b6e3-aecaeddd6ec0')" title="Convert this dataframe to an interactive table." style="display:none;">
 
   <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 -960 960 960">
     <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"></path>
@@ -377,12 +379,12 @@ To: /content/test.csv
 
     <script>
       const buttonEl =
-        document.querySelector('#df-cdc1a5f3-acdd-476d-8466-4347f4799049 button.colab-df-convert');
+        document.querySelector('#df-350a6be0-b535-4532-b6e3-aecaeddd6ec0 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-cdc1a5f3-acdd-476d-8466-4347f4799049');
+        const element = document.querySelector('#df-350a6be0-b535-4532-b6e3-aecaeddd6ec0');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -402,8 +404,8 @@ To: /content/test.csv
   </div>
 
 
-<div id="df-c51c07cd-3606-4ba6-b406-a719b29a4927">
-  <button class="colab-df-quickchart" onclick="quickchart('df-c51c07cd-3606-4ba6-b406-a719b29a4927')" title="Suggest charts" style="display:none;">
+<div id="df-be88f585-bf6a-492b-97b7-9e03d96507e7">
+  <button class="colab-df-quickchart" onclick="quickchart('df-be88f585-bf6a-492b-97b7-9e03d96507e7')" title="Suggest charts" style="display:none;">
 
 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 0 24 24" width="24px">
     <g>
@@ -519,7 +521,7 @@ To: /content/test.csv
     }
     (() => {
       let quickchartButtonEl =
-        document.querySelector('#df-c51c07cd-3606-4ba6-b406-a719b29a4927 button');
+        document.querySelector('#df-be88f585-bf6a-492b-97b7-9e03d96507e7 button');
       quickchartButtonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
     })();
@@ -531,12 +533,12 @@ To: /content/test.csv
 </div>
 </div>
 <p>Agregar una columna ‘source’ para indicar si los datos son de entrenamiento o de prueba</p>
-<div id="560855d9-6739-4ed6-bd19-90593b36b167" class="cell">
+<div id="560855d9-6739-4ed6-bd19-90593b36b167" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>train_data[<span class="st">'source'</span>] <span class="op">=</span> <span class="st">'train'</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>test_data[<span class="st">'source'</span>] <span class="op">=</span> <span class="st">'test'</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Concatenar los conjuntos de datos de entrenamiento y de prueba</p>
-<div id="72a8f9f4-4736-44e3-8502-470fc4ce89eb" class="cell">
+<div id="72a8f9f4-4736-44e3-8502-470fc4ce89eb" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>total_data <span class="op">=</span> pd.concat((train_data, test_data), axis<span class="op">=</span><span class="dv">0</span>)</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>total_data.reset_index(inplace<span class="op">=</span><span class="va">True</span>, drop<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -594,7 +596,7 @@ memory usage: 133.1+ KB</code></pre>
 <div>
 
 
-<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -663,7 +665,7 @@ memory usage: 133.1+ KB</code></pre>
 <div>
 
 
-<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -770,7 +772,7 @@ memory usage: 133.1+ KB</code></pre>
     <div>
 
 
-<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
@@ -1317,7 +1319,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const onCopySuccess = function(e) {
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -1349,45 +1362,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
   });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -1422,11 +1397,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
+      return note.innerHTML;
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
@@ -1474,6 +1445,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
+      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
