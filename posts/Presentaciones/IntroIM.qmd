@@ -1,6 +1,6 @@
 ---
 title: "Introducción a la imagen médica"
-date: "2024-02-22"
+date: "2025-02-25"
 categories: [Presentación]
 image: https://www.researchgate.net/profile/Isa-Dussauge/publication/277820221/figure/fig2/AS:669423601999885@1536614432979/Homer-Simpsons-brain-seen-with-MRI-X-ray-Image-reproduced-on-many-Internet-sites_W640.jpg
 author: "[Antonio Otal Palacín](antonio.otal@udl.cat)"
@@ -15,6 +15,7 @@ format:
         number-sections: false
         slide-number: false
         center: false
+        smaller: true
 filters:
   - reveal-header        
 jupyter: python3   
@@ -25,7 +26,8 @@ jupyter: python3
 -   Introducción a la imagen digital
 -   Conceptos básicos de imagen
 -   Adquisición de imágenes médicas
--   Procesamiento de imágenes
+-   Segmentación de imágenes médicas
+-   Radiómica (*Radiomics*)
 
 
 ::: notes
@@ -65,13 +67,6 @@ Notes
 Notes
 :::
 
-## Breve historia y evolución de la imagen digital
-
-![](https://emimedicalequipment.com/wp-content/webp-express/webp-images/uploads/2021/05/DR-Technology-Development.jpg.webp){fig-align="center"}
-
-::: notes
-Notes
-:::
 
 ## Importancia de la imagen digital en la medicina
 
@@ -341,7 +336,7 @@ Notes
 
 ## Segmentación de células
 
-![](https://static5.olympus-lifescience.com/modules/imageresizer/268/fa5/212318650b/902x369p695x284.png)
+![](https://evidentscientific.com/es/insights/media_167ae9803db5a3cdcd0e46660047ad32d3312da0c.png?width=2000&format=webply&optimize=medium)
 
 ::: notes
 Notes
@@ -355,9 +350,159 @@ Notes
 Notes
 :::
 
-## Instalar 3DSlicer y darse de alta en Huggingface
+# Radiómica
 
-- Descargar el [programa](https://download.slicer.org/)
-- Seguir las intrucciones del ejecutable
-- Ir a la página de [Huggingface](https://huggingface.co/)
-- Darse de [alta](https://huggingface.co/join)
+## La Imagen Médica: Más Allá de lo Visual
+
+- **Modalidades tradicionales:**
+    - Rayos X
+    - Tomografía Computarizada (TC)
+    - Resonancia Magnética (RM)
+    - Medicina Nuclear (PET/CT)
+- **Interpretación:** Principalmente *cualitativa* y *subjetiva*.
+- **Limitaciones:**
+    - Variabilidad inter-observador.
+    - Información potencialmente oculta.
+
+
+::: notes
+
+:::
+
+## ¿Qué es la Radiómica?
+
+<blockquote cite='https://insightsimaging.springeropen.com/articles/10.1186/s13244-020-00887-2'>
+
+La radiómica es un enfoque cuantitativo de la imagenología médica, que tiene como objetivo mejorar los datos existentes disponibles para los clínicos mediante análisis matemáticos avanzados. A través de la extracción matemática de la distribución espacial de las intensidades de señal y las interrelaciones de los píxeles, la radiómica cuantifica la información textural utilizando métodos de análisis del campo de la inteligencia artificial.
+
+</blockquote>
+
+- Transforma imágenes médicas en **datos cuantitativos**.
+
+- "Biopsia virtual": extraer información **sin** procedimientos invasivos.
+
+- La imagen como un *gran conjunto de datos* a explotar.
+
+
+::: notes
+
+:::
+
+## ¿Qué es la Radiómica?
+
+![](https://www.physik.uzh.ch/physik/dam/jcr:a8adea1e-6aa0-4895-b0e0-0677e0b7adca/radiomics_01072019.2019-07-15-13-37-21.png)
+
+::: notes
+
+:::
+
+## Flujo de Trabajo de la Radiómica: Imagen
+
+
+ 1. Adquisición de Imágenes
+
+    - Imágenes médicas estándar (TC, RM, etc.).
+    - ¡Importancia de la **estandarización**!
+
+2. Segmentación (ROI)
+
+    - Delimitar la región de interés (tumor, órgano...).
+    - Manual, semiautomática o automática.
+
+
+:::{.notes}
+
+:::
+
+## Flujo de Trabajo de la Radiómica: Parte Radiómica
+
+::::: columns
+
+::: {.column width="70%"}
+
+
+- **Extracción de Características:** Los algoritmos extraen *miles* de características.
+- **Forma:** Tamaño, esfericidad...
+- **Intensidad:** Distribución de valores.
+- **Textura:** Patrones espaciales.
+
+:::
+
+::: {.column width="30%" }
+ [![](https://theibsi.github.io/assets/images/ibsi.png){width=300px}](https://theibsi.github.io/){preview-links="true"}
+:::
+
+:::::
+
+::: notes
+Notes
+:::
+
+
+## Flujo de Trabajo de la Radiómica: Análisis
+
+- Selección y Modelado
+
+  - No todas las características son útiles.
+  - **Selección:** quedarnos con las más relevantes.
+  - **Modelado:** crear algoritmos predictivos (Machine Learning).
+
+
+- Validación del Modelo
+
+    - Probar con datos "nuevos".
+    - Asegurar la **generalización** (evitar sobreajuste).
+    - Métricas: Precisión, Sensibilidad, Especificidad.
+
+
+:::{.notes}
+
+:::
+
+## Aplicaciones Clínicas: Oncología
+
+- **Detección temprana**
+- **Diferenciación** benigno/maligno.
+- **Predicción de respuesta** a tratamientos.
+- **Pronóstico** y supervivencia.
+
+:::{.notes}
+
+:::
+
+## Aplicaciones Clínicas: Otras Áreas
+
+::: {.columns}
+::: {.column width="50%"}
+#### Cardiovasculares
+- Caracterización de placas.
+
+#### Neurológicas
+- Alzheimer.
+- Esclerosis múltiple.
+:::
+
+::: {.column width="50%"}
+#### Pulmonares
+- EPOC.
+- Fibrosis.
+:::
+:::
+
+:::{.notes}
+:::
+
+
+## Desafíos y Limitaciones
+
+::: {.incremental}
+- **Estandarización:** protocolos consistentes.
+- **"Caja Negra":** interpretabilidad de los modelos.
+- **Grandes Datos:** necesidad de *muchos* datos de calidad.
+- **Integración Clínica:** herramientas fáciles de usar.
+:::
+:::{.notes}
+:::
+
+
+# GRACIAS POR VUESTRA ATENCIÓN

@@ -14,8 +14,8 @@
   <meta name="generator" content="quarto-1.4.549">
 
   <meta name="author" content="Antonio Otal Palacín">
-  <meta name="dcterms.date" content="2025-02-12">
-  <title>UdL AI 2025 - TEXTO, DATOS E IMAGEN</title>
+  <meta name="dcterms.date" content="2025-02-28">
+  <title>UdL AI 2025 - AI e Imagen Médica</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -331,7 +331,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">TEXTO, DATOS E IMAGEN</h1>
+  <h1 class="title">AI e Imagen Médica</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -344,21 +344,234 @@
     </div>
 </div>
 
-  <p class="date">2025-02-12</p>
+  <p class="date">2025-02-28</p>
 </section>
-<section id="hoja-de-ruta" class="title-slide slide level1 center">
-<h1>Hoja de Ruta</h1>
+<section id="índice" class="slide level2">
+<h2>Índice</h2>
 <ul>
-<li><a href="../../posts/Presentaciones/LLMs.html">LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO</a></li>
-<li><a href="../../posts/Presentaciones/Datos_1.html">DATOS EN EL ÁMBITO SANITARIO</a></li>
-<li><a href="../../posts/Presentaciones/IntroIM.html">MODALIDADES DE IMAGEN</a></li>
-<li>AI APLICADA A LA IMÁGEN MÉDICA</li>
-<li>EJEMPLO DE DATOS NO ESTRUCTURADOS A ESTRUCTURADOS</li>
+<li>OCR</li>
+<li>AI en Imagen Médica</li>
+<li>Formatos de Imagen</li>
+<li>Segmentación automática</li>
+<li>Límites de los LLM</li>
+</ul>
+<aside class="notes">
+<p>Notes</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section>
+<section id="introducción-a-la-inteligencia-artificial-en-medicina-empecemos-por-algo-familiar---ocr" class="title-slide slide level1 center">
+<h1>Introducción a la Inteligencia Artificial en Medicina: Empecemos por algo familiar - ¡OCR!</h1>
+
+</section>
+<section id="qué-es-ocr-y-por-qué-es-relevante-en-el-entorno-sanitario" class="slide level2">
+<h2>¿Qué es OCR y por qué es relevante en el entorno sanitario?</h2>
+<ul>
+<li><strong>¿Has usado alguna vez OCR?</strong> (Escanear documentos, apps de escaneo de texto, etc.)</li>
+<li><strong>Definición sencilla:</strong> “Enseñar a un ordenador a leer texto en imágenes.” [Image of Demostración online sencilla de OCR: Imagen de documento médico en papel a la izquierda, texto digitalizado a la derecha]</li>
+<li><strong>Aplicaciones cotidianas:</strong> Escaneo de documentos con el móvil, reconocimiento de matrículas.</li>
+<li><strong>Relevancia en sanidad:</strong> Digitalizar documentos médicos:
+<ul>
+<li>Eficiencia, menos papel, menos errores.</li>
+<li>Acceso rápido a información.</li>
+</ul></li>
 </ul>
 </section>
+<section id="ejemplos-concretos-de-uso-de-ocr-en-hospitales-y-clínicas" class="slide level2">
+<h2>Ejemplos concretos de uso de OCR en hospitales y clínicas</h2>
+<ul>
+<li>Digitalización de historias clínicas en papel.</li>
+<li>Procesamiento de recetas médicas.</li>
+<li>Gestión de resultados de laboratorio.</li>
+</ul>
+</section></section>
+<section>
+<section id="introducción-general-a-la-inteligencia-artificial-en-imagen-médica-más-allá-del-texto-imágenes-que-nos-ayudan-a-diagnosticar" class="title-slide slide level1 center">
+<h1>Introducción General a la Inteligencia Artificial en Imagen Médica: Más allá del texto, ¡imágenes que nos ayudan a diagnosticar!</h1>
 
-<section id="large-language-models-llm-aplicados-al-entorno-médico" class="title-slide slide level1 center">
-<h1>LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO</h1>
+</section>
+<section id="ampliando-la-perspectiva-ia-no-solo-lee-texto-también-ve-imágenes-médicas." class="slide level2">
+<h2>Ampliando la perspectiva: IA no solo lee texto, también “ve” imágenes médicas.</h2>
+<ul>
+<li>Conexión con OCR: Si la IA puede “leer” imágenes con texto…</li>
+<li>… ¿Podría también “analizar” <strong>imágenes médicas</strong> para ayudarnos en el diagnóstico?</li>
+<li>Importancia de la imagen médica en el diagnóstico y tratamiento (radiografías, RM, TC, etc.).</li>
+<li>Auge de la IA en medicina y su potencial transformador en el análisis de imágenes.</li>
+</ul>
+</section>
+<section id="inteligencia-artificial-e-imagen-médica-qué-ventajas-nos-ofrece" class="slide level2">
+<h2>Inteligencia Artificial e Imagen Médica: ¿Qué ventajas nos ofrece?</h2>
+<ul>
+<li><strong>Mejora de la precisión diagnóstica:</strong> Detectar enfermedades antes y con mayor exactitud. [Image of Radiografía de tórax mostrando un pequeño nódulo pulmonar resaltado por IA]
+<ul>
+<li><em>Ejemplo concreto:</em> Detectar pequeños nódulos pulmonares en radiografías.</li>
+</ul></li>
+<li><strong>Eficiencia en el flujo de trabajo:</strong> Ahorrar tiempo a los médicos en tareas repetitivas.
+<ul>
+<li><em>Ejemplo concreto:</em> Segmentar órganos automáticamente.</li>
+</ul></li>
+<li><strong>Identificación de patrones sutiles:</strong> Descubrir información oculta no visible al ojo humano.
+<ul>
+<li><em>Ejemplo concreto:</em> Detectar cambios tempranos en resonancias cerebrales.</li>
+</ul></li>
+<li><strong>Hacia una medicina más personalizada:</strong> Adaptar diagnóstico y tratamiento a cada paciente.</li>
+</ul>
+</section>
+<section class="slide level2">
+
+</section></section>
+<section>
+<section id="formatos-de-imagen-3d-en-medicina-los-formatos-de-archivo-de-las-imágenes-médicas-que-usa-la-ia." class="title-slide slide level1 center">
+<h1>Formatos de Imagen 3D en Medicina: Los “formatos de archivo” de las imágenes médicas que usa la IA.</h1>
+
+</section>
+<section id="por-qué-necesitamos-formatos-especiales-para-las-imágenes-médicas" class="slide level2">
+<h2>¿Por qué necesitamos “formatos especiales” para las imágenes médicas?</h2>
+<ul>
+<li>Analogía con formatos de texto o música: Necesitamos formatos estandarizados para que los ordenadores “entiendan” las imágenes médicas.</li>
+<li>Importancia de la información adicional (metadatos) en imágenes médicas.</li>
+</ul>
+</section>
+<section id="el-estándar-dicom-el-formato-universal-de-las-imágenes-médicas-clínicas." class="slide level2">
+<h2>El Estándar DICOM: El “formato universal” de las imágenes médicas clínicas.</h2>
+<ul>
+<li>DICOM: Estándar principal para imágenes en hospitales. “Idioma común” de equipos médicos.</li>
+<li><strong>Características clave:</strong>
+<ul>
+<li>“Caja” que contiene imagen y metadatos.</li>
+<li>Metadatos: Información del paciente, estudio, equipo (“etiqueta”).</li>
+<li>Interoperabilidad: Equipos de diferentes marcas “se entienden”.</li>
+</ul></li>
+<li>[Image of Visor DICOM sencillo mostrando imagen y metadatos básicos]
+<ul>
+<li>Ejemplo visual de un visor DICOM sencillo.</li>
+</ul></li>
+</ul>
+</section>
+<section id="el-formato-nifti-más-para-investigación-especialmente-en-el-cerebro." class="slide level2">
+<h2>El Formato NIfTI: Más para investigación, especialmente en el cerebro.</h2>
+<ul>
+<li>NIfTI: Formato más simple, para investigación, sobre todo neuroimagen.</li>
+<li>Más “flexible” para análisis computacional e investigación.</li>
+<li>Ejemplo visual de software de neuroimagen (opcional).</li>
+<li><strong>Diferencia clave con DICOM:</strong> DICOM para clínica, NIfTI para investigación.</li>
+</ul>
+</section>
+<section class="slide level2">
+
+</section></section>
+<section>
+<section id="segmentación-automática-de-imágenes-médicas-con-ia-la-ia-dibujando-sobre-las-imágenes." class="title-slide slide level1 center">
+<h1>Segmentación Automática de Imágenes Médicas con IA: La IA “dibujando” sobre las imágenes.</h1>
+
+</section>
+<section id="qué-es-la-segmentación-como-si-la-ia-resaltara-o-dibujara-bordes-sobre-las-estructuras." class="slide level2">
+<h2>¿Qué es la Segmentación? “Como si la IA resaltara o dibujara bordes sobre las estructuras.”</h2>
+<ul>
+<li>Definición sencilla: Identificar y delimitar regiones en imágenes médicas.</li>
+<li>Analogía: “Resaltar” o “dibujar bordes”.</li>
+<li>Segmentación manual vs.&nbsp;automática: Manual laboriosa y subjetiva. Automática más rápida y precisa.</li>
+</ul>
+</section>
+<section id="por-qué-es-importante-la-segmentación-en-medicina" class="slide level2">
+<h2>¿Por qué es importante la Segmentación en Medicina?</h2>
+<ul>
+<li><strong>Diagnóstico:</strong> Detectar y medir tumores, lesiones. [Image of Imagen de TC de pulmón mostrando un tumor segmentado y medido por IA]
+<ul>
+<li><em>Ejemplo concreto:</em> Medir tamaño de tumor en pulmón.</li>
+</ul></li>
+<li><strong>Planificación del tratamiento:</strong> Planificar cirugías, radioterapia. [Image of Resonancia magnética cerebral mostrando el área a operar delimitada por segmentación de IA]
+<ul>
+<li><em>Ejemplo concreto:</em> Delimitar área a operar en cirugía cerebral.</li>
+</ul></li>
+<li><strong>Análisis cuantitativo:</strong> Medir volúmenes de órganos para detectar enfermedades.
+<ul>
+<li><em>Ejemplo concreto:</em> Medir volumen del ventrículo izquierdo del corazón.</li>
+</ul></li>
+</ul>
+</section>
+<section id="cómo-hace-la-ia-la-segmentación-automática-explicación-conceptual-sencilla." class="slide level2">
+<h2>¿Cómo hace la IA la Segmentación Automática? (Explicación conceptual sencilla).</h2>
+<ul>
+<li>Redes Neuronales Convolucionales (CNNs): “La IA aprende a reconocer patrones en las imágenes.” [Image of Representación muy simplificada de una Red Neuronal Convolucional como una “caja negra” que aprende de ejemplos]
+<ul>
+<li>Analogía: “Como un niño aprende a reconocer caras.”</li>
+</ul></li>
+<li><strong>Proceso general simplificado:</strong>
+<ul>
+<li>“Entrenamiento”: IA aprende con imágenes segmentadas por expertos.</li>
+<li>“Segmentación automática”: IA segmenta nuevas imágenes.</li>
+</ul></li>
+</ul>
+</section>
+<section id="herramientas-de-segmentación-con-ia-que-ya-se-usan-ejemplos-visuales." class="slide level2">
+<h2>Herramientas de Segmentación con IA que ya se usan (ejemplos visuales).</h2>
+<ul>
+<li>Ejemplos de software de segmentación médica con IA (interfaces gráficas). [Image of Interfaz de software de segmentación médica mostrando segmentación de un órgano en 3D]</li>
+<li>Aplicaciones clínicas concretas:
+<ul>
+<li>Detección de tumores (cerebro, pulmón, mama).</li>
+<li>Segmentación de órganos (cardiología, neurología).</li>
+<li>Guía quirúrgica.</li>
+</ul></li>
+</ul>
+</section>
+<section class="slide level2">
+
+</section></section>
+<section>
+<section id="conclusiones-y-futuro-de-la-ia-en-imagen-médica-un-futuro-prometedor-pero-con-consideraciones." class="title-slide slide level1 center">
+<h1>Conclusiones y Futuro de la IA en Imagen Médica: Un futuro prometedor, pero con consideraciones.</h1>
+
+</section>
+<section id="resumen-rápido-de-lo-aprendido-ocr-dicom-segmentación." class="slide level2">
+<h2>Resumen rápido de lo aprendido: OCR, DICOM, Segmentación.</h2>
+<ul>
+<li>Repaso visual y conciso de los temas principales.</li>
+</ul>
+</section>
+<section id="limitaciones-y-desafíos-actuales-de-la-ia-en-imagen-médica-adaptado-al-perfil-de-primer-año." class="slide level2">
+<h2>Limitaciones y Desafíos actuales de la IA en Imagen Médica (Adaptado al perfil de primer año).</h2>
+<ul>
+<li>“La IA es una herramienta, no un sustituto del médico.” Juicio clínico humano esencial.</li>
+<li>“La calidad de la IA depende de los datos con los que se la entrena.” Datos de calidad cruciales.</li>
+<li>“La IA necesita validación constante en la práctica clínica.” Seguridad y eficacia deben probarse.</li>
+</ul>
+</section>
+<section id="ejemplos-clínicos-impactantes-y-casos-de-uso-actual-recapitulando-y-reforzando-ejemplos." class="slide level2">
+<h2>Ejemplos Clínicos Impactantes y Casos de Uso Actual (Recapitulando y reforzando ejemplos).</h2>
+<ul>
+<li><strong>Radiología:</strong> Detección de nódulos pulmonares, fracturas, hemorragias cerebrales. [Image of Radiografía de tórax con detección de nódulo pulmonar resaltado por IA]</li>
+<li><strong>Cardiología:</strong> Análisis de ecocardiogramas, segmentación cardíaca en RM. [Image of Resonancia magnética cardíaca con segmentación del ventrículo izquierdo por IA]</li>
+<li><strong>Oftalmología:</strong> Detección de retinopatía diabética, degeneración macular. [Image of Imagen de retina con detección de retinopatía diabética por IA]</li>
+<li><strong>Patología digital:</strong> Diagnóstico de cáncer a partir de biopsias. [Image of Imagen de histopatología con detección de células cancerosas por IA]</li>
+<li><strong>Teledermatología:</strong> Pre-evaluación de riesgo de cáncer de piel con imágenes de smartphone. [Image of Imagen de lesión cutánea analizada por IA para detección de cáncer de piel]</li>
+</ul>
+</section>
+<section id="pregunta-abierta-a-los-alumnos" class="slide level2">
+<h2>Pregunta abierta a los alumnos</h2>
+<ul>
+<li>¿Dónde ven ustedes el mayor potencial de la IA en imagen médica en <em>su futuro</em> como médicos?</li>
+</ul>
+</section>
+<section id="recursos-adicionales-amigables-para-principiantes" class="slide level2">
+<h2>Recursos Adicionales “amigables” para principiantes</h2>
+<ul>
+<li>Sugerencias de recursos de divulgación científica accesibles, webs sencillas sobre IA en medicina, vídeos cortos explicativos.</li>
+</ul>
+</section></section>
+<section id="gracias-por-vuestra-atención" class="title-slide slide level1 center">
+<h1>GRACIAS POR VUESTRA ATENCIÓN</h1>
 
 <div class="quarto-auto-generated-content">
 <p><img src="https://cdn0.iconfinder.com/data/icons/modern-ui-glyph-1/64/modern-ui-glyph-1-03-512.png" class="slide-logo"></p>
@@ -412,7 +625,7 @@
 'autoAnimateDuration': 1,
 'autoAnimateUnmatched': true,
 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
-'smaller': false,
+'smaller': true,
  
         // Display controls in the bottom right corner
         controls: false,

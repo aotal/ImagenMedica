@@ -158,7 +158,7 @@
     "href": "posts/Presentaciones/Datos_1.html#índice",
     "title": "Datos en el ámbito de la salud",
     "section": "Índice",
-    "text": "Índice\n\nIntroducción\nClasificación de los datos\nBases de datos\nAnotación de datos\nPrivacidad y confidencialidad\nRegistros electrónicos de salud\nPreprocesado de datos médicos\nRadiómica (Radiomics)\n\n\nNotes"
+    "text": "Índice\n\nIntroducción\nClasificación de los datos\nBases de datos\nAnotación de datos\nPrivacidad y confidencialidad\nRegistros electrónicos de salud\nPreprocesado de datos médicos\n\n\nNotes"
   },
   {
     "objectID": "posts/Presentaciones/Datos_1.html#disponibilidad-masiva-de-datos",
@@ -578,7 +578,7 @@
     "href": "index.html",
     "title": "Intel·ligència artificial en medicina",
     "section": "",
-    "text": "Datos sobre el desastre del Titanic\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExtracción de características radiómicas\n\n\n\n\n\n\nColab\n\n\n\n\n\n\n\n\n\n14 feb 2025\n\n\n\n\n\n\n\n\n\n\n\n\nLARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO\n\n\n\n\n\n\nPresentación\n\n\n\n\n\n\n\n\n\n12 feb 2025\n\n\nAntonio Otal Palacín\n\n\n\n\n\n\n\n\n\n\n\n\nTEXTO, DATOS E IMAGEN\n\n\n\n\n\n\nIntroducción\n\n\n\n\n\n\n\n\n\n12 feb 2025\n\n\nAntonio Otal Palacín\n\n\n\n\n\n\n\n\n\n\n\n\nEmbeddings\n\n\n\n\n\n\nColab\n\n\n\n\n\n\n\n\n\n19 feb 2024\n\n\n\n\n\n\n\n\n\n\n\n\nProcesamiento de prospectos\n\n\n\n\n\n\nPresentación\n\n\n\n\n\n\n\n\n\n17 feb 2024\n\n\nAntonio Otal Palacín\n\n\n\n\n\n\n\n\n\n\n\n\nDatos en el ámbito de la salud\n\n\n\n\n\n\nPresentación\n\n\n\n\n\n\n\n\n\n14 feb 2024\n\n\nAntonio Otal Palacín\n\n\n\n\n\n\n\n\n\n\n\n\nWord Embeddings\n\n\n\n\n\n\nColab\n\n\n\n\n\n\n\n\n\n12 feb 2024\n\n\n\n\n\n\nNo hay resultados"
+    "text": "Datos sobre el desastre del Titanic\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAI e Imagen Médica\n\n\n\n\n\n\nPresentación\n\n\n\n\n\n\n\n\n\n28 feb 2025\n\n\nAntonio Otal Palacín\n\n\n\n\n\n\n\n\n\n\n\n\nIntroducción a la imagen médica\n\n\n\n\n\n\nPresentación\n\n\n\n\n\n\n\n\n\n25 feb 2025\n\n\nAntonio Otal Palacín\n\n\n\n\n\n\n\n\n\n\n\n\nExtracción de características radiómicas\n\n\n\n\n\n\nColab\n\n\n\n\n\n\n\n\n\n14 feb 2025\n\n\n\n\n\n\n\n\n\n\n\n\nLARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO\n\n\n\n\n\n\nPresentación\n\n\n\n\n\n\n\n\n\n12 feb 2025\n\n\nAntonio Otal Palacín\n\n\n\n\n\n\n\n\n\n\n\n\nTEXTO, DATOS E IMAGEN\n\n\n\n\n\n\nIntroducción\n\n\n\n\n\n\n\n\n\n12 feb 2025\n\n\nAntonio Otal Palacín\n\n\n\n\n\n\n\n\n\n\n\n\nEmbeddings\n\n\n\n\n\n\nColab\n\n\n\n\n\n\n\n\n\n19 feb 2024\n\n\n\n\n\n\n\n\n\n\n\n\nProcesamiento de prospectos\n\n\n\n\n\n\nPresentación\n\n\n\n\n\n\n\n\n\n17 feb 2024\n\n\nAntonio Otal Palacín\n\n\n\n\n\n\n\n\n\n\n\n\nDatos en el ámbito de la salud\n\n\n\n\n\n\nPresentación\n\n\n\n\n\n\n\n\n\n14 feb 2024\n\n\nAntonio Otal Palacín\n\n\n\n\n\n\n\n\n\n\n\n\nWord Embeddings\n\n\n\n\n\n\nColab\n\n\n\n\n\n\n\n\n\n12 feb 2024\n\n\n\n\n\n\nNo hay resultados"
   },
   {
     "objectID": "posts/code/Radiomics_Feature_Extraction.html",
@@ -1216,5 +1216,327 @@
     "title": "Introducción a la imagen médica",
     "section": "Instalar 3DSlicer y darse de alta en Huggingface",
     "text": "Instalar 3DSlicer y darse de alta en Huggingface\n\nDescargar el programa\nSeguir las intrucciones del ejecutable\nIr a la página de Huggingface\nDarse de alta\n\n\n\n\n\nIAMED"
+  },
+  {
+    "objectID": "posts/Presentaciones/IntroIM.html#índice",
+    "href": "posts/Presentaciones/IntroIM.html#índice",
+    "title": "Introducción a la imagen médica",
+    "section": "Índice",
+    "text": "Índice\n\nIntroducción a la imagen digital\nConceptos básicos de imagen\nAdquisición de imágenes médicas\nSegmentación de imágenes médicas\nRadiómica (Radiomics)\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/IntroIM.html#definición-de-imagen-digital",
+    "href": "posts/Presentaciones/IntroIM.html#definición-de-imagen-digital",
+    "title": "Introducción a la imagen médica",
+    "section": "Definición de imagen digital",
+    "text": "Definición de imagen digital\nUna imagen digital o gráfico digital es una representación bidimensional de una imagen a partir de una matriz numérica, frecuentemente en binario (unos y ceros). Dependiendo de si la resolución de la imagen es estática o dinámica, puede tratarse de una imagen matricial (o mapa de bits) o de un gráfico vectorial. El mapa de bits es el formato más utilizado en informática.\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/IntroIM.html#definición-de-radiología-digital",
+    "href": "posts/Presentaciones/IntroIM.html#definición-de-radiología-digital",
+    "title": "Introducción a la imagen médica",
+    "section": "Definición de radiología digital",
+    "text": "Definición de radiología digital\nLa radiología digital es el conjunto de técnicas para obtener imágenes radiológicas escaneadas en formato digital\n\nA partir del escaneo de una la película tradicional (analógica) una vez revelada.\nPor escaneo de una Placa fotoestimulable de fósforo reutilizable que se graba con la imagen de la radiografía (CR)\nUtilizando detectores sensibles expuestos directa o indirectamente a los detectores de rayos X.\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/IntroIM.html#breve-historia-y-evolución-de-la-imagen-digital",
+    "href": "posts/Presentaciones/IntroIM.html#breve-historia-y-evolución-de-la-imagen-digital",
+    "title": "Introducción a la imagen médica",
+    "section": "Breve historia y evolución de la imagen digital",
+    "text": "Breve historia y evolución de la imagen digital\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/IntroIM.html#importancia-de-la-imagen-digital-en-la-medicina",
+    "href": "posts/Presentaciones/IntroIM.html#importancia-de-la-imagen-digital-en-la-medicina",
+    "title": "Introducción a la imagen médica",
+    "section": "Importancia de la imagen digital en la medicina",
+    "text": "Importancia de la imagen digital en la medicina\n\nDiagnóstico preciso.\nProcedimiento no invasivo\nInvestigación y desarrollo\nReducción de la dosis al paciente\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/IntroIM.html#qué-es-un-pixel",
+    "href": "posts/Presentaciones/IntroIM.html#qué-es-un-pixel",
+    "title": "Introducción a la imagen médica",
+    "section": "¿Qué es un pixel?",
+    "text": "¿Qué es un pixel?\n\n\n\n\n\n\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/IntroIM.html#resolución",
+    "href": "posts/Presentaciones/IntroIM.html#resolución",
+    "title": "Introducción a la imagen médica",
+    "section": "Resolución",
+    "text": "Resolución\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/IntroIM.html#profundidad-de-bit",
+    "href": "posts/Presentaciones/IntroIM.html#profundidad-de-bit",
+    "title": "Introducción a la imagen médica",
+    "section": "Profundidad de bit",
+    "text": "Profundidad de bit"
+  },
+  {
+    "objectID": "posts/Presentaciones/IntroIM.html#otras-características",
+    "href": "posts/Presentaciones/IntroIM.html#otras-características",
+    "title": "Introducción a la imagen médica",
+    "section": "Otras características",
+    "text": "Otras características\n\nEspacio de color (RGB,CMYK)\nRelación de aspecto\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/IntroIM.html#modalidades-de-imagen-médica-radiografías",
+    "href": "posts/Presentaciones/IntroIM.html#modalidades-de-imagen-médica-radiografías",
+    "title": "Introducción a la imagen médica",
+    "section": "Modalidades de imagen médica: Radiografías",
+    "text": "Modalidades de imagen médica: Radiografías\n\n\n\nTécnica 2D\nRayos X\nExploración anatómica\nGrafía\n\n\n\n\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/IntroIM.html#modalidades-de-imagen-médica-arcos-de-quirófano",
+    "href": "posts/Presentaciones/IntroIM.html#modalidades-de-imagen-médica-arcos-de-quirófano",
+    "title": "Introducción a la imagen médica",
+    "section": "Modalidades de imagen médica: Arcos de quirófano",
+    "text": "Modalidades de imagen médica: Arcos de quirófano\n\n\n\nTécnica 2D\nRayos X\nExploración anatómica\nEscopia\n\n\n\n\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/IntroIM.html#modalidades-de-imagen-médica-tomografía-computerizada",
+    "href": "posts/Presentaciones/IntroIM.html#modalidades-de-imagen-médica-tomografía-computerizada",
+    "title": "Introducción a la imagen médica",
+    "section": "Modalidades de imagen médica: Tomografía computerizada",
+    "text": "Modalidades de imagen médica: Tomografía computerizada\n\n\n\nTécnica 3D\nRayos X\nExploración anatómica\nImagen tomográfica\n\n\n\n\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/IntroIM.html#modalidades-de-imagen-médica-imágenes-por-resonancia-magnética-nuclear",
+    "href": "posts/Presentaciones/IntroIM.html#modalidades-de-imagen-médica-imágenes-por-resonancia-magnética-nuclear",
+    "title": "Introducción a la imagen médica",
+    "section": "Modalidades de imagen médica: Imágenes por resonancia magnética nuclear",
+    "text": "Modalidades de imagen médica: Imágenes por resonancia magnética nuclear\n\n\n\nTécnica 3D\nResonancia magnética nuclear\nExploración anatómica\nImagen tomográfica\n\n\n\n\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/IntroIM.html#modalidades-de-imagen-médica-equipos-de-ultrasonidos",
+    "href": "posts/Presentaciones/IntroIM.html#modalidades-de-imagen-médica-equipos-de-ultrasonidos",
+    "title": "Introducción a la imagen médica",
+    "section": "Modalidades de imagen médica: Equipos de ultrasonidos",
+    "text": "Modalidades de imagen médica: Equipos de ultrasonidos\n\n\n\nTécnica 2D\nOndas sonoras de alta frecuencia\nExploración anatómica\n\n\n\n\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/IntroIM.html#modalidades-de-imagen-médica-spect",
+    "href": "posts/Presentaciones/IntroIM.html#modalidades-de-imagen-médica-spect",
+    "title": "Introducción a la imagen médica",
+    "section": "Modalidades de imagen médica: SPECT",
+    "text": "Modalidades de imagen médica: SPECT\n\n\n\nTécnica 3D\nRadiofármacos que emiten radiación gamma (\\(^{99}Tc^{m}\\))\nExploración funcional\n\n\n\n\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/IntroIM.html#modalidades-de-imagen-médica-pet",
+    "href": "posts/Presentaciones/IntroIM.html#modalidades-de-imagen-médica-pet",
+    "title": "Introducción a la imagen médica",
+    "section": "Modalidades de imagen médica: PET",
+    "text": "Modalidades de imagen médica: PET\n\n\n\nTécnica 3D\nRadiofármacos que emiten positrones (\\(^{18}F\\))\nExploración funcional\n\n\n\n\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/IntroIM.html#segmentación-de-órganos",
+    "href": "posts/Presentaciones/IntroIM.html#segmentación-de-órganos",
+    "title": "Introducción a la imagen médica",
+    "section": "Segmentación de órganos",
+    "text": "Segmentación de órganos\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/IntroIM.html#segmentación-de-células",
+    "href": "posts/Presentaciones/IntroIM.html#segmentación-de-células",
+    "title": "Introducción a la imagen médica",
+    "section": "Segmentación de células",
+    "text": "Segmentación de células\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/IntroIM.html#segmentación-de-tumores",
+    "href": "posts/Presentaciones/IntroIM.html#segmentación-de-tumores",
+    "title": "Introducción a la imagen médica",
+    "section": "Segmentación de tumores",
+    "text": "Segmentación de tumores\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/IntroIM.html#instalar-3dslicer-y-darse-de-alta-en-huggingface",
+    "href": "posts/Presentaciones/IntroIM.html#instalar-3dslicer-y-darse-de-alta-en-huggingface",
+    "title": "Introducción a la imagen médica",
+    "section": "Instalar 3DSlicer y darse de alta en Huggingface",
+    "text": "Instalar 3DSlicer y darse de alta en Huggingface\n\nDescargar el programa\nSeguir las intrucciones del ejecutable\nIr a la página de Huggingface\nDarse de alta\n\n\n\n\n\nIAMED"
+  },
+  {
+    "objectID": "posts/Presentaciones/IntroIM.html#la-imagen-médica-más-allá-de-lo-visual",
+    "href": "posts/Presentaciones/IntroIM.html#la-imagen-médica-más-allá-de-lo-visual",
+    "title": "Introducción a la imagen médica",
+    "section": "La Imagen Médica: Más Allá de lo Visual",
+    "text": "La Imagen Médica: Más Allá de lo Visual\n\nModalidades tradicionales:\n\nRayos X\nTomografía Computarizada (TC)\nResonancia Magnética (RM)\nMedicina Nuclear (PET/CT)\n\nInterpretación: Principalmente cualitativa y subjetiva.\nLimitaciones:\n\nVariabilidad inter-observador.\nInformación potencialmente oculta."
+  },
+  {
+    "objectID": "posts/Presentaciones/IntroIM.html#qué-es-la-radiómica",
+    "href": "posts/Presentaciones/IntroIM.html#qué-es-la-radiómica",
+    "title": "Introducción a la imagen médica",
+    "section": "¿Qué es la Radiómica?",
+    "text": "¿Qué es la Radiómica?\n\nLa radiómica es un enfoque cuantitativo de la imagenología médica, que tiene como objetivo mejorar los datos existentes disponibles para los clínicos mediante análisis matemáticos avanzados. A través de la extracción matemática de la distribución espacial de las intensidades de señal y las interrelaciones de los píxeles, la radiómica cuantifica la información textural utilizando métodos de análisis del campo de la inteligencia artificial.\n\n\nTransforma imágenes médicas en datos cuantitativos.\n“Biopsia virtual”: extraer información sin procedimientos invasivos.\nLa imagen como un gran conjunto de datos a explotar."
+  },
+  {
+    "objectID": "posts/Presentaciones/IntroIM.html#qué-es-la-radiómica-1",
+    "href": "posts/Presentaciones/IntroIM.html#qué-es-la-radiómica-1",
+    "title": "Introducción a la imagen médica",
+    "section": "¿Qué es la Radiómica?",
+    "text": "¿Qué es la Radiómica?"
+  },
+  {
+    "objectID": "posts/Presentaciones/IntroIM.html#flujo-de-trabajo-de-la-radiómica-imagen",
+    "href": "posts/Presentaciones/IntroIM.html#flujo-de-trabajo-de-la-radiómica-imagen",
+    "title": "Introducción a la imagen médica",
+    "section": "Flujo de Trabajo de la Radiómica: Imagen",
+    "text": "Flujo de Trabajo de la Radiómica: Imagen\n\nAdquisición de Imágenes\n\nImágenes médicas estándar (TC, RM, etc.).\n¡Importancia de la estandarización!\n\nSegmentación (ROI)\n\nDelimitar la región de interés (tumor, órgano…).\nManual, semiautomática o automática."
+  },
+  {
+    "objectID": "posts/Presentaciones/IntroIM.html#flujo-de-trabajo-de-la-radiómica-parte-radiómica",
+    "href": "posts/Presentaciones/IntroIM.html#flujo-de-trabajo-de-la-radiómica-parte-radiómica",
+    "title": "Introducción a la imagen médica",
+    "section": "Flujo de Trabajo de la Radiómica: Parte Radiómica",
+    "text": "Flujo de Trabajo de la Radiómica: Parte Radiómica\n\n\n\nExtracción de Características: Los algoritmos extraen miles de características.\nForma: Tamaño, esfericidad…\nIntensidad: Distribución de valores.\nTextura: Patrones espaciales.\n\n\n\n\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/IntroIM.html#flujo-de-trabajo-de-la-radiómica-análisis",
+    "href": "posts/Presentaciones/IntroIM.html#flujo-de-trabajo-de-la-radiómica-análisis",
+    "title": "Introducción a la imagen médica",
+    "section": "Flujo de Trabajo de la Radiómica: Análisis",
+    "text": "Flujo de Trabajo de la Radiómica: Análisis\n\nSelección y Modelado\n\nNo todas las características son útiles.\nSelección: quedarnos con las más relevantes.\nModelado: crear algoritmos predictivos (Machine Learning).\n\nValidación del Modelo\n\nProbar con datos “nuevos”.\nAsegurar la generalización (evitar sobreajuste).\nMétricas: Precisión, Sensibilidad, Especificidad."
+  },
+  {
+    "objectID": "posts/Presentaciones/IntroIM.html#aplicaciones-clínicas-oncología",
+    "href": "posts/Presentaciones/IntroIM.html#aplicaciones-clínicas-oncología",
+    "title": "Introducción a la imagen médica",
+    "section": "Aplicaciones Clínicas: Oncología",
+    "text": "Aplicaciones Clínicas: Oncología\n\nDetección temprana\nDiferenciación benigno/maligno.\nPredicción de respuesta a tratamientos.\nPronóstico y supervivencia."
+  },
+  {
+    "objectID": "posts/Presentaciones/IntroIM.html#aplicaciones-clínicas-otras-áreas",
+    "href": "posts/Presentaciones/IntroIM.html#aplicaciones-clínicas-otras-áreas",
+    "title": "Introducción a la imagen médica",
+    "section": "Aplicaciones Clínicas: Otras Áreas",
+    "text": "Aplicaciones Clínicas: Otras Áreas\n\n\nCardiovasculares\n\nCaracterización de placas.\n\nNeurológicas\n\nAlzheimer.\nEsclerosis múltiple.\n\n\nPulmonares\n\nEPOC.\nFibrosis."
+  },
+  {
+    "objectID": "posts/Presentaciones/IntroIM.html#desafíos-y-limitaciones",
+    "href": "posts/Presentaciones/IntroIM.html#desafíos-y-limitaciones",
+    "title": "Introducción a la imagen médica",
+    "section": "Desafíos y Limitaciones",
+    "text": "Desafíos y Limitaciones\n\n\nEstandarización: protocolos consistentes.\n“Caja Negra”: interpretabilidad de los modelos.\nGrandes Datos: necesidad de muchos datos de calidad.\nIntegración Clínica: herramientas fáciles de usar."
+  },
+  {
+    "objectID": "posts/Presentaciones/AI_Image.html#índice",
+    "href": "posts/Presentaciones/AI_Image.html#índice",
+    "title": "AI e Imagen Médica",
+    "section": "Índice",
+    "text": "Índice\n\nOCR\nAI en Imagen Médica\nFormatos de Imagen\nSegmentación automática\nLímites de los LLM\n\n\nNotes"
+  },
+  {
+    "objectID": "posts/Presentaciones/AI_Image.html#qué-es-ocr-y-por-qué-es-relevante-en-el-entorno-sanitario",
+    "href": "posts/Presentaciones/AI_Image.html#qué-es-ocr-y-por-qué-es-relevante-en-el-entorno-sanitario",
+    "title": "AI e Imagen Médica",
+    "section": "¿Qué es OCR y por qué es relevante en el entorno sanitario?",
+    "text": "¿Qué es OCR y por qué es relevante en el entorno sanitario?\n\n¿Has usado alguna vez OCR? (Escanear documentos, apps de escaneo de texto, etc.)\nDefinición sencilla: “Enseñar a un ordenador a leer texto en imágenes.” [Image of Demostración online sencilla de OCR: Imagen de documento médico en papel a la izquierda, texto digitalizado a la derecha]\nAplicaciones cotidianas: Escaneo de documentos con el móvil, reconocimiento de matrículas.\nRelevancia en sanidad: Digitalizar documentos médicos:\n\nEficiencia, menos papel, menos errores.\nAcceso rápido a información."
+  },
+  {
+    "objectID": "posts/Presentaciones/AI_Image.html#ejemplos-concretos-de-uso-de-ocr-en-hospitales-y-clínicas",
+    "href": "posts/Presentaciones/AI_Image.html#ejemplos-concretos-de-uso-de-ocr-en-hospitales-y-clínicas",
+    "title": "AI e Imagen Médica",
+    "section": "Ejemplos concretos de uso de OCR en hospitales y clínicas",
+    "text": "Ejemplos concretos de uso de OCR en hospitales y clínicas\n\nDigitalización de historias clínicas en papel.\nProcesamiento de recetas médicas.\nGestión de resultados de laboratorio."
+  },
+  {
+    "objectID": "posts/Presentaciones/AI_Image.html#ampliando-la-perspectiva-ia-no-solo-lee-texto-también-ve-imágenes-médicas.",
+    "href": "posts/Presentaciones/AI_Image.html#ampliando-la-perspectiva-ia-no-solo-lee-texto-también-ve-imágenes-médicas.",
+    "title": "AI e Imagen Médica",
+    "section": "Ampliando la perspectiva: IA no solo lee texto, también “ve” imágenes médicas.",
+    "text": "Ampliando la perspectiva: IA no solo lee texto, también “ve” imágenes médicas.\n\nConexión con OCR: Si la IA puede “leer” imágenes con texto…\n… ¿Podría también “analizar” imágenes médicas para ayudarnos en el diagnóstico?\nImportancia de la imagen médica en el diagnóstico y tratamiento (radiografías, RM, TC, etc.).\nAuge de la IA en medicina y su potencial transformador en el análisis de imágenes."
+  },
+  {
+    "objectID": "posts/Presentaciones/AI_Image.html#inteligencia-artificial-e-imagen-médica-qué-ventajas-nos-ofrece",
+    "href": "posts/Presentaciones/AI_Image.html#inteligencia-artificial-e-imagen-médica-qué-ventajas-nos-ofrece",
+    "title": "AI e Imagen Médica",
+    "section": "Inteligencia Artificial e Imagen Médica: ¿Qué ventajas nos ofrece?",
+    "text": "Inteligencia Artificial e Imagen Médica: ¿Qué ventajas nos ofrece?\n\nMejora de la precisión diagnóstica: Detectar enfermedades antes y con mayor exactitud. [Image of Radiografía de tórax mostrando un pequeño nódulo pulmonar resaltado por IA]\n\nEjemplo concreto: Detectar pequeños nódulos pulmonares en radiografías.\n\nEficiencia en el flujo de trabajo: Ahorrar tiempo a los médicos en tareas repetitivas.\n\nEjemplo concreto: Segmentar órganos automáticamente.\n\nIdentificación de patrones sutiles: Descubrir información oculta no visible al ojo humano.\n\nEjemplo concreto: Detectar cambios tempranos en resonancias cerebrales.\n\nHacia una medicina más personalizada: Adaptar diagnóstico y tratamiento a cada paciente."
+  },
+  {
+    "objectID": "posts/Presentaciones/AI_Image.html#por-qué-necesitamos-formatos-especiales-para-las-imágenes-médicas",
+    "href": "posts/Presentaciones/AI_Image.html#por-qué-necesitamos-formatos-especiales-para-las-imágenes-médicas",
+    "title": "AI e Imagen Médica",
+    "section": "¿Por qué necesitamos “formatos especiales” para las imágenes médicas?",
+    "text": "¿Por qué necesitamos “formatos especiales” para las imágenes médicas?\n\nAnalogía con formatos de texto o música: Necesitamos formatos estandarizados para que los ordenadores “entiendan” las imágenes médicas.\nImportancia de la información adicional (metadatos) en imágenes médicas."
+  },
+  {
+    "objectID": "posts/Presentaciones/AI_Image.html#el-estándar-dicom-el-formato-universal-de-las-imágenes-médicas-clínicas.",
+    "href": "posts/Presentaciones/AI_Image.html#el-estándar-dicom-el-formato-universal-de-las-imágenes-médicas-clínicas.",
+    "title": "AI e Imagen Médica",
+    "section": "El Estándar DICOM: El “formato universal” de las imágenes médicas clínicas.",
+    "text": "El Estándar DICOM: El “formato universal” de las imágenes médicas clínicas.\n\nDICOM: Estándar principal para imágenes en hospitales. “Idioma común” de equipos médicos.\nCaracterísticas clave:\n\n“Caja” que contiene imagen y metadatos.\nMetadatos: Información del paciente, estudio, equipo (“etiqueta”).\nInteroperabilidad: Equipos de diferentes marcas “se entienden”.\n\n[Image of Visor DICOM sencillo mostrando imagen y metadatos básicos]\n\nEjemplo visual de un visor DICOM sencillo."
+  },
+  {
+    "objectID": "posts/Presentaciones/AI_Image.html#el-formato-nifti-más-para-investigación-especialmente-en-el-cerebro.",
+    "href": "posts/Presentaciones/AI_Image.html#el-formato-nifti-más-para-investigación-especialmente-en-el-cerebro.",
+    "title": "AI e Imagen Médica",
+    "section": "El Formato NIfTI: Más para investigación, especialmente en el cerebro.",
+    "text": "El Formato NIfTI: Más para investigación, especialmente en el cerebro.\n\nNIfTI: Formato más simple, para investigación, sobre todo neuroimagen.\nMás “flexible” para análisis computacional e investigación.\nEjemplo visual de software de neuroimagen (opcional).\nDiferencia clave con DICOM: DICOM para clínica, NIfTI para investigación."
+  },
+  {
+    "objectID": "posts/Presentaciones/AI_Image.html#qué-es-la-segmentación-como-si-la-ia-resaltara-o-dibujara-bordes-sobre-las-estructuras.",
+    "href": "posts/Presentaciones/AI_Image.html#qué-es-la-segmentación-como-si-la-ia-resaltara-o-dibujara-bordes-sobre-las-estructuras.",
+    "title": "AI e Imagen Médica",
+    "section": "¿Qué es la Segmentación? “Como si la IA resaltara o dibujara bordes sobre las estructuras.”",
+    "text": "¿Qué es la Segmentación? “Como si la IA resaltara o dibujara bordes sobre las estructuras.”\n\nDefinición sencilla: Identificar y delimitar regiones en imágenes médicas.\nAnalogía: “Resaltar” o “dibujar bordes”.\nSegmentación manual vs. automática: Manual laboriosa y subjetiva. Automática más rápida y precisa."
+  },
+  {
+    "objectID": "posts/Presentaciones/AI_Image.html#por-qué-es-importante-la-segmentación-en-medicina",
+    "href": "posts/Presentaciones/AI_Image.html#por-qué-es-importante-la-segmentación-en-medicina",
+    "title": "AI e Imagen Médica",
+    "section": "¿Por qué es importante la Segmentación en Medicina?",
+    "text": "¿Por qué es importante la Segmentación en Medicina?\n\nDiagnóstico: Detectar y medir tumores, lesiones. [Image of Imagen de TC de pulmón mostrando un tumor segmentado y medido por IA]\n\nEjemplo concreto: Medir tamaño de tumor en pulmón.\n\nPlanificación del tratamiento: Planificar cirugías, radioterapia. [Image of Resonancia magnética cerebral mostrando el área a operar delimitada por segmentación de IA]\n\nEjemplo concreto: Delimitar área a operar en cirugía cerebral.\n\nAnálisis cuantitativo: Medir volúmenes de órganos para detectar enfermedades.\n\nEjemplo concreto: Medir volumen del ventrículo izquierdo del corazón."
+  },
+  {
+    "objectID": "posts/Presentaciones/AI_Image.html#cómo-hace-la-ia-la-segmentación-automática-explicación-conceptual-sencilla.",
+    "href": "posts/Presentaciones/AI_Image.html#cómo-hace-la-ia-la-segmentación-automática-explicación-conceptual-sencilla.",
+    "title": "AI e Imagen Médica",
+    "section": "¿Cómo hace la IA la Segmentación Automática? (Explicación conceptual sencilla).",
+    "text": "¿Cómo hace la IA la Segmentación Automática? (Explicación conceptual sencilla).\n\nRedes Neuronales Convolucionales (CNNs): “La IA aprende a reconocer patrones en las imágenes.” [Image of Representación muy simplificada de una Red Neuronal Convolucional como una “caja negra” que aprende de ejemplos]\n\nAnalogía: “Como un niño aprende a reconocer caras.”\n\nProceso general simplificado:\n\n“Entrenamiento”: IA aprende con imágenes segmentadas por expertos.\n“Segmentación automática”: IA segmenta nuevas imágenes."
+  },
+  {
+    "objectID": "posts/Presentaciones/AI_Image.html#herramientas-de-segmentación-con-ia-que-ya-se-usan-ejemplos-visuales.",
+    "href": "posts/Presentaciones/AI_Image.html#herramientas-de-segmentación-con-ia-que-ya-se-usan-ejemplos-visuales.",
+    "title": "AI e Imagen Médica",
+    "section": "Herramientas de Segmentación con IA que ya se usan (ejemplos visuales).",
+    "text": "Herramientas de Segmentación con IA que ya se usan (ejemplos visuales).\n\nEjemplos de software de segmentación médica con IA (interfaces gráficas). [Image of Interfaz de software de segmentación médica mostrando segmentación de un órgano en 3D]\nAplicaciones clínicas concretas:\n\nDetección de tumores (cerebro, pulmón, mama).\nSegmentación de órganos (cardiología, neurología).\nGuía quirúrgica."
+  },
+  {
+    "objectID": "posts/Presentaciones/AI_Image.html#resumen-rápido-de-lo-aprendido-ocr-dicom-segmentación.",
+    "href": "posts/Presentaciones/AI_Image.html#resumen-rápido-de-lo-aprendido-ocr-dicom-segmentación.",
+    "title": "AI e Imagen Médica",
+    "section": "Resumen rápido de lo aprendido: OCR, DICOM, Segmentación.",
+    "text": "Resumen rápido de lo aprendido: OCR, DICOM, Segmentación.\n\nRepaso visual y conciso de los temas principales."
+  },
+  {
+    "objectID": "posts/Presentaciones/AI_Image.html#limitaciones-y-desafíos-actuales-de-la-ia-en-imagen-médica-adaptado-al-perfil-de-primer-año.",
+    "href": "posts/Presentaciones/AI_Image.html#limitaciones-y-desafíos-actuales-de-la-ia-en-imagen-médica-adaptado-al-perfil-de-primer-año.",
+    "title": "AI e Imagen Médica",
+    "section": "Limitaciones y Desafíos actuales de la IA en Imagen Médica (Adaptado al perfil de primer año).",
+    "text": "Limitaciones y Desafíos actuales de la IA en Imagen Médica (Adaptado al perfil de primer año).\n\n“La IA es una herramienta, no un sustituto del médico.” Juicio clínico humano esencial.\n“La calidad de la IA depende de los datos con los que se la entrena.” Datos de calidad cruciales.\n“La IA necesita validación constante en la práctica clínica.” Seguridad y eficacia deben probarse."
+  },
+  {
+    "objectID": "posts/Presentaciones/AI_Image.html#ejemplos-clínicos-impactantes-y-casos-de-uso-actual-recapitulando-y-reforzando-ejemplos.",
+    "href": "posts/Presentaciones/AI_Image.html#ejemplos-clínicos-impactantes-y-casos-de-uso-actual-recapitulando-y-reforzando-ejemplos.",
+    "title": "AI e Imagen Médica",
+    "section": "Ejemplos Clínicos Impactantes y Casos de Uso Actual (Recapitulando y reforzando ejemplos).",
+    "text": "Ejemplos Clínicos Impactantes y Casos de Uso Actual (Recapitulando y reforzando ejemplos).\n\nRadiología: Detección de nódulos pulmonares, fracturas, hemorragias cerebrales. [Image of Radiografía de tórax con detección de nódulo pulmonar resaltado por IA]\nCardiología: Análisis de ecocardiogramas, segmentación cardíaca en RM. [Image of Resonancia magnética cardíaca con segmentación del ventrículo izquierdo por IA]\nOftalmología: Detección de retinopatía diabética, degeneración macular. [Image of Imagen de retina con detección de retinopatía diabética por IA]\nPatología digital: Diagnóstico de cáncer a partir de biopsias. [Image of Imagen de histopatología con detección de células cancerosas por IA]\nTeledermatología: Pre-evaluación de riesgo de cáncer de piel con imágenes de smartphone. [Image of Imagen de lesión cutánea analizada por IA para detección de cáncer de piel]"
+  },
+  {
+    "objectID": "posts/Presentaciones/AI_Image.html#pregunta-abierta-a-los-alumnos",
+    "href": "posts/Presentaciones/AI_Image.html#pregunta-abierta-a-los-alumnos",
+    "title": "AI e Imagen Médica",
+    "section": "Pregunta abierta a los alumnos",
+    "text": "Pregunta abierta a los alumnos\n\n¿Dónde ven ustedes el mayor potencial de la IA en imagen médica en su futuro como médicos?"
+  },
+  {
+    "objectID": "posts/Presentaciones/AI_Image.html#recursos-adicionales-amigables-para-principiantes",
+    "href": "posts/Presentaciones/AI_Image.html#recursos-adicionales-amigables-para-principiantes",
+    "title": "AI e Imagen Médica",
+    "section": "Recursos Adicionales “amigables” para principiantes",
+    "text": "Recursos Adicionales “amigables” para principiantes\n\nSugerencias de recursos de divulgación científica accesibles, webs sencillas sobre IA en medicina, vídeos cortos explicativos."
   }
 ]

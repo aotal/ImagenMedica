@@ -14,8 +14,8 @@
   <meta name="generator" content="quarto-1.4.549">
 
   <meta name="author" content="Antonio Otal Palacín">
-  <meta name="dcterms.date" content="2025-02-12">
-  <title>UdL AI 2025 - TEXTO, DATOS E IMAGEN</title>
+  <meta name="dcterms.date" content="2025-02-25">
+  <title>UdL AI 2025 - Introducción a la imagen médica</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -331,7 +331,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">TEXTO, DATOS E IMAGEN</h1>
+  <h1 class="title">Introducción a la imagen médica</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -344,21 +344,733 @@
     </div>
 </div>
 
-  <p class="date">2025-02-12</p>
+  <p class="date">2025-02-25</p>
 </section>
-<section id="hoja-de-ruta" class="title-slide slide level1 center">
-<h1>Hoja de Ruta</h1>
+<section id="índice" class="slide level2">
+<h2>Índice</h2>
 <ul>
-<li><a href="../../posts/Presentaciones/LLMs.html">LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO</a></li>
-<li><a href="../../posts/Presentaciones/Datos_1.html">DATOS EN EL ÁMBITO SANITARIO</a></li>
-<li><a href="../../posts/Presentaciones/IntroIM.html">MODALIDADES DE IMAGEN</a></li>
-<li>AI APLICADA A LA IMÁGEN MÉDICA</li>
-<li>EJEMPLO DE DATOS NO ESTRUCTURADOS A ESTRUCTURADOS</li>
+<li>Introducción a la imagen digital</li>
+<li>Conceptos básicos de imagen</li>
+<li>Adquisición de imágenes médicas</li>
+<li>Segmentación de imágenes médicas</li>
+<li>Radiómica (<em>Radiomics</em>)</li>
 </ul>
+<aside class="notes">
+<p>Notes</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section>
+<section id="introducción-a-la-imagen-digital" class="title-slide slide level1 center">
+<h1>Introducción a la imagen digital</h1>
+<aside class="notes">
+<p>Notes</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="definición-de-imagen-digital" class="slide level2">
+<h2>Definición de imagen digital</h2>
+<p><em>Una imagen digital o gráfico digital es una representación bidimensional de una imagen a partir de una matriz numérica, frecuentemente en binario (unos y ceros). Dependiendo de si la resolución de la imagen es estática o dinámica, puede tratarse de una imagen matricial (o mapa de bits) o de un gráfico vectorial. El mapa de bits es el formato más utilizado en informática.</em></p>
+<aside class="notes">
+<p>Notes</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="definición-de-radiología-digital" class="slide level2">
+<h2>Definición de radiología digital</h2>
+<p><em>La <a href="https://www.iaea.org/es/recursos/proteccion-radiologica-de-los-pacientes/profesionales-de-la-salud/radiodiagnostico/radiografias/digitales">radiología digital</a> es el conjunto de técnicas para obtener imágenes radiológicas escaneadas en formato digital</em></p>
+<ul>
+<li><p>A partir del escaneo de una la película tradicional (analógica) una vez revelada.</p></li>
+<li><p>Por escaneo de una Placa fotoestimulable de fósforo reutilizable que se graba con la imagen de la radiografía (CR)</p></li>
+<li><p>Utilizando detectores sensibles expuestos directa o indirectamente a los detectores de rayos X.</p></li>
+</ul>
+<aside class="notes">
+<p>Notes</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="importancia-de-la-imagen-digital-en-la-medicina" class="slide level2">
+<h2>Importancia de la imagen digital en la medicina</h2>
+<ul>
+<li><p>Diagnóstico preciso.</p></li>
+<li><p>Procedimiento no invasivo</p></li>
+<li><p>Investigación y desarrollo</p></li>
+<li><p>Reducción de la dosis al paciente</p></li>
+</ul>
+<aside class="notes">
+<p>Notes</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section></section>
+<section>
+<section id="conceptos-básicos-de-imagen" class="title-slide slide level1 center">
+<h1>Conceptos básicos de imagen</h1>
+
+</section>
+<section id="qué-es-un-pixel" class="slide level2">
+<h2>¿Qué es un pixel?</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="https://static.javatpoint.com/tutorial/dip/images/concept-of-pixel1.png"></p>
+</div><div class="column" style="width:50%;">
+<p><img data-src="https://images.wondershare.com/mockitt/tips/pixel-04.jpg"></p>
+</div>
+</div>
+<aside class="notes">
+<p>Notes</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="resolución" class="slide level2">
+<h2>Resolución</h2>
+
+<img data-src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Resolution_illustration.png" class="quarto-figure quarto-figure-center r-stretch"><aside class="notes">
+<p>Notes</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="profundidad-de-bit" class="slide level2">
+<h2>Profundidad de bit</h2>
+<p><img data-src="img/ProfBit.jpg"></p>
+<p><img data-src="https://www.profesionalreview.com/wp-content/uploads/2019/02/Espacio-de-color-img02.jpg"></p>
+</section>
+<section id="otras-características" class="slide level2">
+<h2>Otras características</h2>
+<ul>
+<li><p>Espacio de color (RGB,CMYK)</p></li>
+<li><p>Relación de aspecto</p></li>
+</ul>
+<aside class="notes">
+<p>Notes</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section></section>
+<section id="adquisición-de-imágenes-médicas" class="title-slide slide level1 center">
+<h1>Adquisición de imágenes médicas</h1>
+<aside class="notes">
+<p>Notes</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 
-<section id="large-language-models-llm-aplicados-al-entorno-médico" class="title-slide slide level1 center">
-<h1>LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO</h1>
+<section id="clasificación-1" class="title-slide slide level1 center">
+<h1>Clasificación 1</h1>
+<ul>
+<li><p>Basadas en radiaciones ionizantes</p></li>
+<li><p>Basadas en radiaciones No ionizantes</p></li>
+</ul>
+<aside class="notes">
+<p>Notes</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+
+<section>
+<section id="clasificación-2" class="title-slide slide level1 center">
+<h1>Clasificación 2</h1>
+<ul>
+<li><p>Imágenes anatómicas</p></li>
+<li><p>Imágenes funcionales</p></li>
+</ul>
+<aside class="notes">
+<p>Notes</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="modalidades-de-imagen-médica-radiografías" class="slide level2">
+<h2>Modalidades de imagen médica: Radiografías</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>Técnica 2D</li>
+<li>Rayos X</li>
+<li>Exploración anatómica</li>
+<li>Grafía</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img data-src="https://www.philips.es/c-dam/b2bhc/master/Products/Category/radiography/radiography/digital-radiography/digitaldiagnost-c90-product.jpg"></p>
+</div>
+</div>
+<aside class="notes">
+<p>Notes</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="modalidades-de-imagen-médica-arcos-de-quirófano" class="slide level2">
+<h2>Modalidades de imagen médica: Arcos de quirófano</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>Técnica 2D</li>
+<li>Rayos X</li>
+<li>Exploración anatómica</li>
+<li>Escopia</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img data-src="https://www.philips.es/c-dam/b2bhc/master/image-guided-therapy/mobile-c-arm/vascular/zenition-70.jpg"></p>
+</div>
+</div>
+<aside class="notes">
+<p>Notes</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="modalidades-de-imagen-médica-tomografía-computerizada" class="slide level2">
+<h2>Modalidades de imagen médica: Tomografía computerizada</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>Técnica 3D</li>
+<li>Rayos X</li>
+<li>Exploración anatómica</li>
+<li>Imagen tomográfica</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img data-src="https://www.philips.es/c-dam/corporate/newscenter/global/standard/resources/healthcare/2021/spectral-ct-7500/spectral-ct-product-shot-side-view.download.jpg"></p>
+</div>
+</div>
+<aside class="notes">
+<p>Notes</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="modalidades-de-imagen-médica-imágenes-por-resonancia-magnética-nuclear" class="slide level2">
+<h2>Modalidades de imagen médica: Imágenes por resonancia magnética nuclear</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>Técnica 3D</li>
+<li>Resonancia magnética nuclear</li>
+<li>Exploración anatómica</li>
+<li>Imagen tomográfica</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img data-src="https://marketing.webassets.siemens-healthineers.com/8f29d20bc36cb975/f3b7ec529638/v/e84360e43f6a/siemens-healthineers_MRI_Magnetom-Sola.png"></p>
+</div>
+</div>
+<aside class="notes">
+<p>Notes</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="modalidades-de-imagen-médica-equipos-de-ultrasonidos" class="slide level2">
+<h2>Modalidades de imagen médica: Equipos de ultrasonidos</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>Técnica 2D</li>
+<li>Ondas sonoras de alta frecuencia</li>
+<li>Exploración anatómica</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img data-src="https://www.promedco.com/images/Noticias_2022/_pro_Resona.png"></p>
+</div>
+</div>
+<aside class="notes">
+<p>Notes</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="modalidades-de-imagen-médica-spect" class="slide level2">
+<h2>Modalidades de imagen médica: SPECT</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>Técnica 3D</li>
+<li>Radiofármacos que emiten radiación gamma (<span class="math inline">\(^{99}Tc^{m}\)</span>)</li>
+<li>Exploración funcional</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img data-src="https://cdn.bimedis.com/search/aimage/standardm/93411.png"></p>
+</div>
+</div>
+<aside class="notes">
+<p>Notes</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="modalidades-de-imagen-médica-pet" class="slide level2">
+<h2>Modalidades de imagen médica: PET</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>Técnica 3D</li>
+<li>Radiofármacos que emiten positrones (<span class="math inline">\(^{18}F\)</span>)</li>
+<li>Exploración funcional</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img data-src="https://d100mj7v0l85u5.cloudfront.net/s3fs-public/styles/webp/public/GEHC-Discovery-IQ_spotlight_1_product_shot.jpg.webp?itok=MV2FdG4K"></p>
+</div>
+</div>
+<aside class="notes">
+<p>Notes</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section></section>
+<section>
+<section id="segmentación-de-imágenes-médicas" class="title-slide slide level1 center">
+<h1>Segmentación de imágenes médicas</h1>
+<p>-La segmentación de imágenes médicas consiste en dividir dichas imágenes en regiones o segmentos significativos que representan estructuras anatómicas o patológicas de interés.</p>
+</section>
+<section id="segmentación-de-órganos" class="slide level2">
+<h2>Segmentación de órganos</h2>
+
+<img data-src="https://cdn.plainconcepts.com/wp-content/uploads/2021/09/segmentacion-organos-ejemplo.jpg" class="r-stretch"><aside class="notes">
+<p>Notes</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="segmentación-de-células" class="slide level2">
+<h2>Segmentación de células</h2>
+
+<img data-src="https://evidentscientific.com/es/insights/media_167ae9803db5a3cdcd0e46660047ad32d3312da0c.png?width=2000&amp;format=webply&amp;optimize=medium" class="r-stretch"><aside class="notes">
+<p>Notes</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="segmentación-de-tumores" class="slide level2">
+<h2>Segmentación de tumores</h2>
+
+<img data-src="https://wchh.onlinelibrary.wiley.com/cms/asset/03fc0838-39de-4bbc-8998-51851d6e0739/tre777-fig-0005-m.jpg" class="quarto-figure quarto-figure-center r-stretch" style="width:80.0%"><aside class="notes">
+<p>Notes</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section></section>
+<section>
+<section id="radiómica" class="title-slide slide level1 center">
+<h1>Radiómica</h1>
+
+</section>
+<section id="la-imagen-médica-más-allá-de-lo-visual" class="slide level2">
+<h2>La Imagen Médica: Más Allá de lo Visual</h2>
+<ul>
+<li><strong>Modalidades tradicionales:</strong>
+<ul>
+<li>Rayos X</li>
+<li>Tomografía Computarizada (TC)</li>
+<li>Resonancia Magnética (RM)</li>
+<li>Medicina Nuclear (PET/CT)</li>
+</ul></li>
+<li><strong>Interpretación:</strong> Principalmente <em>cualitativa</em> y <em>subjetiva</em>.</li>
+<li><strong>Limitaciones:</strong>
+<ul>
+<li>Variabilidad inter-observador.</li>
+<li>Información potencialmente oculta.</li>
+</ul></li>
+</ul>
+<aside class="notes">
+
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="qué-es-la-radiómica" class="slide level2">
+<h2>¿Qué es la Radiómica?</h2>
+<blockquote cite="https://insightsimaging.springeropen.com/articles/10.1186/s13244-020-00887-2">
+<p>La radiómica es un enfoque cuantitativo de la imagenología médica, que tiene como objetivo mejorar los datos existentes disponibles para los clínicos mediante análisis matemáticos avanzados. A través de la extracción matemática de la distribución espacial de las intensidades de señal y las interrelaciones de los píxeles, la radiómica cuantifica la información textural utilizando métodos de análisis del campo de la inteligencia artificial.</p>
+</blockquote>
+<ul>
+<li><p>Transforma imágenes médicas en <strong>datos cuantitativos</strong>.</p></li>
+<li><p>“Biopsia virtual”: extraer información <strong>sin</strong> procedimientos invasivos.</p></li>
+<li><p>La imagen como un <em>gran conjunto de datos</em> a explotar.</p></li>
+</ul>
+<aside class="notes">
+
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="qué-es-la-radiómica-1" class="slide level2">
+<h2>¿Qué es la Radiómica?</h2>
+
+<img data-src="https://www.physik.uzh.ch/physik/dam/jcr:a8adea1e-6aa0-4895-b0e0-0677e0b7adca/radiomics_01072019.2019-07-15-13-37-21.png" class="r-stretch"><aside class="notes">
+
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="flujo-de-trabajo-de-la-radiómica-imagen" class="slide level2">
+<h2>Flujo de Trabajo de la Radiómica: Imagen</h2>
+<ol type="1">
+<li><p>Adquisición de Imágenes</p>
+<ul>
+<li>Imágenes médicas estándar (TC, RM, etc.).</li>
+<li>¡Importancia de la <strong>estandarización</strong>!</li>
+</ul></li>
+<li><p>Segmentación (ROI)</p>
+<ul>
+<li>Delimitar la región de interés (tumor, órgano…).</li>
+<li>Manual, semiautomática o automática.</li>
+</ul></li>
+</ol>
+<aside class="notes">
+
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="flujo-de-trabajo-de-la-radiómica-parte-radiómica" class="slide level2">
+<h2>Flujo de Trabajo de la Radiómica: Parte Radiómica</h2>
+<div class="columns">
+<div class="column" style="width:70%;">
+<ul>
+<li><strong>Extracción de Características:</strong> Los algoritmos extraen <em>miles</em> de características.</li>
+<li><strong>Forma:</strong> Tamaño, esfericidad…</li>
+<li><strong>Intensidad:</strong> Distribución de valores.</li>
+<li><strong>Textura:</strong> Patrones espaciales.</li>
+</ul>
+</div><div class="column" style="width:30%;">
+<p><a href="https://theibsi.github.io/" data-preview-links="true"><img data-src="https://theibsi.github.io/assets/images/ibsi.png" width="300"></a></p>
+</div>
+</div>
+<aside class="notes">
+<p>Notes</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="flujo-de-trabajo-de-la-radiómica-análisis" class="slide level2">
+<h2>Flujo de Trabajo de la Radiómica: Análisis</h2>
+<ul>
+<li><p>Selección y Modelado</p>
+<ul>
+<li>No todas las características son útiles.</li>
+<li><strong>Selección:</strong> quedarnos con las más relevantes.</li>
+<li><strong>Modelado:</strong> crear algoritmos predictivos (Machine Learning).</li>
+</ul></li>
+<li><p>Validación del Modelo</p>
+<ul>
+<li>Probar con datos “nuevos”.</li>
+<li>Asegurar la <strong>generalización</strong> (evitar sobreajuste).</li>
+<li>Métricas: Precisión, Sensibilidad, Especificidad.</li>
+</ul></li>
+</ul>
+<aside class="notes">
+
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="aplicaciones-clínicas-oncología" class="slide level2">
+<h2>Aplicaciones Clínicas: Oncología</h2>
+<ul>
+<li><strong>Detección temprana</strong></li>
+<li><strong>Diferenciación</strong> benigno/maligno.</li>
+<li><strong>Predicción de respuesta</strong> a tratamientos.</li>
+<li><strong>Pronóstico</strong> y supervivencia.</li>
+</ul>
+<aside class="notes">
+
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="aplicaciones-clínicas-otras-áreas" class="slide level2">
+<h2>Aplicaciones Clínicas: Otras Áreas</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h4 id="cardiovasculares">Cardiovasculares</h4>
+<ul>
+<li>Caracterización de placas.</li>
+</ul>
+<h4 id="neurológicas">Neurológicas</h4>
+<ul>
+<li>Alzheimer.</li>
+<li>Esclerosis múltiple.</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<h4 id="pulmonares">Pulmonares</h4>
+<ul>
+<li>EPOC.</li>
+<li>Fibrosis.</li>
+</ul>
+</div>
+</div>
+<aside class="notes">
+
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="desafíos-y-limitaciones" class="slide level2">
+<h2>Desafíos y Limitaciones</h2>
+<div>
+<ul>
+<li class="fragment"><strong>Estandarización:</strong> protocolos consistentes.</li>
+<li class="fragment"><strong>“Caja Negra”:</strong> interpretabilidad de los modelos.</li>
+<li class="fragment"><strong>Grandes Datos:</strong> necesidad de <em>muchos</em> datos de calidad.</li>
+<li class="fragment"><strong>Integración Clínica:</strong> herramientas fáciles de usar.</li>
+</ul>
+</div>
+<aside class="notes">
+
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section></section>
+<section id="gracias-por-vuestra-atención" class="title-slide slide level1 center">
+<h1>GRACIAS POR VUESTRA ATENCIÓN</h1>
 
 <div class="quarto-auto-generated-content">
 <p><img src="https://cdn0.iconfinder.com/data/icons/modern-ui-glyph-1/64/modern-ui-glyph-1-03-512.png" class="slide-logo"></p>
@@ -412,7 +1124,7 @@
 'autoAnimateDuration': 1,
 'autoAnimateUnmatched': true,
 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
-'smaller': false,
+'smaller': true,
  
         // Display controls in the bottom right corner
         controls: false,
@@ -534,7 +1246,7 @@
         hideCursorTime: 5000,
 
         // Opens links in an iframe preview overlay
-        previewLinks: true,
+        previewLinks: false,
 
         // Transition style (none/fade/slide/convex/concave/zoom)
         transition: 'none',
