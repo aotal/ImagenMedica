@@ -1,0 +1,180 @@
+---
+title: "AI e Imagen Médica"
+date: "2025-02-28"
+categories: [Presentación]
+image: https://thejournalofmhealth.com/wp-content/uploads/2023/05/Is-There-Space-for-Generative-AI-in-Radiology_AdobeStock-777x437.jpeg
+author: "[Antonio Otal Palacín](antonio.otal@udl.cat)"
+institute: Hospital Universitari Arnau de Vilanova (Lleida)
+lang: es
+format: 
+    revealjs:
+        logo: 'https://cdn0.iconfinder.com/data/icons/modern-ui-glyph-1/64/modern-ui-glyph-1-03-512.png'
+        footer-logo-link: "/"
+        footer: "[IAMED](https://cv.udl.cat/portal/site/100794-2324/tool/3d5c2c81-a50b-43ce-a0bf-ecbfd152350b)"
+        css: styles.css
+        number-sections: false
+        slide-number: false
+        center: false
+        preview-links: true
+        smaller: true
+filters:
+  - reveal-header        
+jupyter: python3   
+---
+
+## Índice
+
+-   OCR
+-   AI en Imagen Médica
+-   Formatos de Imagen
+-   Segmentación automática
+-   Límites de los LLM
+
+::: notes
+Notes
+:::
+
+# Introducción a la Inteligencia Artificial en Medicina: Empecemos por algo familiar - ¡OCR!
+
+## ¿Qué es OCR y por qué es relevante en el entorno sanitario?
+
+*   **¿Has usado alguna vez OCR?** (Escanear documentos, apps de escaneo de texto, etc.)
+*   **Definición sencilla:** "Enseñar a un ordenador a leer texto en imágenes."
+    [Image of Demostración online sencilla de OCR: Imagen de documento médico en papel a la izquierda, texto digitalizado a la derecha]
+*   **Aplicaciones cotidianas:** Escaneo de documentos con el móvil, reconocimiento de matrículas.
+*   **Relevancia en sanidad:** Digitalizar documentos médicos:
+    *   Eficiencia, menos papel, menos errores.
+    *   Acceso rápido a información.
+
+## Ejemplos concretos de uso de OCR en hospitales y clínicas
+
+*   Digitalización de historias clínicas en papel.
+*   Procesamiento de recetas médicas.
+*   Gestión de resultados de laboratorio.
+
+
+
+# Introducción General a la Inteligencia Artificial en Imagen Médica: Más allá del texto, ¡imágenes que nos ayudan a diagnosticar!
+
+## Ampliando la perspectiva: IA no solo lee texto, también "ve" imágenes médicas.
+
+*   Conexión con OCR: Si la IA puede "leer" imágenes con texto...
+*   ... ¿Podría también "analizar" **imágenes médicas** para ayudarnos en el diagnóstico?
+*   Importancia de la imagen médica en el diagnóstico y tratamiento (radiografías, RM, TC, etc.).
+*   Auge de la IA en medicina y su potencial transformador en el análisis de imágenes.
+
+## Inteligencia Artificial e Imagen Médica: ¿Qué ventajas nos ofrece?
+
+*   **Mejora de la precisión diagnóstica:** Detectar enfermedades antes y con mayor exactitud.
+    [Image of Radiografía de tórax mostrando un pequeño nódulo pulmonar resaltado por IA]
+    *   *Ejemplo concreto:* Detectar pequeños nódulos pulmonares en radiografías.
+*   **Eficiencia en el flujo de trabajo:** Ahorrar tiempo a los médicos en tareas repetitivas.
+    *   *Ejemplo concreto:* Segmentar órganos automáticamente.
+*   **Identificación de patrones sutiles:** Descubrir información oculta no visible al ojo humano.
+    *   *Ejemplo concreto:* Detectar cambios tempranos en resonancias cerebrales.
+*   **Hacia una medicina más personalizada:** Adaptar diagnóstico y tratamiento a cada paciente.
+
+---
+
+# Formatos de Imagen 3D en Medicina: Los "formatos de archivo" de las imágenes médicas que usa la IA.
+
+## ¿Por qué necesitamos "formatos especiales" para las imágenes médicas?
+
+*   Analogía con formatos de texto o música: Necesitamos formatos estandarizados para que los ordenadores "entiendan" las imágenes médicas.
+*   Importancia de la información adicional (metadatos) en imágenes médicas.
+
+## El Estándar DICOM: El "formato universal" de las imágenes médicas clínicas.
+
+*   DICOM: Estándar principal para imágenes en hospitales. "Idioma común" de equipos médicos.
+*   **Características clave:**
+    *   "Caja" que contiene imagen y metadatos.
+    *   Metadatos: Información del paciente, estudio, equipo ("etiqueta").
+    *   Interoperabilidad: Equipos de diferentes marcas "se entienden".
+*   [Image of Visor DICOM sencillo mostrando imagen y metadatos básicos]
+    *   Ejemplo visual de un visor DICOM sencillo.
+
+## El Formato NIfTI: Más para investigación, especialmente en el cerebro.
+
+*   NIfTI: Formato más simple, para investigación, sobre todo neuroimagen.
+*   Más "flexible" para análisis computacional e investigación.
+*   Ejemplo visual de software de neuroimagen (opcional).
+*   **Diferencia clave con DICOM:** DICOM para clínica, NIfTI para investigación.
+
+---
+
+# Segmentación Automática de Imágenes Médicas con IA: La IA "dibujando" sobre las imágenes.
+
+## ¿Qué es la Segmentación? "Como si la IA resaltara o dibujara bordes sobre las estructuras."
+
+*   Definición sencilla: Identificar y delimitar regiones en imágenes médicas.
+*   Analogía: "Resaltar" o "dibujar bordes".
+*   Segmentación manual vs. automática: Manual laboriosa y subjetiva. Automática más rápida y precisa.
+
+## ¿Por qué es importante la Segmentación en Medicina?
+
+*   **Diagnóstico:** Detectar y medir tumores, lesiones.
+    [Image of Imagen de TC de pulmón mostrando un tumor segmentado y medido por IA]
+    *   *Ejemplo concreto:* Medir tamaño de tumor en pulmón.
+*   **Planificación del tratamiento:** Planificar cirugías, radioterapia.
+    [Image of Resonancia magnética cerebral mostrando el área a operar delimitada por segmentación de IA]
+    *   *Ejemplo concreto:* Delimitar área a operar en cirugía cerebral.
+*   **Análisis cuantitativo:** Medir volúmenes de órganos para detectar enfermedades.
+    *   *Ejemplo concreto:* Medir volumen del ventrículo izquierdo del corazón.
+
+## ¿Cómo hace la IA la Segmentación Automática? (Explicación conceptual sencilla).
+
+*   Redes Neuronales Convolucionales (CNNs): "La IA aprende a reconocer patrones en las imágenes."
+    [Image of Representación muy simplificada de una Red Neuronal Convolucional como una "caja negra" que aprende de ejemplos]
+    *   Analogía: "Como un niño aprende a reconocer caras."
+*   **Proceso general simplificado:**
+    *   "Entrenamiento": IA aprende con imágenes segmentadas por expertos.
+    *   "Segmentación automática": IA segmenta nuevas imágenes.
+
+## Herramientas de Segmentación con IA que ya se usan (ejemplos visuales).
+
+*   Ejemplos de software de segmentación médica con IA (interfaces gráficas).
+    [Image of Interfaz de software de segmentación médica mostrando segmentación de un órgano en 3D]
+*   Aplicaciones clínicas concretas:
+    *   Detección de tumores (cerebro, pulmón, mama).
+    *   Segmentación de órganos (cardiología, neurología).
+    *   Guía quirúrgica.
+
+---
+
+# Conclusiones y Futuro de la IA en Imagen Médica: Un futuro prometedor, pero con consideraciones.
+
+## Resumen rápido de lo aprendido: OCR, DICOM, Segmentación.
+
+*   Repaso visual y conciso de los temas principales.
+
+## Limitaciones y Desafíos actuales de la IA en Imagen Médica (Adaptado al perfil de primer año).
+
+*   "La IA es una herramienta, no un sustituto del médico." Juicio clínico humano esencial.
+*   "La calidad de la IA depende de los datos con los que se la entrena." Datos de calidad cruciales.
+*   "La IA necesita validación constante en la práctica clínica." Seguridad y eficacia deben probarse.
+
+## Ejemplos Clínicos Impactantes y Casos de Uso Actual (Recapitulando y reforzando ejemplos).
+
+*   **Radiología:** Detección de nódulos pulmonares, fracturas, hemorragias cerebrales.
+    [Image of Radiografía de tórax con detección de nódulo pulmonar resaltado por IA]
+*   **Cardiología:** Análisis de ecocardiogramas, segmentación cardíaca en RM.
+    [Image of Resonancia magnética cardíaca con segmentación del ventrículo izquierdo por IA]
+*   **Oftalmología:** Detección de retinopatía diabética, degeneración macular.
+    [Image of Imagen de retina con detección de retinopatía diabética por IA]
+*   **Patología digital:** Diagnóstico de cáncer a partir de biopsias.
+    [Image of Imagen de histopatología con detección de células cancerosas por IA]
+*   **Teledermatología:** Pre-evaluación de riesgo de cáncer de piel con imágenes de smartphone.
+    [Image of Imagen de lesión cutánea analizada por IA para detección de cáncer de piel]
+
+## Pregunta abierta a los alumnos
+
+*   ¿Dónde ven ustedes el mayor potencial de la IA en imagen médica en *su futuro* como médicos?
+
+## Recursos Adicionales "amigables" para principiantes
+
+*   Sugerencias de recursos de divulgación científica accesibles, webs sencillas sobre IA en medicina, vídeos cortos explicativos.
+
+
+# GRACIAS POR VUESTRA ATENCIÓN
+
+

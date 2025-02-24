@@ -1,0 +1,154 @@
+---
+title: "Procesamiento de prospectos"
+date: "2024-02-25"
+categories: [Presentación]
+image: img/imagen_ejemplo_datos.jpg
+author: "[Antonio Otal Palacín](antonio.otal@udl.cat)"
+institute: Hospital Universitari Arnau de Vilanova (Lleida)
+lang: es
+format: 
+    revealjs:
+        logo: 'https://cdn0.iconfinder.com/data/icons/modern-ui-glyph-1/64/modern-ui-glyph-1-03-512.png'
+        footer-logo-link: "/"
+        footer: "[IAMED](https://cv.udl.cat/portal/site/100794-2324/tool/3d5c2c81-a50b-43ce-a0bf-ecbfd152350b)"
+        css: styles.css
+        number-sections: false
+        slide-number: false
+        center: false
+        smaller: true
+filters:
+  - reveal-header        
+jupyter: python3   
+---
+
+## Índice
+
+- Planteamiento del problema
+- Extracción de datos
+- *UNSTRUCTURED TO STRUCTURED*
+- DB vectorial: Pinecone
+- DB grafos: Neo4j Aura
+
+::: notes
+Notes
+:::
+
+# Planteamiento del problema
+
+## Página CIMA
+
+[![](https://www.aemps.gob.es/assets/logo/apps/cima.jpg){width=300px}](https://cima.aemps.es/cima/publico/home.html#)
+
+::: notes
+Notes
+:::
+
+## ¿Qué es una API?
+
+*   **API** son las siglas de **Application Programming Interface** (Interfaz de Programación de Aplicaciones).
+*   Es un conjunto de reglas y especificaciones que permiten que diferentes aplicaciones de software se comuniquen e intercambien datos entre sí.
+*   Las APIs actúan como intermediarios, facilitando la interacción entre sistemas que de otro modo serían incompatibles.
+
+::: notes
+Notes
+:::
+
+## ¿Cómo funcionan las APIs?
+
+1.  Una aplicación (el cliente) realiza una solicitud a través de la API a otra aplicación (el servidor).
+2.  El servidor recibe la solicitud, la procesa y envía una respuesta con los datos solicitados.
+3.  El cliente recibe la respuesta y puede utilizar los datos para realizar diversas funciones.
+
+**Ejemplo:** Cuando utilizas una aplicación de viajes compartidos, la API de Google Maps se utiliza para mostrar el mapa y calcular la ruta. La API de la aplicación de viajes compartidos se encarga de gestionar las reservas y los pagos.
+
+::: notes
+Notes
+:::
+
+## CIMA REST API
+
+```{=html}
+<iframe width="1200" height="500" src="https://sede.aemps.gob.es/docs/CIMA-REST-API_1_19.pdf" title="API CIMA"></iframe>
+```
+
+::: notes
+Notes
+:::
+
+# Extracción de datos
+
+## Diseño del Colab
+
+<div style="text-align: center;"> [![Diálogo 1 con Gemini](img/gemini-color.png){width=100 style="margin-right: 20px;"}](https://g.co/gemini/share/86cec95f48b6)
+
+<a href="https://colab.research.google.com/drive/1R8_QxT-A66iQbkt3rSfW7VGS0q_dqfQ4?usp=sharing" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Código para la extracción de datos"/></a>
+
+[Búsqueda de paracetamol página 1](https://cima.aemps.es/cima/rest/medicamentos?nombre=paracetamol&pagina=1)
+
+</div>
+
+::: notes
+Notes
+:::
+
+## Primer JSON: Prospectos
+
+[Fichero obtenido](files/prospectos_componentes.json){preview-links="true"}
+
+::: notes
+Quizá recordar que se podrían almacenar en una NoSQL de las de clave-valor. Aunque de poco sirve.
+:::
+
+# *UNSTRUCTURED TO STRUCTURED*
+
+## Buscando la estructura
+
+<div style="text-align: center;"> [![Diálogo 2 con Gemini](img/gemini-color.png){width=100 style="margin-right: 20px;"}](https://g.co/gemini/share/7a41dc1e66a3)
+
+[Proyecto baml](https://github.com/codespaces/redesigned-bassoon-xq45pv9vrxfv9jg)
+
+[![Diálogo 3 con Gemini](img/gemini-color.png){width=100 style="margin-right: 20px;"}](https://g.co/gemini/share/f63c3db814a0)
+
+</div>
+
+## Iterando por todos los prospectos
+
+<div style="text-align: center;"> ![Diálogo 4 con Gemini](img/gemini-color.png){width=100 style="margin-right: 20px;"}
+
+<a href="https://colab.research.google.com/drive/1URmlyjPGhkIhqV-W896RO4lQ6W4qNFbO?usp=sharing" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Código para la extracción de datos"/></a>
+
+[Fichero obtenido](files/cytoscape_data.json){preview-links="true"}
+
+</div>
+
+# DB vectorial: Pinecone
+
+::: notes
+Notes
+:::
+
+## Repositorio de github
+
+<div style="text-align: center;"> ![[El enlace al repositorio aquí](https://github.com/aotal/pinecone_upload)](https://1000logos.net/wp-content/uploads/2021/05/GitHub-logo-500x281.png){width=500 style="margin-right: 100px;"}
+</div>
+
+## 
+
+<div style="text-align: center;"> [![Diálogo 1 con Gemini](img/gemini-color.png){width=100 style="margin-right: 20px;"}](https://g.co/gemini/share/36bad53754972dd3)
+
+<a href="https://colab.research.google.com/drive/1R8_QxT-A66iQbkt3rSfW7VGS0q_dqfQ4?usp=sharing" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Código para la extracción de datos"/></a>
+
+[Búsqueda de paracetamol página 1](https://cima.aemps.es/cima/rest/medicamentos?nombre=paracetamol&pagina=1)
+
+</div>
+
+
+## Nodes&Edges
+
+![](img/cytoscape.png)
+
+
+
+
+
+
