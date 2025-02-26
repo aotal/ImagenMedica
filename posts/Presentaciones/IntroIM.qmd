@@ -1,6 +1,6 @@
 ---
 title: "Introducción a la imagen médica"
-date: "2025-02-24"
+date: "2025-02-25"
 categories: [Presentación]
 image: https://www.researchgate.net/profile/Isa-Dussauge/publication/277820221/figure/fig2/AS:669423601999885@1536614432979/Homer-Simpsons-brain-seen-with-MRI-X-ray-Image-reproduced-on-many-Internet-sites_W640.jpg
 author: "[Antonio Otal Palacín](antonio.otal@udl.cat)"
@@ -43,11 +43,7 @@ Notes
 ## Definición de imagen digital
 
 
-<blockquote cite=''>
-
-Una imagen digital o gráfico digital es una representación bidimensional de una imagen a partir de una matriz numérica, frecuentemente en binario (unos y ceros). Dependiendo de si la resolución de la imagen es estática o dinámica, puede tratarse de una imagen matricial (o mapa de bits) o de un gráfico vectorial. El mapa de bits es el formato más utilizado en informática.
-
-</blockquote>
+*Una imagen digital o gráfico digital es una representación bidimensional de una imagen a partir de una matriz numérica, frecuentemente en binario (unos y ceros). Dependiendo de si la resolución de la imagen es estática o dinámica, puede tratarse de una imagen matricial (o mapa de bits) o de un gráfico vectorial. El mapa de bits es el formato más utilizado en informática.* 
 
 
 ::: notes
@@ -328,25 +324,7 @@ Notes
 
 # Segmentación de imágenes médicas
 
-::: notes
-Notes
-:::
-
-## Segmentación de imágenes médicas:Definición
-
-- La segmentación de imágenes médicas consiste en dividir dichas imágenes en regiones o segmentos significativos que representan estructuras anatómicas o patológicas de interés.
-
-::: notes
-Notes
-:::
-
-## Segmentación de imágenes médicas:Máscara vs Imagen
-
-![](img/mascara.png)
-
-::: notes
-Notes
-:::
+-La segmentación de imágenes médicas consiste en dividir dichas imágenes en regiones o segmentos significativos que representan estructuras anatómicas o patológicas de interés.
 
 ## Segmentación de órganos
 

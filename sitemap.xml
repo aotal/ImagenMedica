@@ -1,75 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://aotal.github.io/ImagenMedica/posts/Presentaciones/Datos_1.html</loc>
-    <lastmod>2025-02-24T09:20:40.019Z</lastmod>
-  </url>
-  <url>
-    <loc>https://aotal.github.io/ImagenMedica/posts/Presentaciones/Procesamiento_datos.html</loc>
-    <lastmod>2025-02-24T11:41:22.820Z</lastmod>
-  </url>
-  <url>
-    <loc>https://aotal.github.io/ImagenMedica/posts/Presentaciones/plan.html</loc>
-    <lastmod>2025-02-24T09:20:40.019Z</lastmod>
-  </url>
-  <url>
-    <loc>https://aotal.github.io/ImagenMedica/posts/code/word_embeddings.html</loc>
-    <lastmod>2025-02-24T09:08:06.920Z</lastmod>
-  </url>
-  <url>
-    <loc>https://aotal.github.io/ImagenMedica/posts/code/Titanic.html</loc>
-    <lastmod>2025-02-24T09:08:06.459Z</lastmod>
-  </url>
-  <url>
-    <loc>https://aotal.github.io/ImagenMedica/index.html</loc>
-    <lastmod>2025-02-24T09:08:05.599Z</lastmod>
-  </url>
-  <url>
-    <loc>https://aotal.github.io/ImagenMedica/pre-post/Presentaciones/ImagenAI.html</loc>
-    <lastmod>2025-02-24T09:08:06.920Z</lastmod>
-  </url>
-  <url>
-    <loc>https://aotal.github.io/ImagenMedica/pre-post/code/2_ConvolutionalNN_PNEUMONIA_X_ray.html</loc>
-    <lastmod>2025-02-24T09:08:07.080Z</lastmod>
-  </url>
-  <url>
-    <loc>https://aotal.github.io/ImagenMedica/pre-post/code/PruebaMonai.html</loc>
-    <lastmod>2025-02-24T09:08:07.080Z</lastmod>
-  </url>
-  <url>
     <loc>https://aotal.github.io/ImagenMedica/tmp/limpieza.html</loc>
-    <lastmod>2025-02-24T09:08:07.090Z</lastmod>
+    <lastmod>2025-02-26T07:39:02.208Z</lastmod>
   </url>
   <url>
     <loc>https://aotal.github.io/ImagenMedica/pre-post/code/unet_segmentation.html</loc>
-    <lastmod>2025-02-24T09:08:07.080Z</lastmod>
+    <lastmod>2025-02-26T07:39:02.150Z</lastmod>
   </url>
   <url>
     <loc>https://aotal.github.io/ImagenMedica/pre-post/code/Neumonia.html</loc>
-    <lastmod>2025-02-24T09:08:07.080Z</lastmod>
+    <lastmod>2025-02-26T07:39:02.130Z</lastmod>
   </url>
   <url>
-    <loc>https://aotal.github.io/ImagenMedica/about.html</loc>
-    <lastmod>2025-02-24T09:08:05.558Z</lastmod>
-  </url>
-  <url>
-    <loc>https://aotal.github.io/ImagenMedica/posts/code/Embedding.html</loc>
-    <lastmod>2025-02-24T09:08:06.199Z</lastmod>
-  </url>
-  <url>
-    <loc>https://aotal.github.io/ImagenMedica/posts/code/Radiomics_Feature_Extraction.html</loc>
-    <lastmod>2025-02-24T09:08:06.439Z</lastmod>
-  </url>
-  <url>
-    <loc>https://aotal.github.io/ImagenMedica/posts/Presentaciones/AI_Image.html</loc>
-    <lastmod>2025-02-24T09:20:40.019Z</lastmod>
+    <loc>https://aotal.github.io/ImagenMedica/posts/Presentaciones/Procesamiento_datos.html</loc>
+    <lastmod>2025-02-26T13:52:48.316Z</lastmod>
   </url>
   <url>
     <loc>https://aotal.github.io/ImagenMedica/posts/Presentaciones/LLMs.html</loc>
-    <lastmod>2025-02-24T09:08:05.599Z</lastmod>
+    <lastmod>2025-02-26T07:35:21.441Z</lastmod>
+  </url>
+  <url>
+    <loc>https://aotal.github.io/ImagenMedica/posts/Presentaciones/Datos_1.html</loc>
+    <lastmod>2025-02-26T07:35:21.399Z</lastmod>
+  </url>
+  <url>
+    <loc>https://aotal.github.io/ImagenMedica/posts/code/word_embeddings.html</loc>
+    <lastmod>2025-02-26T07:35:21.556Z</lastmod>
+  </url>
+  <url>
+    <loc>https://aotal.github.io/ImagenMedica/posts/code/Radiomics_training_masmodelos.html</loc>
+    <lastmod>2025-02-26T11:55:40.166Z</lastmod>
+  </url>
+  <url>
+    <loc>https://aotal.github.io/ImagenMedica/posts/code/Embedding.html</loc>
+    <lastmod>2025-02-26T07:35:21.479Z</lastmod>
+  </url>
+  <url>
+    <loc>https://aotal.github.io/ImagenMedica/about.html</loc>
+    <lastmod>2025-02-26T07:38:56.350Z</lastmod>
+  </url>
+  <url>
+    <loc>https://aotal.github.io/ImagenMedica/index.html</loc>
+    <lastmod>2025-02-26T07:38:56.632Z</lastmod>
+  </url>
+  <url>
+    <loc>https://aotal.github.io/ImagenMedica/posts/code/Radiomics_Feature_Extraction.html</loc>
+    <lastmod>2025-02-26T07:35:32.978Z</lastmod>
+  </url>
+  <url>
+    <loc>https://aotal.github.io/ImagenMedica/posts/code/Titanic.html</loc>
+    <lastmod>2025-02-26T07:35:23.224Z</lastmod>
+  </url>
+  <url>
+    <loc>https://aotal.github.io/ImagenMedica/posts/Presentaciones/AI_Image.html</loc>
+    <lastmod>2025-02-26T07:35:21.376Z</lastmod>
   </url>
   <url>
     <loc>https://aotal.github.io/ImagenMedica/posts/Presentaciones/IntroIM.html</loc>
-    <lastmod>2025-02-24T09:58:46.046Z</lastmod>
+    <lastmod>2025-02-26T07:35:21.389Z</lastmod>
+  </url>
+  <url>
+    <loc>https://aotal.github.io/ImagenMedica/posts/Presentaciones/plan.html</loc>
+    <lastmod>2025-02-26T07:35:21.488Z</lastmod>
+  </url>
+  <url>
+    <loc>https://aotal.github.io/ImagenMedica/pre-post/code/2_ConvolutionalNN_PNEUMONIA_X_ray.html</loc>
+    <lastmod>2025-02-26T07:39:02.108Z</lastmod>
+  </url>
+  <url>
+    <loc>https://aotal.github.io/ImagenMedica/pre-post/code/PruebaMonai.html</loc>
+    <lastmod>2025-02-26T07:39:02.139Z</lastmod>
+  </url>
+  <url>
+    <loc>https://aotal.github.io/ImagenMedica/pre-post/Presentaciones/ImagenAI.html</loc>
+    <lastmod>2025-02-26T07:39:01.324Z</lastmod>
   </url>
 </urlset>

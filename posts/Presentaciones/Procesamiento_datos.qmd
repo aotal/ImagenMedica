@@ -77,6 +77,16 @@ Notes
 
 # Extracción de datos
 
+## *Promt* para diseño del colab 
+
+<blockquote cite='https://gemini.google.com/'>
+
+Quiero que busques un medicamento por nombre, por ejemplo paracetamol utilizando la información contenida en el archivo adjunto. Ten en cuenta que cada búsqueda puede tener varias páginas. Hay un campo llamados totalFilas que indica el número de medicamentos encontrados y otro llamado tamanioPagina que indica el número de medicamentos por página. Me gustaría que almacenases los ids de cada uno en un array. Hazlo mediante una estructura de funciones de python, comentadas y lo más concisas y a su vez que formen una estructura robusta y escalable.
+
+</blockquote>
+
+![](img/gemini_2_Flash.PNG){.absolute top="500" right="0" height="75"}
+
 ## Diseño del Colab
 
 <div style="text-align: center;"> [![Diálogo 1 con Gemini](img/gemini-color.png){width=100 style="margin-right: 20px;"}](https://g.co/gemini/share/86cec95f48b6)
@@ -101,6 +111,26 @@ Quizá recordar que se podrían almacenar en una NoSQL de las de clave-valor. Au
 
 # *UNSTRUCTURED TO STRUCTURED*
 
+## *Promt* para buscar la estructura 
+
+<blockquote cite='https://gemini.google.com/'>
+
+Te he pasado un archivo JSON en el que los campos son los IDs de unos medicamentos y el alor el prospecto de cada uno de los medicamentos. Puedes buscar campos comunes dentro del texto de los prospectos?
+
+</blockquote>
+
+![](img/gemini_2_Flash.PNG){.absolute top="500" right="0" height="75"}
+
+## *Promt* para buscar la estructura 
+
+<blockquote cite='https://gemini.google.com/'>
+
+Te he pasado un archivo JSON en el que los campos son los IDs de unos medicamentos y el alor el prospecto de cada uno de los medicamentos. Puedes buscar campos comunes dentro del texto de los prospectos?
+
+</blockquote>
+
+![](img/gemini_2_Flash.PNG){.absolute top="500" right="0" height="75"}
+
 ## Buscando la estructura
 
 <div style="text-align: center;"> [![Diálogo 2 con Gemini](img/gemini-color.png){width=100 style="margin-right: 20px;"}](https://g.co/gemini/share/7a41dc1e66a3)
@@ -110,6 +140,37 @@ Quizá recordar que se podrían almacenar en una NoSQL de las de clave-valor. Au
 [![Diálogo 3 con Gemini](img/gemini-color.png){width=100 style="margin-right: 20px;"}](https://g.co/gemini/share/f63c3db814a0)
 
 </div>
+
+## *Promt* para definir las clases 
+
+<blockquote cite='https://gemini.google.com/'>
+
+Tengo una lista de posibles valores:
+Comprimidos
+Comprimidos efervescentes
+Comprimidos gastrorresistentes
+Comprimidos recubiertos con película
+Cápsulas blandas
+Granulado para solución oral
+Suspensión oral
+Solución oral
+Solución para perfusión
+Concentrado para solución para perfusión
+Y una estructura en un lenguage llamado baml:
+enum MyEnum {
+  Value1 @alias("complete_summary") @description("Answer in 2 sentences")
+  Value2
+  Value3 @skip
+  Value4 @description(#"
+    This is a long description that spans multiple lines.
+    It can be useful for providing more context to the value.
+  "#)
+}
+Puedes adaptarme la lista a la estructura?
+
+</blockquote>
+
+![](img/gemini_2_Flash.PNG){.absolute top="500" right="0" height="75"}
 
 ## Iterando por todos los prospectos
 
@@ -132,20 +193,135 @@ Notes
 <div style="text-align: center;"> ![[El enlace al repositorio aquí](https://github.com/aotal/pinecone_upload)](https://1000logos.net/wp-content/uploads/2021/05/GitHub-logo-500x281.png){width=500 style="margin-right: 100px;"}
 </div>
 
-## 
+## Pinecone: Base de datos vectorial
 
-<div style="text-align: center;"> [![Diálogo 1 con Gemini](img/gemini-color.png){width=100 style="margin-right: 20px;"}](https://g.co/gemini/share/36bad53754972dd3)
+::: columns
+::: {.column width="50%"}
 
-<a href="https://colab.research.google.com/drive/1R8_QxT-A66iQbkt3rSfW7VGS0q_dqfQ4?usp=sharing" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Código para la extracción de datos"/></a>
+* **¿Qué es Pinecone?**
+    * Base de datos vectorial diseñada para aplicaciones de IA.
+    * Optimizado para búsqueda por similitud de alta velocidad.
+    * Almacena y consulta incrustaciones (embeddings).
 
-[Búsqueda de paracetamol página 1](https://cima.aemps.es/cima/rest/medicamentos?nombre=paracetamol&pagina=1)
+* **Casos de uso clave:**
+    * Sistemas de recomendación.
+    * Búsqueda semántica.
+    * Chatbots y asistentes virtuales.
+    * Detección de anomalías.
+
+:::
+::: {.column width="50%"}
+
+![](https://mma.prnewswire.com/media/2418074/Pinecone_Systems_Inc_Logo.jpg){.absolute top="300" right="50" height="75"}
+
+:::
+:::
+
+## Características principales de Pinecone
+
+* **Alta velocidad y escalabilidad:**
+    * Índices optimizados para búsqueda de vecinos más cercanos (ANN).
+    * Escalado horizontal para manejar grandes volúmenes de datos.
+
+* **Flexibilidad:**
+    * Soporta diferentes tipos de metricas de distancia (coseno, euclidiana, etc).
+    * Soporta metadatos.
+
+
+## *Promt* para pinecone 
+
+<blockquote cite='https://gemini.google.com/'>
+
+Quiero codificar en una base de datos de pinecone el siguiente json que consiste en una lista de tres diccionarios que corresponden a 3 analgesicos. Solamente es una muestra de una lista mucho más grande. La lista es:[...]
+Me gustaría que encontrases la manera más eficiente de codificarla en pinecone como base de una aplicación rag que mediante lenguaje natural haga preguntas y reciba también respuestas en lenguaje natural lo más exactas posibles. Es un proyecto de un chat para médicos que les ayude a encontrar el analgésico más adecuado para un determinado paciente con una determinada dolencia. Por lo tanto, las respuestas deben ser en un lenguaje de experto médico.
+
+</blockquote>
+
+![](img/gemini_2_Pro_exp.PNG){.absolute top="500" right="0" height="75"}
+
+## Adaptando datos a pinecone
+
+<div style="text-align: center;"> [![Diálogo 5 con Gemini](img/gemini-color.png){width=100 style="margin-right: 20px;"}](https://gemini.google.com/)
+
+[Enlace a pinecone](https://app.pinecone.io/organizations/-OJIqDwxUspfeMInRBdg/projects/6a5fa0c7-11c8-465d-862c-9b7ec5199380/get-started/database)
 
 </div>
 
+## *Promt*: Creando el chatbot
 
-## Nodes&Edges
+<blockquote cite='https://gemini.google.com/'>
+
+Estoy creando una aplicación rag sobre medicamentos analgesicos. El fichero de partida es un json con una estructura de diccionarios como la siguiente:
+[...]
+Existen tres ficheros python. En primer lugar, data_utils.py:
+[...]
+En segundo lugar transform_json.py:
+[...]
+Y por último el fichero que carga los datos en pinecone upload_pinecone.py
+[...]
+Todo esto funciona. A partir de ahora me gustraía crear una aplicación chatbot que al hacerle preguntas en lenguaje natural sobre medicamento respondiese como un experto médico en analgesicos con la información contenida en la base de datos de pinecone recomendando los medicamentos optimos en cada situación.
+
+</blockquote>
+
+![](img/gemini_2_Pro_exp.PNG){.absolute top="500" right="0" height="75"}
+
+
+# DB grafos: Neo4j Aura
+
+
+## Neo4j y Aura
+
+- **Neo4j** es la base de datos de grafos líder en el mundo.
+-  Almacena y consulta datos como nodos y relaciones.
+-  Ideal para datos altamente conectados.
+-  Casos de uso: redes sociales, detección de fraudes, recomendaciones, etc.
+- **Aura** la solución en la nube neo4j.
+
+## ¿Por qué grafos?
+
+- Los datos están conectados. Los grafos permiten modelar estas conexiones de forma natural.
+- Las consultas en grafos son más eficientes para relaciones complejas.
+- Los grafos permiten descubrir patrones ocultos en los datos.
+
+**Ejemplo de código Cypher**
+
+```cypher
+MATCH (usuario:Usuario)-[:SIGUE]->(otroUsuario:Usuario)-[:PUBLICÓ]->(articulo:Articulo)
+WHERE usuario.nombre = 'TuNombre'
+RETURN articulo.titulo
+```
+
+## Creación del la DB de grafos
+
+
+<a href="https://colab.research.google.com/drive/1R8_QxT-A66iQbkt3rSfW7VGS0q_dqfQ4?usp=sharing" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Código para la extracción de datos"/></a>
 
 ![](img/cytoscape.png)
+
+[Neo4j](https://console-preview.neo4j.io/projects/fd625893-ecee-4e7d-a6d6-652fd4bfd1e9/instances)
+
+
+::: notes
+Notes
+:::
+
+## Preguntas
+
+- Me duele mucho la cabeza y tengo el estómago delicado, ¿hay algún analgésico que no me lo irrite?
+- Tengo dolor de cabeza y estoy tomando anticoagulantes, ¿hay alguna interacción que deba tener en cuenta?
+- Soy mayor y tengo dolor de articulaciones, ¿qué medicamento es seguro para mí?
+- Tengo dolor menstrual muy fuerte, ¿qué medicamento me puede ayudar?
+- Me duele mucho la cabeza y tengo el estómago delicado, ¿hay algún analgésico que no me lo irrite?
+
+
+
+::: notes
+Notes
+:::
+
+
+# GRACIAS POR VUESTRA ATENCIÓN
+
 
 
 
