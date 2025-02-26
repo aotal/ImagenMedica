@@ -1,6 +1,6 @@
 ---
 title: "Procesamiento de prospectos"
-date: "2024-02-17"
+date: "2024-02-25"
 categories: [Presentación]
 image: img/imagen_ejemplo_datos.jpg
 author: "[Antonio Otal Palacín](antonio.otal@udl.cat)"
@@ -26,7 +26,8 @@ jupyter: python3
 - Planteamiento del problema
 - Extracción de datos
 - *UNSTRUCTURED TO STRUCTURED*
-- Pruebas
+- DB vectorial: Pinecone
+- DB grafos: Neo4j Aura
 
 ::: notes
 Notes
@@ -120,9 +121,64 @@ Quizá recordar que se podrían almacenar en una NoSQL de las de clave-valor. Au
 
 </div>
 
-## Nodes&Edges
+# DB vectorial: Pinecone
 
-![](img/cytoscape.png)
+::: notes
+Notes
+:::
+
+## Repositorio de github
+
+<div style="text-align: center;"> ![[El enlace al repositorio aquí](https://github.com/aotal/pinecone_upload)](https://1000logos.net/wp-content/uploads/2021/05/GitHub-logo-500x281.png){width=500 style="margin-right: 100px;"}
+</div>
+
+## Pinecone: Base de datos vectorial
+
+::: columns
+::: {.column width="50%"}
+
+* **¿Qué es Pinecone?**
+    * Base de datos vectorial diseñada para aplicaciones de IA.
+    * Optimizado para búsqueda por similitud de alta velocidad.
+    * Almacena y consulta incrustaciones (embeddings).
+
+* **Casos de uso clave:**
+    * Sistemas de recomendación.
+    * Búsqueda semántica.
+    * Chatbots y asistentes virtuales.
+    * Detección de anomalías.
+
+:::
+::: {.column width="50%"}
+
+![](https://mma.prnewswire.com/media/2418074/Pinecone_Systems_Inc_Logo.jpg?w=200)
+
+:::
+:::
+
+## Características principales de Pinecone
+
+* **Alta velocidad y escalabilidad:**
+    * Índices optimizados para búsqueda de vecinos más cercanos (ANN).
+    * Escalado horizontal para manejar grandes volúmenes de datos.
+* **Facilidad de uso:**
+    * API simple y flexible.
+    * Integración con frameworks de ML populares.
+* **Flexibilidad:**
+    * Soporta diferentes tipos de metricas de distancia (coseno, euclidiana, etc).
+    * Soporta metadatos.
+
+## Adaptando datos a pinecone
+
+<div style="text-align: center;"> [![Diálogo 1 con Gemini](img/gemini-color.png){width=100 style="margin-right: 20px;"}](https://g.co/gemini/share/36bad53754972dd3)
+
+<a href="https://colab.research.google.com/drive/1X3glaLte_CPRu498sUcISGv7XLPgr7Q8?usp=sharing" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Código para la extracción de datos"/></a>
+
+[Enlace a pinecone](https://app.pinecone.io/organizations/-OJIqDwxUspfeMInRBdg/projects/6a5fa0c7-11c8-465d-862c-9b7ec5199380/get-started/database)
+
+</div>
+
+
 
 
 
