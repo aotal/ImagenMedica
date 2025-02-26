@@ -85,5 +85,8 @@
   },
   "posts/Presentaciones/AI_Image.qmd": {
     "AI_Image.html": "71e80c28"
+  },
+  "posts/code/Radiomics_training_masmodelos.ipynb": {
+    "Radiomics_training_masmodelos.html": "54cd6b8b"
   }
 }
