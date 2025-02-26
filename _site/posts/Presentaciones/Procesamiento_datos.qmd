@@ -291,8 +291,36 @@ WHERE usuario.nombre = 'TuNombre'
 RETURN articulo.titulo
 ```
 
+## Creación del la DB de grafos
 
 
+<a href="https://colab.research.google.com/drive/1R8_QxT-A66iQbkt3rSfW7VGS0q_dqfQ4?usp=sharing" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Código para la extracción de datos"/></a>
+
+![](img/cytoscape.png)
+
+[Neo4j](https://console-preview.neo4j.io/projects/fd625893-ecee-4e7d-a6d6-652fd4bfd1e9/instances)
+
+
+::: notes
+Notes
+:::
+
+## Preguntas
+
+- Me duele mucho la cabeza y tengo el estómago delicado, ¿hay algún analgésico que no me lo irrite?
+- Tengo dolor de cabeza y estoy tomando anticoagulantes, ¿hay alguna interacción que deba tener en cuenta?
+- Soy mayor y tengo dolor de articulaciones, ¿qué medicamento es seguro para mí?
+- Tengo dolor menstrual muy fuerte, ¿qué medicamento me puede ayudar?
+- Me duele mucho la cabeza y tengo el estómago delicado, ¿hay algún analgésico que no me lo irrite?
+
+
+
+::: notes
+Notes
+:::
+
+
+# GRACIAS POR VUESTRA ATENCIÓN
 
 
 
