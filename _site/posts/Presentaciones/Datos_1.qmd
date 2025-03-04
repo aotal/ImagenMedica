@@ -9,7 +9,7 @@ lang: es
 format: 
     revealjs:
         logo: 'https://cdn0.iconfinder.com/data/icons/modern-ui-glyph-1/64/modern-ui-glyph-1-03-512.png'
-        footer-logo-link: "/"
+        footer-logo-link: "./ImagenMedica/"
         footer: "[IAMED](https://cv.udl.cat/portal/site/100794-2324/tool/3d5c2c81-a50b-43ce-a0bf-ecbfd152350b)"
         css: styles.css
         number-sections: false

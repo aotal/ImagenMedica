@@ -9,7 +9,7 @@ lang: es
 format: 
     revealjs:
         logo: 'https://cdn0.iconfinder.com/data/icons/modern-ui-glyph-1/64/modern-ui-glyph-1-03-512.png'
-        footer-logo-link: "/"
+        footer-logo-link: "https://aotal.github.io/ImagenMedica/"
         footer: "[IAMED](https://cv.udl.cat/portal/site/100794-2324/tool/3d5c2c81-a50b-43ce-a0bf-ecbfd152350b)"
         css: styles.css
         number-sections: false
@@ -22,11 +22,7 @@ jupyter: python3
 ---
 
 # Hoja de Ruta
-- [LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO](/posts/Presentaciones/LLMs.html)
-- [DATOS EN EL ÁMBITO SANITARIO](/posts/Presentaciones/Datos_1.html)
-- [MODALIDADES DE IMAGEN](/posts/Presentaciones/IntroIM.html)
-- AI APLICADA A LA IMÁGEN MÉDICA
-- EJEMPLO DE DATOS NO ESTRUCTURADOS A ESTRUCTURADOS
-
-
-# LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO
+- [LARGE LANGUAGE MODELS (LLM) APLICADOS AL ENTORNO MÉDICO](~/posts/Presentaciones/LLMs.html)
+- [DATOS EN EL ÁMBITO SANITARIO](~/posts/Presentaciones/Datos_1.html)
+- [MODALIDADES DE IMAGEN](~/posts/Presentaciones/IntroIM.html)
+- [EJEMPLO DE DATOS NO ESTRUCTURADOS A ESTRUCTURADOS](~/posts/Presentaciones/Procesamiento_datos.qmd)
